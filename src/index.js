@@ -4,27 +4,28 @@ import './index.css';
 import {id_reader} from './email_templates/id-reader';
 
 class Container extends React.Component {
-        constructor(props) {
+    constructor(props) {
         super(props);
         this.state = {
         info: {
             month: 'October',
             volume: '10'
         }
-
         };
         this.handleTextChange = this.handleTextChange.bind(this);
     }
+
     handleTextChange(value, e) {
         let info = {...this.state.info};
         info[e.target.name] = value.trim();
         this.setState({info});
-      }
+        console.log(this.state);
+    }
 
     render(){
         return(
             <div id="container">
-                <Form info={this.state.info} volume={this.state.volume} onTextChange={this.handleTextChange}/>
+                <Form info={this.state.info} onTextChange={this.handleTextChange}/>
                 <TextResults info={this.state.info}/>
             </div>
         )
@@ -40,7 +41,7 @@ class Form extends React.Component {
         }
         this.handleTemplateChange = this.handleTemplateChange.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
-      }
+    }
     handleTextChange(e) {
         this.props.onTextChange(e.target.value, e);
     }
@@ -49,12 +50,14 @@ class Form extends React.Component {
     }
     
     render(){
-        let displayedForm;
-        
+    
+        let displayForm = <IDReaderForm />;
+        if(this.state.template === 'id-reader'){displayForm = <IDReaderForm />}
+        if(this.state.template === 'id-thematic'){displayForm = <IDThematicForm />}
+  
 
         return(
             <div id="main-form">
-
                 <select value={this.state.value} onChange={this.handleTemplateChange}>
                     <option value="id-reader">ID Reader</option>
                     <option value="id-thematic">ID Thematic</option>
@@ -62,6 +65,8 @@ class Form extends React.Component {
                     <option value="idt-thematic">IDT Thematic</option>
                     <option value="cced-reader">CCED Reader</option>
                 </select>
+
+                {displayForm}
 
                 <div className="label">
                     {/* The name attribute should match the state.info property */}
@@ -75,6 +80,22 @@ class Form extends React.Component {
         )
     }
 
+}
+
+class IDReaderForm extends React.Component {
+    render() {
+        return(
+            <div>Hello ID Reader!</div>
+        )
+    }
+}
+
+class IDThematicForm extends React.Component {
+    render() {
+        return(
+            <div>Hello ID Thematic!</div>
+        )
+    }
 }
 
 class TextResults extends React.Component {

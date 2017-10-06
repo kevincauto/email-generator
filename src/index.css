@@ -28,11 +28,8 @@ textarea {
   min-height: 600px;
 }
 
-.label {
-  width: 40x;
-  margin: 0px 10px 0px 0px
-}
 
-.label1{
+
+.label{
   display: flex;
 }
