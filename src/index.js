@@ -7,9 +7,9 @@ class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected_template: 'info',
+      selected_template: 'id_reader',
       id_reader: {},
-      info: {}
+      id_thematic: {}
     };
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleTemplateChange = this.handleTemplateChange.bind(this);
@@ -18,34 +18,29 @@ class Container extends React.Component {
   componentDidMount() {
     //preload the selected templates object with default values?
   }
-
-  handleTextChange(value, e) {
-    let copyOfState = { ...this.state };
-    //within the state object, select the property that matches the selected template, then assign or reasign the propery that matches the name assigned to the textbox.  Be sure that the name attribute on the textbox is what you want this propery to be.
-    console.log(copyOfState);
-    copyOfState[this.state.selected_template][e.target.name] = value.trim();
-    console.log(copyOfState);
-    this.setState({ copyOfState });
+  //***I think this is not saving state correctly right now.  May be overwriting things.
+  handleTextChange(value, name) {
+    this.setState({
+      [this.state.selected_template]: { [name]: value }
+    });
   }
 
-  handleTemplateChange(value) {
-    //change the selected template.  If coded correctly the change should cascade down and adjust everything.
-    let copyOfState = { ...this.state };
-    copyOfState.selected_template = value;
-    this.setState({ copyOfState });
-    console.log(this.state);
+  handleTemplateChange(template) {
+    if (!this.state[template]) {
+      this.setState({ template: {} });
+    }
+    this.setState({ selected_template: template });
   }
 
   render() {
     return (
       <div id="container">
         <Form
-          selected_template={this.state.selected_template}
-          info={this.state[this.state.selected_template]}
+          info={this.state}
           onTextChange={this.handleTextChange}
           onTemplateChange={value => this.handleTemplateChange(value)}
         />
-        <TextResults info={this.state.info} />
+        <TextResults info={this.state} />
       </div>
     );
   }
@@ -54,43 +49,37 @@ class Container extends React.Component {
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      template: 'id_reader'
-    };
     this.handleTemplateChange = this.handleTemplateChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
   }
 
-  handleTextChange(value, e) {
-    this.props.onTextChange(value, e);
+  handleTextChange(value, name) {
+    this.props.onTextChange(value, name);
   }
 
-  handleTemplateChange(value) {
-    this.props.onTemplateChange(value);
+  handleTemplateChange(e) {
+    this.props.onTemplateChange(e.target.value);
   }
 
   render() {
     let displayForm = (
       <IDReaderForm
-        selected_template={this.props.selected_template}
-        info={this.props[this.props.selected_template]}
+        info={this.props.info}
         onTextChange={this.handleTextChange}
       />
     );
-    if (this.state.template === 'id_reader') {
+    if (this.props.info.selected_template === 'id_reader') {
       displayForm = (
         <IDReaderForm
-          selected_template={this.props.selected_template}
-          info={this.props[this.props.selected_template]}
-          onTextChange={() => this.handleTextChange('id_reader')}
+          info={this.props.info}
+          onTextChange={this.handleTextChange}
         />
       );
     }
-    if (this.state.template === 'id_thematic') {
+    if (this.props.info.selected_template === 'id_thematic') {
       displayForm = (
         <IDThematicForm
-          selected_template={this.props.selected_template}
-          info={this.props[this.props.selected_template]}
+          info={this.props.info}
           onTextChange={this.handleTextChange}
         />
       );
@@ -98,7 +87,10 @@ class Form extends React.Component {
 
     return (
       <div id="main-form">
-        <select value={this.state.value} onChange={this.handleTemplateChange}>
+        <select
+          value={this.props.info.selected_template}
+          onChange={this.handleTemplateChange}
+        >
           <option value="id_reader">ID Reader</option>
           <option value="id_thematic">ID Thematic</option>
           <option value="idt_reader">IDT Reader</option>
@@ -119,7 +111,7 @@ class IDReaderForm extends React.Component {
   }
 
   handleTextChange(e) {
-    this.props.onTextChange(e.target.value, e);
+    this.props.onTextChange(e.target.value, e.target.name);
   }
   render() {
     return (
@@ -130,7 +122,7 @@ class IDReaderForm extends React.Component {
           Month: &nbsp;<input
             type="text"
             name="month"
-            value={this.props[this.props.selected_template].month}
+            value={this.props.info[this.props.info.selected_template].month}
             onChange={this.handleTextChange}
           />
         </div>
@@ -138,14 +130,14 @@ class IDReaderForm extends React.Component {
           Volume: &nbsp;<input
             type="text"
             name="volume"
-            value={this.props[this.props.selected_template].volume}
+            value={this.props.info[this.props.info.selected_template].volume}
             onChange={this.handleTextChange}
           />
         </div>
         <div className="label">
           Year: &nbsp;
           <select
-            value={this.props[this.props.selected_template].year}
+            value={this.props.info[this.props.info.selected_template].years}
             name="year"
             onChange={this.handleTextChange}
           >
@@ -166,7 +158,7 @@ class IDThematicForm extends React.Component {
   }
 
   handleTextChange(e) {
-    this.props.onTextChange(e.target.value, e);
+    this.props.onTextChange(e.target.value, e.target.name);
   }
   render() {
     return (
@@ -177,7 +169,7 @@ class IDThematicForm extends React.Component {
           Month: &nbsp;<input
             type="text"
             name="month"
-            value={this.props.info.month}
+            value={this.props.info[this.props.info.selected_template].month}
             onChange={this.handleTextChange}
           />
         </div>
@@ -185,7 +177,7 @@ class IDThematicForm extends React.Component {
           Volume: &nbsp;<input
             type="text"
             name="volume"
-            value={this.props.info.volume}
+            value={this.props.info[this.props.info.selected_template].volume}
             onChange={this.handleTextChange}
           />
         </div>
@@ -193,7 +185,7 @@ class IDThematicForm extends React.Component {
           Year: &nbsp;<input
             type="text"
             name="year"
-            value={this.props.info.year}
+            value={this.props.info[this.props.info.selected_template].year}
             onChange={this.handleTextChange}
           />
         </div>
@@ -204,7 +196,9 @@ class IDThematicForm extends React.Component {
 
 class TextResults extends React.Component {
   render() {
-    const { month, volume, year } = this.props.info;
+    const { month, volume, year } = this.props.info[
+      this.props.info.selected_template
+    ];
 
     const text = `
                 ${id_reader.doctype}
