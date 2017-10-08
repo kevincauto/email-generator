@@ -18,7 +18,7 @@ class Container extends React.Component {
   componentDidMount() {
     //preload the selected templates object with default values?
   }
-  //***I think this is not saving state correctly right now.  May be overwriting things.
+  //*** I think this is not saving state correctly right now.  May be overwriting things.
   handleTextChange(value, name) {
     this.setState({
       [this.state.selected_template]: { [name]: value }
