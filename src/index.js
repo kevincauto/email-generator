@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { id_reader } from './email_templates/id_reader';
-import CCEDWebinarRecruitment from './components/CCEDWebinarRecruitment';
+import CCEDLiveWebinar from './components/CCEDLiveWebinar';
 
 class Container extends React.Component {
   constructor(props) {
@@ -18,16 +17,28 @@ class Container extends React.Component {
   }
 
   componentDidMount() {
+      console.log(this.state);
     //preload the selected templates object with default values?
   }
   //*** I think this is not saving state correctly right now.  May be overwriting things.
-  handleTextChange(value, name) {
+  
+  componentDidUpdate(){
+      console.log(this.state);
+  }
+
+  handleTextChange(value, name, html) {
+
     this.setState({
-      [this.state.selected_template]: { [name]: value }
+      [this.state.selected_template]: { 
+        ...this.state[this.state.selected_template],        
+        [name]: value 
+    }
     });
+
   }
 
   handleTemplateChange(template) {
+    //create a blank object for the template if it does not exist
     if (!this.state[template]) {
       this.setState({ template: {} });
     }
@@ -55,8 +66,8 @@ class Form extends React.Component {
     this.handleTextChange = this.handleTextChange.bind(this);
   }
 
-  handleTextChange(value, name) {
-    this.props.onTextChange(value, name);
+  handleTextChange(value, name, html) {
+    this.props.onTextChange(value, name, html);
   }
 
   handleTemplateChange(e) {
@@ -89,7 +100,7 @@ class Form extends React.Component {
 
     if (this.props.info.selected_template === 'cced_webinar_recruitment') {
         displayForm = (
-          <CCEDWebinarRecruitment
+          <CCEDLiveWebinar
             info={this.props.info}
             onTextChange={this.handleTextChange}
           />
@@ -105,9 +116,7 @@ class Form extends React.Component {
           <option value="id_reader">ID Reader</option>
           <option value="id_thematic">ID Thematic</option>
           <option value="cced_webinar_recruitment">CCED Webinar Recruitment</option>
-          <option value="idt_reader">IDT Reader</option>
-          <option value="idt_thematic">IDT Thematic</option>
-          <option value="cced_reader">CCED Reader</option>
+
         </select>
         <h2>Complete the information below.</h2>
         {displayForm}
@@ -214,12 +223,12 @@ class TextResults extends React.Component {
     ];
 
     const text = `
-                ${id_reader.doctype}
+ 
                 <div>Hello ${month} World</div>
                 <div> This is the volume: ${volume} </div>
                 <div>${year}</div>
-                ${id_reader.head}
-                ${id_reader.bottom}
+
+
 
             `;
 
