@@ -111,9 +111,19 @@ class Form extends React.Component {
 
 class TextResults extends React.Component {
   render() {
+    var str = this.props.info[[this.props.info.selected_template]].html;
+    if(str){
+        var addon = 'body style="background-color:#bfbfbf;">'.length + 1
+        var body = str.substring(str.indexOf('body style="background-color:#bfbfbf;">')+addon,str.lastIndexOf("</body>"));
+    }
+    
+
+
     return (
       <div id="text-results">
-        <textarea value={this.props.info[[this.props.info.selected_template]].html} readOnly={true} />
+       
+        <div className="content" dangerouslySetInnerHTML={{__html: body}}></div>
+        
       </div>
     );
   }

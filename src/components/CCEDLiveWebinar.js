@@ -294,12 +294,6 @@ export default class CCEDLiveWebinar extends React.Component {
                 onInput={this.handleTextChange}
               />
             </div>
-
-            <div>
-            {text}
-            </div>
-
-
           </div>
           )
       }
