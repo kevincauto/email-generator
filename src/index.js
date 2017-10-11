@@ -18,7 +18,6 @@ class Container extends React.Component {
       console.log(this.state);
     //preload the selected templates object with default values?
   }
-  //*** I think this is not saving state correctly right now.  May be overwriting things.
   
   componentDidUpdate(){
       console.log(this.state);
