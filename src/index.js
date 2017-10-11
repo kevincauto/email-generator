@@ -31,7 +31,8 @@ class Container extends React.Component {
     this.setState({
       [this.state.selected_template]: { 
         ...this.state[this.state.selected_template],        
-        [name]: value 
+        [name]: value, 
+        html: html
     }
     });
 
@@ -217,24 +218,9 @@ class IDThematicForm extends React.Component {
 
 class TextResults extends React.Component {
   render() {
-
-    const { month, volume, year } = this.props.info[
-      this.props.info.selected_template
-    ];
-
-    const text = `
- 
-                <div>Hello ${month} World</div>
-                <div> This is the volume: ${volume} </div>
-                <div>${year}</div>
-
-
-
-            `;
-
     return (
       <div id="text-results">
-        <textarea value={text} readOnly={true} />
+        <textarea value={this.props.info[[this.props.info.selected_template]].html} readOnly={true} />
       </div>
     );
   }
