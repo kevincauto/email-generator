@@ -24,7 +24,6 @@ class Container extends React.Component {
   }
 
   handleTextChange(value, name, html) {
-
     this.setState({
       [this.state.selected_template]: { 
         ...this.state[this.state.selected_template],        
@@ -32,7 +31,6 @@ class Container extends React.Component {
         html: html
     }
     });
-
   }
 
   handleTemplateChange(template) {
@@ -112,8 +110,8 @@ class Form extends React.Component {
 class TextResults extends React.Component {
   render() {
 
-    const {title, date, link, description, lo1, lo2, lo3, headshot,  presenter, provider, supporter, cost, credits} = this.props.info[this.props.info.selected_template];
-    const text=`
+    const {title, date, link, description, lo1, lo2, lo3, headshot,  presenter, provider, supporter, cost, credits, tvLink, tagline} = this.props.info[this.props.info.selected_template];
+    const first=`
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
@@ -145,7 +143,9 @@ class TextResults extends React.Component {
                     </tr>
                 </table>
             </td>
-        </tr>
+        </tr>`
+
+    let tag = `
     <!--	<tr>
         <td colspan="2">
           <table width="599" cellpadding="0" cellspacing="0" border="0" style="border-bottom: 1px solid #e4e4e4; margin:0 32px 20px 32px;">
@@ -158,7 +158,26 @@ class TextResults extends React.Component {
           </table>
         </td>
       </tr>-->
-      
+      `
+      if(tagline){
+        tag = `
+        <tr>
+        <td colspan="2">
+          <table width="599" cellpadding="0" cellspacing="0" border="0" style="border-bottom: 1px solid #e4e4e4; margin:0 32px 20px 32px;">
+            <tr>
+              <td style="padding:14px 0 14px 0; font-family:'Times New Roman', serif; font-size:25px; font-style:italic; color:#c2904a;">
+          
+    ${tagline}
+    </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+        `
+
+      }
+
+      let main = `
       <tr>
         <td height="348" colspan="2" valign="top" style="padding:12px 32px 24px 32px; font-size:13px; color:#c2904a; line-height:16px; border-bottom: 1px solid #e4e4e4;">
           <table cellpadding="0" cellspacing="0" border="0" align="right" style="padding:0 0 50px 0;">
@@ -183,39 +202,84 @@ class TextResults extends React.Component {
                 <span>
           <strong style="color:#424242;">Description:</strong><br /></span>
           <div style="margin:5px 0 0 0; color:#424242; width:57%;">${description}</div>		
-          <br />
-          <span style="color:#424242; font-weight:bold;">Learning Objectives:</span>
-          <ul style="margin:5px 0 0 0; padding-left:1.3em; color:#424242; width:57%;">
-              <li>${lo1}</li>
-              <li>${lo2}</li>
-              <li>${lo3}</li>
-            </ul>
-        </td>
-      </tr>
-      <!--<tr>
-        <td colspan="2" valign="top" style="padding:12px 32px 24px 32px; font-size:13px; color:#c2904a; line-height:16px; border-bottom: 1px solid #e4e4e4;">
-          <table cellpadding="0" cellspacing="0" border="0" align="left" bgcolor="#FFFFFF"  >
-        <tr>
-            <td width="74">
-                <a href="http://forms.coronapro.com/3MvJGQmB&returnredir=2017-03-30_pds" style="text-decoration:none;" target="_blank"><img src="http://forms.coronapro.com/images/tv_with_interference_full.gif" alt="Video Test" width="74" height="86" border="0" /></a>
-            </td>
-            <td valign="center" align="left" width="328">
-                <p style="font-weight: bold; font-size: 9pt; color:#D97B03; line-height: 13pt; margin: 0; padding: 11px 0 0 11px; font-family:Arial, Helvetica, sans-serif"><a href="http://forms.coronapro.com/3MvJGQmB&returnredir=2017-03-30_pds" style="color:#c2904a; text-decoration:none;" target="_blank">Be sure to test your setup here <em><span style="font-size:10pt;'">BEFORE</span></em> the Webinar to ensure everything is working properly!</a></p>
-            </td>
-        </tr>
-    </table>
-    <table cellpadding="0" cellspacing="0" border="0" align="left" style="padding-top:12px;">
-      <tr>
-        <td>
-    <div style="font-size:11px; line-height:16px; font-family:Arial, Helvetica, sans-serif; color:#666666;"><span style="font-size:16px;">Webinar Hardware/Software Requirements</span><br />
-    CDEWorld requires Internet Explorer<sup>&reg;</sup> version 7.0 or higher, or Firefox 3.0 or higher, a computer running Windows<sup>&reg;</sup> XP, Windows<sup>&reg;</sup> Vista, Windows<sup>&reg;</sup> 7, or Mac OS X, 512MB of RAM or greater, 1.5 GHZ or faster processor, and a screen resolution of 1024x768 or higher. This activity will be marked with the information and/or links to the required software. That software may be <a href="http://www.elabs10.com/c.html?rtr=on&s=x8pagq,racs,4878,dqdc,3h2l,fdfx,lduw&MLM_MID=1273132&MLM_UNIQUEID=af1cdf3968" target="_blank" style="text-decoration:none; font-size:11px; line-height:16px; font-family:Arial, Helvetica, sans-serif; color:#c2904a;">Adobe<sup>&reg;</sup> Acrobat<sup>&reg;</sup></a>, <a href="http://www.elabs10.com/c.html?rtr=on&s=x8pagq,racs,4878,g69i,kpb9,fdfx,lduw&MLM_MID=1273132&MLM_UNIQUEID=af1cdf3968" target="_blank" style="text-decoration:none; font-size:11px; line-height:16px; font-family:Arial, Helvetica, sans-serif; color:#c2904a;">Windows Media<sup>&reg;</sup>Player</a> or <a href="http://www.elabs10.com/c.html?rtr=on&s=x8pagq,racs,4878,41l,5cn7,fdfx,lduw&MLM_MID=1273132&MLM_UNIQUEID=af1cdf3968" target="_blank" style="text-decoration:none; font-size:11px; line-height:16px; font-family:Arial, Helvetica, sans-serif; color:#c2904a;">Microsoft<sup>&reg;</sup> Silverlight™</a>.</div>
-        </td>
-      </tr>
-    </table>
+          <br />`
           
-          </td>
-      </tr>-->
-      
+        //Logic to render Learning Objectives based on how many LO there are.
+        let lo = '';
+
+          if(!lo1) {
+            console.log('one!') ; 
+            lo = '</td></tr>'};
+          if(lo1 && !lo2 && !lo3 ) {
+            console.log('two!')  
+            lo = `
+            <span style="color:#424242; font-weight:bold;">Learning Objective:</span>
+            <ul style="margin:5px 0 0 0; padding-left:1.3em; color:#424242; width:57%;">
+                <li>${lo1}</li>
+              </ul>
+              </td>
+              </tr>`  
+          };
+          if(lo1 && lo2 && !lo3 ) {
+            console.log('Three!')  
+            lo = `
+            <span style="color:#424242; font-weight:bold;">Learning Objectives:</span>
+            <ul style="margin:5px 0 0 0; padding-left:1.3em; color:#424242; width:57%;">
+                <li>${lo1}</li>
+                <li>${lo2}</li>
+              </ul>
+              </td>
+              </tr>
+              `  
+          };
+          if(lo1 && lo2 && lo3){
+            console.log('four')  
+            lo = `
+            <span style="color:#424242; font-weight:bold;">Learning Objectives:</span>
+            <ul style="margin:5px 0 0 0; padding-left:1.3em; color:#424242; width:57%;">
+                <li>${lo1}</li>
+                <li>${lo2}</li>
+                <li>${lo3}</li>
+              </ul>
+              </td>
+              </tr>
+              `
+          }
+        
+        //The Bottom TV Section is only used in the reminder emails.
+        let tv; 
+        if(!tvLink){
+            tv = '';
+        }
+        else{
+            tv = `
+            <tr>
+            <td colspan="2" valign="top" style="padding:12px 32px 24px 32px; font-size:13px; color:#c2904a; line-height:16px; border-bottom: 1px solid #e4e4e4;">
+              <table cellpadding="0" cellspacing="0" border="0" align="left" bgcolor="#FFFFFF"  >
+            <tr>
+                <td width="74">
+                    <a href="http://forms.coronapro.com/3MvJGQmB&returnredir=2017-03-30_pds" style="text-decoration:none;" target="_blank"><img src="http://forms.coronapro.com/images/tv_with_interference_full.gif" alt="Video Test" width="74" height="86" border="0" /></a>
+                </td>
+                <td valign="center" align="left" width="328">
+                    <p style="font-weight: bold; font-size: 9pt; color:#D97B03; line-height: 13pt; margin: 0; padding: 11px 0 0 11px; font-family:Arial, Helvetica, sans-serif"><a href="http://forms.coronapro.com/3MvJGQmB&returnredir=2017-03-30_pds" style="color:#c2904a; text-decoration:none;" target="_blank">Be sure to test your setup here <em><span style="font-size:10pt;'">BEFORE</span></em> the Webinar to ensure everything is working properly!</a></p>
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" border="0" align="left" style="padding-top:12px;">
+          <tr>
+            <td>
+        <div style="font-size:11px; line-height:16px; font-family:Arial, Helvetica, sans-serif; color:#666666;"><span style="font-size:16px;">Webinar Hardware/Software Requirements</span><br />
+        CDEWorld requires Internet Explorer<sup>&reg;</sup> version 7.0 or higher, or Firefox 3.0 or higher, a computer running Windows<sup>&reg;</sup> XP, Windows<sup>&reg;</sup> Vista, Windows<sup>&reg;</sup> 7, or Mac OS X, 512MB of RAM or greater, 1.5 GHZ or faster processor, and a screen resolution of 1024x768 or higher. This activity will be marked with the information and/or links to the required software. That software may be <a href="http://www.elabs10.com/c.html?rtr=on&s=x8pagq,racs,4878,dqdc,3h2l,fdfx,lduw&MLM_MID=1273132&MLM_UNIQUEID=af1cdf3968" target="_blank" style="text-decoration:none; font-size:11px; line-height:16px; font-family:Arial, Helvetica, sans-serif; color:#c2904a;">Adobe<sup>&reg;</sup> Acrobat<sup>&reg;</sup></a>, <a href="http://www.elabs10.com/c.html?rtr=on&s=x8pagq,racs,4878,g69i,kpb9,fdfx,lduw&MLM_MID=1273132&MLM_UNIQUEID=af1cdf3968" target="_blank" style="text-decoration:none; font-size:11px; line-height:16px; font-family:Arial, Helvetica, sans-serif; color:#c2904a;">Windows Media<sup>&reg;</sup>Player</a> or <a href="http://www.elabs10.com/c.html?rtr=on&s=x8pagq,racs,4878,41l,5cn7,fdfx,lduw&MLM_MID=1273132&MLM_UNIQUEID=af1cdf3968" target="_blank" style="text-decoration:none; font-size:11px; line-height:16px; font-family:Arial, Helvetica, sans-serif; color:#c2904a;">Microsoft<sup>&reg;</sup> Silverlight™</a>.</div>
+            </td>
+          </tr>
+        </table>
+              
+              </td>
+          </tr>
+            `
+        }
+
+       const theRest = `
       <tr>
         <!-- Fine Print Footer -->
         <td colspan="2" align="center">
@@ -262,7 +326,7 @@ class TextResults extends React.Component {
 
 
 
-    var html = this.props.info[[this.props.info.selected_template]].html;
+    var html = first + tag + main + lo + tv + theRest;
 
     
 
@@ -270,7 +334,7 @@ class TextResults extends React.Component {
     return (
       <div id="text-results">
        
-        <div className="content" dangerouslySetInnerHTML={{__html: text}}></div>
+        <div className="content" dangerouslySetInnerHTML={{__html: html}}></div>
         
       </div>
     );

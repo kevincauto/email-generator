@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 export default class CCEDLiveWebinar extends React.Component {
     constructor(props) {
         super(props);
@@ -19,6 +17,18 @@ export default class CCEDLiveWebinar extends React.Component {
             <img src="https://www.dentalaegis.com/media/63967/" width="300"/>
             <div className="label">
               {/* The name attribute should match the state.selected_template property */}
+              Tagline Header: &nbsp;
+            <select
+              name="tagline"
+               value={this.props.info[this.props.info.selected_template].tagline}
+              onChange={this.handleTextChange}
+            >
+            <option value="">No Tagline Header</option>
+            <option value="Don’t Forget – You’re Registered for Tomorrow's Webinar!">CCED Live Webinar Tomorrow</option>
+            <option value="Don’t Forget – You’re Registered for Tonight's Webinar!">CCED Live Webinar in Two Hours</option>
+            </select>
+            </div>
+            <div className="label">
               Title: &nbsp;
               <input
                 type="text"
@@ -89,7 +99,7 @@ export default class CCEDLiveWebinar extends React.Component {
                 name="headshot"
                 value={this.props.info[this.props.info.selected_template].headshot}
                 onChange={this.handleTextChange}
-                onI
+                onInput={this.handleTextChange}
               />
             </div>
             <div className="label">
@@ -137,6 +147,18 @@ export default class CCEDLiveWebinar extends React.Component {
                 onChange={this.handleTextChange}
               />
             </div>
+            <div className="label">
+              TV Link: &nbsp;
+              <input
+                type="text"
+                name="tvLink"
+                placeholder="This can be blank"
+                value={this.props.info[this.props.info.selected_template].tvLink}
+                onChange={this.handleTextChange}
+              
+              />
+            </div> 
+
           </div>
           )
       }

@@ -9,15 +9,14 @@ body {
 #main-form {
   border: solid #000 1px;
   float: left;
-  width: 50%;
+  width: 40%;
   padding: 20px;
   margin: 0px 0px 0px 20px;
 }
 #text-results {
   border: solid #000 1px;
   float: right;
-  width: 50%;
-  
+  width: 60%;
   padding: 20px;
   margin: 0px 20px 0px 20px;
 }
@@ -27,8 +26,6 @@ textarea {
   max-width: 100%;
   min-height: 600px;
 }
-
-
 
 .label{
   display: flex;
