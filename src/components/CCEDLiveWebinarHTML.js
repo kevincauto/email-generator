@@ -1,7 +1,8 @@
 import React from 'react';
 
 export default class CCEDLiveWebinarHTML extends React.Component{
-    render(){
+
+  render(){
         const {title, date, link, description, lo1, lo2, lo3, headshot,  presenter, provider, supporter, cost, credits, tvLink, tagline} = this.props.info[this.props.info.selected_template];
         const first=`
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -209,11 +210,29 @@ export default class CCEDLiveWebinarHTML extends React.Component{
         
         
         </body></html>
-        `
+        `;
+
+        let textEmail =  `
+        ${title}<br />
+        ${link}<br />
+        <br />
+        Presenter: ${presenter}<br />
+        Provider: ${provider}<br />
+        Commercial Supporter: ${supporter}<br />
+        Cost: ${cost}<br />
+        Description:<br />
+        ${description}<br />
+        <br />
+        `;
+        
         let html = first + tag + main + lo + tv + theRest;
         return(
             <div >
             <div className="content" dangerouslySetInnerHTML={{__html: html}}></div>
+            HTML:
+            <textarea value={html} readOnly={true} id="copyHtml" />
+            Text:
+            <textarea value={textEmail} readOnly={true} />
           </div>
         )
     }

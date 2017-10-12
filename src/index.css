@@ -21,10 +21,9 @@ body {
   margin: 0px 20px 0px 20px;
 }
 
-textarea {
-  width: 100%;
-  max-width: 100%;
-  min-height: 600px;
+.copyHtml {
+  width: 50%;
+  max-height: 50px;
 }
 
 .label{
