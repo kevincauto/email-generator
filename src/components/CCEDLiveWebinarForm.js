@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class CCEDLiveWebinar extends React.Component {
+export default class CCEDLiveWebinarForm extends React.Component {
     constructor(props) {
         super(props);
         this.handleTextChange = this.handleTextChange.bind(this);
