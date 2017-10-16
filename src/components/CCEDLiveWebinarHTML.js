@@ -3,7 +3,7 @@ import React from 'react';
 export default class CCEDLiveWebinarHTML extends React.Component{
 
   render(){
-        const {title, date, link, description, lo1, lo2, lo3, headshot,  presenter, provider, supporter, cost, credits, tvLink, tagline, unsubscribe} = this.props.info[this.props.info.selected_template];
+        const {title = 'To Be Updated', date = 'Date To Be Updated', link, description ='Lorem ipsum...', lo1, lo2, lo3, headshot,  presenter='Lorem Ipsum, DDS', provider = '', supporter = '', cost = '', credits = '', tvLink, tagline, unsubscribe} = this.props.info[this.props.info.selected_template];
         const first=`
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
