@@ -3,7 +3,7 @@ import React from 'react';
 export default class CCEDOnDemandWebinarHTML extends React.Component{
     
     render(){
-        const {title, dates, link, description, lo1, lo2, lo3, imgLink,  presenter, provider, supporter, cost, credits, tvLink, tagline, disclosure} = this.props.info[this.props.info.selected_template];
+        const {title, dates, link, description, lo1, lo2, lo3, imgLink,  presenter, provider, supporter, cost, credits, tvLink, tagline, disclosure, unsubscribe} = this.props.info[this.props.info.selected_template];
         let html = `
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
@@ -102,7 +102,7 @@ export default class CCEDOnDemandWebinarHTML extends React.Component{
                     <em>Compendium</em>  |  104 Pheasant Run, Suite 105  |  Newtown, PA 18940
                       <br />
                     
-                %%PLUGIN_UNSUBSCRIBE: 2144642-UNSUBSCRIBE%%
+                ${unsubscribe}
         </div> 
               </td>
             </tr>	

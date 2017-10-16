@@ -14,9 +14,33 @@ export default class CCEDLiveWebinarForm extends React.Component {
           return (
             <div className="form">
             <h3> CCED Live Webinar Recruitment</h3>
-            <img src="https://www.dentalaegis.com/media/63967/" width="300"/>
+            {/* <img src="https://www.dentalaegis.com/media/63967/" width="300"/> */}
+            <div className="lyris">
+              <div className="label">
+              Email List: &nbsp;
+                <select
+                  name="unsubscribe"
+                  value={this.props.info[this.props.info.selected_template].list}
+                  onChange={this.handleTextChange}
+                >
+                <option value="%%PLUGIN_UNSUBSCRIBE: 2144642-UNSUBSCRIBE%% ">CCED Webinar List | 3.27.17</option>
+                <option value="%%PLUGIN_UNSUBSCRIBE: 2146841-UNSUBSCRIBE%%">IDT - Newsletter | 3.30.17</option>
+                <option value="%%PLUGIN_UNSUBSCRIBE: 2192269-UNSUBSCRIBE%% ">ID Webinar List</option>
+                <option value="%%PLUGIN_UNSUBSCRIBE: 2145051-UNSUBSCRIBE%% ">CDEWorld Webinar List | 3.28.17</option>
+                </select>
+            </div>
+              <div className="label">
+                Lyris Name: &nbsp;
+                <input
+                  type="text"
+                  name="lyrisName"
+                  value={this.props.info[this.props.info.selected_template].lyrisName}
+                  onChange={this.handleTextChange}
+                />
+              </div>
+            </div>
+            <br />
             <div className="label">
-              {/* The name attribute should match the state.selected_template property */}
               Tagline Header: &nbsp;
             <select
               name="tagline"
@@ -43,7 +67,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
                 type="text"
                 name="date"
                 placeholder="OCTOBER 19, 2017 @ 7PM ET..."
-                value={this.props.info[this.props.info.selected_template].volume}
+                value={this.props.info[this.props.info.selected_template].date}
                 onChange={this.handleTextChange}
               />
             </div>
@@ -66,7 +90,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
               />
             </div>
             <div className="label">
-              Learn Objective 1: &nbsp;
+              Learning Objective 1: &nbsp;
               <input
                 type="text"
                 name="lo1"
@@ -75,7 +99,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
               />
             </div>
             <div className="label">
-              Learn Objective 2: &nbsp;
+              Learning Objective 2: &nbsp;
               <input
                 type="text"
                 name="lo2"
@@ -84,7 +108,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
               />
             </div>
             <div className="label">
-              Learn Objective 3: &nbsp;
+              Learning Objective 3: &nbsp;
               <input
                 type="text"
                 name="lo3"

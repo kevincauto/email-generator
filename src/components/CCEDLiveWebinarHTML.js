@@ -3,7 +3,7 @@ import React from 'react';
 export default class CCEDLiveWebinarHTML extends React.Component{
 
   render(){
-        const {title, date, link, description, lo1, lo2, lo3, headshot,  presenter, provider, supporter, cost, credits, tvLink, tagline} = this.props.info[this.props.info.selected_template];
+        const {title, date, link, description, lo1, lo2, lo3, headshot,  presenter, provider, supporter, cost, credits, tvLink, tagline, unsubscribe} = this.props.info[this.props.info.selected_template];
         const first=`
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
@@ -102,10 +102,8 @@ export default class CCEDLiveWebinarHTML extends React.Component{
             let lo = '';
         
               if(!lo1) {
-                console.log('one!') ; 
                 lo = '</td></tr>'};
               if(lo1 && !lo2 && !lo3 ) {
-                console.log('two!')  
                 lo = `
                 <span style="color:#424242; font-weight:bold;">Learning Objective:</span>
                 <ul style="margin:5px 0 0 0; padding-left:1.3em; color:#424242; width:57%;">
@@ -115,7 +113,6 @@ export default class CCEDLiveWebinarHTML extends React.Component{
                   </tr>`  
               };
               if(lo1 && lo2 && !lo3 ) {
-                console.log('Three!')  
                 lo = `
                 <span style="color:#424242; font-weight:bold;">Learning Objectives:</span>
                 <ul style="margin:5px 0 0 0; padding-left:1.3em; color:#424242; width:57%;">
@@ -127,7 +124,6 @@ export default class CCEDLiveWebinarHTML extends React.Component{
                   `  
               };
               if(lo1 && lo2 && lo3){
-                console.log('four')  
                 lo = `
                 <span style="color:#424242; font-weight:bold;">Learning Objectives:</span>
                 <ul style="margin:5px 0 0 0; padding-left:1.3em; color:#424242; width:57%;">
@@ -194,9 +190,8 @@ export default class CCEDLiveWebinarHTML extends React.Component{
               </a>
                 <br />
               AEGIS Communications  |  104 Pheasant Run, Suite 105  |  Newtown, PA 18940
-                <br />
-                
-            %%PLUGIN_UNSUBSCRIBE: 2144642-UNSUBSCRIBE%%
+                <br />       
+            ${unsubscribe}
         </div>
             </td>
           </tr>
@@ -212,27 +207,16 @@ export default class CCEDLiveWebinarHTML extends React.Component{
         </body></html>
         `;
 
-        let textEmail =  `
-        ${title}<br />
-        ${link}<br />
-        <br />
-        Presenter: ${presenter}<br />
-        Provider: ${provider}<br />
-        Commercial Supporter: ${supporter}<br />
-        Cost: ${cost}<br />
-        Description:<br />
-        ${description}<br />
-        <br />
-        `;
+        let textEmail =  `${title}\n${link}\n\nPresenter: ${presenter}\nProvider: ${provider}\nCommercial Supporter: ${supporter}\nCost: ${cost}\n\nDescription:\n${description}`;
         
         let html = first + tag + main + lo + tv + theRest;
         return(
             <div >
             <div className="content" dangerouslySetInnerHTML={{__html: html}}></div>
             HTML:
-            <textarea value={html} readOnly={true} id="copyHtml" />
+            <textarea type="text" value={html} readOnly={true} id="copyHtml" />
             Text:
-            <textarea value={textEmail} readOnly={true} />
+            <textarea type="text" value={textEmail} readOnly={true} />
           </div>
         )
     }
