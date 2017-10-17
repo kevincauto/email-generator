@@ -23,10 +23,11 @@ export default class CCEDLiveWebinarForm extends React.Component {
                   value={this.props.info[this.props.info.selected_template].list}
                   onChange={this.handleTextChange}
                 >
-                <option value="%%PLUGIN_UNSUBSCRIBE: 2144642-UNSUBSCRIBE%% ">CCED Webinar List | 3.27.17</option>
+                <option value="">Please Select a List</option>
+                <option value="%%PLUGIN_UNSUBSCRIBE: 2144642-UNSUBSCRIBE%%">CCED Webinar List | 3.27.17</option>
                 <option value="%%PLUGIN_UNSUBSCRIBE: 2146841-UNSUBSCRIBE%%">IDT - Newsletter | 3.30.17</option>
-                <option value="%%PLUGIN_UNSUBSCRIBE: 2192269-UNSUBSCRIBE%% ">ID Webinar List</option>
-                <option value="%%PLUGIN_UNSUBSCRIBE: 2145051-UNSUBSCRIBE%% ">CDEWorld Webinar List | 3.28.17</option>
+                <option value="%%PLUGIN_UNSUBSCRIBE: 2192269-UNSUBSCRIBE%%">ID Webinar List</option>
+                <option value="%%PLUGIN_UNSUBSCRIBE: 2145051-UNSUBSCRIBE%%">CDEWorld Webinar List | 3.28.17</option>
                 </select>
             </div>
               <div className="label">

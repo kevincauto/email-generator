@@ -43,3 +43,8 @@ input[type=text], select {
   padding: 5px;
   border-radius: 4px;
 }
+
+.copyArea{
+  width: 400px;
+  height: 100px;
+}

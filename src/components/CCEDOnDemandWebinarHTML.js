@@ -1,4 +1,5 @@
 import React from 'react';
+import DOMPurify from 'dompurify';
 
 export default class CCEDOnDemandWebinarHTML extends React.Component{
     
@@ -57,7 +58,7 @@ export default class CCEDOnDemandWebinarHTML extends React.Component{
                     <tbody><tr>
                         <td bgcolor="#ffffff" style="border-collapse:collapse;padding:0 14px 10px 0"></td>
                       <td align="right" valign="top">
-                        <a href="${link}" target="_blank"><img src="https://www.dentalaegis.com/media/63260/" alt="" width="299"></a><br>
+                        <a href="${link}" target="_blank"><img src="${imgLink}}" alt="" width="299"></a><br>
                         </td>
                     </tr>
                 </tbody></table>	
@@ -112,26 +113,19 @@ export default class CCEDOnDemandWebinarHTML extends React.Component{
         </html>
         `
 
-        let textEmail =  `${title}
-        ${link}
-     
-        Presenter: ${presenter}
-        Provider: ${provider}
-        Commercial Supporter: ${supporter}
-        Cost: ${cost}
-        Description:
-        ${description}
-       
-        `
+        let textEmail =  `${title}\n${link}\n\nPresenter: ${presenter}\nProvider: ${provider}\nCommercial Supporter: ${supporter}\nCost: ${cost}\nDescription:\n${description}`
+        
+        //Sanitize data to avoid XSS attack
+        html = DOMPurify.sanitize(html);
 
         return(
-          <div >
-            <div className="content" dangerouslySetInnerHTML={{__html: html}}></div>
-            HTML:
-            <textarea value={html} readOnly={true} id="copyHtml" /><br />
+            <div >
+            <div className="content" dangerouslySetInnerHTML={{__html: html}}></div><br />
+            HTML:< br />
+            <textarea value={html} readOnly={true} className="copyArea" /><br />
             <br />
-            TEXT:
-            <textarea value={textEmail} readOnly={true} />
+            TEXT EMAIL:< br />
+            <textarea value={textEmail} readOnly={true} className="copyArea"/>
           </div>
         )
     }

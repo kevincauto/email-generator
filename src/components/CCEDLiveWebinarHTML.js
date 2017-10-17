@@ -1,4 +1,5 @@
 import React from 'react';
+import DOMPurify from 'dompurify';
 
 export default class CCEDLiveWebinarHTML extends React.Component{
 
@@ -209,14 +210,18 @@ export default class CCEDLiveWebinarHTML extends React.Component{
 
         let textEmail =  `${title}\n${link}\n\nPresenter: ${presenter}\nProvider: ${provider}\nCommercial Supporter: ${supporter}\nCost: ${cost}\n\nDescription:\n${description}`;
         
+        //Sanitize data to avoid XSS attack
+        html = DOMPurify.sanitize(html);
+
         let html = first + tag + main + lo + tv + theRest;
         return(
-            <div >
-            <div className="content" dangerouslySetInnerHTML={{__html: html}}></div>
-            HTML:
-            <textarea type="text" value={html} readOnly={true} id="copyHtml" />
-            Text:
-            <textarea type="text" value={textEmail} readOnly={true} />
+          <div >
+            <div className="content" dangerouslySetInnerHTML={{__html: html}}></div><br />
+            HTML:< br />
+            <textarea value={html} readOnly={true} className="copyArea" /><br />
+            <br />
+            TEXT EMAIL:< br />
+            <textarea value={textEmail} readOnly={true} className="copyArea"/>
           </div>
         )
     }
