@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class CCEDLiveWebinarForm extends React.Component {
+export default class IDLiveWebinarForm extends React.Component {
     constructor(props) {
         super(props);
         this.handleTextChange = this.handleTextChange.bind(this);
@@ -13,37 +13,36 @@ export default class CCEDLiveWebinarForm extends React.Component {
       render(){
           return (
             <div className="form">
-            <h3> CCED On-Demand Webinar</h3>
-
+            <h3>ID Live Webinar</h3>
             <div className="lyris">
-            <div className="label">
-            Email List: &nbsp;
-              <select
-                name="unsubscribe"
-                value={this.props.info[this.props.info.selected_template].list}
-                onChange={this.handleTextChange}
-              >
-              <option value="">Please Select a List</option>
-              <option value="%%PLUGIN_UNSUBSCRIBE: 2144642-UNSUBSCRIBE%%">CCED Webinar List | 3.27.17</option>
-              <option value="%%PLUGIN_UNSUBSCRIBE: 2146841-UNSUBSCRIBE%%">IDT - Newsletter | 3.30.17</option>
-              <option value="%%PLUGIN_UNSUBSCRIBE: 2192269-UNSUBSCRIBE%%">ID Webinar List</option>
-              <option value="%%PLUGIN_UNSUBSCRIBE: 2145051-UNSUBSCRIBE%%">CDEWorld Webinar List | 3.28.17</option>
-              </select>
-          </div>
               <div className="label">
-                Lyris Name: &nbsp;
+              Email List: 
+                <select
+                  name="unsubscribe"
+                  value={this.props.info[this.props.info.selected_template].unsubscribe}
+                  onChange={this.handleTextChange}
+                >
+                <option value="blank">Please Select a List</option>
+                <option value="%%PLUGIN_UNSUBSCRIBE: 2192269-UNSUBSCRIBE%%">ID Webinar List</option>
+                <option value="%%PLUGIN_UNSUBSCRIBE: 2144642-UNSUBSCRIBE%%">CCED Webinar List | 3.27.17</option>
+                <option value="%%PLUGIN_UNSUBSCRIBE: 2146841-UNSUBSCRIBE%%">IDT - Newsletter | 3.30.17</option>
+                <option value="%%PLUGIN_UNSUBSCRIBE: 2145051-UNSUBSCRIBE%%">CDEWorld Webinar List | 3.28.17</option>
+                </select>
+            </div>
+              <div className="label">
+                Lyris Name: 
                 <input
                   type="text"
                   name="lyrisName"
                   value={this.props.info[this.props.info.selected_template].lyrisName}
                   onChange={this.handleTextChange}
+                  onInput={this.handleTextChange}
                 />
               </div>
             </div>
-
             <br />
             <div className="label">
-              Title: &nbsp;
+              Title: 
               <input
                 type="text"
                 name="title"
@@ -53,17 +52,18 @@ export default class CCEDLiveWebinarForm extends React.Component {
               />
             </div>
             <div className="label">
-              Presenter's Name: &nbsp;
+              Date and Time: 
               <input
                 type="text"
-                name="presenter"
-                value={this.props.info[this.props.info.selected_template].presenter}
+                name="date"
+                placeholder="OCTOBER 19, 2017 @ 7PM ET..."
+                value={this.props.info[this.props.info.selected_template].date}
                 onChange={this.handleTextChange}
                 onInput={this.handleTextChange}
               />
             </div>
             <div className="label">
-              Provider: &nbsp;
+              Provider: 
               <input
                 type="text"
                 name="provider"
@@ -73,7 +73,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
               />
             </div>
             <div className="label">
-              Commercial Supporter: &nbsp;
+              Commercial Supporter: 
               <input
                 type="text"
                 name="supporter"
@@ -83,17 +83,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
               />
             </div>
             <div className="label">
-              CDE Credits: &nbsp;
-              <input
-                type="text"
-                name="credits"
-                value={this.props.info[this.props.info.selected_template].credits}
-                onChange={this.handleTextChange}
-                onInput={this.handleTextChange}
-              />
-            </div>
-            <div className="label">
-              Cost: &nbsp;
+              Cost: 
               <input
                 type="text"
                 name="cost"
@@ -103,17 +93,17 @@ export default class CCEDLiveWebinarForm extends React.Component {
               />
             </div>
             <div className="label">
-              Dates: &nbsp;
+              CDE Credits: 
               <input
                 type="text"
-                name="dates"
-                placeholder="Sep 8th, 2017 - Sep 30th, 2020"
-                value={this.props.info[this.props.info.selected_template].dates}
+                name="credits"
+                value={this.props.info[this.props.info.selected_template].credits}
                 onChange={this.handleTextChange}
+                onInput={this.handleTextChange}
               />
             </div>
             <div className="label">
-              Description: &nbsp;
+              Description: 
               <input
                 type="text"
                 name="description"
@@ -122,10 +112,8 @@ export default class CCEDLiveWebinarForm extends React.Component {
                 onInput={this.handleTextChange}
               />
             </div>
-
-
             <div className="label">
-              Learn Objective 1: &nbsp;
+              Learning Objective 1: 
               <input
                 type="text"
                 name="lo1"
@@ -135,7 +123,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
               />
             </div>
             <div className="label">
-              Learn Objective 2: &nbsp;
+              Learning Objective 2: 
               <input
                 type="text"
                 name="lo2"
@@ -145,7 +133,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
               />
             </div>
             <div className="label">
-              Learn Objective 3: &nbsp;
+              Learning Objective 3: 
               <input
                 type="text"
                 name="lo3"
@@ -154,9 +142,19 @@ export default class CCEDLiveWebinarForm extends React.Component {
                 onInput={this.handleTextChange}
               />
             </div>
+            <div className="label">
+              Presenter's Name: 
+              <input
+                type="text"
+                name="presenter"
+                value={this.props.info[this.props.info.selected_template].presenter}
+                onChange={this.handleTextChange}
+                onInput={this.handleTextChange}
+              />
+            </div>
 
             <div className="label">
-              Link: &nbsp;
+              Link: 
               <input
                 type="text"
                 name="link"
@@ -166,27 +164,26 @@ export default class CCEDLiveWebinarForm extends React.Component {
               />
             </div>
             <div className="label">
-              Image Link: &nbsp;
+              Headshot Link: 
               <input
                 type="text"
-                name="imgLink"
-                value={this.props.info[this.props.info.selected_template].imgLink}
+                name="headshot"
+                value={this.props.info[this.props.info.selected_template].headshot}
                 onChange={this.handleTextChange}
                 onInput={this.handleTextChange}
               />
             </div>
-
             <div className="label">
-              Disclosure: &nbsp;
+              TV Link: 
               <input
                 type="text"
-                name="disclosure"
-                value={this.props.info[this.props.info.selected_template].disclosure}
+                name="tvLink"
+                placeholder="This can be blank"
+                value={this.props.info[this.props.info.selected_template].tvLink}
                 onChange={this.handleTextChange}
                 onInput={this.handleTextChange}
               />
             </div> 
-
           </div>
           )
       }
