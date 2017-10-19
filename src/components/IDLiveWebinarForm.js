@@ -52,6 +52,16 @@ export default class IDLiveWebinarForm extends React.Component {
               />
             </div>
             <div className="label">
+              Presenter's Name: 
+              <input
+                type="text"
+                name="presenter"
+                value={this.props.info[this.props.info.selected_template].presenter}
+                onChange={this.handleTextChange}
+                onInput={this.handleTextChange}
+              />
+            </div>
+            <div className="label">
               Date and Time: 
               <input
                 type="text"
@@ -142,17 +152,6 @@ export default class IDLiveWebinarForm extends React.Component {
                 onInput={this.handleTextChange}
               />
             </div>
-            <div className="label">
-              Presenter's Name: 
-              <input
-                type="text"
-                name="presenter"
-                value={this.props.info[this.props.info.selected_template].presenter}
-                onChange={this.handleTextChange}
-                onInput={this.handleTextChange}
-              />
-            </div>
-
             <div className="label">
               Link: 
               <input
