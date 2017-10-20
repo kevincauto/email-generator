@@ -119,7 +119,7 @@ export default class CCEDOnDemandWebinarHTML extends React.Component{
         html = DOMPurify.sanitize(html);
 
         return(
-            <div >
+          <div >
             <div className="content" dangerouslySetInnerHTML={{__html: html}}></div><br />
             HTML:< br />
             <textarea value={html} readOnly={true} className="copyArea" /><br />

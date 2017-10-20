@@ -64,7 +64,6 @@ export default class IDLiveWebinarHTML extends React.Component {
                     <!-- Webinar Buttons -->
         
                     <span style="font-size:16px; line-height:auto; color:#63246a; font-family:Arial, Helvetica, sans-serif; font-weight:normal; color:#005fae; margin-bottom:5px;"><a href="${link}" target="_blank"  style="color: #FFF;  text-transform:uppercase; display: inline-block;background-color:#9d0707; padding:7px 17px 7px 17px;text-align: center;text-decoration: none;"><strong>VIEW THE WEBINAR</strong></a></span></span>
-        
                     <br /><br />
                     <span style="font-size:11px; line-height:auto;">
                         <span style="color:#9d0707;"><strong>DESCRIPTION</strong></span><br /> ${description}
@@ -88,24 +87,15 @@ export default class IDLiveWebinarHTML extends React.Component {
                 <!-- Presenter's Photo -->
         
                 <td valign="top" style="padding:12px;">
-        
-                    <img src="${headshot}" width="138" style="clear:both; margin:0 0 14px 0;" />
-        
+                    <img src="${headshot}" width="138" style="clear:both; margin:0 0 14px 0;" /><br />
                     <div style="font-size:11px; line-height:auto;">
-        
-                    <span style="color:#9d0707; "><strong>Presenter:</strong></span> 
-        
-                        ${presenter}<br />			
-        
-                    <span style="color:#9d0707;"><strong>Commercial Supporter:</strong></span> <em>${supporter}</em><br />
-        
-                    <span style="color:#9d0707;"><strong>Cost:</strong></span> ${cost}<br />
-        
-                    <span style="color:#9d0707;"><strong>Credits</strong></span>: ${credits}
-        
-                </div>
-        
-              </td>
+                        <span style="color:#9d0707; "><strong>Presenter:</strong></span> 
+                            ${presenter}<br />			
+                        <span style="color:#9d0707;"><strong>Commercial Supporter:</strong></span> <em>${supporter}</em><br />      
+                        <span style="color:#9d0707;"><strong>Cost:</strong></span> ${cost}<br />
+                        <span style="color:#9d0707;"><strong>Credits</strong></span>: ${credits}
+                    </div>
+                 </td>
         
                 <!-- /Presenter's Photo -->
         
@@ -143,7 +133,7 @@ export default class IDLiveWebinarHTML extends React.Component {
                             <tr>
             
                                 <td style="font-size:11px;">
-            
+
                                     CDEWorld requires Internet Explorer® version 7.0 or higher, or Firefox 3.0 or higher, a computer running Windows® XP, Windows® Vista, Windows® 7, or Mac OS X, 512MB of RAM or greater, 1.5 GHZ or faster processor, and a screen resolution of 1024x768 or higher. This activity will be marked with the information and/or links to the required software. That software may be 
             
                                     <a href="http://success.adobe.com/en/na/sem/products/acrobat/acrobat.html" target="_blank" style="text-decoration:none; color:#005fae;">Adobe® Acrobat®</a>, 
@@ -194,28 +184,10 @@ export default class IDLiveWebinarHTML extends React.Component {
             
                     <!-- /Webinar Software Requirements -->
             
-                <!--</tr>-->
-            
-                
-            
-                <!--<tr>
-            
-                    <td colspan="2">
-            
-                        <hr size="1" color="#dedede" width="575" />
-            
-                    </td>
-            
-                </tr>-->
-            
-                
-            
+                <!--</tr>-->       
                 <tr>
-            
                     <td colspan="2" height="10">
-            
                     </td>
-            
                 </tr>
             
                 `
@@ -270,7 +242,7 @@ export default class IDLiveWebinarHTML extends React.Component {
         html = start + tv + end;    
         //Sanitize data to avoid XSS attack
         let sanitizedHtml = DOMPurify.sanitize(html); 
-        let textEmail = `Inside Dentistry Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\nCommercial Supporter: ${supporter}\nDescription:\n${description}\n\n${link}`;
+        let textEmail = `CDEW Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\nCommercial Supporter: ${supporter}\nDescription:\n${description}\n\n${link}`;
 
         return(
           <div >
