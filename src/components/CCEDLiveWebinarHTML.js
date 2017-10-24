@@ -4,7 +4,8 @@ import DOMPurify from 'dompurify';
 export default class CCEDLiveWebinarHTML extends React.Component{
 
   render(){
-        const {title = 'To Be Updated', date = 'Date To Be Updated', link, description ='Lorem ipsum...', lo1, lo2, lo3, headshot,  presenter='Lorem Ipsum, DDS', provider = '', supporter = '', cost = '', credits = '', tvLink, tagline, unsubscribe} = this.props.info[this.props.info.selected_template];
+        let {title = 'To Be Updated', date = 'Date To Be Updated', link, description ='Lorem ipsum...', lo1, lo2, lo3, headshot,  presenter='Lorem Ipsum, DDS', provider = '', supporter = '', cost = '', credits = '', tvLink, tagline, unsubscribe} = this.props.info[this.props.info.selected_template];
+        if(link){link = link.trim()}
         const first=`
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
@@ -81,7 +82,7 @@ export default class CCEDLiveWebinarHTML extends React.Component{
                   <a href="${link}" target="_blank"><img src="${headshot}" width="138" style="border:solid 1px #efefef; margin:17px 0 14px 0;" /></a><br /> <span style="color:#424242;">
                     <strong>Presenter:</strong> ${presenter}<br />
                     <strong>Provider:</strong> ${provider}<br />
-                    <strong>Commercial Supporter:</strong> ${supporter}<br />
+                    <strong>Commercial Supporter:</strong> <em>${supporter}</em><br />
                     <strong>Cost:</strong> ${cost}<br>
                     <strong>CDE Credits:</strong>${credits}</span>			    </td>
                 </tr>

@@ -14,7 +14,6 @@ export default class CCEDLiveWebinarForm extends React.Component {
           return (
             <div className="form">
             <h3> CCED Live Webinar Recruitment</h3>
-            {/* <img src="https://www.dentalaegis.com/media/63967/" width="300"/> */}
             <div className="lyris">
               <div className="label">
               Email List: &nbsp;
@@ -28,6 +27,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
                 <option value="%%PLUGIN_UNSUBSCRIBE: 2146841-UNSUBSCRIBE%%">IDT - Newsletter | 3.30.17</option>
                 <option value="%%PLUGIN_UNSUBSCRIBE: 2192269-UNSUBSCRIBE%%">ID Webinar List</option>
                 <option value="%%PLUGIN_UNSUBSCRIBE: 2145051-UNSUBSCRIBE%%">CDEWorld Webinar List | 3.28.17</option>
+                <option value="%%PLUGIN_UNSUBSCRIBE: 2200418-UNSUBSCRIBE%% ">Nobel Webinar List | 3.28.17</option>
                 </select>
             </div>
               <div className="label">

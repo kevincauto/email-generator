@@ -27,6 +27,7 @@ export default class IDLiveWebinarForm extends React.Component {
                 <option value="%%PLUGIN_UNSUBSCRIBE: 2144642-UNSUBSCRIBE%%">CCED Webinar List | 3.27.17</option>
                 <option value="%%PLUGIN_UNSUBSCRIBE: 2146841-UNSUBSCRIBE%%">IDT - Newsletter | 3.30.17</option>
                 <option value="%%PLUGIN_UNSUBSCRIBE: 2145051-UNSUBSCRIBE%%">CDEWorld Webinar List | 3.28.17</option>
+                <option value="%%PLUGIN_UNSUBSCRIBE: 2200418-UNSUBSCRIBE%% ">Nobel Webinar List | 3.28.17</option>
                 </select>
             </div>
               <div className="label">
