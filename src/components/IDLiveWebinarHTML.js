@@ -199,7 +199,7 @@ export default class IDLiveWebinarHTML extends React.Component {
         
             <td colspan="2" align="center" style="font-size:11px; color:#444444;">
         
-                    AEGIS Communications
+                    Inside Dentistry
         
                     &nbsp;&nbsp;|&nbsp;&nbsp;
         
