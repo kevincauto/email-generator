@@ -146,7 +146,7 @@ export default class IDTLiveWebinarHTML extends React.Component {
             <tr>
               <td colspan="2" align="center" valign="top" 
                  style="font-family:Arial, sans-serif; font-size:10px; color:#424b52; text-align:center; padding:14px 14px 14px 14px; border-top:solid 1px #000000; border-bottom:solid 1px #000000;"> 
-                                            AEGIS Communications | 104 Pheasant Run, Suite 105 | Newtown, PA 18940<br>
+                                            Inside Dental Technology | 104 Pheasant Run, Suite 105 | Newtown, PA 18940<br>
                   %%PLUGIN_UNSUBSCRIBE: 2147849-UNSUBSCRIBE%%
                 </td>
             </tr>

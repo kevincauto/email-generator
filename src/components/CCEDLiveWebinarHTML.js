@@ -191,7 +191,7 @@ export default class CCEDLiveWebinarHTML extends React.Component{
                 Privacy Policy
               </a>
                 <br />
-              AEGIS Communications  |  104 Pheasant Run, Suite 105  |  Newtown, PA 18940
+              Compendium  |  104 Pheasant Run, Suite 105  |  Newtown, PA 18940
                 <br />       
             ${unsubscribe}
         </div>
