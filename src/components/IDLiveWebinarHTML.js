@@ -4,7 +4,7 @@ import DOMPurify from 'dompurify';
 
 export default class IDLiveWebinarHTML extends React.Component {
     render(){
-        const {title, date, provider, supporter, cost, credits, description, lo1, lo2, lo3, presenter, link, headshot, tvLink, unsubscribe} = this.props.info[this.props.info.selected_template]
+        const {title, date, provider, supporter, cost, credits, description, lo1, lo2, lo3, presenter, link, headshot, tvLink, unsubscribe, disclosure} = this.props.info[this.props.info.selected_template]
         let html 
         
         let start = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -78,8 +78,22 @@ export default class IDLiveWebinarHTML extends React.Component {
                         <li>${lo1}</li>
                         <li>${lo2}</li>
                         <li>${lo3}</li>
-                    </ul>
-        
+                    </ul>`
+                let disclosureSection = '';
+                if(disclosure){
+                    disclosureSection = `
+                    <br />
+                <span style="font-size:11px; font-weight:bold; color:#9d0707;">
+                    DISCLOSURE:
+                </span>
+                <br />
+                <span style="font-size:11px">
+                ${disclosure}
+                </span>`
+                }
+
+                    
+        let presenterInfo = `
                 </td>
         
                 
@@ -239,10 +253,10 @@ export default class IDLiveWebinarHTML extends React.Component {
             </map>
             </body></html>`;
 
-        html = start + tv + end;    
+        html = start +  disclosureSection + presenterInfo + tv + end;    
         //Sanitize data to avoid XSS attack
         let sanitizedHtml = DOMPurify.sanitize(html); 
-        let textEmail = `CDEW Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\nCommercial Supporter: ${supporter}\nDescription:\n${description}\n\n${link}`;
+        let textEmail = `Inside Dentistry Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\nCommercial Supporter: ${supporter}\nDescription:\n${description}\n\n${link}`;
 
         return(
           <div >
