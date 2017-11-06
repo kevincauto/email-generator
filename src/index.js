@@ -11,12 +11,15 @@ import CDEWLiveWebinarForm from './components/CDEWLiveWebinarForm';
 import CDEWLiveWebinarHTML from './components/CDEWLiveWebinarHTML';
 import IDTLiveWebinarForm from './components/IDTLiveWebinarForm';
 import IDTLiveWebinarHTML from './components/IDTLiveWebinarHTML';
+import IDReaderForm from './components/IDReaderForm';
+import IDReaderHTML from './components/IDReaderHTML';
 
 class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected_template: 'cdew_live_webinar',
+      selected_template: 'id_reader',
+      id_reader: {},
       cced_live_webinar: {},
       cced_on_demand_webinar: {},
       id_live_webinar: {},
@@ -86,8 +89,15 @@ class Form extends React.Component {
   render() {
     let displayForm;
 
-
-    if (this.props.info.selected_template === 'cced_live_webinar') {
+      if (this.props.info.selected_template === 'id_reader') {
+        displayForm = (
+          <IDReaderForm
+            info={this.props.info}
+            onTextChange={this.handleTextChange}
+          />
+        );
+      } 
+      if (this.props.info.selected_template === 'cced_live_webinar') {
         displayForm = (
           <CCEDLiveWebinarForm
             info={this.props.info}
@@ -134,6 +144,7 @@ class Form extends React.Component {
           value={this.props.info.selected_template}
           onChange={this.handleTemplateChange}
         >
+          <option value="id_reader">ID Reader</option>
           <option value="cced_live_webinar">CCED Live Webinar</option>
           <option value="cced_on_demand_webinar">CCED On-Demand Webinar</option>
           <option value="id_live_webinar">ID Live Webinar</option>
@@ -152,6 +163,7 @@ class Form extends React.Component {
 class TextResults extends React.Component {
   render() {
    let htmlDisplay = "Nothing to display right now.";
+   if(this.props.info.selected_template === 'id_reader'){htmlDisplay = <IDReaderHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'cced_live_webinar'){htmlDisplay = <CCEDLiveWebinarHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'cced_on_demand_webinar'){htmlDisplay = <CCEDOnDemandWebinarHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'id_live_webinar'){htmlDisplay = <IDLiveWebinarHTML info={this.props.info} />}

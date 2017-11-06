@@ -43,25 +43,50 @@ export default class IDLiveWebinarForm extends React.Component {
             </div>
             <br />
             <div className="label">
-              Title: 
+              Subscribe Link: 
               <input
                 type="text"
-                name="title"
-                value={this.props.info[this.props.info.selected_template].title}
+                name="subscribeLink"
+                value={this.props.info[this.props.info.selected_template].subscribeLink}
                 onChange={this.handleTextChange}
                 onInput={this.handleTextChange}
               />
             </div>
+
             <div className="label">
-              Presenter's Name: 
+              Month: 
+                <select
+                  name="month"
+                  value={this.props.info[this.props.info.selected_template].month}
+                  onChange={this.handleTextChange}
+                >
+                <option value="blank">Please Select a List</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+                </select>
+            </div>
+
+            <div className="label">
+              Cover Story Title: 
               <input
                 type="text"
-                name="presenter"
-                value={this.props.info[this.props.info.selected_template].presenter}
+                name="coverTitle"
+                value={this.props.info[this.props.info.selected_template].coverTitle}
                 onChange={this.handleTextChange}
                 onInput={this.handleTextChange}
               />
             </div>
+            
             <div className="label">
               Date and Time: 
               <input

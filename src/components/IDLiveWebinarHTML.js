@@ -256,7 +256,7 @@ export default class IDLiveWebinarHTML extends React.Component {
         html = start +  disclosureSection + presenterInfo + tv + end;    
         //Sanitize data to avoid XSS attack
         let sanitizedHtml = DOMPurify.sanitize(html); 
-        let textEmail = `Inside Dentistry Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\nCommercial Supporter: ${supporter}\nDescription:\n${description}\n\n${link}`;
+        let textEmail = `Inside Dentistry Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\n${date}\nCommercial Supporter: ${supporter}\nCost: ${cost}\nCredits: ${credits}\nDescription:\n${description}\n\n${link}`;
 
         return(
           <div >
