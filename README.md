@@ -1,12 +1,16 @@
 Email Generator
 ===============
 
-Start by cloning the repo
+Start by cloning the repo:
 ```
 git clone https://github.com/kevincauto/email-generator.git
 ```
-
-Navigate to the folder in terminal and start the local server
+Navigate to inside the project folder within the terminal.
+Then install all the node package dependencies needed to run the app using:
+```
+npm install
+```
+Start the local server:
 ```
 npm start
 ```
