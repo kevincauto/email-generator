@@ -66,9 +66,12 @@ export default class CCEDOnDemandWebinarHTML extends React.Component{
                 
                     
                     <a href="${link}" target="_blank" style="text-transform:uppercase; font-size:16px; background:#c2904a; padding:10px 11px;color:#ffffff; border-radius:10px; font-weight:bold; display:block; width:193px; text-align:center; margin:14px 0 14px 0; text-decoration:none;">VIEW THE WEBINAR</a><br />
-                    <strong>Presenter:</strong> ${presenter} | <strong>Provider:</strong> ${provider}<br>					
+                    <strong>Presenter:</strong> ${presenter}<br />
+                    <strong>Provider:</strong> ${provider}<br>					
                     <em><strong>Commercial Supporter:</strong> ${supporter}</em><br>
-                    <strong>CDE Credits:</strong> ${credits} | <strong>Cost:</strong> ${cost} | ${dates}<br><br />
+                    <strong>CDE Credits:</strong> ${credits}<br />
+                    <strong>Cost:</strong> ${cost}<br />
+                    <strong>Available: ${dates}<br><br />
                     <strong>Description</strong><br>
                     <div style="margin:5px 0 0 0">${description} </div>		
                     <br>
@@ -113,7 +116,7 @@ export default class CCEDOnDemandWebinarHTML extends React.Component{
         </html>
         `
 
-        let textEmail =  `${title}\n${link}\n\nPresenter: ${presenter}\nProvider: ${provider}\nCommercial Supporter: ${supporter}\nCost: ${cost}\nDescription:\n${description}`
+        let textEmail =  `Compendium On-Demand Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\nProvider: ${provider}\nCommercial Supporter: ${supporter}\nCost: ${cost}\nAvailable:\n${dates}Description:\n${description}\n\n${link}`
         
         //Sanitize data to avoid XSS attack
         html = DOMPurify.sanitize(html);
