@@ -153,7 +153,14 @@ export default class IDLiveWebinarHTML extends React.Component {
                                   </td>
                                 </tr>
                                 <!--END ID LOGO -->
-                                
+
+                                <!--ISSUE SPECIFIC DATA -->
+                                <tr>
+                                  <td align="center" style="padding:10px; border-bottom:1px dotted #333333; font-family:Georgia, 'Times New Roman', Times, serif; font-size:14px; color:#000000; padding:2px 0 7px 0; font-weight:bold;" valign="top">
+                                    <a href="https://www.dentalaegis.com/id/2017/10/" style="text-decoration:none; color:#000000;" target="_blank">October 2017 <span style="color:#000000;">|</span> Vol. 13, No. 10</a> | <a href="https://www.dentalaegis.com/id" style="color:#9d0707; text-decoration:none;" target="_blank">insidedentistry.net</a><a href="https://www.dentalaegis.com/id/2017/10/digital" style="color:#9d0707; text-decoration:none;" target="_blank"> <span style="color:#000000;">|</span> Digital Edition</a>
+                                  </td>
+                                </tr>
+                                <!--END ISSUE SPECIFIC DATA -->
                                 
                                 <!--NAVIGATION -->
                                 <tr>
@@ -272,7 +279,7 @@ export default class IDLiveWebinarHTML extends React.Component {
                                 <tr>
                                   <td align="center" style="font-family:'Times New Roman', Times, serif; font-size:12px;  color:#000000; padding-top:0px; border-bottom:1px solid #000000;"><br /><span><em>Inside Dentistry</em> | 104 Pheasant Run, Suite 105 | Newtown, PA 18940</span><br />
                                     <span>To ensure delivery, please add <a href="mailto:reply-207851@news.aegispublications.com" style="color:#000000; text-decoration:none;" target="_blank">reply-207851@news.aegispublications.com</a></span><span> to your address book<br />
-                                    %%PLUGIN_UNSUBSCRIBE: 1155779-ID EMAIL%% </span><br /><br />
+                                    ${unsubscribe} </span><br /><br />
                                   </td>
                                 </tr>
                                 <!--END FOOTER AND UNSUBSCRIBE-->
