@@ -1,30 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import IDReaderForm from './components/IDReaderForm';
+import IDReaderHTML from './components/IDReaderHTML';
 import CCEDLiveWebinarForm from './components/CCEDLiveWebinarForm';
 import CCEDLiveWebinarHTML from './components/CCEDLiveWebinarHTML';
 import CCEDOnDemandWebinarForm from './components/CCEDOnDemandWebinarForm';
 import CCEDOnDemandWebinarHTML from './components/CCEDOnDemandWebinarHTML';
 import IDLiveWebinarForm from './components/IDLiveWebinarForm';
 import IDLiveWebinarHTML from './components/IDLiveWebinarHTML';
+import IDOnDemandWebinarForm from './components/IDOnDemandWebinarForm';
+import IDOnDemandWebinarHTML from './components/IDOnDemandWebinarHTML';
 import CDEWLiveWebinarForm from './components/CDEWLiveWebinarForm';
 import CDEWLiveWebinarHTML from './components/CDEWLiveWebinarHTML';
+import IDTOnDemandWebinarForm from './components/IDTOnDemandWebinarForm';
+import IDTOnDemandWebinarHTML from './components/IDTOnDemandWebinarHTML';
 import IDTLiveWebinarForm from './components/IDTLiveWebinarForm';
 import IDTLiveWebinarHTML from './components/IDTLiveWebinarHTML';
-import IDReaderForm from './components/IDReaderForm';
-import IDReaderHTML from './components/IDReaderHTML';
 
 class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected_template: 'id_reader',
+      selected_template: 'id_on_demand_webinar',
       id_reader: {},
       cced_live_webinar: {},
       cced_on_demand_webinar: {},
       id_live_webinar: {},
+      id_on_demand_webinar: {},
       cdew_live_webinar: {},
-      idt_live_webinar: {}
+      idt_live_webinar: {},
+      idt_on_demand_webinar: {}
     };
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleTemplateChange = this.handleTemplateChange.bind(this);
@@ -137,6 +143,22 @@ class Form extends React.Component {
           />
         );
       }  
+      if (this.props.info.selected_template === 'id_on_demand_webinar') {
+        displayForm = (
+          <IDOnDemandWebinarForm 
+            info={this.props.info}
+            onTextChange={this.handleTextChange}
+          />
+        );
+      } 
+      if (this.props.info.selected_template === 'idt_on_demand_webinar') {
+        displayForm = (
+          <IDTOnDemandWebinarForm 
+            info={this.props.info}
+            onTextChange={this.handleTextChange}
+          />
+        );
+      } 
 
     return (
       <div id="main-form">
@@ -144,12 +166,14 @@ class Form extends React.Component {
           value={this.props.info.selected_template}
           onChange={this.handleTemplateChange}
         >
+          <option value="id_on_demand_webinar">ID On-Demand Webinar</option>
           <option value="id_reader">ID Reader</option>
           <option value="cced_live_webinar">CCED Live Webinar</option>
           <option value="cced_on_demand_webinar">CCED On-Demand Webinar</option>
           <option value="id_live_webinar">ID Live Webinar</option>
           <option value="cdew_live_webinar">CDEW Live Webinar</option>
           <option value="idt_live_webinar">IDT Live Webinar</option>
+          <option value="idt_on_demand_webinar">IDT Live Webinar</option>
         </select>
         <h2>Complete the information below.</h2>
         {displayForm}
@@ -158,17 +182,17 @@ class Form extends React.Component {
   }
 }
 
-
-
 class TextResults extends React.Component {
   render() {
    let htmlDisplay = "Nothing to display right now.";
    if(this.props.info.selected_template === 'id_reader'){htmlDisplay = <IDReaderHTML info={this.props.info} />}
+   if(this.props.info.selected_template === 'id_on_demand_webinar'){htmlDisplay = <IDOnDemandWebinarHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'cced_live_webinar'){htmlDisplay = <CCEDLiveWebinarHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'cced_on_demand_webinar'){htmlDisplay = <CCEDOnDemandWebinarHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'id_live_webinar'){htmlDisplay = <IDLiveWebinarHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'cdew_live_webinar'){htmlDisplay = <CDEWLiveWebinarHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'idt_live_webinar'){htmlDisplay = <IDTLiveWebinarHTML info={this.props.info} />}
+   if(this.props.info.selected_template === 'idt_on_demand_webinar'){htmlDisplay = <IDTOnDemandWebinarHTML info={this.props.info} />}
     return (
         <div>
         {htmlDisplay}
