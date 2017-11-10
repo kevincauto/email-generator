@@ -4,8 +4,9 @@ import DOMPurify from 'dompurify';
 
 export default class CDEWLiveWebinarHTML extends React.Component {
     render(){
-        const {title, date, provider, supporter, cost, credits, description, lo1, lo2, lo3, presenter, link, headshot, tvLink, unsubscribe} = this.props.info[this.props.info.selected_template]
-
+        const {title, date, provider, supporter, cost, credits, description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', lo1, lo2, lo3, presenter, link, headshot, tvLink, unsubscribe} = this.props.info[this.props.info.selected_template]
+        let image = 'http://placehold.it/130x160';
+        if(headshot){image = headshot.trim()}
         
         let start = `
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -51,9 +52,9 @@ export default class CDEWLiveWebinarHTML extends React.Component {
         
                 </td>
               <!-- Presenter's Photo -->
-              <td align="left" valign="top" style="padding:12px 32px 12px 12px; font-size: 11px; color:#005fae; float:right;"><a href="${link}" target="_blank"><img src="${headshot}" width="138" style="padding-right: 24px; margin-bottom: 14px;" /></a> 
-              <strong>Presenter:</strong>${presenter}<br />
-                <strong>Provider:</strong> Dental Learning Systems, LLC<br />
+              <td align="left" valign="top" style="padding:12px 32px 12px 12px; font-size: 11px; color:#005fae; float:right;"><a href="${link}" target="_blank"><img src="${image}" width="138" style="padding-right: 24px; margin-bottom: 14px;" /></a> <br />
+              <strong>Presenter: </strong>${presenter}<br />
+                <strong>Provider: </strong> ${provider}<br />
                 <strong>Commercial Supporter:</strong> <em>${supporter}</em><br />
                 <strong>Cost:</strong> ${cost}<br>
                 <strong>CDE Credits:</strong> ${credits} </td>
@@ -148,7 +149,7 @@ export default class CDEWLiveWebinarHTML extends React.Component {
         return(
           <div >
             <div className="content" dangerouslySetInnerHTML={{__html: sanitizedHtml}}></div><br />
-            HTML:< br />
+            Generated HTML Code to Copy:< br />
             <textarea value={html} readOnly={true} className="copyArea" /><br />
             <br />
             TEXT EMAIL:< br />

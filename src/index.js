@@ -162,18 +162,19 @@ class Form extends React.Component {
 
     return (
       <div id="main-form">
+        <h2>Select an email template</h2>
         <select
           value={this.props.info.selected_template}
           onChange={this.handleTemplateChange}
         >
           <option value="id_on_demand_webinar">ID On-Demand Webinar</option>
-          <option value="id_reader">ID Reader</option>
-          <option value="cced_live_webinar">CCED Live Webinar</option>
-          <option value="cced_on_demand_webinar">CCED On-Demand Webinar</option>
           <option value="id_live_webinar">ID Live Webinar</option>
+          <option value="id_reader">ID Reader</option>
+          <option value="cced_on_demand_webinar">CCED On-Demand Webinar</option>
+          <option value="cced_live_webinar">CCED Live Webinar</option>
           <option value="cdew_live_webinar">CDEW Live Webinar</option>
           <option value="idt_live_webinar">IDT Live Webinar</option>
-          <option value="idt_on_demand_webinar">IDT Live Webinar</option>
+          <option value="idt_on_demand_webinar">IDT On-Demand Webinar</option>
         </select>
         <h2>Complete the information below.</h2>
         {displayForm}

@@ -4,7 +4,9 @@ import DOMPurify from 'dompurify';
 export default class CCEDOnDemandWebinarHTML extends React.Component{
     
     render(){
-        const {title = 'To Be Updated', dates = 'Dates to Be Updated', link, description ='Lorem ipsum...', lo1, lo2, lo3, imgLink,  presenter = '', provider = '', supporter = '', cost = '', credits = '', tvLink, tagline = '', disclosure, unsubscribe} = this.props.info[this.props.info.selected_template];
+        const {title = 'To Be Updated', dates = 'Dates to Be Updated', link, description ='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', lo1, lo2, lo3, imgLink,  presenter = '', provider = '', supporter = '', cost = '', credits = '', tvLink, tagline = '', disclosure, unsubscribe} = this.props.info[this.props.info.selected_template];
+        let image = 'http://placehold.it/250x200';
+        if(imgLink){image = imgLink.trim()}
         let html = `
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
@@ -58,7 +60,7 @@ export default class CCEDOnDemandWebinarHTML extends React.Component{
                     <tbody><tr>
                         <td bgcolor="#ffffff" style="border-collapse:collapse;padding:0 14px 10px 0"></td>
                       <td align="right" valign="top">
-                        <a href="${link}" target="_blank"><img src="${imgLink}}" alt="" width="299"></a><br>
+                        <a href="${link}" target="_blank"><img src="${image}" alt="" width="250"></a><br>
                         </td>
                     </tr>
                 </tbody></table>	
@@ -71,7 +73,7 @@ export default class CCEDOnDemandWebinarHTML extends React.Component{
                     <em><strong>Commercial Supporter:</strong> ${supporter}</em><br>
                     <strong>CDE Credits:</strong> ${credits}<br />
                     <strong>Cost:</strong> ${cost}<br />
-                    <strong>Available: ${dates}<br><br />
+                    <strong>Available: </strong> ${dates}<br><br />
                     <strong>Description</strong><br>
                     <div style="margin:5px 0 0 0">${description} </div>		
                     <br>
@@ -124,7 +126,7 @@ export default class CCEDOnDemandWebinarHTML extends React.Component{
         return(
           <div >
             <div className="content" dangerouslySetInnerHTML={{__html: html}}></div><br />
-            HTML:< br />
+            Generated HTML Code to Copy:< br />
             <textarea value={html} readOnly={true} className="copyArea" /><br />
             <br />
             TEXT EMAIL:< br />

@@ -4,7 +4,7 @@ import DOMPurify from 'dompurify';
 
 export default class IDOnDemandWebinarHTML extends React.Component {
     render(){
-        const {title, date, provider, supporter, cost, credits, description, lo1, lo2, lo3, presenter, link, tvLink, unsubscribe, disclosure, image} = this.props.info[this.props.info.selected_template]
+        const {title, date, provider, supporter, cost, credits, description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', lo1, lo2, lo3, presenter, link, tvLink, unsubscribe, disclosure, image} = this.props.info[this.props.info.selected_template]
         let image2 = 'http://placehold.it/200x150';
         if(image){image2 = image.trim()}
         
@@ -184,7 +184,7 @@ export default class IDOnDemandWebinarHTML extends React.Component {
         return(
           <div >
             <div className="content" dangerouslySetInnerHTML={{__html: sanitizedHtml}}></div><br />
-            HTML:< br />
+            Generated HTML Code to Copy:< br />
             <textarea value={html} readOnly={true} className="copyArea" /><br />
             <br />
             TEXT EMAIL:< br />

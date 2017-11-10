@@ -4,7 +4,9 @@ import DOMPurify from 'dompurify';
 export default class CCEDLiveWebinarHTML extends React.Component{
 
   render(){
-        let {title = 'To Be Updated', date = 'Date To Be Updated', link, description ='Lorem ipsum...', lo1, lo2, lo3, headshot,  presenter='Lorem Ipsum, DDS', provider = '', supporter = '', cost = '', credits = '', tvLink, tagline, unsubscribe} = this.props.info[this.props.info.selected_template];
+        let {title = 'To Be Updated', date = 'Date To Be Updated', link, description ='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', lo1, lo2, lo3, headshot,  presenter='Lorem Ipsum, DDS', provider = '', supporter = '', cost = '', credits = '', tvLink, tagline, unsubscribe} = this.props.info[this.props.info.selected_template];
+        let image = 'http://placehold.it/140x180';
+        if(headshot){image = headshot}
         if(link){link = link.trim()}
         const first=`
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -79,7 +81,7 @@ export default class CCEDLiveWebinarHTML extends React.Component{
               <table cellpadding="0" cellspacing="0" border="0" align="right" style="padding:0 0 50px 0;">
               <tr>
                 <td width="191" bgcolor="#ffffff" style="border-collapse:collapse; padding: 0 30px 10px 0;">
-                  <a href="${link}" target="_blank"><img src="${headshot}" width="138" style="border:solid 1px #efefef; margin:17px 0 14px 0;" /></a><br /> <span style="color:#424242;">
+                  <a href="${link}" target="_blank"><img src="${image}" width="138" style="border:solid 1px #efefef; margin:17px 0 14px 0;" /></a><br /> <span style="color:#424242;">
                     <strong>Presenter:</strong> ${presenter}<br />
                     <strong>Provider:</strong> ${provider}<br />
                     <strong>Commercial Supporter:</strong> <em>${supporter}</em><br />
@@ -218,7 +220,7 @@ export default class CCEDLiveWebinarHTML extends React.Component{
         return(
           <div >
             <div className="content" dangerouslySetInnerHTML={{__html: html}}></div><br />
-            HTML:< br />
+            Generated HTML Code to Copy:< br />
             <textarea value={html} readOnly={true} className="copyArea" /><br />
             <br />
             TEXT EMAIL:< br />

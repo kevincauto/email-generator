@@ -31,7 +31,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
               <option value="%%PLUGIN_UNSUBSCRIBE: 2200418-UNSUBSCRIBE%% ">Nobel Webinar List | 3.28.17</option>
               </select>
           </div>
-              <div className="label">
+              {/* <div className="label">
                 Lyris Name: &nbsp;
                 <input
                   type="text"
@@ -39,7 +39,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
                   value={this.props.info[this.props.info.selected_template].lyrisName}
                   onChange={this.handleTextChange}
                 />
-              </div>
+              </div> */}
             </div>
 
             <br />

@@ -314,7 +314,7 @@ export default class IDLiveWebinarHTML extends React.Component {
         return(
           <div >
             <div className="content" dangerouslySetInnerHTML={{__html: sanitizedHtml}}></div><br />
-            HTML:< br />
+            Generated HTML Code to Copy:< br />
             <textarea value={html} readOnly={true} className="copyArea" /><br />
             <br />
             TEXT EMAIL:< br />
