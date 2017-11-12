@@ -154,6 +154,16 @@ export default class IDTLiveWebinarForm extends React.Component {
               />
             </div>
             <div className="label">
+              Disclosure: 
+              <input
+                type="text"
+                name="disclosure"
+                value={this.props.info[this.props.info.selected_template].disclosure}
+                onChange={this.handleTextChange}
+                onInput={this.handleTextChange}
+              />
+            </div>
+            <div className="label">
               Link: 
               <input
                 type="text"

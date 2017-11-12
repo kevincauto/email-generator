@@ -3,6 +3,9 @@ import React from 'react';
 export default class IDLiveWebinarForm extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+          formArray: []
+        };
         this.handleTextChange = this.handleTextChange.bind(this);
         this.addRow = this.addRow.bind(this);
       }
@@ -11,13 +14,19 @@ export default class IDLiveWebinarForm extends React.Component {
         this.props.onTextChange(e.target.value, e.target.name);
       }
 
-      addRow(arg1,arg2){
-
+      addRow(arr,e){
+        arr[1] = <div key={3}>Hello</div>;
+        this.setState({
+          formArray: arr
+        }
+        )
+        console.log(this.state);
       }
 
       render(){
-        let formArray = [          
-        <div className="lyris">
+        let arr = this.state.formArray
+        arr[0] =          
+        <div className="lyris" key={arr.length+1}>
             <div className="label">
             Email List: 
             <select
@@ -44,13 +53,12 @@ export default class IDLiveWebinarForm extends React.Component {
             />
             </div>
         </div>
-        ];
-        let yell = 'cowabunga';
+        ;
 
           return (
             <div className="form">
             <h3>ID Live Webinar</h3>
-            {formArray}
+            {arr}
             <br />
             <div className="label">
               Subscribe Link: 
@@ -96,7 +104,7 @@ export default class IDLiveWebinarForm extends React.Component {
                 onInput={this.handleTextChange}
               />
             </div>
-            <button onClick={(e) => this.addRow(yell, e)}>Add a Row</button>
+            <button onClick={(e) => this.addRow(arr, e)}>Add a Row</button>
 
 
 

@@ -4,7 +4,7 @@ import DOMPurify from 'dompurify';
 
 export default class IDTLiveWebinarHTML extends React.Component {
     render() {
-        const { title, date, provider, supporter, cost, credits, description, lo1, lo2, lo3, presenter, link, tvLink, unsubscribe } = this.props.info[this.props.info.selected_template];
+        const { title, date, provider, supporter, cost, credits, description, lo1, lo2, lo3, presenter, link, tvLink, unsubscribe, disclosure } = this.props.info[this.props.info.selected_template];
         let html;
 
         let start = `<!doctype html>
@@ -28,7 +28,7 @@ export default class IDTLiveWebinarHTML extends React.Component {
             <tr>
               <td valign="top"><img src="http://aegispublications.com/news/idt/2015/05/webinar-side.jpg" width="193" height="652" alt=""  style="border-top:#000000 solid 1px;"/></td>
               <td valign="top">
-              <a href="http://cdeworld.coronapro.com/live/2017-10-25_plameca"><img src="http://aegispublications.com/news/idt/2015/06/tonight.jpg" width="407" height="156" alt=""/></a>
+              <a href="${link}"><img src="http://aegispublications.com/news/idt/2015/06/tonight.jpg" width="407" height="156" alt=""/></a>
                 <table width="394" border="0" cellspacing="0" cellpadding="0">
                   <tbody>
                     <tr>
@@ -38,26 +38,26 @@ export default class IDTLiveWebinarHTML extends React.Component {
         <span style="font-family:Arial, sans-serif; font-size:18px; color:#424b52; text-align:left; line-height:auto; font-weight:bold;">The Collaboration Between the Dentist and Laboratory in the Digital Age</span>
         <br>
         <strong><br>
-        Presenter</strong>: Gary Kaye, DDS<br>
-        <strong>Provider: </strong> AEGIS Publications, LLC<br>
-        <strong>Commercial Supporter: </strong>: Planmeca - <em>E4D Technologies</em><br>
-        <strong>CE Credits: </strong> 1 Self Study<br>
-        <strong>Cost: </strong> $0.00<br>
-        <strong>Available Dates: </strong>: Nov 9th, 2017 - Nov 30th, 2020<br>
+        Presenter</strong>: ${presenter}<br>
+        <strong>Provider: </strong> ${provider}<br>
+        <strong>Commercial Supporter: </strong>: <em>${supporter}</em><br>
+        <strong>CE Credits: </strong> ${credits}<br>
+        <strong>Cost: </strong> ${cost}<br>
+        <strong>Available Dates: </strong>: ${date}<br>
         <br>
         <strong>Description:</strong><br />
-        The presentation will detail the digital restorative workflow and highlight clinical cases that demonstrate how the dentist and laboratory are collaborating today to provide improved patient care.<br /><br />
+        ${description}<br /><br />
         <strong>Leaning Objectives:</strong><br />
         <ul style="margin: 0px; padding: 0px 0px 0px 15px">
-        	<li>Review all the elements within the digital workflow.</li>
-        	<li>Discuss the capabilities of digital instrumentation and design software.</li>
-        	<li>Describe the materials utilized within the digital restorative workflow.</li>
+        	<li>${lo1}</li>
+        	<li>${lo2}</li>
+        	<li>${lo3}</li>
         </ul>
         <br />
         <strong>Disclosure: </strong><br />
-        Dr. Kaye has received an honorarium for his preparation and presentation of this program.
+        ${disclosure}
         
-        <a href="https://cdeworld.com/webinars/20852-The_Collaboration_Between_the_Dentist_and_Laboratory_in_the_Digital_Age" target="_blank" style="text-transform:uppercase; font-family:Gotham, sans-serif;  font-size:16px; background:#bf2a26; padding:10px 11px;color:#ffffff; border-radius:10px; font-weight:bold; display:block; width:193px; text-align:center;margin-bottom:18px; margin:14px 0 14px 0; text-decoration:none;">VIEW THE WEBINAR</a>
+        <a href="${link}" target="_blank" style="text-transform:uppercase; font-family:Gotham, sans-serif;  font-size:16px; background:#bf2a26; padding:10px 11px;color:#ffffff; border-radius:10px; font-weight:bold; display:block; width:193px; text-align:center;margin-bottom:18px; margin:14px 0 14px 0; text-decoration:none;">VIEW THE WEBINAR</a>
             </td>
                       </tr>
                     <tr>
@@ -104,7 +104,7 @@ export default class IDTLiveWebinarHTML extends React.Component {
         
                                         <td width="74">
         
-                                            <a href="http://cdeworld.coronapro.com/live/video_streaming_test_id_w_cde?returnredir=2017-10-25_plameca" target="_blank" style="text-decoration:none;">
+                                            <a href="${tvLink}" target="_blank" style="text-decoration:none;">
         
                                                 <img src="http://forms.coronapro.com/images/tv_with_interference_full.gif" width="74" height="86" />
         
@@ -114,7 +114,7 @@ export default class IDTLiveWebinarHTML extends React.Component {
         
                                         <td style="font-size:11px; line-height:13px;">
         
-                                            <a href="http://cdeworld.coronapro.com/live/video_streaming_test_id_w_cde?returnredir=2017-10-25_plameca" target="_blank" style="color:#9d0707; text-decoration:none;">
+                                            <a href="${tvLink}">
         
                                                 Be sure to test your setup here <em><strong>BEFORE</strong></em> the Webinar to ensure everything is working properly! Click here to test your setup!
         
@@ -155,7 +155,7 @@ export default class IDTLiveWebinarHTML extends React.Component {
               <td colspan="2" align="center" valign="top" 
                  style="font-family:Arial, sans-serif; font-size:10px; color:#424b52; text-align:center; padding:14px 14px 14px 14px; border-top:solid 1px #000000; border-bottom:solid 1px #000000;"> 
                                             Inside Dental Technology | 104 Pheasant Run, Suite 105 | Newtown, PA 18940<br>
-                  %%PLUGIN_UNSUBSCRIBE: 2147849-UNSUBSCRIBE%%
+                  ${unsubscribe}
                 </td>
             </tr>
           </tbody>
