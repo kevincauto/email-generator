@@ -35,7 +35,7 @@ export default class IDTLiveWebinarHTML extends React.Component {
                       <td width="424" valign="top" style="font-family:Arial, sans-serif; font-size:12px; color:#424b52; text-align:left; padding:14px 14px 14px 14px; ">
                       
         
-        <span style="font-family:Arial, sans-serif; font-size:18px; color:#424b52; text-align:left; line-height:auto; font-weight:bold;">The Collaboration Between the Dentist and Laboratory in the Digital Age</span>
+        <span style="font-family:Arial, sans-serif; font-size:18px; color:#424b52; text-align:left; line-height:auto; font-weight:bold;">${title}</span>
         <br>
         <strong><br>
         Presenter</strong>: ${presenter}<br>
