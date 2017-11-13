@@ -119,6 +119,15 @@ export default class CCEDLiveWebinarForm extends React.Component {
               />
             </div>
             <div className="label">
+              Disclosure: &nbsp;
+              <input
+                type="text"
+                name="disclosure"
+                value={this.props.info[this.props.info.selected_template].disclosure}
+                onChange={this.handleTextChange}
+              />
+            </div>
+            <div className="label">
               Headshot Link: &nbsp;
               <input
                 type="text"

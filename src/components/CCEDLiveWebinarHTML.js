@@ -4,7 +4,7 @@ import DOMPurify from 'dompurify';
 export default class CCEDLiveWebinarHTML extends React.Component{
 
   render(){
-        let {title = 'To Be Updated', date = 'Date To Be Updated', link, description ='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', lo1, lo2, lo3, headshot,  presenter='Lorem Ipsum, DDS', provider = '', supporter = '', cost = '', credits = '', tvLink, tagline, unsubscribe} = this.props.info[this.props.info.selected_template];
+        let {title = 'To Be Updated', date = 'Date To Be Updated', link, description ='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', lo1, lo2, lo3, headshot,  presenter='Lorem Ipsum, DDS', provider = '', supporter = '', cost = '', credits = '', tvLink, tagline, unsubscribe, disclosure} = this.props.info[this.props.info.selected_template];
         let image = 'http://placehold.it/140x180';
         if(headshot){image = headshot}
         if(link){link = link.trim()}
@@ -100,45 +100,58 @@ export default class CCEDLiveWebinarHTML extends React.Component{
                     <span>
               <strong style="color:#424242;">Description:</strong><br /></span>
               <div style="margin:5px 0 0 0; color:#424242; width:57%;">${description}</div>		
-              <br />`
+              `
               
             //Logic to render Learning Objectives based on how many LO there are.
             let lo = '';
         
-              if(!lo1) {
-                lo = '</td></tr>'};
+
               if(lo1 && !lo2 && !lo3 ) {
                 lo = `
+                <br />
                 <span style="color:#424242; font-weight:bold;">Learning Objective:</span>
                 <ul style="margin:5px 0 0 0; padding-left:1.3em; color:#424242; width:57%;">
                     <li>${lo1}</li>
                   </ul>
-                  </td>
-                  </tr>`  
+`  
               };
               if(lo1 && lo2 && !lo3 ) {
                 lo = `
+                <br />
                 <span style="color:#424242; font-weight:bold;">Learning Objectives:</span>
                 <ul style="margin:5px 0 0 0; padding-left:1.3em; color:#424242; width:57%;">
                     <li>${lo1}</li>
                     <li>${lo2}</li>
                   </ul>
-                  </td>
-                  </tr>
+
                   `  
               };
               if(lo1 && lo2 && lo3){
                 lo = `
+                <br />
                 <span style="color:#424242; font-weight:bold;">Learning Objectives:</span>
                 <ul style="margin:5px 0 0 0; padding-left:1.3em; color:#424242; width:57%;">
                     <li>${lo1}</li>
                     <li>${lo2}</li>
                     <li>${lo3}</li>
                   </ul>
-                  </td>
-                  </tr>
+
                   `
               }
+              let dis = '';
+              if(disclosure){
+                dis = `
+                <br />
+                <strong style="color:#424242;">Disclosure:</strong><br /></span>
+                <div style="margin:5px 0 0 0; color:#424242; width:57%;">${disclosure}</div>		
+                <br />
+                `
+              }
+              let trEnd=
+              `                  
+              </td>
+              </tr>
+              `
             
             //The Bottom TV Section is only used in the reminder emails.
             let tv; 
@@ -210,13 +223,16 @@ export default class CCEDLiveWebinarHTML extends React.Component{
         
         </body></html>
         `;
-
-        let textEmail =  `${title}\n${link}\n\nPresenter: ${presenter}\nProvider: ${provider}\nCommercial Supporter: ${supporter}\nCost: ${cost}\n\nDescription:\n${description}`;
+        let loText = '';
+        if(lo1){loText = `\nLearning Objectives:\n${lo1}\n${lo2}\n${lo3}\n`};
+        let disText = '';
+        if(disclosure){disText = `\nDisclosure:\n${disclosure}\n`}
+        let textEmail =  `Compendium\n${title}\n${link}\n\nPresenter: ${presenter}\nProvider: ${provider}\nCommercial Supporter: ${supporter}\nCost: ${cost}\n\nDescription:\n${description}\n${loText}${disText}`;
         
         //Sanitize data to avoid XSS attack
         html = DOMPurify.sanitize(html);
+        let html = first + tag + main + lo + dis + trEnd + tv + theRest;
 
-        let html = first + tag + main + lo + tv + theRest;
         return(
           <div >
             <div className="content" dangerouslySetInnerHTML={{__html: html}}></div><br />
