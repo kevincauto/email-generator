@@ -22,7 +22,7 @@ class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected_template: 'id_on_demand_webinar',
+      selected_template: 'cced_live_webinar',
       id_reader: {},
       cced_live_webinar: {},
       cced_on_demand_webinar: {},

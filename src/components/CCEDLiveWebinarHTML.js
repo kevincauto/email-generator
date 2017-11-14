@@ -4,7 +4,23 @@ import DOMPurify from 'dompurify';
 export default class CCEDLiveWebinarHTML extends React.Component{
 
   render(){
-        let {title = 'To Be Updated', date = 'Date To Be Updated', link, description ='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', lo1, lo2, lo3, headshot,  presenter='Lorem Ipsum, DDS', provider = '', supporter = '', cost = '', credits = '', tvLink, tagline, unsubscribe, disclosure} = this.props.info[this.props.info.selected_template];
+        let {title = 'To Be Updated', date = 'Date To Be Updated', link, description ='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', lo1, lo2, lo3, headshot,  presenter='Lorem Ipsum, DDS', provider = '', supporter = '', cost = '', credits = '', tvLink, tagline, unsubscribe, disclosure, lyrisName=''} = this.props.info[this.props.info.selected_template];
+       
+      //Auto detect the month and year for the url.  
+      let d = new Date();
+      let month = d.getMonth() + 1;
+      var year = d.getFullYear();
+
+      lyrisName = lyrisName.toString()
+        .replace(/\s+/g, '-')           // Replace spaces with -
+        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+        .replace(/^-+/, '')             // Trim - from start of text
+        .replace(/-+$/, '');            // Trim - from end of text
+      
+
+        let url = `http://aegispublications.com/news/cced/${year}/${month}/${lyrisName}.html`
+        
         let image = 'http://placehold.it/140x180';
         if(headshot){image = headshot}
         if(link){link = link.trim()}
@@ -28,7 +44,7 @@ export default class CCEDLiveWebinarHTML extends React.Component{
                                 <tbody>
                                 <tr>
                             <td colspan="3" align="center" valign="middle" style="font-size:10px; line-height:20px; color:#424242; font-family:Arial, Helvetica, sans-serif; text-transform:uppercase; text-align:center;">
-                                Cannot view this email? <a href="http://aegispublications.com/news/cced/2017/09/DS-Prosthetics-Registration.html" target="_blank" style="font-size:10px; line-height:20px; color:#424242; font-family:Arial, Helvetica, sans-serif; text-transform:uppercase; text-decoration:none; font-weight:bold;">Click here to view HTML version</a>
+                                Cannot view this email? <a href="${url}" target="_blank" style="font-size:10px; line-height:20px; color:#424242; font-family:Arial, Helvetica, sans-serif; text-transform:uppercase; text-decoration:none; font-weight:bold;">Click here to view HTML version</a>
                             </td>
                         </tr>
                                 
@@ -198,7 +214,7 @@ export default class CCEDLiveWebinarHTML extends React.Component{
         <table width="600" align="center" cellspacing="0" cellpadding="0" border="0" style="font-family:Arial, Helvetica, sans-serif;">
           <tbody><tr>
           <td colspan="2" align="center" style="font-size:10px; color:#444444; padding:11px 0 0 0;">
-              <a href="mailto:?subject=Live Webinar!&amp;body=I thought you might be interested in this: http://aegispublications.com/news/cced/2017/09/DS-Prosthetics-Registration.html" target="_blank" style="text-decoration:none; color:#444444;">
+              <a href="mailto:?subject=Live Webinar!&amp;body=I thought you might be interested in this: ${url}" target="_blank" style="text-decoration:none; color:#444444;">
                 Forward to a Colleague
               </a>
               &nbsp;&nbsp;|&nbsp;&nbsp; 
@@ -215,9 +231,9 @@ export default class CCEDLiveWebinarHTML extends React.Component{
         </tbody></table>
           
         <map name="Map" id="Map">
-          <area shape="rect" coords="57,2,85,24" href="mailto:?subject=Live CDE Webinar&amp;body=I thought you might be interested in this: http://aegispublications.com/news/cced/2017/08/solutionreach-2-reg.html" target="_blank" alt="mailto" />
-          <area shape="rect" coords="27,4,48,23" href="http://twitter.com/home?status=Live CDE Webinar+http://aegispublications.com/news/cced/2017/08/solutionreach-2-reg.html" target="_blank" alt="twitter" />
-          <area shape="rect" coords="5,3,21,24" href="http://www.facebook.com/share.php?u=http://aegispublications.com/news/cced/2017/08/solutionreach-2-reg.html&amp;title=Live CDE Webinar"  target="_blank" alt="fb" />
+          <area shape="rect" coords="57,2,85,24" href="mailto:?subject=Live CDE Webinar&amp;body=I thought you might be interested in this: ${url}" target="_blank" alt="mailto" />
+          <area shape="rect" coords="27,4,48,23" href="http://twitter.com/home?status=Live CDE Webinar+${url}" target="_blank" alt="twitter" />
+          <area shape="rect" coords="5,3,21,24" href="http://www.facebook.com/share.php?u=${url}&amp;title=Live CDE Webinar"  target="_blank" alt="fb" />
         </map>
         
         
