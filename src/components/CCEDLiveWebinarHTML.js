@@ -2,39 +2,52 @@ import React from 'react';
 import DOMPurify from 'dompurify';
 
 export default class CCEDLiveWebinarHTML extends React.Component{
-
   render(){
-        let {title = 'To Be Updated', date = 'Date To Be Updated', link, description ='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', lo1, lo2, lo3, headshot,  presenter='Lorem Ipsum, DDS', provider = '', supporter = '', cost = '', credits = '', tvLink, tagline, unsubscribe, disclosure, lyrisName=''} = this.props.info[this.props.info.selected_template];
+    //Import data from the fields.
+    let {
+      title = 'To Be Updated',
+      date = 'Date To Be Updated',
+      link, description ='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      lo1, lo2, lo3, headshot,  
+      presenter='Lorem Ipsum, DDS', 
+      provider = '',
+      supporter = '',
+      cost = '',
+      credits = '',
+      tvLink, tagline, unsubscribe, disclosure, 
+      lyrisName=''
+    } = this.props.info[this.props.info.selected_template];
        
-      //Auto detect the month and year for the url.  
-      let d = new Date();
-      let month = d.getMonth() + 1;
-      var year = d.getFullYear();
-
-      lyrisName = lyrisName.toString()
-        .replace(/\s+/g, '-')           // Replace spaces with -
-        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
-        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
-        .replace(/^-+/, '')             // Trim - from start of text
-        .replace(/-+$/, '');            // Trim - from end of text
+    //Auto detect the month and year for the url.  
+    let d = new Date();
+    let month = d.getMonth() + 1;
+    let year = d.getFullYear();
       
+    //Take the Lyris Name and make a url slug out of it.
+    lyrisName = lyrisName.toString()
+      .replace(/\s+/g, '-')           // Replace spaces with -
+      .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+      .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+      .replace(/^-+/, '')             // Trim - from start of text
+      .replace(/-+$/, '');            // Trim - from end of text
+      
+    let url = `http://aegispublications.com/news/cced/${year}/${month}/${lyrisName}.html`
+     
+    //Set up a dummy image when the template first loads.
+    let image = 'http://placehold.it/140x180';
+    if(headshot){image = headshot}
 
-        let url = `http://aegispublications.com/news/cced/${year}/${month}/${lyrisName}.html`
-        
-        let image = 'http://placehold.it/140x180';
-        if(headshot){image = headshot}
-        if(link){link = link.trim()}
+    //Prevent whitespace from messing up link.
+    if(link){link = link.trim()};
         const first=`
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
-          <head>
+        <head>
           <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
           <title></title>
         </head>
-        
         <body style="background-color:#bfbfbf;">
         <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" style="font-family:'Helvetica', 'Arial', sans-serif; background-color:#FFFFFF;">
-          
           <tr>
                 <td colspan="2" align="center">
                     <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0" style="padding:0 32px 14px 32px;font-family:Arial, sans-serif; font-size:12px;text-align:right;color:#ffffff; background:#ffffff;">
@@ -47,7 +60,6 @@ export default class CCEDLiveWebinarHTML extends React.Component{
                                 Cannot view this email? <a href="${url}" target="_blank" style="font-size:10px; line-height:20px; color:#424242; font-family:Arial, Helvetica, sans-serif; text-transform:uppercase; text-decoration:none; font-weight:bold;">Click here to view HTML version</a>
                             </td>
                         </tr>
-                                
                                 <tr>
                                     <td style="background:#c2904a;"><a href="https://cced.cdeworld.com/" target="_blank"><img src="http://www.aegispublications.com/news/cdeworld/2016/03/cced-header.jpg" width="659" height="75" hspace="0" vspace="0" border="0" align="left"></a></td>
                                     </tr>
@@ -57,8 +69,9 @@ export default class CCEDLiveWebinarHTML extends React.Component{
                     </table>
                 </td>
             </tr>`
-        //commented out by default
-        let tag = `
+
+    //The tagline is commented out by default.
+    let tag = `
         <!--	<tr>
             <td colspan="2">
               <table width="599" cellpadding="0" cellspacing="0" border="0" style="border-bottom: 1px solid #e4e4e4; margin:0 32px 20px 32px;">
@@ -70,28 +83,26 @@ export default class CCEDLiveWebinarHTML extends React.Component{
                 </tr>
               </table>
             </td>
-          </tr>-->
-          `
-          //if, however, the tagline is filled out...
-          if(tagline){
-            tag = `
+          </tr>-->`
+
+      //If, however, the tagline is filled out, display it.
+      if(tagline){
+        tag = `
             <tr>
             <td colspan="2">
               <table width="599" cellpadding="0" cellspacing="0" border="0" style="border-bottom: 1px solid #e4e4e4; margin:0 32px 20px 32px;">
                 <tr>
-                  <td style="padding:14px 0 14px 0; font-family:'Times New Roman', serif; font-size:25px; font-style:italic; color:#c2904a;">
-              
-        ${tagline}
-        </td>
+                  <td style="padding:14px 0 14px 0; font-family:'Times New Roman', serif; font-size:25px; font-style:italic; color:#c2904a;"> 
+                  ${tagline}
+                  </td>
                 </tr>
               </table>
             </td>
           </tr>
             `
-        
           }
         
-          let main = `
+      let main = `
           <tr>
             <td height="348" colspan="2" valign="top" style="padding:12px 32px 24px 32px; font-size:13px; color:#c2904a; line-height:16px; border-bottom: 1px solid #e4e4e4;">
               <table cellpadding="0" cellspacing="0" border="0" align="right" style="padding:0 0 50px 0;">
@@ -102,7 +113,7 @@ export default class CCEDLiveWebinarHTML extends React.Component{
                     <strong>Provider:</strong> ${provider}<br />
                     <strong>Commercial Supporter:</strong> <em>${supporter}</em><br />
                     <strong>Cost:</strong> ${cost}<br>
-                    <strong>CDE Credits:</strong>${credits}</span>			    </td>
+                    <strong>CDE Credits:</strong> ${credits}</span>			    </td>
                 </tr>
             </table>		
                 
@@ -118,32 +129,29 @@ export default class CCEDLiveWebinarHTML extends React.Component{
               <div style="margin:5px 0 0 0; color:#424242; width:57%;">${description}</div>		
               `
               
-            //Logic to render Learning Objectives based on how many LO there are.
-            let lo = '';
+        //Logic to render Learning Objectives based on how many LOs there are.
+        let lo = '';
         
 
-              if(lo1 && !lo2 && !lo3 ) {
-                lo = `
+        if(lo1 && !lo2 && !lo3 ) {
+          lo = `
                 <br />
                 <span style="color:#424242; font-weight:bold;">Learning Objective:</span>
                 <ul style="margin:5px 0 0 0; padding-left:1.3em; color:#424242; width:57%;">
                     <li>${lo1}</li>
-                  </ul>
-`  
-              };
-              if(lo1 && lo2 && !lo3 ) {
-                lo = `
+                  </ul>`  
+        };
+        if(lo1 && lo2 && !lo3 ) {
+          lo = `
                 <br />
                 <span style="color:#424242; font-weight:bold;">Learning Objectives:</span>
                 <ul style="margin:5px 0 0 0; padding-left:1.3em; color:#424242; width:57%;">
                     <li>${lo1}</li>
                     <li>${lo2}</li>
-                  </ul>
-
-                  `  
-              };
-              if(lo1 && lo2 && lo3){
-                lo = `
+                  </ul>`  
+          };
+        if(lo1 && lo2 && lo3){
+            lo = `
                 <br />
                 <span style="color:#424242; font-weight:bold;">Learning Objectives:</span>
                 <ul style="margin:5px 0 0 0; padding-left:1.3em; color:#424242; width:57%;">
@@ -151,31 +159,29 @@ export default class CCEDLiveWebinarHTML extends React.Component{
                     <li>${lo2}</li>
                     <li>${lo3}</li>
                   </ul>
-
                   `
-              }
-              let dis = '';
-              if(disclosure){
+          }
+        let dis = '';
+          if(disclosure){
                 dis = `
                 <br />
                 <strong style="color:#424242;">Disclosure:</strong><br /></span>
                 <div style="margin:5px 0 0 0; color:#424242; width:57%;">${disclosure}</div>		
                 <br />
                 `
-              }
-              let trEnd=
+          }
+        let trEnd=
               `                  
               </td>
               </tr>
               `
-            
-            //The Bottom TV Section is only used in the reminder emails.
-            let tv; 
-            if(!tvLink){
-                tv = '';
-            }
-            else{
-                tv = `
+          //The Bottom TV Section is only used in the reminder emails.
+          let tv; 
+          if(!tvLink){
+            tv = '';
+          }
+          else{
+            tv = `
                 <tr>
                 <td colspan="2" valign="top" style="padding:12px 32px 24px 32px; font-size:13px; color:#c2904a; line-height:16px; border-bottom: 1px solid #e4e4e4;">
                   <table cellpadding="0" cellspacing="0" border="0" align="left" bgcolor="#FFFFFF"  >
@@ -202,7 +208,7 @@ export default class CCEDLiveWebinarHTML extends React.Component{
                 `
             }
         
-           const theRest = `
+          const theRest = `
           <tr>
             <!-- Fine Print Footer -->
             <td colspan="2" align="center">
@@ -235,19 +241,22 @@ export default class CCEDLiveWebinarHTML extends React.Component{
           <area shape="rect" coords="27,4,48,23" href="http://twitter.com/home?status=Live CDE Webinar+${url}" target="_blank" alt="twitter" />
           <area shape="rect" coords="5,3,21,24" href="http://www.facebook.com/share.php?u=${url}&amp;title=Live CDE Webinar"  target="_blank" alt="fb" />
         </map>
-        
-        
         </body></html>
         `;
+        
+        //if learning objectives exist, display in text email
         let loText = '';
         if(lo1){loText = `\nLearning Objectives:\n${lo1}\n${lo2}\n${lo3}\n`};
+
+        //if a disclosure exists, display in text email
         let disText = '';
         if(disclosure){disText = `\nDisclosure:\n${disclosure}\n`}
+
         let textEmail =  `Compendium\n${title}\n${link}\n\nPresenter: ${presenter}\nProvider: ${provider}\nCommercial Supporter: ${supporter}\nCost: ${cost}\n\nDescription:\n${description}\n${loText}${disText}`;
         
         //Sanitize data to avoid XSS attack
-        html = DOMPurify.sanitize(html);
         let html = first + tag + main + lo + dis + trEnd + tv + theRest;
+        html = DOMPurify.sanitize(html);
 
         return(
           <div >

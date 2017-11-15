@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import IDReaderForm from './components/IDReaderForm';
 import IDReaderHTML from './components/IDReaderHTML';
+import CCEDThematicForm from './components/CCEDThematicForm';
+import CCEDThematicHTML from './components/CCEDThematicHTML';
 import CCEDLiveWebinarForm from './components/CCEDLiveWebinarForm';
 import CCEDLiveWebinarHTML from './components/CCEDLiveWebinarHTML';
 import CCEDOnDemandWebinarForm from './components/CCEDOnDemandWebinarForm';
@@ -24,6 +26,7 @@ class Container extends React.Component {
     this.state = {
       selected_template: 'cced_live_webinar',
       id_reader: {},
+      cced_thematic: {},
       cced_live_webinar: {},
       cced_on_demand_webinar: {},
       id_live_webinar: {},
@@ -103,6 +106,14 @@ class Form extends React.Component {
           />
         );
       } 
+      if (this.props.info.selected_template === 'id_reader') {
+        displayForm = (
+          <CCEDThematicForm
+            info={this.props.info}
+            onTextChange={this.handleTextChange}
+          />
+        );
+      } 
       if (this.props.info.selected_template === 'cced_live_webinar') {
         displayForm = (
           <CCEDLiveWebinarForm
@@ -170,6 +181,7 @@ class Form extends React.Component {
           <option value="id_on_demand_webinar">ID On-Demand Webinar</option>
           <option value="id_live_webinar">ID Live Webinar</option>
           <option value="id_reader">ID Reader</option>
+          <option value="cced_thematic">CCED Thematic</option>
           <option value="cced_on_demand_webinar">CCED On-Demand Webinar</option>
           <option value="cced_live_webinar">CCED Live Webinar</option>
           <option value="cdew_live_webinar">CDEW Live Webinar</option>
@@ -187,6 +199,7 @@ class TextResults extends React.Component {
   render() {
    let htmlDisplay = "Nothing to display right now.";
    if(this.props.info.selected_template === 'id_reader'){htmlDisplay = <IDReaderHTML info={this.props.info} />}
+   if(this.props.info.selected_template === 'cced_thematic'){htmlDisplay = <CCEDThematicHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'id_on_demand_webinar'){htmlDisplay = <IDOnDemandWebinarHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'cced_live_webinar'){htmlDisplay = <CCEDLiveWebinarHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'cced_on_demand_webinar'){htmlDisplay = <CCEDOnDemandWebinarHTML info={this.props.info} />}
