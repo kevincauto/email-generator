@@ -2,17 +2,20 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 #container {
   display: flex;
 }
 #main-form {
-  border: solid #000 1px;
+
   float: left;
   width: 30%;
   padding: 20px;
   margin: 0px 20px 0px 20px;
+  box-shadow: 1px 4px 6px rgba(50,50,93,.51), 1px 3px 6px rgba(0,0,0,.38);
+  border-radius: 4px;
+
 }
 #text-results {
   border: solid #000 1px;
@@ -40,7 +43,7 @@ input[type=text], select {
   box-sizing: border-box;
 }
 .lyris{
-  background-color: #D2ECF8;
+
   padding: 5px;
   border-radius: 4px;
 }
@@ -48,4 +51,30 @@ input[type=text], select {
 .copyArea{
   width: 400px;
   height: 100px;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+
+.common-Button {
+  flex-shrink: 0;
+  white-space: nowrap;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 14px;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  background: #fff;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+  color: #5d6291;
+  text-decoration: none;
+  transition: all .15s ease;
+}
+
+.common-Button {
+  color: #fff;
+  background: #2e0dc2;
 }

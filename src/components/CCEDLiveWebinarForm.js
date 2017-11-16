@@ -1,4 +1,6 @@
 import React from 'react';
+import TextField from 'material-ui/TextField';
+import SelectField from 'material-ui/SelectField';
 
 const FIELDS = [
   {label: 'Title', name: 'title' },
@@ -35,8 +37,11 @@ export default class CCEDLiveWebinarForm extends React.Component {
               className="label"
               key={field.name}
             >
-            {field.label}:
-            <input
+            
+            <TextField
+              hintText="Enter text..."
+              floatingLabelText={field.label}
+              fullWidth={true}
               type="text"
               name={field.name}
               value={this.props.info[this.props.info.selected_template][field.name]}
@@ -69,8 +74,11 @@ export default class CCEDLiveWebinarForm extends React.Component {
                 </select>
             </div>
               <div className="label">
-                Lyris Name: 
-                <input
+              
+                <TextField
+                  hintText="Enter text..."
+                  floatingLabelText="Lyris Name:"
+                  fullWidth={true}
                   type="text"
                   name="lyrisName"
                   value={this.props.info[this.props.info.selected_template].lyrisName}

@@ -1,13 +1,29 @@
 import React from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
 import DOMPurify from 'dompurify';
+import {saveAs} from 'file-saver';
 
 export default class CCEDLiveWebinarHTML extends React.Component{
+  
+  downloadHtml(html, fileName){
+    if(!fileName){fileName = 'Untitled'};
+    var file = new File([html], fileName + '.html', {type: "text/html"});
+    saveAs(file);
+  }
+
+  downloadText(textEmail,fileName){
+    if(!fileName){fileName = 'Untitled'};
+    var file = new File([textEmail], fileName + '.txt', {type: "text/plain;charset=utf-8"});
+    saveAs(file);
+  }
+
   render(){
-    //Import data from the fields.
+    //Import data from the form fields.
     let {
       title = 'To Be Updated',
       date = 'Date To Be Updated',
-      link, description ='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      link, 
+      description ='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       lo1, lo2, lo3, headshot,  
       presenter='Lorem Ipsum, DDS', 
       provider = '',
@@ -30,8 +46,8 @@ export default class CCEDLiveWebinarHTML extends React.Component{
       .replace(/\-\-+/g, '-')         // Replace multiple - with single -
       .replace(/^-+/, '')             // Trim - from start of text
       .replace(/-+$/, '');            // Trim - from end of text
-      
-    let url = `http://aegispublications.com/news/cced/${year}/${month}/${lyrisName}.html`
+    
+    let url = `http://aegispublications.com/news/cced/${year}/${month}/${lyrisName}.html`;
      
     //Set up a dummy image when the template first loads.
     let image = 'http://placehold.it/140x180';
@@ -39,6 +55,7 @@ export default class CCEDLiveWebinarHTML extends React.Component{
 
     //Prevent whitespace from messing up link.
     if(link){link = link.trim()};
+
         const first=`
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
@@ -243,7 +260,12 @@ export default class CCEDLiveWebinarHTML extends React.Component{
         </map>
         </body></html>
         `;
-        
+
+        let html = first + tag + main + lo + dis + trEnd + tv + theRest;
+
+        //Sanitize data to avoid XSS attack
+        let cleanHtml = DOMPurify.sanitize(html);
+
         //if learning objectives exist, display in text email
         let loText = '';
         if(lo1){loText = `\nLearning Objectives:\n${lo1}\n${lo2}\n${lo3}\n`};
@@ -253,19 +275,20 @@ export default class CCEDLiveWebinarHTML extends React.Component{
         if(disclosure){disText = `\nDisclosure:\n${disclosure}\n`}
 
         let textEmail =  `Compendium\n${title}\n${link}\n\nPresenter: ${presenter}\nProvider: ${provider}\nCommercial Supporter: ${supporter}\nCost: ${cost}\n\nDescription:\n${description}\n${loText}${disText}`;
-        
-        //Sanitize data to avoid XSS attack
-        let html = first + tag + main + lo + dis + trEnd + tv + theRest;
-        html = DOMPurify.sanitize(html);
 
         return(
           <div >
-            <div className="content" dangerouslySetInnerHTML={{__html: html}}></div><br />
+            <div className="content" dangerouslySetInnerHTML={{__html: cleanHtml}}></div><br />
             Generated HTML Code to Copy:< br />
-            <textarea value={html} readOnly={true} className="copyArea" /><br />
+            <textarea value={html} readOnly={true} className="copyArea" />
+            <br />
             <br />
             TEXT EMAIL:< br />
             <textarea value={textEmail} readOnly={true} className="copyArea"/>
+            <br />
+            <RaisedButton onClick={()=>this.downloadHtml(html,lyrisName)} backgroundColor="#a4c639" label="Download HTML Email"/>
+            <br /><br />
+            <RaisedButton onClick={()=>this.downloadText(textEmail,lyrisName)} secondary={true} label="Download Text Version Email" />
           </div>
         )
     }

@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 import IDReaderForm from './components/IDReaderForm';
 import IDReaderHTML from './components/IDReaderHTML';
 import CCEDThematicForm from './components/CCEDThematicForm';
@@ -41,7 +44,7 @@ class Container extends React.Component {
 
   componentDidMount() {
       console.log(this.state);
-    //preload the selected templates object with default values?
+    //preload current month and year
   }
   
   componentDidUpdate(){
@@ -68,6 +71,7 @@ class Container extends React.Component {
 
   render() {
     return (
+      <MuiThemeProvider>
       <div id="container">
         <Form
           info={this.state}
@@ -76,6 +80,7 @@ class Container extends React.Component {
         />
         <TextResults info={this.state} />
       </div>
+      </MuiThemeProvider>
     );
   }
 }
