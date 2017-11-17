@@ -4,7 +4,37 @@ import DOMPurify from 'dompurify';
 export default class CCEDOnDemandWebinarHTML extends React.Component{
     
     render(){
-        const {title = 'To Be Updated', dates = 'Dates to Be Updated', link, description ='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', lo1, lo2, lo3, imgLink,  presenter = '', provider = '', supporter = '', cost = '', credits = '', tvLink, tagline = '', disclosure, unsubscribe} = this.props.info[this.props.info.selected_template];
+    const {
+        title = 'To Be Updated', 
+        dates = 'Dates to Be Updated', 
+        link, 
+        description ='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 
+        lo1, lo2, lo3, imgLink,  
+        presenter = '', 
+        provider = '', 
+        supporter = '', 
+        cost = '', 
+        credits = '', 
+        tvLink, 
+        tagline = '', 
+        disclosure, unsubscribe, lyrisName =''
+    } = this.props.info[this.props.info.selected_template];
+        
+        
+    //Auto detect the month and year for the url.  
+    let d = new Date();
+    let month = d.getMonth() + 1;
+    let year = d.getFullYear();
+      
+    //Take the Lyris Name and make a url slug out of it.
+    let slug = lyrisName.toString()
+      .replace(/\s+/g, '-')           // Replace spaces with -
+      .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+      .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+      .replace(/^-+/, '')             // Trim - from start of text
+      .replace(/-+$/, '');            // Trim - from end of text
+    
+    let url = `http://aegispublications.com/news/cced/${year}/${month}/${slug}.html`;
         let image = 'http://placehold.it/250x200';
         if(imgLink){image = imgLink.trim()}
         let html = `
@@ -29,7 +59,7 @@ export default class CCEDOnDemandWebinarHTML extends React.Component{
             <tr>
                 <td colspan="2" style="font-size:9px; line-height:20px; text-transform:uppercase; text-align:center; color:#333333; background-color:#efefef;">
                 Cannot view this email? 
-                    <a href="http://aegispublications.com/news/cced/2017/09/Instrumentarium-5-On-Demand.html" target="_blank" style="text-decoration:none; color:#c2904a;">
+                    <a href="${url}" target="_blank" style="text-decoration:none; color:#c2904a;">
                         Click here to view the HTML version.
                     </a>
                 </td>
@@ -97,7 +127,7 @@ export default class CCEDOnDemandWebinarHTML extends React.Component{
             </tr>
             <tr>
               <td colspan="2" align="center" style="font-size:10px; font-family:Arial, Helvetica, sans-serif; color:#424242; padding:11px 0 11px 0; border-top:solid 1px #efefef; background-color:#efefef;">
-                  <a href="mailto:?subject=On Demand Webinar!&amp;body=I thought you might be interested in this: http://aegispublications.com/news/cced/2017/09/Instrumentarium-5-On-Demand.html" target="_blank" style="text-decoration:none; color:#c2904a;">
+                  <a href="mailto:?subject=On Demand Webinar!&amp;body=I thought you might be interested in this: ${url}" target="_blank" style="text-decoration:none; color:#c2904a;">
                         Forward to a Colleague
                     </a>
                     &nbsp;&nbsp;|&nbsp;&nbsp; 
@@ -121,11 +151,11 @@ export default class CCEDOnDemandWebinarHTML extends React.Component{
         let textEmail =  `Compendium On-Demand Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\nProvider: ${provider}\nCommercial Supporter: ${supporter}\nCost: ${cost}\nAvailable:\n${dates}Description:\n${description}\n\n${link}`
         
         //Sanitize data to avoid XSS attack
-        html = DOMPurify.sanitize(html);
+        let cleanHtml = DOMPurify.sanitize(html);
 
         return(
           <div >
-            <div className="content" dangerouslySetInnerHTML={{__html: html}}></div><br />
+            <div className="content" dangerouslySetInnerHTML={{__html: cleanHtml}}></div><br />
             Generated HTML Code to Copy:< br />
             <textarea value={html} readOnly={true} className="copyArea" /><br />
             <br />

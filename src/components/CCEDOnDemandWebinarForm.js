@@ -52,7 +52,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
             <h3> CCED On-Demand Webinar</h3>
             <div className="lyris">
             <div className="label">
-            Email List: &nbsp;
+            Email List: 
               <select
                 name="unsubscribe"
                 value={this.props.info[this.props.info.selected_template].list}
@@ -67,7 +67,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
               </select>
           </div>
              <div className="label">
-                Lyris Name: &nbsp;
+                Lyris Name:
                 <input
                   type="text"
                   name="lyrisName"

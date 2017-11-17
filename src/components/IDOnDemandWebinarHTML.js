@@ -4,7 +4,26 @@ import DOMPurify from 'dompurify';
 
 export default class IDOnDemandWebinarHTML extends React.Component {
     render(){
-        const {title, date, provider, supporter, cost, credits, description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', lo1, lo2, lo3, presenter, link, tvLink, unsubscribe, disclosure, image} = this.props.info[this.props.info.selected_template]
+    const {
+        lyrisName = '',
+            title, date, provider, supporter, cost, credits, 
+            description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            lo1, lo2, lo3, presenter, link, tvLink, unsubscribe, disclosure, image
+        } = this.props.info[this.props.info.selected_template]
+            //Auto detect the month and year for the url.  
+    let d = new Date();
+    let month = d.getMonth() + 1;
+    let year = d.getFullYear();
+      
+    //Take the Lyris Name and make a url slug out of it.
+    let slug = lyrisName.toString()
+      .replace(/\s+/g, '-')           // Replace spaces with -
+      .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+      .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+      .replace(/^-+/, '')             // Trim - from start of text
+      .replace(/-+$/, '');            // Trim - from end of text
+    
+    let url = `http://aegispublications.com/news/cced/${year}/${month}/${slug}.html`;
         let image2 = 'http://placehold.it/200x150';
         if(image){image2 = image.trim()}
         
@@ -23,7 +42,7 @@ export default class IDOnDemandWebinarHTML extends React.Component {
         <tr>
             <td colspan="2" style="font-size:10px; line-height:20px; text-transform:uppercase; text-align:center; color:#83878c;">
             Cannot view this email? 
-                <a href="http://aegispublications.com/news/id/2017/11/Brassler-3-On-Demand.html" target="_blank" style="text-decoration:none; color:#83878c;">
+                <a href="${url}" target="_blank" style="text-decoration:none; color:#83878c;">
                     Click here to view the HTML version.
                 </a>
             </td>
@@ -139,7 +158,7 @@ export default class IDOnDemandWebinarHTML extends React.Component {
                 <br />
             
                 
-                <a href="mailto:?subject=ID Webinar&body=I thought you might be interested in this: http://aegispublications.com/news/id/2017/11/Brassler-3-On-Demand.html" style="text-decoration:none; color:#526687;">
+                <a href="mailto:?subject=ID Webinar&body=I thought you might be interested in this: ${url}" style="text-decoration:none; color:#526687;">
                     Forward to a Colleague
                 </a>
                 &nbsp;&nbsp;|&nbsp;&nbsp; 
@@ -153,25 +172,17 @@ export default class IDOnDemandWebinarHTML extends React.Component {
         <tr>
             <td colspan="2" height="10">
             </td>
-        </tr>
-        
-        
-        
-        
-        
+        </tr>   
         <tr>
             <td colspan="2" height="10">
             </td>
         </tr>
         </table>
-        
         <map name="Map" id="Map">
-            <area shape="rect" coords="4,5,21,22" href="http://www.facebook.com/share.php?u=http://aegispublications.com/news/id/2017/11/Brassler-3-On-Demand.html&amp;title=CDE Webinar" target="_blank" alt="fb">
-            <area shape="rect" coords="30,3,50,21" href="http://twitter.com/home?status=Live CDE Webinar+http://aegispublications.com/news/id/2017/11/Brassler-3-On-Demand.html" target="_blank" alt="twitter">
-            <area shape="rect" coords="58,3,83,23" href="mailto:?subject=FW: Live CDE Webinar&amp;body=I thought you might be interested in this: http://aegispublications.com/news/id/2017/11/Brassler-3-On-Demand.html" target="_blank" alt="mailto">
+            <area shape="rect" coords="4,5,21,22" href="http://www.facebook.com/share.php?u=${url}&amp;title=CDE Webinar" target="_blank" alt="fb">
+            <area shape="rect" coords="30,3,50,21" href="http://twitter.com/home?status=Live CDE Webinar+${url}" target="_blank" alt="twitter">
+            <area shape="rect" coords="58,3,83,23" href="mailto:?subject=FW: Live CDE Webinar&amp;body=I thought you might be interested in this: ${url}" target="_blank" alt="mailto">
         </map>
-        
-        
         </body>
         </html>
         `;

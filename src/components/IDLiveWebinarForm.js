@@ -30,7 +30,7 @@ export default class IDLiveWebinarForm extends React.Component {
                 <option value="%%PLUGIN_UNSUBSCRIBE: 2200418-UNSUBSCRIBE%%">Nobel Webinar List | 3.28.17</option>
                 </select>
             </div>
-              {/* <div className="label">
+              <div className="label">
                 Lyris Name: 
                 <input
                   type="text"
@@ -39,7 +39,7 @@ export default class IDLiveWebinarForm extends React.Component {
                   onChange={this.handleTextChange}
                   onInput={this.handleTextChange}
                 />
-              </div> */}
+              </div>
             </div>
             <br />
             <div className="label">

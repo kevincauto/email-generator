@@ -4,7 +4,28 @@ import DOMPurify from 'dompurify';
 
 export default class CDEWLiveWebinarHTML extends React.Component {
     render(){
-        const {title, date, provider, supporter, cost, credits, description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', lo1, lo2, lo3, presenter, link, headshot, tvLink, unsubscribe} = this.props.info[this.props.info.selected_template]
+        const {
+          lyrisName='', 
+          title, date, provider, supporter, cost, credits, 
+          description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 
+          lo1, lo2, lo3, presenter, link, headshot, tvLink, unsubscribe
+        } = this.props.info[this.props.info.selected_template]
+        
+    //Auto detect the month and year for the url.  
+    let d = new Date();
+    let month = d.getMonth() + 1;
+    let year = d.getFullYear();
+      
+    //Take the Lyris Name and make a url slug out of it.
+    let slug = lyrisName.toString()
+      .replace(/\s+/g, '-')           // Replace spaces with -
+      .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+      .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+      .replace(/^-+/, '')             // Trim - from start of text
+      .replace(/-+$/, '');            // Trim - from end of text
+    
+    let url = `http://aegispublications.com/news/cced/${year}/${month}/${slug}.html`;
+        
         let image = 'http://placehold.it/130x160';
         if(headshot){image = headshot.trim()}
         
@@ -24,7 +45,7 @@ export default class CDEWLiveWebinarHTML extends React.Component {
           <td colspan="2" style="font-size:9px; text-align:center; color:#333333; padding: 5px 0;"><table width="600" cellpadding="0" cellspacing="0" border="0" align="center" style="font-family:'Helvetica', 'Arial', sans-serif; background-color:#FFFFFF;">
         
             <tr>
-              <td colspan="2" style="font-size:9px; line-height:20px; text-transform:uppercase; text-align:center; color:#333333; padding: 5px 0;"> Cannot view this email? <a href="http://aegispublications.com/news/cdeworld/2017/10/pelton-3-rem.html" target="_blank" style="text-decoration:none; color:#005fae;"> Click here to view the HTML version. </a></td>
+              <td colspan="2" style="font-size:9px; line-height:20px; text-transform:uppercase; text-align:center; color:#333333; padding: 5px 0;"> Cannot view this email? <a href="${url}" target="_blank" style="text-decoration:none; color:#005fae;"> Click here to view the HTML version. </a></td>
             </tr>
             <tr>
               <td colspan="2"><a href="https://cdeworld.com" target="_blank"> <img src="http://www.aegispublications.com/news/cdeworld/09/images/header1.jpg" width="600" height="90" border="0" /> </a></td>
@@ -119,7 +140,7 @@ export default class CDEWLiveWebinarHTML extends React.Component {
                 </div>-->
                 <div style="padding-bottom:7px;">
                   © 2017 CDEWorld. All rights reserved.<br /> PO Box 510, Newtown, PA 18940<br />
-        <a href="mailto:?subject=CDEWorld Webinar&amp;body=I thought you might be interested in this: http://aegispublications.com/news/cdeworld/2017/08/pds-3-rem.html" target="_blank" style="text-decoration:none; color:#526687;">
+        <a href="mailto:?subject=CDEWorld Webinar&amp;body=I thought you might be interested in this: ${url}" target="_blank" style="text-decoration:none; color:#526687;">
                         Forward to a Colleague
                     </a> &nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href="http://www.dentalaegis.com/privacy-policy/" target="_blank" style="text-decoration:none; color:#526687;">
@@ -132,9 +153,9 @@ export default class CDEWLiveWebinarHTML extends React.Component {
           </table>
         
           <map name="Map" id="Map">
-            <area shape="rect" coords="57,2,85,24" href="mailto:?subject=Free CE Webinar &amp;body=I thought you might be interested in this: http://aegispublications.com/news/cdeworld/2017/10/pelton-3-rem.html" target="_blank" alt="mailto" />
-            <area shape="rect" coords="27,4,48,23" href="http://twitter.com/home?status=Free CE Webinar +http://cdeworld.coronapro.com/live/2017-08-22/pds3" target="_blank" alt="twitter" />
-            <area shape="rect" coords="5,3,21,24" href="http://aegispublications.com/news/cdeworld/2017/10/pelton-3-rem.html&title=Free%20CE%20Webinar!"  target="_blank" alt="fb" />
+            <area shape="rect" coords="57,2,85,24" href="mailto:?subject=Free CE Webinar &amp;body=I thought you might be interested in this: ${url}" target="_blank" alt="mailto" />
+            <area shape="rect" coords="27,4,48,23" href="http://twitter.com/home?status=Free CE Webinar +${url}" target="_blank" alt="twitter" />
+            <area shape="rect" coords="5,3,21,24" href="${url}&title=CE%20Webinar!"  target="_blank" alt="fb" />
         </map>
         
         
