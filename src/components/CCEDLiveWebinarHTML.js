@@ -33,11 +33,9 @@ export default class CCEDLiveWebinarHTML extends React.Component{
       tvLink, tagline, unsubscribe, disclosure, 
       lyrisName=''
     } = this.props.info[this.props.info.selected_template];
+
+    let {month, year} = this.props.info;
        
-    //Auto detect the month and year for the url.  
-    let d = new Date();
-    let month = d.getMonth() + 1;
-    let year = d.getFullYear();
       
     //Take the Lyris Name and make a url slug out of it.
     lyrisName = lyrisName.toString()

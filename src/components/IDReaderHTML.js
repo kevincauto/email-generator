@@ -9,23 +9,11 @@ export default class IDLiveWebinarHTML extends React.Component {
           title, date, provider, supporter, cost, credits, description, lo1, lo2, lo3, presenter, link, headshot, tvLink, unsubscribe, disclosure
         } = this.props.info[this.props.info.selected_template]
         
-      //Auto detect the month and year for the url.  
-      let d = new Date();
-      let month = d.getMonth() + 1;
-      let year = d.getFullYear();
-        
-      //Take the Lyris Name and make a url slug out of it.
-      let slug = lyrisName.toString()
-        .replace(/\s+/g, '-')           // Replace spaces with -
-        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
-        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
-        .replace(/^-+/, '')             // Trim - from start of text
-        .replace(/-+$/, '');            // Trim - from end of text
+        const {month, year} = this.props.info;
       
-      let url = `http://aegispublications.com/news/cced/${year}/${month}/${slug}.html`;
-        let html 
-        
-        let start = `<!doctype html>
+      let url = ``;
+      let html; 
+      let start = `<!doctype html>
         <html>
         <head>
             <title></title>

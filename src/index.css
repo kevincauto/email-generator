@@ -12,10 +12,12 @@ body {
   float: left;
   width: 30%;
   padding: 20px;
-  margin: 0px 20px 0px 20px;
+  margin: 4px 20px 2px 20px;
   box-shadow: 1px 4px 6px rgba(50,50,93,.51), 1px 3px 6px rgba(0,0,0,.38);
   border-radius: 4px;
-
+  
+  border: 1px solid #bbb;
+  box-shadow: 0px 1px 3px 0px rgb(43, 43, 44);
 }
 #text-results {
   border: solid #000 1px;
@@ -33,14 +35,10 @@ body {
 .label{
 
 }
-input[type=text], select {
-  width: 100%;
-  padding: 6px 10px;
-  margin: 2px 0 8px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+
+select{
+
+
 }
 .lyris{
 
@@ -78,3 +76,44 @@ input[type=text], select {
   color: #fff;
   background: #2e0dc2;
 }
+input[type=text]{
+  width: 100%;
+  padding: 6px 10px;
+  margin: 2px 0 8px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  box-shadow: inset 1px 1px 0px rgba(0,0,0,.18);
+  -webkit-font-smoothing: antialiased;
+  border: 1px solid #bbb;
+  border-top-color: #999;
+  
+}
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px;
+  width: 100%;
+  padding: 6px 10px;
+  margin: 2px 0 8px;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size:16px;
+  background-color: rgb(234, 235, 245);
+  border: 1px solid #bbb;
+  box-shadow: 0 1px 1px rgb(43, 43, 44);
+  
+
+}
+
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgb(234, 235, 245);
+
+  border: 1px solid rgb(234, 235, 245);
+}
+
+input:focus {outline: none; }

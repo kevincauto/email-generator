@@ -40,15 +40,23 @@ class Container extends React.Component {
     };
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleTemplateChange = this.handleTemplateChange.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
   }
 
   componentDidMount() {
-      console.log(this.state);
+      //Auto detect the month and year for the url.  
+      let d = new Date();
+      let month = d.getMonth() + 1;
+      let year = d.getFullYear();
+      this.setState({month, year});
     //preload current month and year
   }
   
   componentDidUpdate(){
       console.log(this.state);
+  }
+  handleDateChange(value, name){
+    this.setState({[name]: value});
   }
 
   handleTextChange(value, name, html) {
@@ -77,6 +85,7 @@ class Container extends React.Component {
           info={this.state}
           onTextChange={this.handleTextChange}
           onTemplateChange={value => this.handleTemplateChange(value)}
+          onDateChange={this.handleDateChange}
         />
         <TextResults info={this.state} />
       </div>
@@ -90,6 +99,10 @@ class Form extends React.Component {
     super(props);
     this.handleTemplateChange = this.handleTemplateChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
+  }
+  handleDateChange(value, name){
+    this.props.onDateChange(value, name)
   }
 
   handleTextChange(value, name, html) {
@@ -108,6 +121,7 @@ class Form extends React.Component {
           <IDReaderForm
             info={this.props.info}
             onTextChange={this.handleTextChange}
+            onDateChange={this.handleDateChange}
           />
         );
       } 
@@ -116,6 +130,7 @@ class Form extends React.Component {
           <CCEDThematicForm
             info={this.props.info}
             onTextChange={this.handleTextChange}
+            onDateChange={this.handleDateChange}
           />
         );
       } 
@@ -124,6 +139,7 @@ class Form extends React.Component {
           <CCEDLiveWebinarForm
             info={this.props.info}
             onTextChange={this.handleTextChange}
+            onDateChange={this.handleDateChange}
           />
         );
       } 
@@ -132,6 +148,7 @@ class Form extends React.Component {
           <CCEDOnDemandWebinarForm
             info={this.props.info}
             onTextChange={this.handleTextChange}
+            onDateChange={this.handleDateChange}
           />
         );
       }
@@ -140,6 +157,7 @@ class Form extends React.Component {
           <IDLiveWebinarForm 
             info={this.props.info}
             onTextChange={this.handleTextChange}
+            onDateChange={this.handleDateChange}
           />
         );
       }  
@@ -148,6 +166,7 @@ class Form extends React.Component {
           <CDEWLiveWebinarForm 
             info={this.props.info}
             onTextChange={this.handleTextChange}
+            onDateChange={this.handleDateChange}
           />
         );
       }  
@@ -156,6 +175,7 @@ class Form extends React.Component {
           <IDTLiveWebinarForm 
             info={this.props.info}
             onTextChange={this.handleTextChange}
+            onDateChange={this.handleDateChange}
           />
         );
       }  
@@ -164,6 +184,7 @@ class Form extends React.Component {
           <IDOnDemandWebinarForm 
             info={this.props.info}
             onTextChange={this.handleTextChange}
+            onDateChange={this.handleDateChange}
           />
         );
       } 
@@ -172,28 +193,30 @@ class Form extends React.Component {
           <IDTOnDemandWebinarForm 
             info={this.props.info}
             onTextChange={this.handleTextChange}
+            onDateChange={this.handleDateChange}
           />
         );
       } 
 
     return (
       <div id="main-form">
-        <h2>Select an email template</h2>
+        <h3>1. Select an email template.</h3>
         <select
           value={this.props.info.selected_template}
           onChange={this.handleTemplateChange}
         >
-          <option value="id_on_demand_webinar">ID On-Demand Webinar</option>
-          <option value="id_live_webinar">ID Live Webinar</option>
-          <option value="id_reader">ID Reader</option>
-          <option value="cced_thematic">CCED Thematic</option>
-          <option value="cced_on_demand_webinar">CCED On-Demand Webinar</option>
-          <option value="cced_live_webinar">CCED Live Webinar</option>
-          <option value="cdew_live_webinar">CDEW Live Webinar</option>
-          <option value="idt_live_webinar">IDT Live Webinar</option>
-          <option value="idt_on_demand_webinar">IDT On-Demand Webinar</option>
+          <option value="">&#9660; &nbsp;&nbsp;Select an Email Template</option>
+          <option value="id_on_demand_webinar">&#9660; &nbsp;&nbsp;ID On-Demand Webinar</option>
+          <option value="id_live_webinar">&#9660; &nbsp;&nbsp;ID Live Webinar</option>
+          <option value="id_reader">&#9660; &nbsp;&nbsp;ID Reader</option>
+          <option value="cced_thematic">&#9660; &nbsp;&nbsp;CCED Thematic</option>
+          <option value="cced_on_demand_webinar">&#9660; &nbsp;&nbsp;CCED On-Demand Webinar</option>
+          <option value="cced_live_webinar">&#9660; &nbsp;&nbsp;CCED Live Webinar</option>
+          <option value="cdew_live_webinar">&#9660; &nbsp;&nbsp;CDEW Live Webinar</option>
+          <option value="idt_live_webinar">&#9660; &nbsp;&nbsp;IDT Live Webinar</option>
+          <option value="idt_on_demand_webinar">&#9660; &nbsp;&nbsp;IDT On-Demand Webinar</option>
         </select>
-        <h2>Complete the information below.</h2>
+        
         {displayForm}
       </div>
     );

@@ -10,11 +10,11 @@ Then install all the node package dependencies needed to run the app using:
 ```
 npm install
 ```
-Start the local server:
+Start the local development server:
 ```
 npm start
 ```
 
 The Purpose
 -----------
-This app is meant to make putting together templated email quick and easy.
+This app is meant to make putting together templated emails quick and easy.
