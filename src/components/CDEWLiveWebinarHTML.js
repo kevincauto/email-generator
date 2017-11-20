@@ -1,20 +1,45 @@
 import React from 'react';
 import DOMPurify from 'dompurify';
+import {saveAs} from 'file-saver';
 
 
 export default class CDEWLiveWebinarHTML extends React.Component {
-    render(){
-        const {
-          lyrisName='', 
-          title, date, provider, supporter, cost, credits, 
-          description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 
-          lo1, lo2, lo3, presenter, link, headshot, tvLink, unsubscribe
-        } = this.props.info[this.props.info.selected_template]
-        
-    //Auto detect the month and year for the url.  
-    let d = new Date();
-    let month = d.getMonth() + 1;
-    let year = d.getFullYear();
+  downloadHtml(html, fileName){
+    if(!fileName){
+      alert("This email needs a name in order to be downloaded.");
+      return;
+    };
+    var file = new File([html], fileName + '.html', {type: "text/html"});
+    saveAs(file);
+  }
+
+  downloadText(textEmail,fileName){
+    if(!fileName){
+      alert("This email needs a name in order to be downloaded.");
+      return;
+    };
+    var file = new File([textEmail], fileName + '.txt', {type: "text/plain;charset=utf-8"});
+    saveAs(file);
+  }
+
+  render(){
+    //Import data from the form fields.
+    let {
+      title = 'To Be Updated',
+      date = 'Date To Be Updated',
+      link, 
+      description ='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      lo1, lo2, lo3, headshot,  
+      presenter='Lorem Ipsum, DDS', 
+      provider = '',
+      supporter = '',
+      cost = '',
+      credits = '',
+      tvLink, tagline, unsubscribe, disclosure, 
+      lyrisName=''
+    } = this.props.info[this.props.info.selected_template];
+
+    let {month, year} = this.props.info;
       
     //Take the Lyris Name and make a url slug out of it.
     let slug = lyrisName.toString()
@@ -64,13 +89,30 @@ export default class CDEWLiveWebinarHTML extends React.Component {
                 <strong>Description:</strong><br />
                 ${description}<br />
                 <br />
+
+                ${lo1 && !lo2 && !lo3 ? `
+                <strong>Learning Objective:</strong>
+                <ul style="margin:5px 0 0 0; padding-left:1.3em;">
+                  <li>${lo1}</li>                  
+                </ul>` : ``}
+
+                ${lo1 && lo2 && !lo3 ? `
                 <strong>Learning Objectives:</strong>
                 <ul style="margin:5px 0 0 0; padding-left:1.3em;">
-                  <li>${lo1}</li>
+                  <li>${lo1}</li>                  
+                  <li>${lo2}</li>
+                </ul>` : ``}
+
+                ${lo1 && lo2 && lo3 ? `
+                <strong>Learning Objectives:</strong>
+                <ul style="margin:5px 0 0 0; padding-left:1.3em;">
+                  <li>${lo1}</li>                  
                   <li>${lo2}</li>
                   <li>${lo3}</li>
-                </ul>
-        
+                </ul>` : ``}
+
+                ${disclosure ? `<br /><strong>Disclosure:</strong><br />${disclosure}<br /><br />` : '' }
+
                 </td>
               <!-- Presenter's Photo -->
               <td align="left" valign="top" style="padding:12px 32px 12px 12px; font-size: 11px; color:#005fae; float:right;"><a href="${link}" target="_blank"><img src="${image}" width="138" style="padding-right: 24px; margin-bottom: 14px;" /></a> <br />
@@ -145,7 +187,7 @@ export default class CDEWLiveWebinarHTML extends React.Component {
                     </a> &nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href="http://www.dentalaegis.com/privacy-policy/" target="_blank" style="text-decoration:none; color:#526687;">
                         Privacy Policy
-                    </a><br />%%PLUGIN_UNSUBSCRIBE: 1680329-UNSUBSCRIBE%%
+                    </a><br />${unsubscribe}
                 </div>
                 
               </td>
@@ -164,18 +206,25 @@ export default class CDEWLiveWebinarHTML extends React.Component {
         let html;
         html = start + tv + end;    
         //Sanitize data to avoid XSS attack
-        let sanitizedHtml = DOMPurify.sanitize(html); 
+        let cleanHtml = DOMPurify.sanitize(html);
         let textEmail = `Inside Dentistry Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\nCommercial Supporter: ${supporter}\nDescription:\n${description}\n\n${link}`;
 
         return(
           <div >
-            <div className="content" dangerouslySetInnerHTML={{__html: sanitizedHtml}}></div><br />
-            Generated HTML Code to Copy:< br />
-            <textarea value={html} readOnly={true} className="copyArea" /><br />
+            <div className="content" dangerouslySetInnerHTML={{__html: cleanHtml}}></div>
             <br />
-            TEXT EMAIL:< br />
-            <textarea value={textEmail} readOnly={true} className="copyArea"/>
+            <h3 className="download-header">3. Copy or download the email.</h3>
+            <div className="copy-paste">
+              <div className="copyArea html-copy">
+                <textarea value={html} readOnly={true}  />
+                <button onClick={()=>this.downloadHtml(html,lyrisName)} className="download-button">Download HTML Email</button>
+              </div>
+              <div className="copyArea text-copy">
+                <textarea value={textEmail} readOnly={true}/>
+                <button onClick={()=>this.downloadText(textEmail,lyrisName)} className="download-button">Download Text-Version Email</button>
+              </div>
+            </div>
           </div>
-        );
+        )
     }
 }

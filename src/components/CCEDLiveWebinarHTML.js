@@ -2,8 +2,7 @@ import React from 'react';
 import DOMPurify from 'dompurify';
 import {saveAs} from 'file-saver';
 
-export default class CCEDLiveWebinarHTML extends React.Component{
-  
+export default class CCEDLiveWebinarHTML extends React.Component{ 
   downloadHtml(html, fileName){
     if(!fileName){
       alert("This email needs a name in order to be downloaded.");
@@ -281,19 +280,17 @@ export default class CCEDLiveWebinarHTML extends React.Component{
 
         return(
           <div >
-            <div className="content" dangerouslySetInnerHTML={{__html: cleanHtml}}></div><br />
+            <div className="content" dangerouslySetInnerHTML={{__html: cleanHtml}}></div>
+            <br />
             <h3 className="download-header">3. Copy or download the email.</h3>
             <div className="copy-paste">
-            
               <div className="copyArea html-copy">
-              
-              <textarea value={html} readOnly={true}  />
-              <button onClick={()=>this.downloadHtml(html,lyrisName)} className="download-button">Download HTML Email</button>
+                <textarea value={html} readOnly={true}  />
+                <button onClick={()=>this.downloadHtml(html,lyrisName)} className="download-button">Download HTML Email</button>
               </div>
               <div className="copyArea text-copy">
-              
-              <textarea value={textEmail} readOnly={true}/>
-              <button onClick={()=>this.downloadText(textEmail,lyrisName)} className="download-button">Download Text-Version Email</button>
+                <textarea value={textEmail} readOnly={true}/>
+                <button onClick={()=>this.downloadText(textEmail,lyrisName)} className="download-button">Download Text-Version Email</button>
               </div>
             </div>
           </div>

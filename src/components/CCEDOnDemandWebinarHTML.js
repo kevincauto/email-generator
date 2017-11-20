@@ -1,8 +1,26 @@
 import React from 'react';
 import DOMPurify from 'dompurify';
+import {saveAs} from 'file-saver';
 
 export default class CCEDOnDemandWebinarHTML extends React.Component{
+    downloadHtml(html, fileName){
+        if(!fileName){
+          alert("This email needs a name in order to be downloaded.");
+          return;
+        };
+        var file = new File([html], fileName + '.html', {type: "text/html"});
+        saveAs(file);
+    }
     
+    downloadText(textEmail,fileName){
+        if(!fileName){
+          alert("This email needs a name in order to be downloaded.");
+          return;
+        };
+        var file = new File([textEmail], fileName + '.txt', {type: "text/plain;charset=utf-8"});
+        saveAs(file);
+    }   
+
     render(){
     const {
         title = 'To Be Updated', 
@@ -20,11 +38,7 @@ export default class CCEDOnDemandWebinarHTML extends React.Component{
         disclosure, unsubscribe, lyrisName =''
     } = this.props.info[this.props.info.selected_template];
         
-        
-    //Auto detect the month and year for the url.  
-    let d = new Date();
-    let month = d.getMonth() + 1;
-    let year = d.getFullYear();
+    let {month, year} = this.props.info;
       
     //Take the Lyris Name and make a url slug out of it.
     let slug = lyrisName.toString()
@@ -154,13 +168,20 @@ export default class CCEDOnDemandWebinarHTML extends React.Component{
         let cleanHtml = DOMPurify.sanitize(html);
 
         return(
-          <div >
-            <div className="content" dangerouslySetInnerHTML={{__html: cleanHtml}}></div><br />
-            Generated HTML Code to Copy:< br />
-            <textarea value={html} readOnly={true} className="copyArea" /><br />
+            <div >
+            <div className="content" dangerouslySetInnerHTML={{__html: cleanHtml}}></div>
             <br />
-            TEXT EMAIL:< br />
-            <textarea value={textEmail} readOnly={true} className="copyArea"/>
+            <h3 className="download-header">3. Copy or download the email.</h3>
+            <div className="copy-paste">
+              <div className="copyArea html-copy">
+                <textarea value={html} readOnly={true}  />
+                <button onClick={()=>this.downloadHtml(html,lyrisName)} className="download-button">Download HTML Email</button>
+              </div>
+              <div className="copyArea text-copy">
+                <textarea value={textEmail} readOnly={true}/>
+                <button onClick={()=>this.downloadText(textEmail,lyrisName)} className="download-button">Download Text-Version Email</button>
+              </div>
+            </div>
           </div>
         )
     }

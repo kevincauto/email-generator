@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const FIELDS = [
   {label: 'Title', name: 'title' },
   {label: 'Date and Time', name: 'date'},
@@ -25,12 +24,9 @@ export default class CCEDLiveWebinarForm extends React.Component {
         this.handleTextChange = this.handleTextChange.bind(this);
         this.handleDateChange = this.handleDateChange.bind(this);
       }
-      componentDidMount() {
-
-      }
 
       handleDateChange(e){
-        this.props.onDateChange(e.target.value, e.target.name)
+        this.props.onDateChange(e.target.value, e.target.name);
       }
 
       handleTextChange(e) {
@@ -44,7 +40,6 @@ export default class CCEDLiveWebinarForm extends React.Component {
               className="label"
               key={field.name}
             >
-
             <input
               type="text"
               placeholder={field.label}
@@ -58,8 +53,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
       }
 
       render(){
-          return (
-            
+          return (  
             <div className="form">
             <h3>2. Complete the information below.</h3>
             <div className="label">
@@ -86,35 +80,28 @@ export default class CCEDLiveWebinarForm extends React.Component {
                   <option value="%%PLUGIN_UNSUBSCRIBE: 2200418-UNSUBSCRIBE%%">&#9660; &nbsp;&nbsp;Nobel Webinar List | 3.28.17</option>
                   <option value="%%PLUGIN_UNSUBSCRIBE: 2147849-UNSUBSCRIBE%%">&#9660; &nbsp;&nbsp;CDEWorld - Lab | 4.3.17</option>
                 </select>
-             
             </div>
-
-            
-
             <div id="month-dropdown" className="label">
-              
-            <select
-              name="month"
-              value={this.props.info.month}
-              onChange={this.handleDateChange}
-            >
-            <option value="1">&#9660; &nbsp;&nbsp;Send Month: January</option>
-            <option value="2">&#9660; &nbsp;&nbsp;Send Month: February</option>
-            <option value="3">&#9660; &nbsp;&nbsp;Send Month: March</option>
-            <option value="4">&#9660; &nbsp;&nbsp;Send Month: April</option>
-            <option value="5">&#9660; &nbsp;&nbsp;Send Month: May</option>
-            <option value="6">&#9660; &nbsp;&nbsp;Send Month: June</option>
-            <option value="7">&#9660; &nbsp;&nbsp;Send Month: July</option>
-            <option value="8">&#9660; &nbsp;&nbsp;Send Month: August</option>
-            <option value="9">&#9660; &nbsp;&nbsp;Send Month: September</option>
-            <option value="10">&#9660; &nbsp;&nbsp;Send Month: October</option>
-            <option value="11">&#9660; &nbsp;&nbsp;Send Month: November</option>
-            <option value="12">&#9660; &nbsp;&nbsp;Send Month: December</option>
-            </select>
+              <select
+                name="month"
+                value={this.props.info.month}
+                onChange={this.handleDateChange}
+              >
+              <option value="1">&#9660; &nbsp;&nbsp;Send Month: January</option>
+              <option value="2">&#9660; &nbsp;&nbsp;Send Month: February</option>
+              <option value="3">&#9660; &nbsp;&nbsp;Send Month: March</option>
+              <option value="4">&#9660; &nbsp;&nbsp;Send Month: April</option>
+              <option value="5">&#9660; &nbsp;&nbsp;Send Month: May</option>
+              <option value="6">&#9660; &nbsp;&nbsp;Send Month: June</option>
+              <option value="7">&#9660; &nbsp;&nbsp;Send Month: July</option>
+              <option value="8">&#9660; &nbsp;&nbsp;Send Month: August</option>
+              <option value="9">&#9660; &nbsp;&nbsp;Send Month: September</option>
+              <option value="10">&#9660; &nbsp;&nbsp;Send Month: October</option>
+              <option value="11">&#9660; &nbsp;&nbsp;Send Month: November</option>
+              <option value="12">&#9660; &nbsp;&nbsp;Send Month: December</option>
+              </select>
             </div>
-
             <div id="year-dropdown" className="label">
-              
               <select
               name="year"
               value={this.props.info.year}
@@ -127,20 +114,18 @@ export default class CCEDLiveWebinarForm extends React.Component {
               <option value="2021">&#9660; &nbsp;&nbsp;Send Year: 2021</option>
             </select>
             </div>
-
             <div className="label">
-              
-            <select
-              name="tagline"
-               value={this.props.info[this.props.info.selected_template].tagline}
-              onChange={this.handleTextChange}
-            >
-            <option value="">&#9660; &nbsp;&nbsp;Tagline Header (Currently None)</option>
-            <option value="Don’t Forget – You’re Registered for Tomorrow's Webinar!">&#9660; &nbsp;&nbsp;CCED Live Webinar Tomorrow</option>
-            <option value="Don’t Forget – You’re Registered for Tonight's Webinar!">&#9660; &nbsp;&nbsp;CCED Live Webinar in Two Hours</option>
-            </select>
-            </div>
-            {this.renderForm()}
+              <select
+                name="tagline"
+                value={this.props.info[this.props.info.selected_template].tagline}
+                onChange={this.handleTextChange}
+              >
+              <option value="">&#9660; &nbsp;&nbsp;Tagline Header (Currently None)</option>
+              <option value="Don’t Forget – You’re Registered for Tomorrow's Webinar!">&#9660; &nbsp;&nbsp;CCED Live Webinar Tomorrow</option>
+              <option value="Don’t Forget – You’re Registered for Tonight's Webinar!">&#9660; &nbsp;&nbsp;CCED Live Webinar in Two Hours</option>
+              </select>
+              </div>
+              {this.renderForm()}
           </div>
           )
       }
