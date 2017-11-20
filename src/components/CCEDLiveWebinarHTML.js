@@ -5,13 +5,19 @@ import {saveAs} from 'file-saver';
 export default class CCEDLiveWebinarHTML extends React.Component{
   
   downloadHtml(html, fileName){
-    if(!fileName){fileName = 'Untitled'};
+    if(!fileName){
+      alert("This email needs a name in order to be downloaded.");
+      return;
+    };
     var file = new File([html], fileName + '.html', {type: "text/html"});
     saveAs(file);
   }
 
   downloadText(textEmail,fileName){
-    if(!fileName){fileName = 'Untitled'};
+    if(!fileName){
+      alert("This email needs a name in order to be downloaded.");
+      return;
+    };
     var file = new File([textEmail], fileName + '.txt', {type: "text/plain;charset=utf-8"});
     saveAs(file);
   }
