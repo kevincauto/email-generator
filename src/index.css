@@ -3,28 +3,37 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  background-color: rgba(255, 251, 200, 0.986)
 }
 #container {
   display: flex;
 }
 #main-form {
-
+  background: #fff;
   float: left;
-  width: 30%;
-  padding: 20px;
-  margin: 4px 20px 2px 20px;
-  box-shadow: 1px 4px 6px rgba(50,50,93,.51), 1px 3px 6px rgba(0,0,0,.38);
+  width: 300px;
+  min-width: 300px;
+  padding: 10px;
+  margin: 4px 10px 2px 10px;
   border-radius: 4px;
   
   border: 1px solid #bbb;
-  box-shadow: 0px 1px 3px 0px rgb(43, 43, 44);
+  box-shadow: 0px 1px 1px 0px rgb(43, 43, 44);
 }
 #text-results {
+  background-color: #fff;
   border: solid #000 1px;
-  float: right;
-  width: 70%;
-  padding: 20px;
+  float: left;
+  min-width: 700px;
+ 
+
   margin: 0px 20px 0px 20px;
+  padding: 10px;
+  margin: 4px 10px 2px 0px;
+  border-radius: 4px;
+  
+  border: 1px solid #bbb;
+  box-shadow: 0px 1px 1px 0px rgb(43, 43, 44);
 }
 
 .copyHtml {
@@ -47,9 +56,9 @@ select{
 }
 
 .copyArea{
-  width: 400px;
-  height: 100px;
-  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  width:50%;
+
+
 }
 
 
@@ -104,8 +113,8 @@ select{
   box-sizing: border-box;
   font-size:16px;
   background-color: rgb(234, 235, 245);
-  border: 1px solid #bbb;
-  box-shadow: 0 1px 1px rgb(43, 43, 44);
+ 
+  box-shadow: 0 1px 1px rgb(164, 164, 167);
   
 
 }
@@ -117,3 +126,68 @@ input[type=text]:focus, textarea:focus {
 }
 
 input:focus {outline: none; }
+button:focus{outline: none; }
+
+.copy-paste{
+  display: flex;
+  padding:10px;
+  padding: 10px;
+  margin: 4px 5px 2px 5px;
+
+
+}
+.download-header{
+  padding:10px;
+  margin: 4px 5px 2px 5px;
+}
+
+textarea{
+  min-height: 100px;
+  width: 100%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  width: 100%;
+  padding: 6px 10px;
+
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 11px;
+  box-shadow: inset 1px 1px 0px rgba(0,0,0,.18);
+  -webkit-font-smoothing: antialiased;
+  border: 1px solid #bbb;
+  border-top-color: #999;
+}
+
+.download-button {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 2px 0 8px;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size:16px;
+  background-color: rgb(234, 235, 245);
+ 
+  box-shadow: 0 1px 1px rgb(164, 164, 167);
+  box-shadow: 0 2px #999;
+  width: 100%;
+}
+
+.download-button:hover {background-color: rgba(234, 235, 245, 0.5);}
+
+.download-button:active {
+  background-color: rgba(234, 235, 245, 0.5);
+  box-shadow: 0 0px #666;
+  transform: translateY(4px);
+}
+
+.html-copy{
+  padding: 0px 5px 0px 0px;
+}
+
+.text-copy{
+  padding: 0px 0px 0px 5px;
+}

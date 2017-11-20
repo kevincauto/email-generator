@@ -1,6 +1,4 @@
 import React from 'react';
-import TextField from 'material-ui/TextField';
-import SelectField from 'material-ui/SelectField';
 
 
 const FIELDS = [
@@ -64,15 +62,23 @@ export default class CCEDLiveWebinarForm extends React.Component {
             
             <div className="form">
             <h3>2. Complete the information below.</h3>
+            <div className="label">
+                <input
+                  type="text"
+                  name="lyrisName"
+                  value={this.props.info[this.props.info.selected_template].lyrisName}
+                  onChange={this.handleTextChange}
+                  placeholder="Email Name"
+                />
+              </div>
               <div className="label">
-            
                 <select
                   name="unsubscribe"
                   value={this.props.info[this.props.info.selected_template].list}
                   onChange={this.handleTextChange}
                   fullWidth={true}
                 >
-                  <option value="">&#9660; &nbsp;&nbsp;Please Select an Email List  </option>
+                  <option value="">&#9660; &nbsp;&nbsp;Select an Email List  </option>
                   <option value="%%PLUGIN_UNSUBSCRIBE: 2144642-UNSUBSCRIBE%%">&#9660; &nbsp;&nbsp;CCED Webinar List | 3.27.17</option>
                   <option value="%%PLUGIN_UNSUBSCRIBE: 2146841-UNSUBSCRIBE%%">&#9660; &nbsp;&nbsp;IDT - Newsletter | 3.30.17</option>
                   <option value="%%PLUGIN_UNSUBSCRIBE: 2192269-UNSUBSCRIBE%%">&#9660; &nbsp;&nbsp;ID Webinar List</option>
@@ -82,16 +88,7 @@ export default class CCEDLiveWebinarForm extends React.Component {
                 </select>
              
             </div>
-              <div className="label">
-                
-                <input
-                  type="text"
-                  name="lyrisName"
-                  value={this.props.info[this.props.info.selected_template].lyrisName}
-                  onChange={this.handleTextChange}
-                  placeholder="Email Name"
-                />
-              </div>
+
             
 
             <div id="month-dropdown" className="label">

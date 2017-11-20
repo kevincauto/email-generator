@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 import IDReaderForm from './components/IDReaderForm';
 import IDReaderHTML from './components/IDReaderHTML';
@@ -79,7 +79,7 @@ class Container extends React.Component {
 
   render() {
     return (
-      <MuiThemeProvider>
+
       <div id="container">
         <Form
           info={this.state}
@@ -89,7 +89,7 @@ class Container extends React.Component {
         />
         <TextResults info={this.state} />
       </div>
-      </MuiThemeProvider>
+
     );
   }
 }
@@ -206,13 +206,13 @@ class Form extends React.Component {
           onChange={this.handleTemplateChange}
         >
           <option value="">&#9660; &nbsp;&nbsp;Select an Email Template</option>
-          <option value="id_on_demand_webinar">&#9660; &nbsp;&nbsp;ID On-Demand Webinar</option>
-          <option value="id_live_webinar">&#9660; &nbsp;&nbsp;ID Live Webinar</option>
-          <option value="id_reader">&#9660; &nbsp;&nbsp;ID Reader</option>
-          <option value="cced_thematic">&#9660; &nbsp;&nbsp;CCED Thematic</option>
+          <option value="cced_live_webinar">&#9660; &nbsp;&nbsp;CCED Live Webinar</option> 
           <option value="cced_on_demand_webinar">&#9660; &nbsp;&nbsp;CCED On-Demand Webinar</option>
-          <option value="cced_live_webinar">&#9660; &nbsp;&nbsp;CCED Live Webinar</option>
           <option value="cdew_live_webinar">&#9660; &nbsp;&nbsp;CDEW Live Webinar</option>
+          <option value="id_live_webinar">&#9660; &nbsp;&nbsp;ID Live Webinar</option>    
+          <option value="id_on_demand_webinar">&#9660; &nbsp;&nbsp;ID On-Demand Webinar</option>
+          {/* <option value="id_reader">&#9660; &nbsp;&nbsp;ID Reader</option>
+          <option value="cced_thematic">&#9660; &nbsp;&nbsp;CCED Thematic</option> */}
           <option value="idt_live_webinar">&#9660; &nbsp;&nbsp;IDT Live Webinar</option>
           <option value="idt_on_demand_webinar">&#9660; &nbsp;&nbsp;IDT On-Demand Webinar</option>
         </select>
@@ -236,7 +236,7 @@ class TextResults extends React.Component {
    if(this.props.info.selected_template === 'idt_live_webinar'){htmlDisplay = <IDTLiveWebinarHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'idt_on_demand_webinar'){htmlDisplay = <IDTOnDemandWebinarHTML info={this.props.info} />}
     return (
-        <div>
+        <div id="text-results">
         {htmlDisplay}
         </div>
     );
