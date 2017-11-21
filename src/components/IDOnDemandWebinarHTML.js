@@ -6,9 +6,9 @@ export default class IDOnDemandWebinarHTML extends React.Component {
     render(){
     const {
         lyrisName = '',
-            title, date, provider, supporter, cost, credits, 
+            title, dates, provider, supporter, cost, credits, 
             description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            lo1, lo2, lo3, presenter, link, tvLink, unsubscribe, disclosure, image
+            lo1, lo2, lo3, presenter, link, tvLink, unsubscribe, disclosure, imgLink
         } = this.props.info[this.props.info.selected_template]
 
     let {month, year} = this.props.info;
@@ -23,7 +23,7 @@ export default class IDOnDemandWebinarHTML extends React.Component {
     
     let url = `http://aegispublications.com/news/cced/${year}/${month}/${slug}.html`;
         let image2 = 'http://placehold.it/200x150';
-        if(image){image2 = image.trim()}
+        if(imgLink){image2 = imgLink.trim()}
         
         let start = `
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -90,7 +90,7 @@ export default class IDOnDemandWebinarHTML extends React.Component {
                         <span style="color:#333333;"><em>${provider}</em></span>
                     </div>
                        <div style="color:#ad112b; clear:both; margin:0 0 7px 0;"><strong>AVAILABLE:</strong>
-                        <span style="color:#333333;"><em>${date}</em></span>
+                        <span style="color:#333333;"><em>${dates}</em></span>
                     </div> 
                 </div>
          
@@ -187,17 +187,24 @@ export default class IDOnDemandWebinarHTML extends React.Component {
 
         let html = start;    
         //Sanitize data to avoid XSS attack
-        let sanitizedHtml = DOMPurify.sanitize(html); 
-        let textEmail = `Inside Dentistry On-Demand Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\n${date}\nCommercial Supporter: ${supporter}\nCost: ${cost}\nCredits: ${credits}\nDescription:\n${description}\n\n${link}`;
+        let cleanHtml = DOMPurify.sanitize(html);
+        let textEmail = `Inside Dentistry On-Demand Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\n${dates}\nCommercial Supporter: ${supporter}\nCost: ${cost}\nCredits: ${credits}\nDescription:\n${description}\n\n${link}`;
 
         return(
-          <div >
-            <div className="content" dangerouslySetInnerHTML={{__html: sanitizedHtml}}></div><br />
-            Generated HTML Code to Copy:< br />
-            <textarea value={html} readOnly={true} className="copyArea" /><br />
+            <div >
+            <div className="content" dangerouslySetInnerHTML={{__html: cleanHtml}}></div>
             <br />
-            TEXT EMAIL:< br />
-            <textarea value={textEmail} readOnly={true} className="copyArea"/>
+            <h3 className="download-header">3. Copy or download the email.</h3>
+            <div className="copy-paste">
+              <div className="copyArea html-copy">
+                <textarea value={html} readOnly={true}  />
+                <button onClick={()=>this.downloadHtml(html,lyrisName)} className="download-button">Download HTML Email</button>
+              </div>
+              <div className="copyArea text-copy">
+                <textarea value={textEmail} readOnly={true}/>
+                <button onClick={()=>this.downloadText(textEmail,lyrisName)} className="download-button">Download Text-Version Email</button>
+              </div>
+            </div>
           </div>
         );
     }
