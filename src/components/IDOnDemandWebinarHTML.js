@@ -10,10 +10,8 @@ export default class IDOnDemandWebinarHTML extends React.Component {
             description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             lo1, lo2, lo3, presenter, link, tvLink, unsubscribe, disclosure, image
         } = this.props.info[this.props.info.selected_template]
-            //Auto detect the month and year for the url.  
-    let d = new Date();
-    let month = d.getMonth() + 1;
-    let year = d.getFullYear();
+
+    let {month, year} = this.props.info;
       
     //Take the Lyris Name and make a url slug out of it.
     let slug = lyrisName.toString()

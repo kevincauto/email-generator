@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 
-
 import IDReaderForm from './components/IDReaderForm';
 import IDReaderHTML from './components/IDReaderHTML';
 import CCEDThematicForm from './components/CCEDThematicForm';
@@ -27,7 +26,7 @@ class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected_template: 'cdew_live_webinar',
+      selected_template: 'id_live_webinar',
       id_reader: {},
       cced_thematic: {},
       cced_live_webinar: {},
@@ -49,7 +48,6 @@ class Container extends React.Component {
       let month = d.getMonth() + 1;
       let year = d.getFullYear();
       this.setState({month, year});
-    //preload current month and year
   }
   
   componentDidUpdate(){
