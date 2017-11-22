@@ -203,16 +203,16 @@ class Form extends React.Component {
           value={this.props.info.selected_template}
           onChange={this.handleTemplateChange}
         >
-          <option value="">&#9660; &nbsp;&nbsp;Select an Email Template</option>
-          <option value="cced_live_webinar">&#9660; &nbsp;&nbsp;CCED Live Webinar</option> 
-          <option value="cced_on_demand_webinar">&#9660; &nbsp;&nbsp;CCED On-Demand Webinar</option>
-          <option value="cdew_live_webinar">&#9660; &nbsp;&nbsp;CDEW Live Webinar</option>
-          <option value="id_live_webinar">&#9660; &nbsp;&nbsp;ID Live Webinar</option>    
-          <option value="id_on_demand_webinar">&#9660; &nbsp;&nbsp;ID On-Demand Webinar</option>
-          {/* <option value="id_reader">&#9660; &nbsp;&nbsp;ID Reader</option>
-          <option value="cced_thematic">&#9660; &nbsp;&nbsp;CCED Thematic</option> */}
-          <option value="idt_live_webinar">&#9660; &nbsp;&nbsp;IDT Live Webinar</option>
-          <option value="idt_on_demand_webinar">&#9660; &nbsp;&nbsp;IDT On-Demand Webinar</option>
+          <option value="">Select an Email Template</option>
+          <option value="cced_live_webinar">CCED Live Webinar</option> 
+          <option value="cced_on_demand_webinar">CCED On-Demand Webinar</option>
+          <option value="cdew_live_webinar">CDEW Live Webinar</option>
+          <option value="id_live_webinar">ID Live Webinar</option>    
+          <option value="id_on_demand_webinar">ID On-Demand Webinar</option>
+          {/* <option value="id_reader">ID Reader</option>
+          <option value="cced_thematic">CCED Thematic</option> */}
+          <option value="idt_live_webinar">IDT Live Webinar</option>
+          <option value="idt_on_demand_webinar">IDT On-Demand Webinar</option>
         </select>
         
         {displayForm}

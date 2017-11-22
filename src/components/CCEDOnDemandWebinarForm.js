@@ -72,13 +72,13 @@ export default class CCEDLiveWebinarForm extends React.Component {
               onChange={this.handleTextChange}
               fullWidth={true}
             >
-              <option value="">&#9660; &nbsp;&nbsp;Select an Email List  </option>
-              <option value="%%PLUGIN_UNSUBSCRIBE: 2144642-UNSUBSCRIBE%%">&#9660; &nbsp;&nbsp;CCED Webinar List | 3.27.17</option>
-              <option value="%%PLUGIN_UNSUBSCRIBE: 2146841-UNSUBSCRIBE%%">&#9660; &nbsp;&nbsp;IDT - Newsletter | 3.30.17</option>
-              <option value="%%PLUGIN_UNSUBSCRIBE: 2192269-UNSUBSCRIBE%%">&#9660; &nbsp;&nbsp;ID Webinar List</option>
-              <option value="%%PLUGIN_UNSUBSCRIBE: 2145051-UNSUBSCRIBE%%">&#9660; &nbsp;&nbsp;CDEWorld Webinar List | 3.28.17</option>
-              <option value="%%PLUGIN_UNSUBSCRIBE: 2200418-UNSUBSCRIBE%%">&#9660; &nbsp;&nbsp;Nobel Webinar List | 3.28.17</option>
-              <option value="%%PLUGIN_UNSUBSCRIBE: 2147849-UNSUBSCRIBE%%">&#9660; &nbsp;&nbsp;CDEWorld - Lab | 4.3.17</option>
+              <option value="">Select an Email List  </option>
+              <option value="%%PLUGIN_UNSUBSCRIBE: 2144642-UNSUBSCRIBE%%">CCED Webinar List | 3.27.17</option>
+              <option value="%%PLUGIN_UNSUBSCRIBE: 2146841-UNSUBSCRIBE%%">IDT - Newsletter | 3.30.17</option>
+              <option value="%%PLUGIN_UNSUBSCRIBE: 2192269-UNSUBSCRIBE%%">ID Webinar List</option>
+              <option value="%%PLUGIN_UNSUBSCRIBE: 2145051-UNSUBSCRIBE%%">CDEWorld Webinar List | 3.28.17</option>
+              <option value="%%PLUGIN_UNSUBSCRIBE: 2200418-UNSUBSCRIBE%%">Nobel Webinar List | 3.28.17</option>
+              <option value="%%PLUGIN_UNSUBSCRIBE: 2147849-UNSUBSCRIBE%%">CDEWorld - Lab | 4.3.17</option>
             </select>
         </div>
         <div id="month-dropdown" className="label">
@@ -87,18 +87,18 @@ export default class CCEDLiveWebinarForm extends React.Component {
             value={this.props.info.month}
             onChange={this.handleDateChange}
           >
-          <option value="1">&#9660; &nbsp;&nbsp;Send Month: January</option>
-          <option value="2">&#9660; &nbsp;&nbsp;Send Month: February</option>
-          <option value="3">&#9660; &nbsp;&nbsp;Send Month: March</option>
-          <option value="4">&#9660; &nbsp;&nbsp;Send Month: April</option>
-          <option value="5">&#9660; &nbsp;&nbsp;Send Month: May</option>
-          <option value="6">&#9660; &nbsp;&nbsp;Send Month: June</option>
-          <option value="7">&#9660; &nbsp;&nbsp;Send Month: July</option>
-          <option value="8">&#9660; &nbsp;&nbsp;Send Month: August</option>
-          <option value="9">&#9660; &nbsp;&nbsp;Send Month: September</option>
-          <option value="10">&#9660; &nbsp;&nbsp;Send Month: October</option>
-          <option value="11">&#9660; &nbsp;&nbsp;Send Month: November</option>
-          <option value="12">&#9660; &nbsp;&nbsp;Send Month: December</option>
+          <option value="1">Send Month: January</option>
+          <option value="2">Send Month: February</option>
+          <option value="3">Send Month: March</option>
+          <option value="4">Send Month: April</option>
+          <option value="5">Send Month: May</option>
+          <option value="6">Send Month: June</option>
+          <option value="7">Send Month: July</option>
+          <option value="8">Send Month: August</option>
+          <option value="9">Send Month: September</option>
+          <option value="10">Send Month: October</option>
+          <option value="11">Send Month: November</option>
+          <option value="12">Send Month: December</option>
           </select>
         </div>
         <div id="year-dropdown" className="label">
@@ -107,11 +107,11 @@ export default class CCEDLiveWebinarForm extends React.Component {
           value={this.props.info.year}
           onChange={this.handleDateChange}
         >
-          <option value="2017">&#9660; &nbsp;&nbsp;Send Year: 2017</option>
-          <option value="2018">&#9660; &nbsp;&nbsp;Send Year: 2018</option>
-          <option value="2019">&#9660; &nbsp;&nbsp;Send Year: 2019</option>
-          <option value="2020">&#9660; &nbsp;&nbsp;Send Year: 2020</option>
-          <option value="2021">&#9660; &nbsp;&nbsp;Send Year: 2021</option>
+          <option value="2017">Send Year: 2017</option>
+          <option value="2018">Send Year: 2018</option>
+          <option value="2019">Send Year: 2019</option>
+          <option value="2020">Send Year: 2020</option>
+          <option value="2021">Send Year: 2021</option>
         </select>
         </div>
           {this.renderForm()}
