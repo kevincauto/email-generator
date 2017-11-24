@@ -25,7 +25,7 @@ export default class IDTOnDemandWebinarHTML extends React.Component {
     render() {
         const { 
             lyrisName='', 
-            title, date, provider, supporter, cost, credits, description, lo1, lo2, lo3, presenter, link, tvLink, unsubscribe 
+            title, dates, provider, supporter, cost, credits, description, lo1, lo2, lo3, presenter, link, tvLink, unsubscribe, disclosure 
         } = this.props.info[this.props.info.selected_template];
        
         let {month, year} = this.props.info;
@@ -40,9 +40,8 @@ export default class IDTOnDemandWebinarHTML extends React.Component {
     
         let url = `http://aegispublications.com/news/cced/${year}/${month}/${slug}.html`;
         
-        let html;
 
-        let start = `<!doctype html>
+        let html = `<!doctype html>
         <html>
         <head>
         <meta charset="UTF-8">
@@ -63,36 +62,58 @@ export default class IDTOnDemandWebinarHTML extends React.Component {
             <tr>
               <td valign="top"><img src="http://aegispublications.com/news/idt/2015/05/webinar-side.jpg" width="193" height="652" alt=""  style="border-top:#000000 solid 1px;"/></td>
               <td valign="top">
-              <a href="https://cdeworld.com/webinars/20852-The_Collaboration_Between_the_Dentist_and_Laboratory_in_the_Digital_Age"><img src="http://aegispublications.com/news/idt/2016/11/idt-ondemand.jpg" width="407" height="156" alt=""/></a>
+              <a href="${link}"><img src="http://aegispublications.com/news/idt/2016/11/idt-ondemand.jpg" width="407" height="156" alt=""/></a>
                 <table width="394" border="0" cellspacing="0" cellpadding="0">
                   <tbody>
                     <tr>
                       <td width="424" valign="top" style="font-family:Arial, sans-serif; font-size:12px; color:#424b52; text-align:left; padding:14px 14px 14px 14px; ">
                       
         
-        <span style="font-family:Arial, sans-serif; font-size:18px; color:#424b52; text-align:left; line-height:auto; font-weight:bold;">The Collaboration Between the Dentist and Laboratory in the Digital Age</span>
+        <span style="font-family:Arial, sans-serif; font-size:18px; color:#424b52; text-align:left; line-height:auto; font-weight:bold;">${title}</span>
         <br>
         <strong><br>
-        Presenter</strong>: Gary Kaye, DDS<br>
-        <strong>Provider: </strong> AEGIS Publications, LLC<br>
-        <strong>Commercial Supporter: </strong>: Planmeca - <em>E4D Technologies</em><br>
-        <strong>CE Credits: </strong> 1 Self Study<br>
-        <strong>Cost: </strong> $0.00<br>
-        <strong>Available Dates: </strong>: Nov 9th, 2017 - Nov 30th, 2020<br>
+        Presenter</strong>: ${presenter}<br>
+        <strong>Provider: </strong> ${provider}<br>
+        <strong>Commercial Supporter: </strong>: <em>${supporter}</em><br>
+        <strong>CE Credits: </strong>${credits}<br>
+        <strong>Cost: </strong> ${cost}<br>
+        <strong>Available Dates: </strong>: ${dates}<br>
         <br>
         <strong>Description:</strong><br />
-        The presentation will detail the digital restorative workflow and highlight clinical cases that demonstrate how the dentist and laboratory are collaborating today to provide improved patient care.<br /><br />
-        <strong>Leaning Objectives:</strong><br />
+        ${description}<br />
+
+        ${lo1 && !lo2 && !lo3 ? `
+        <br /><strong>Leaning Objective:</strong><br />
         <ul style="margin: 0px; padding: 0px 0px 0px 15px">
-        	<li>Review all the elements within the digital workflow.</li>
-        	<li>Discuss the capabilities of digital instrumentation and design software.</li>
-        	<li>Describe the materials utilized within the digital restorative workflow.</li>
+        	<li>${lo1}</li>
         </ul>
-        <br />
-        <strong>Disclosure: </strong><br />
-        Dr. Kaye has received an honorarium for his preparation and presentation of this program.
+        ` : ``}
+        ${lo1 && lo2 && !lo3 ? `
+        <br /><strong>Leaning Objectives:</strong><br />
+        <ul style="margin: 0px; padding: 0px 0px 0px 15px">
+        	<li>${lo1}</li>
+        	<li>${lo2}</li>
+        </ul>
+        ` : ``}
+        ${lo1 && lo2 && lo3 ? `
+        <br /><strong>Leaning Objectives:</strong><br />
+        <ul style="margin: 0px; padding: 0px 0px 0px 15px">
+        	<li>${lo1}</li>
+        	<li>${lo2}</li>
+        	<li>${lo3}</li>
+        </ul>
+        ` : ``}
+
+        ${disclosure ? 
+          `<br />
+          <strong>Disclosure: </strong><br />
+          ${disclosure}`
+          : 
+          ``
+        }
+
         
-        <a href="https://cdeworld.com/webinars/20852-The_Collaboration_Between_the_Dentist_and_Laboratory_in_the_Digital_Age" target="_blank" style="text-transform:uppercase; font-family:Gotham, sans-serif;  font-size:16px; background:#bf2a26; padding:10px 11px;color:#ffffff; border-radius:10px; font-weight:bold; display:block; width:193px; text-align:center;margin-bottom:18px; margin:14px 0 14px 0; text-decoration:none;">VIEW THE WEBINAR</a>
+        <a href="${link}" target="_blank" style="text-transform:uppercase; font-family:Gotham, sans-serif;  font-size:16px; background:#bf2a26; padding:10px 11px;color:#ffffff; border-radius:10px; font-weight:bold; display:block; width:193px; text-align:center;margin-bottom:18px; margin:14px 0 14px 0; text-decoration:none;">VIEW THE WEBINAR</a>
             </td>
                       </tr>
                     <tr>
@@ -102,25 +123,11 @@ export default class IDTOnDemandWebinarHTML extends React.Component {
                 </table>        </td>
             </tr>
             
-        
-            
-        
-            <!--<tr>
-        
-                <td colspan="2">
-        
-                    <hr size="1" color="#dedede" width="575" />
-        
-                </td>
-        
-            </tr>-->
-        
-        
             <tr>
               <td colspan="2" align="center" valign="top" 
                  style="font-family:Arial, sans-serif; font-size:10px; color:#424b52; text-align:center; padding:14px 14px 14px 14px; border-top:solid 1px #000000; border-bottom:solid 1px #000000;"> 
                                             Inside Dental Technology | 104 Pheasant Run, Suite 105 | Newtown, PA 18940<br>
-                  %%PLUGIN_UNSUBSCRIBE: 2146841-UNSUBSCRIBE%%
+                  ${unsubscribe}
                 </td>
             </tr>
           </tbody>
@@ -128,7 +135,7 @@ export default class IDTOnDemandWebinarHTML extends React.Component {
         </center>
         </body></html>`;
 
-        html = start;
+   
         //Sanitize data to avoid XSS attack
         let cleanHtml = DOMPurify.sanitize(html);
         let textEmail = `IDT On-Demand Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\nCommercial Supporter: ${supporter}\nDescription:\n${description}\n\n${link}`;

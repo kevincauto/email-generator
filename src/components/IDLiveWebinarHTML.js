@@ -26,13 +26,13 @@ export default class IDLiveWebinarHTML extends React.Component {
         const {title, date, provider, supporter, cost, credits, 
             description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 
             lo1, lo2, lo3, presenter, link, headshot, tvLink, unsubscribe, disclosure,
-            lyrisName=''
+            emailName=''
         } = this.props.info[this.props.info.selected_template];
         
     let {month, year} = this.props.info;
       
     //Take the Lyris Name and make a url slug out of it.
-    let slug = lyrisName.toString()
+    let slug = emailName.toString()
       .replace(/\s+/g, '-')           // Replace spaces with -
       .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
       .replace(/\-\-+/g, '-')         // Replace multiple - with single -
@@ -305,11 +305,11 @@ export default class IDLiveWebinarHTML extends React.Component {
             <div className="copy-paste">
               <div className="copyArea html-copy">
                 <textarea value={html} readOnly={true}  />
-                <button onClick={()=>this.downloadHtml(html,lyrisName)} className="download-button">Download HTML Email</button>
+                <button onClick={()=>this.downloadHtml(html,emailName)} className="download-button">Download HTML Email</button>
               </div>
               <div className="copyArea text-copy">
                 <textarea value={textEmail} readOnly={true}/>
-                <button onClick={()=>this.downloadText(textEmail,lyrisName)} className="download-button">Download Text-Version Email</button>
+                <button onClick={()=>this.downloadText(textEmail,emailName)} className="download-button">Download Text-Version Email</button>
               </div>
             </div>
           </div>

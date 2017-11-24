@@ -35,21 +35,21 @@ export default class CCEDLiveWebinarHTML extends React.Component{
       cost = '',
       credits = '',
       tvLink, tagline, unsubscribe, disclosure, 
-      lyrisName=''
+      emailName=''
     } = this.props.info[this.props.info.selected_template];
 
     let {month, year} = this.props.info;
        
       
     //Take the Lyris Name and make a url slug out of it.
-    lyrisName = lyrisName.toString()
+    emailName = emailName.toString()
       .replace(/\s+/g, '-')           // Replace spaces with -
       .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
       .replace(/\-\-+/g, '-')         // Replace multiple - with single -
       .replace(/^-+/, '')             // Trim - from start of text
       .replace(/-+$/, '');            // Trim - from end of text
     
-    let url = `http://aegispublications.com/news/cced/${year}/${month}/${lyrisName}.html`;
+    let url = `http://aegispublications.com/news/cced/${year}/${month}/${emailName}.html`;
      
     //Set up a dummy image when the template first loads.
     let image = 'http://placehold.it/140x180';
@@ -286,11 +286,11 @@ export default class CCEDLiveWebinarHTML extends React.Component{
             <div className="copy-paste">
               <div className="copyArea html-copy">
                 <textarea value={html} readOnly={true}  />
-                <button onClick={()=>this.downloadHtml(html,lyrisName)} className="download-button">Download HTML Email</button>
+                <button onClick={()=>this.downloadHtml(html,emailName)} className="download-button">Download HTML Email</button>
               </div>
               <div className="copyArea text-copy">
                 <textarea value={textEmail} readOnly={true}/>
-                <button onClick={()=>this.downloadText(textEmail,lyrisName)} className="download-button">Download Text-Version Email</button>
+                <button onClick={()=>this.downloadText(textEmail,emailName)} className="download-button">Download Text-Version Email</button>
               </div>
             </div>
           </div>

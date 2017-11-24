@@ -59,8 +59,8 @@ export default class IDOnDemandWebinarForm extends React.Component {
         <div className="label">
             <input
               type="text"
-              name="lyrisName"
-              value={this.props.info[this.props.info.selected_template].lyrisName}
+              name="emailName"
+              value={this.props.info[this.props.info.selected_template].emailName}
               onChange={this.handleTextChange}
               placeholder="Email Name"
             />

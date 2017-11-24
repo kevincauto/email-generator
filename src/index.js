@@ -26,7 +26,7 @@ class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected_template: 'idt_live_webinar',
+      selected_template: 'cced_thematic',
       id_reader: {},
       cced_thematic: {},
       cced_live_webinar: {},
@@ -123,7 +123,7 @@ class Form extends React.Component {
           />
         );
       } 
-      if (this.props.info.selected_template === 'id_reader') {
+      if (this.props.info.selected_template === 'cced_thematic') {
         displayForm = (
           <CCEDThematicForm
             info={this.props.info}
@@ -195,6 +195,15 @@ class Form extends React.Component {
           />
         );
       } 
+            if (this.props.info.selected_template === 'idt_on_demand_webinar') {
+        displayForm = (
+          <IDTOnDemandWebinarForm 
+            info={this.props.info}
+            onTextChange={this.handleTextChange}
+            onDateChange={this.handleDateChange}
+          />
+        );
+      } 
 
     return (
       <div id="main-form">
@@ -209,8 +218,8 @@ class Form extends React.Component {
           <option value="cdew_live_webinar">CDEW Live Webinar</option>
           <option value="id_live_webinar">ID Live Webinar</option>    
           <option value="id_on_demand_webinar">ID On-Demand Webinar</option>
-          {/* <option value="id_reader">ID Reader</option>
-          <option value="cced_thematic">CCED Thematic</option> */}
+          {/* <option value="id_reader">ID Reader</option> */}
+          <option value="cced_thematic">CCED Thematic</option>
           <option value="idt_live_webinar">IDT Live Webinar</option>
           <option value="idt_on_demand_webinar">IDT On-Demand Webinar</option>
         </select>
