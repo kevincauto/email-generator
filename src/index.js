@@ -22,13 +22,21 @@ import IDTOnDemandWebinarHTML from './components/IDTOnDemandWebinarHTML';
 import IDTLiveWebinarForm from './components/IDTLiveWebinarForm';
 import IDTLiveWebinarHTML from './components/IDTLiveWebinarHTML';
 
+import Form2 from './components/Form2';
+
+import {cced_thematic_template} from './templates/cced_thematic';
+
+
+
 class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       selected_template: 'cced_thematic',
+      month: undefined,
+      year: undefined,
       id_reader: {},
-      cced_thematic: {},
+      cced_thematic: cced_thematic_template,
       cced_live_webinar: {},
       cced_on_demand_webinar: {},
       id_live_webinar: {},
@@ -48,6 +56,8 @@ class Container extends React.Component {
       let month = d.getMonth() + 1;
       let year = d.getFullYear();
       this.setState({month, year});
+
+
   }
   
   componentDidUpdate(){
@@ -79,12 +89,20 @@ class Container extends React.Component {
     return (
 
       <div id="container">
-        <Form
-          info={this.state}
-          onTextChange={this.handleTextChange}
-          onTemplateChange={value => this.handleTemplateChange(value)}
-          onDateChange={this.handleDateChange}
-        />
+        {this.state.selected_template === 'cced_thematic' ? 
+                <Form2
+                info={this.state}
+                onTextChange={this.handleTextChange}
+                onTemplateChange={value => this.handleTemplateChange(value)}
+                onDateChange={this.handleDateChange}
+              />:
+              <Form
+              info={this.state}
+              onTextChange={this.handleTextChange}
+              onTemplateChange={value => this.handleTemplateChange(value)}
+              onDateChange={this.handleDateChange}
+            />
+      }
         <TextResults info={this.state} />
       </div>
 
