@@ -189,3 +189,13 @@ textarea{
 .text-copy{
   padding: 0px 0px 0px 5px;
 }
+.blue{
+  padding: 5px;
+  background-color: rgb(207, 223, 247);
+  border-radius: 4px; 
+  margin: 5px 0px;
+  border: solid 2px #666
+}
+h4{
+  text-align: center;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import _ from 'lodash';
 
 import './index.css';
 
@@ -48,6 +49,7 @@ class Container extends React.Component {
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleTemplateChange = this.handleTemplateChange.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleFieldChange = this.handleFieldChange.bind(this);
   }
 
   componentDidMount() {
@@ -77,6 +79,13 @@ class Container extends React.Component {
     });
   }
 
+  handleFieldChange(form, field, value) {
+
+    let stateClone = _.cloneDeep(this.state);
+    stateClone[this.state.selected_template][form].fields[field].value = value;
+    this.setState(stateClone);
+  }
+
   handleTemplateChange(template) {
     //create a blank object for the template if it does not exist
     if (!this.state[template]) {
@@ -90,12 +99,13 @@ class Container extends React.Component {
 
       <div id="container">
         {this.state.selected_template === 'cced_thematic' ? 
-                <Form2
+              <Form2
                 info={this.state}
                 onTextChange={this.handleTextChange}
                 onTemplateChange={value => this.handleTemplateChange(value)}
                 onDateChange={this.handleDateChange}
-              />:
+                onFieldChange={(form, field, value)=>this.handleFieldChange(form, field, value)}
+              /> :
               <Form
               info={this.state}
               onTextChange={this.handleTextChange}

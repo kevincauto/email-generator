@@ -1,27 +1,29 @@
 export const cced_thematic_template = [
     {
       typeOfRow: 'beginning',
+      header: 'Beginning Section',
       fields:  [
         {label: 'Title', name: 'title', value: undefined},
         {label: 'Description', name: 'description', value: undefined},
-        {label: 'Month', name: 'month', value: 1, 
+        {label: 'Month', name: 'month', value: '1', 
             dropdown: [
                 {value: '1', text: 'Send Month: January'}, 
                 {value: '2', text: 'Send Month: February'},
-                {value: '1', text: 'Send Month: January'}, 
-                {value: '2', text: 'Send Month: February'},
+                {value: '3', text: 'Send Month: January'}, 
+                {value: '4', text: 'Send Month: February'},
             ]
         }
       ]
     },
     {
       typeOfRow: 'news',
+      header: 'News Section',
       fields:  [
         {label: 'Header', name: 'header', value: 'IN THE NEWS'},
-        {label: 'First News Title', name: 'title1', value: 'First Title'},
+        {label: 'First News Title', name: 'title1'},
         {label: 'Description', name: 'description1', value: 'Lorem ipsum dolar...'},
         {label: 'First News Link', name: 'link'},
-        {label: 'Second News Title', name: 'title2', value: 'Second Title'},
+        {label: 'Second News Title', name: 'title2'},
         {label: 'Description', name: 'description2', value: 'Lorem ipsum dolar...'},
         {label: 'First News Link', name: 'link2'},
         {label: 'Month', name: 'month', value: ''}
@@ -29,6 +31,7 @@ export const cced_thematic_template = [
     },
     {
         typeOfRow: 'ce',
+        header: 'Continuing Education Section',
         fields:  [
           {label: 'Title', name: 'title'},
           {label: 'Description', name: 'description'},
@@ -44,6 +47,7 @@ export const cced_thematic_template = [
       },
       {
         typeOfRow: 'center_banner',
+        header: "Center Banner Ad",
         fields:  [
           {label: 'Link', name: 'link'},
           {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70'},
@@ -51,6 +55,7 @@ export const cced_thematic_template = [
       },
       {
         typeOfRow: '3_column',
+        header: '3 Column Section',
         fields:  [
             {label: 'First Header', name: 'header1'},
             {label: 'First Title', name: 'title1'},
@@ -68,8 +73,9 @@ export const cced_thematic_template = [
       },
       {
         typeOfRow: 'featured',
+        header: 'Featured Section',
         fields:  [
-            {label: 'Header', name: 'header'},
+            {label: 'Header', name: 'header', value: 'FEATURED EVENT'},
             {label: 'Title', name: 'title'},
             {label: 'Author', name: 'author'},
             {label: 'Description', name: 'description'},
@@ -79,6 +85,7 @@ export const cced_thematic_template = [
       },
       {
       typeOfRow: 'products',
+      header: 'Products Section',
       fields:  [
           {label: 'Header', name: 'header', value: 'FEATURED PRODUCTS'},
           {label: 'First Product', name: 'product1'},
@@ -95,6 +102,7 @@ export const cced_thematic_template = [
     },
     {
         typeOfRow: 'featured',
+        header: 'Featured Section',
         fields:  [
             {label: 'Header', name: 'header', value: 'FEATURED VIDEO'},
             {label: 'Title', name: 'title'},
@@ -106,6 +114,6 @@ export const cced_thematic_template = [
       },
       {
         typeOfRow: 'end',
-        fields: [{label: 'Header', name: 'title'}]
+        header: 'End of the Email'
       },
   ];
