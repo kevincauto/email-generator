@@ -23,6 +23,8 @@ import IDTOnDemandWebinarHTML from './components/IDTOnDemandWebinarHTML';
 import IDTLiveWebinarForm from './components/IDTLiveWebinarForm';
 import IDTLiveWebinarHTML from './components/IDTLiveWebinarHTML';
 
+import Display from './components/Display';
+
 import Form2 from './components/Form2';
 
 import {cced_thematic_template} from './templates/cced_thematic';
@@ -262,7 +264,7 @@ class TextResults extends React.Component {
   render() {
    let htmlDisplay = "Nothing to display right now.";
    if(this.props.info.selected_template === 'id_reader'){htmlDisplay = <IDReaderHTML info={this.props.info} />}
-   if(this.props.info.selected_template === 'cced_thematic'){htmlDisplay = <CCEDThematicHTML info={this.props.info} />}
+   if(this.props.info.selected_template === 'cced_thematic'){htmlDisplay = <Display info={this.props.info} />}
    if(this.props.info.selected_template === 'id_on_demand_webinar'){htmlDisplay = <IDOnDemandWebinarHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'cced_live_webinar'){htmlDisplay = <CCEDLiveWebinarHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'cced_on_demand_webinar'){htmlDisplay = <CCEDOnDemandWebinarHTML info={this.props.info} />}
