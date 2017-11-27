@@ -49,7 +49,7 @@ export default class CDEWLiveWebinarHTML extends React.Component {
       .replace(/^-+/, '')             // Trim - from start of text
       .replace(/-+$/, '');            // Trim - from end of text
     
-    let url = `http://aegispublications.com/news/cced/${year}/${month}/${slug}.html`;
+    let url = `http://aegispublications.com/news/cdeworld/${year}/${month}/${slug}.html`;
         
         let image = 'http://placehold.it/130x160';
         if(headshot){image = headshot.trim()}
@@ -217,11 +217,11 @@ export default class CDEWLiveWebinarHTML extends React.Component {
             <div className="copy-paste">
               <div className="copyArea html-copy">
                 <textarea value={html} readOnly={true}  />
-                <button onClick={()=>this.downloadHtml(html,emailName)} className="download-button">Download HTML Email</button>
+                <button onClick={()=>this.downloadHtml(html,slug)} className="download-button">Download HTML Email</button>
               </div>
               <div className="copyArea text-copy">
                 <textarea value={textEmail} readOnly={true}/>
-                <button onClick={()=>this.downloadText(textEmail,emailName)} className="download-button">Download Text-Version Email</button>
+                <button onClick={()=>this.downloadText(textEmail,slug)} className="download-button">Download Text-Version Email</button>
               </div>
             </div>
           </div>

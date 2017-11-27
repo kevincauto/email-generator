@@ -195,11 +195,12 @@ textarea{
 }
 .blue{
   padding: 5px;
-  background-color: rgb(207, 223, 247);
+  background-color: rgb(231, 238, 250);
   border-radius: 4px; 
   margin: 5px 0px;
-  border: solid 2px #666
+  border: solid 2px #333
 }
+
 h4{
   padding-left: 5px;
   font-family: 'Roboto', sans-serif;
@@ -209,11 +210,21 @@ h3{
   padding-left: 5px;
 }
 .close{
-  font-size: 40px;
+  font-size: 30px;
   float: right;
-  color: maroon;
+  color: rgb(114, 2, 2);
+}
+.close:hover{
+  font-size: 30px;
+  float: right;
+  color: rgb(180, 0, 0);
 }
 .add{
-  font-size: 40px;
-  color: rgb(5, 87, 5)
+  font-size: 50px;
+  color: rgb(9, 75, 9);
+  text-align: right;
+}
+.add:hover{
+  font-size: 50px;
+  color: rgb(6, 105, 6)
 }

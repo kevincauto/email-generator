@@ -2,6 +2,8 @@ export const cced_thematic_initial_state = [
     {
       typeOfRow: 'beginning',
       header: 'Beginning Section',
+      closable: false,
+      addable: true,
       fields:  [
         {label: 'Email Name', name: 'emailName', value: 'CCED Bioactivity Thematic'},
         {label: 'Month', name: 'month', value: '01', 
@@ -40,6 +42,8 @@ export const cced_thematic_initial_state = [
     {
       typeOfRow: 'news',
       header: 'News Section',
+      closable: true,
+      addable: true,
       fields:  [
         {label: 'Header', name: 'header', value: 'IN THE NEWS'},
         {label: 'First News Title', name: 'title1'},
@@ -54,6 +58,8 @@ export const cced_thematic_initial_state = [
     {
         typeOfRow: 'ce',
         header: 'Continuing Ed Section',
+        closable: true,
+        addable: true,
         fields:  [
           {label: 'Title', name: 'title'},
           {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
@@ -70,6 +76,8 @@ export const cced_thematic_initial_state = [
       {
         typeOfRow: 'center_banner',
         header: "Center Banner Ad",
+        closable: true,
+        addable: true,
         fields:  [
           {label: 'Link', name: 'link'},
           {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70'},
@@ -78,6 +86,8 @@ export const cced_thematic_initial_state = [
       {
         typeOfRow: 'three_column',
         header: '3 Column Section',
+        closable: true,
+        addable: true,
         fields:  [
             {label: 'First Header', name: 'header1'},
             {label: 'First Title', name: 'title1'},
@@ -96,6 +106,8 @@ export const cced_thematic_initial_state = [
       {
         typeOfRow: 'featured',
         header: 'Featured Section',
+        closable: true,
+        addable: true,
         fields:  [
             {label: 'Header', name: 'header', value: 'FEATURED EVENT'},
             {label: 'Title', name: 'title'},
@@ -108,6 +120,8 @@ export const cced_thematic_initial_state = [
       {
       typeOfRow: 'products',
       header: 'Products Section',
+      closable: true,
+      addable: true,
       fields:  [
           {label: 'Header', name: 'header', value: 'FEATURED PRODUCTS'},
           {label: 'First Product', name: 'product1'},
@@ -125,6 +139,8 @@ export const cced_thematic_initial_state = [
     {
         typeOfRow: 'featured',
         header: 'Featured Section',
+        closable: true,
+        addable: true,
         fields:  [
             {label: 'Header', name: 'header', value: 'FEATURED VIDEO'},
             {label: 'Title', name: 'title'},
@@ -137,6 +153,8 @@ export const cced_thematic_initial_state = [
       {
         typeOfRow: 'end',
         header: 'End of the Email',
+        closable: false,
+        addable: false,
         fields: []
       },
   ];

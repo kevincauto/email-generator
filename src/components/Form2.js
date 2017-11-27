@@ -4,31 +4,19 @@ class Form2 extends React.Component{
     constructor(props) {
         super(props);
         this.handleTemplateChange = this.handleTemplateChange.bind(this);
-        this.handleTextChange = this.handleTextChange.bind(this);
-        this.handleDateChange = this.handleDateChange.bind(this);
         this.handleFieldChange = this.handleFieldChange.bind(this);
         this.handleAddSection = this.handleAddSection.bind(this);
         this.handleDeleteSection = this.handleDeleteSection.bind(this);
       }
 
       handleDeleteSection(field, e){
-        
         this.props.onDeleteSection(field);
       };
 
       handleAddSection(field, e){
-       
         this.props.onAddSection(field);
       }
-
-      handleDateChange(value, name){
-        this.props.onDateChange(value, name);
-      }
-    
-      handleTextChange(value, name, html) {
-        this.props.onTextChange(value, name, html);
-      }
-    
+  
       handleTemplateChange(e) {
         this.props.onTemplateChange(e.target.value);
       }
@@ -45,7 +33,13 @@ class Form2 extends React.Component{
             .map((object,i)=>{
             return(
                 <div className="blue" key={i + object.typeOfRow}>
-                <i className="icon-remove-sign close" onClick={(e)=>this.handleDeleteSection(i,e)}></i>
+                
+                {
+                  this.props.info[this.props.info.selected_template][i].closable ? 
+                  <i className="icon-remove-sign close" onClick={(e)=>this.handleDeleteSection(i,e)}></i> : 
+                  <i></i> 
+                }
+
                 <h3>{object.header}</h3>
                 {object.fields.map((field,j)=>{
                 if(field.dropdown){
@@ -89,7 +83,12 @@ class Form2 extends React.Component{
                   />
                   </div>)
                 })}
-                <i className="icon-plus-sign add" onClick={(e)=>this.handleAddSection(i,e)}></i>
+                {
+                  this.props.info[this.props.info.selected_template][i].addable ? 
+                  <i className="icon-plus-sign add" onClick={(e)=>this.handleAddSection(i,e)}></i> : 
+                  <i></i> 
+                }
+                
              
                 
                 </div>
