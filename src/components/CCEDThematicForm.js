@@ -52,7 +52,7 @@ let layout = [
         ]
       },
       {
-        typeOfRow: '3_column',
+        typeOfRow: 'three_column',
         fields:  [
             {label: 'First Header', name: 'header1'},
             {label: 'First Title', name: 'title1'},

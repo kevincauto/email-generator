@@ -24,10 +24,8 @@ import IDTLiveWebinarForm from './components/IDTLiveWebinarForm';
 import IDTLiveWebinarHTML from './components/IDTLiveWebinarHTML';
 
 import Display from './components/Display';
-
 import Form2 from './components/Form2';
-
-import {cced_thematic_template} from './templates/cced_thematic';
+import {cced_thematic_initial_state} from './templates/cced_thematic';
 
 
 
@@ -39,7 +37,7 @@ class Container extends React.Component {
       month: undefined,
       year: undefined,
       id_reader: {},
-      cced_thematic: cced_thematic_template,
+      cced_thematic: cced_thematic_initial_state,
       cced_live_webinar: {},
       cced_on_demand_webinar: {},
       id_live_webinar: {},
@@ -60,8 +58,6 @@ class Container extends React.Component {
       let month = d.getMonth() + 1;
       let year = d.getFullYear();
       this.setState({month, year});
-
-
   }
   
   componentDidUpdate(){
@@ -82,7 +78,6 @@ class Container extends React.Component {
   }
 
   handleFieldChange(form, field, value) {
-
     let stateClone = _.cloneDeep(this.state);
     stateClone[this.state.selected_template][form].fields[field].value = value;
     this.setState(stateClone);

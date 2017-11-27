@@ -1,10 +1,10 @@
 import React from 'react';
 import DOMPurify from 'dompurify';
 import {saveAs} from 'file-saver';
-import {html_sections} from '../templates/cced_thematic'
+import {html_sections} from '../templates/cced_thematic';
+import * as cced_thematic from '../templates/cced_thematic.js';
 
-
-export default class CCEDThematicHTML extends React.Component {
+export default class Display extends React.Component {
     downloadHtml(html, fileName){
         if(!fileName){
           alert("This email needs a name in order to be downloaded.");
@@ -24,55 +24,34 @@ export default class CCEDThematicHTML extends React.Component {
     }   
 
     render() {
-
+    let layout = this.props.info[this.props.info.selected_template];
+    //I would prefer a more dynamic solution in the line below.
+    //cced_thematic should be variable depending on the selected template
+    //the line of code below calls the functions in the cced_thematic.js
+    //It uses the information in the fields array to generate an html row with the proper info
+    //The info is mapped to an array and then joined into one string of html
+    let html = layout.map(row=>{ return cced_thematic[row.typeOfRow](row.fields)}).join('');
     
-    let layout = this.props.info[this.props.info.selected_template]
-    let arr = [];
-    let html;
-    for (let i=0; i<layout.length; i++){
-        for(let j=0; j<html_sections.length; j++){
-            if(layout[i].typeOfRow == html_sections[j].typeOfRow){
-                html = html_sections[j].html;
-                for(let k=0; k<layout[i].fields.length; k++){
-                    if(layout[i].fields){
-                        let variable = '{' + layout[i].fields[k].name + '}';
-                        let val = layout[i].fields[k].value;
-                        var regex = new RegExp(variable,'g');
-                        html = html.replace(regex,val)
-                    }
-                }  
-                arr.push(html);
-            }   
-        }
-
-    }
-
-
-    html = arr.join('');
-    //   let html = html_sections.reduce((prev, current)=>{
-            
-    //         return(prev + current.html)
-    //     },'');
-
-    //     html =html.replace(/{{title1}}/g, 'WOW');
-
         //Sanitize data to avoid XSS attack
+        //Sanitize strips css from the header and make the email render oddly.  Need to find a solution to clean without
+        //messing up what it looks like
         //let cleanHtml = DOMPurify.sanitize(html);
-        // let textEmail = `IDT On-Demand Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\nCommercial Supporter: ${supporter}\nDescription:\n${description}\n\n${link}`;
-let cleanHtml = html;
+
+    let textEmail = `This is the text email.\n\nTo be updated with data`
+    let emailName = this.props.info[this.props.info.selected_template][0].fields[0].value
         return(
         <div >
-        <div className="content" dangerouslySetInnerHTML={{__html: cleanHtml}}></div>
+        <div className="content" dangerouslySetInnerHTML={{__html: html}}></div>
         <br />
         <h3 className="download-header">3. Copy or download the email.</h3>
         <div className="copy-paste">
           <div className="copyArea html-copy">
-            {/* <textarea value={html} readOnly={true}  />
-            <button onClick={()=>this.downloadHtml(html,lyrisName)} className="download-button">Download HTML Email</button> */}
+            <textarea value={html} readOnly={true}  />
+            {<button onClick={()=>this.downloadHtml(html,emailName)} className="download-button">Download HTML Email</button>}
           </div>
           <div className="copyArea text-copy">
-            {/* <textarea value={textEmail} readOnly={true}/>
-            <button onClick={()=>this.downloadText(textEmail,lyrisName)} className="download-button">Download Text-Version Email</button> */}
+            <textarea value={textEmail} readOnly={true}/>
+            <button onClick={()=>this.downloadText(textEmail,emailName)} className="download-button">Download Text-Version Email</button>
           </div>
         </div>
       </div>
