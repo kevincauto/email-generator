@@ -38,7 +38,8 @@ export default class Display extends React.Component {
         //let cleanHtml = DOMPurify.sanitize(html);
 
     let textEmail = `This is the text email.\n\nTo be updated with data`
-    let emailName = this.props.info[this.props.info.selected_template][0].fields[0].value
+    //fix this.
+    let emailName =  'Untitled';
         return(
         <div >
         <div className="content" dangerouslySetInnerHTML={{__html: html}}></div>

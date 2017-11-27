@@ -50,6 +50,8 @@ class Container extends React.Component {
     this.handleTemplateChange = this.handleTemplateChange.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleFieldChange = this.handleFieldChange.bind(this);
+    this.handleAddSection = this.handleAddSection.bind(this);
+    this.handleDeleteSection = this.handleDeleteSection.bind(this);
   }
 
   componentDidMount() {
@@ -61,7 +63,34 @@ class Container extends React.Component {
   }
   
   componentDidUpdate(){
-      console.log(this.state);
+      //console.log(this.state);
+  }
+  handleDeleteSection(field){
+    
+    let stateClone = _.cloneDeep(this.state);
+
+    stateClone[this.state.selected_template].splice(field, 1);
+
+    this.setState(stateClone);
+  }
+  handleAddSection(field){
+    let stateClone = _.cloneDeep(this.state);
+    // let row = stateClone[this.state.selected_template][field];
+    let row =       {
+      typeOfRow: 'featured',
+      header: 'Featured Section',
+      fields:  [
+          {label: 'Header', name: 'header', value: 'FEATURED EVENT'},
+          {label: 'Title', name: 'title'},
+          {label: 'Author', name: 'author'},
+          {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+          {label: 'Link', name: 'link'},
+          {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/150'}
+      ]
+    }
+    stateClone[this.state.selected_template].splice(field+1, 0, row);
+    this.setState(stateClone);
+
   }
   handleDateChange(value, name){
     this.setState({[name]: value});
@@ -102,6 +131,8 @@ class Container extends React.Component {
                 onTemplateChange={value => this.handleTemplateChange(value)}
                 onDateChange={this.handleDateChange}
                 onFieldChange={(form, field, value)=>this.handleFieldChange(form, field, value)}
+                onAddSection={(field)=>this.handleAddSection(field)}
+                onDeleteSection={(field)=>this.handleDeleteSection(field)}
               /> :
               <Form
               info={this.state}

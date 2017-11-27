@@ -7,9 +7,22 @@ class Form2 extends React.Component{
         this.handleTextChange = this.handleTextChange.bind(this);
         this.handleDateChange = this.handleDateChange.bind(this);
         this.handleFieldChange = this.handleFieldChange.bind(this);
+        this.handleAddSection = this.handleAddSection.bind(this);
+        this.handleDeleteSection = this.handleDeleteSection.bind(this);
       }
+
+      handleDeleteSection(field, e){
+        
+        this.props.onDeleteSection(field);
+      };
+
+      handleAddSection(field, e){
+       
+        this.props.onAddSection(field);
+      }
+
       handleDateChange(value, name){
-        this.props.onDateChange(value, name)
+        this.props.onDateChange(value, name);
       }
     
       handleTextChange(value, name, html) {
@@ -27,8 +40,8 @@ class Form2 extends React.Component{
 
     
     render(){
-        let display = this.props.info.cced_thematic
-            .filter(object => object.fields)
+        let display = this.props.info[this.props.info.selected_template]
+            .filter(object => object.fields) //only worry about sections that have fields (last section does not)
             .map((object,i)=>{
             return(
                 <div className="blue" key={i + object.typeOfRow}>
@@ -75,6 +88,8 @@ class Form2 extends React.Component{
                   />
                   </div>)
                 })}
+                <button onClick={(e)=>this.handleAddSection(i,e)}>Add Section Below</button>
+                <button onClick={(e)=>this.handleDeleteSection(i,e)}>Delete This Section</button>
                 </div>
             )
         })
