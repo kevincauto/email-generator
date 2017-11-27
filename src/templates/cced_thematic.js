@@ -53,7 +53,7 @@ export const cced_thematic_initial_state = [
     },
     {
         typeOfRow: 'ce',
-        header: 'Continuing Education Section',
+        header: 'Continuing Ed Section',
         fields:  [
           {label: 'Title', name: 'title'},
           {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},

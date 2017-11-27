@@ -45,7 +45,8 @@ class Form2 extends React.Component{
             .map((object,i)=>{
             return(
                 <div className="blue" key={i + object.typeOfRow}>
-                <h4>{object.header}</h4>
+                <i className="icon-remove-sign close" onClick={(e)=>this.handleDeleteSection(i,e)}></i>
+                <h3>{object.header}</h3>
                 {object.fields.map((field,j)=>{
                 if(field.dropdown){
                     return(
@@ -88,8 +89,9 @@ class Form2 extends React.Component{
                   />
                   </div>)
                 })}
-                <button onClick={(e)=>this.handleAddSection(i,e)}>Add Section Below</button>
-                <button onClick={(e)=>this.handleDeleteSection(i,e)}>Delete This Section</button>
+                <i className="icon-plus-sign add" onClick={(e)=>this.handleAddSection(i,e)}></i>
+             
+                
                 </div>
             )
         })
