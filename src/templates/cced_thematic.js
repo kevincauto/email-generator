@@ -3,6 +3,7 @@ export const cced_thematic_initial_state = [
       typeOfRow: 'beginning',
       header: 'Beginning Section',
       closable: false,
+      switchable: false,
       addable: true,
       fields:  [
         {label: 'Email Name', name: 'emailName', value: 'CCED Bioactivity Thematic'},
@@ -43,6 +44,7 @@ export const cced_thematic_initial_state = [
       typeOfRow: 'news',
       header: 'News Section',
       closable: true,
+      switchable: true,
       addable: true,
       fields:  [
         {label: 'Header', name: 'header', value: 'IN THE NEWS'},
@@ -59,6 +61,7 @@ export const cced_thematic_initial_state = [
         typeOfRow: 'ce',
         header: 'Continuing Ed Section',
         closable: true,
+        switchable: true,
         addable: true,
         fields:  [
           {label: 'Title', name: 'title'},
@@ -77,6 +80,7 @@ export const cced_thematic_initial_state = [
         typeOfRow: 'center_banner',
         header: "Center Banner Ad",
         closable: true,
+        switchable: true,
         addable: true,
         fields:  [
           {label: 'Link', name: 'link'},
@@ -87,6 +91,7 @@ export const cced_thematic_initial_state = [
         typeOfRow: 'three_column',
         header: '3 Column Section',
         closable: true,
+        switchable: true,
         addable: true,
         fields:  [
             {label: 'First Header', name: 'header1'},
@@ -107,6 +112,7 @@ export const cced_thematic_initial_state = [
         typeOfRow: 'featured',
         header: 'Featured Section',
         closable: true,
+        switchable: true,
         addable: true,
         fields:  [
             {label: 'Header', name: 'header', value: 'FEATURED EVENT'},
@@ -121,6 +127,7 @@ export const cced_thematic_initial_state = [
       typeOfRow: 'products',
       header: 'Products Section',
       closable: true,
+      switchable: true,
       addable: true,
       fields:  [
           {label: 'Header', name: 'header', value: 'FEATURED PRODUCTS'},
@@ -140,6 +147,7 @@ export const cced_thematic_initial_state = [
         typeOfRow: 'featured',
         header: 'Featured Section',
         closable: true,
+        switchable: true,
         addable: true,
         fields:  [
             {label: 'Header', name: 'header', value: 'FEATURED VIDEO'},
@@ -154,10 +162,21 @@ export const cced_thematic_initial_state = [
         typeOfRow: 'end',
         header: 'End of the Email',
         closable: false,
+        switchable: false,
         addable: false,
         fields: []
       },
   ];
+
+export const rows = {
+  beginning: {},
+  news: {},
+  ce: {},
+  center_banner: {},
+  featured: {},
+  three_column: {},
+  end
+}
 
 export function beginning(fields){
   let emailName = fields[0].value;

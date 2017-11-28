@@ -33,14 +33,27 @@ class Form2 extends React.Component{
             .map((object,i)=>{
             return(
                 <div className="blue" key={i + object.typeOfRow}>
-                
+                {/* closable? */}
                 {
                   this.props.info[this.props.info.selected_template][i].closable ? 
                   <i className="icon-remove-sign close" onClick={(e)=>this.handleDeleteSection(i,e)}></i> : 
                   <i></i> 
                 }
+                {/* switchable? */}
+                {
+                  this.props.info[this.props.info.selected_template][i].switchable ? 
+                    <select className="header-dropdown">
+                      {}
+                      <option>{object.header}</option>
+                    </select> 
+                : 
+                    <h3>{object.header}</h3>
+                }
 
-                <h3>{object.header}</h3>
+                
+
+
+
                 {object.fields.map((field,j)=>{
                 if(field.dropdown){
                     return(
