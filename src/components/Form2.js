@@ -1,4 +1,5 @@
 import React from 'react';
+import {rows} from '../templates/cced_thematic';
 
 class Form2 extends React.Component{
     constructor(props) {
@@ -43,8 +44,10 @@ class Form2 extends React.Component{
                 {
                   this.props.info[this.props.info.selected_template][i].switchable ? 
                     <select className="header-dropdown">
-                      {}
                       <option>{object.header}</option>
+                      {
+                        Object.keys(rows).map(rowName => <option key={rowName}>{rowName}</option>)
+                      }    
                     </select> 
                 : 
                     <h3>{object.header}</h3>

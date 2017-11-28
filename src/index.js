@@ -79,6 +79,9 @@ class Container extends React.Component {
     let row =       {
       typeOfRow: 'featured',
       header: 'Featured Section',
+      closable: true,
+      switchable: true,
+      addable: true,
       fields:  [
           {label: 'Header', name: 'header', value: 'FEATURED EVENT'},
           {label: 'Title', name: 'title'},

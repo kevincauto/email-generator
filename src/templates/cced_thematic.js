@@ -1,182 +1,169 @@
-export const cced_thematic_initial_state = [
-    {
-      typeOfRow: 'beginning',
-      header: 'Beginning Section',
-      closable: false,
-      switchable: false,
-      addable: true,
-      fields:  [
-        {label: 'Email Name', name: 'emailName', value: 'CCED Bioactivity Thematic'},
-        {label: 'Month', name: 'month', value: '01', 
-            dropdown: [
-                {value: '01', text: 'Send Month: January'}, 
-                {value: '02', text: 'Send Month: February'},
-                {value: '03', text: 'Send Month: March'}, 
-                {value: '04', text: 'Send Month: April'},
-                {value: '05', text: 'Send Month: May'}, 
-                {value: '06', text: 'Send Month: June'},
-                {value: '07', text: 'Send Month: July'}, 
-                {value: '08', text: 'Send Month: August'},
-                {value: '09', text: 'Send Month: September'}, 
-                {value: '10', text: 'Send Month: October'},
-                {value: '11', text: 'Send Month: November'}, 
-                {value: '12', text: 'Send Month: December'},
-            ]
-        },
-        {label: 'Year', name: 'year', value: '2017', 
-        dropdown: [
-            {value: '2017', text: 'Send Year: 2017'}, 
-            {value: '2018', text: 'Send Year: 2018'},
-            {value: '2019', text: 'Send Year: 2019'}, 
-            {value: '2020', text: 'Send Year: 2020'},
-            {value: '2021', text: 'Send Year: 2021'}, 
-            {value: '2022', text: 'Send Year: 2022'}
-        ]
-    },
-        {label: 'Masthead Link', name: 'mastheadLink', value: 'https://www.pulpdent.com'},
-        {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
-        {label: 'Thematic Topic', name: 'topic', value: 'Implantology'},
-        {label: 'Main Image Link Source', name: 'mainImg', value: 'http://placehold.it/600x150'},
-        {label: 'Intro Paragraph', name: 'intro', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-      ]
-    },
-    {
-      typeOfRow: 'news',
-      header: 'News Section',
-      closable: true,
-      switchable: true,
-      addable: true,
-      fields:  [
-        {label: 'Header', name: 'header', value: 'IN THE NEWS'},
-        {label: 'First News Title', name: 'title1'},
-        {label: 'Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'First News Link', name: 'link1'},
-        {label: 'Second News Title', name: 'title2'},
-        {label: 'Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'First News Link', name: 'link2'},
-
-      ]
-    },
-    {
-        typeOfRow: 'ce',
-        header: 'Continuing Ed Section',
-        closable: true,
-        switchable: true,
-        addable: true,
-        fields:  [
-          {label: 'Title', name: 'title'},
-          {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-          {label: 'Author', name: 'author'},
-          {label: 'Credits', name: 'credits'},
-          {label: 'Cost', name: 'cost'},
-          {label: 'Source', name: 'source'},
-          {label: 'Provider', name: 'provider'},
-          {label: 'Available Dates', name: 'dates'},
-          {label: 'Link', name: 'link'},
-          {label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/120x100'},
-        ]
-      },
-      {
-        typeOfRow: 'center_banner',
-        header: "Center Banner Ad",
-        closable: true,
-        switchable: true,
-        addable: true,
-        fields:  [
-          {label: 'Link', name: 'link'},
-          {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70'},
-        ]
-      },
-      {
-        typeOfRow: 'three_column',
-        header: '3 Column Section',
-        closable: true,
-        switchable: true,
-        addable: true,
-        fields:  [
-            {label: 'First Header', name: 'header1'},
-            {label: 'First Title', name: 'title1'},
-            {label: 'First Author', name: 'author1'},
-            {label: 'First Link', name: 'link1'},
-            {label: 'Second Header', name: 'header2'},
-            {label: 'Second Title', name: 'title2'},
-            {label: 'Second Author', name: 'author2'},
-            {label: 'Second Link', name: 'link2'},
-            {label: 'Third Header', name: 'header3'},
-            {label: 'Third Title', name: 'title3'},
-            {label: 'Third Author', name: 'author3'},
-            {label: 'Third Link', name: 'link3'},            
-        ]
-      },
-      {
-        typeOfRow: 'featured',
-        header: 'Featured Section',
-        closable: true,
-        switchable: true,
-        addable: true,
-        fields:  [
-            {label: 'Header', name: 'header', value: 'FEATURED EVENT'},
-            {label: 'Title', name: 'title'},
-            {label: 'Author', name: 'author'},
-            {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-            {label: 'Link', name: 'link'},
-            {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/150'}
-        ]
-      },
-      {
-      typeOfRow: 'products',
-      header: 'Products Section',
-      closable: true,
-      switchable: true,
-      addable: true,
-      fields:  [
-          {label: 'Header', name: 'header', value: 'FEATURED PRODUCTS'},
-          {label: 'First Product', name: 'product1'},
-          {label: 'First Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-          {label: 'First Link', name: 'link1'},
-          {label: 'Second Product', name: 'product2'},
-          {label: 'Second Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-          {label: 'Second Link', name: 'link2'},
-          {label: 'Featured Product', name: 'product3'},
-          {label: 'Featured Description', name: 'description3', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-          {label: 'Featured Link', name: 'link3'},
-          {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150'},
-      ]
-    },
-    {
-        typeOfRow: 'featured',
-        header: 'Featured Section',
-        closable: true,
-        switchable: true,
-        addable: true,
-        fields:  [
-            {label: 'Header', name: 'header', value: 'FEATURED VIDEO'},
-            {label: 'Title', name: 'title'},
-            {label: 'Author', name: 'author'},
-            {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-            {label: 'Link', name: 'link'},
-            {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/150'}
-        ]
-      },
-      {
-        typeOfRow: 'end',
-        header: 'End of the Email',
-        closable: false,
-        switchable: false,
-        addable: false,
-        fields: []
-      },
-  ];
-
 export const rows = {
-  beginning: {},
-  news: {},
-  ce: {},
-  center_banner: {},
-  featured: {},
-  three_column: {},
-  end
+  beginning: {
+    typeOfRow: 'beginning',
+    header: 'Beginning Section',
+    closable: false,
+    switchable: false,
+    addable: true,
+    fields:  [
+      {label: 'Email Name', name: 'emailName', value: 'CCED Bioactivity Thematic'},
+      {label: 'Month', name: 'month', value: '01', 
+          dropdown: [
+              {value: '01', text: 'Send Month: January'}, 
+              {value: '02', text: 'Send Month: February'},
+              {value: '03', text: 'Send Month: March'}, 
+              {value: '04', text: 'Send Month: April'},
+              {value: '05', text: 'Send Month: May'}, 
+              {value: '06', text: 'Send Month: June'},
+              {value: '07', text: 'Send Month: July'}, 
+              {value: '08', text: 'Send Month: August'},
+              {value: '09', text: 'Send Month: September'}, 
+              {value: '10', text: 'Send Month: October'},
+              {value: '11', text: 'Send Month: November'}, 
+              {value: '12', text: 'Send Month: December'},
+          ]
+      },
+      {label: 'Year', name: 'year', value: '2017', 
+      dropdown: [
+          {value: '2017', text: 'Send Year: 2017'}, 
+          {value: '2018', text: 'Send Year: 2018'},
+          {value: '2019', text: 'Send Year: 2019'}, 
+          {value: '2020', text: 'Send Year: 2020'},
+          {value: '2021', text: 'Send Year: 2021'}, 
+          {value: '2022', text: 'Send Year: 2022'}
+      ]
+  },
+      {label: 'Masthead Link', name: 'mastheadLink', value: 'https://www.pulpdent.com'},
+      {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
+      {label: 'Thematic Topic', name: 'topic', value: 'Implantology'},
+      {label: 'Main Image Link Source', name: 'mainImg', value: 'http://placehold.it/600x150'},
+      {label: 'Intro Paragraph', name: 'intro', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+    ]
+  },
+  news:     {
+    typeOfRow: 'news',
+    header: 'News Section',
+    closable: true,
+    switchable: true,
+    addable: true,
+    fields:  [
+      {label: 'Header', name: 'header', value: 'IN THE NEWS'},
+      {label: 'First News Title', name: 'title1'},
+      {label: 'Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+      {label: 'First News Link', name: 'link1'},
+      {label: 'Second News Title', name: 'title2'},
+      {label: 'Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+      {label: 'First News Link', name: 'link2'},
+
+    ]
+  },
+  ce: {
+    typeOfRow: 'ce',
+    header: 'Continuing Ed Section',
+    closable: true,
+    switchable: true,
+    addable: true,
+    fields:  [
+      {label: 'Title', name: 'title'},
+      {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+      {label: 'Author', name: 'author'},
+      {label: 'Credits', name: 'credits'},
+      {label: 'Cost', name: 'cost'},
+      {label: 'Source', name: 'source'},
+      {label: 'Provider', name: 'provider'},
+      {label: 'Available Dates', name: 'dates'},
+      {label: 'Link', name: 'link'},
+      {label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/120x100'},
+    ]
+  },
+  center_banner: {
+    typeOfRow: 'center_banner',
+    header: "Center Banner Ad",
+    closable: true,
+    switchable: true,
+    addable: true,
+    fields:  [
+      {label: 'Link', name: 'link'},
+      {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70'},
+    ]
+  },
+  three_column: {
+    typeOfRow: 'three_column',
+    header: '3 Column Section',
+    closable: true,
+    switchable: true,
+    addable: true,
+    fields:  [
+        {label: 'First Header', name: 'header1'},
+        {label: 'First Title', name: 'title1'},
+        {label: 'First Author', name: 'author1'},
+        {label: 'First Link', name: 'link1'},
+        {label: 'Second Header', name: 'header2'},
+        {label: 'Second Title', name: 'title2'},
+        {label: 'Second Author', name: 'author2'},
+        {label: 'Second Link', name: 'link2'},
+        {label: 'Third Header', name: 'header3'},
+        {label: 'Third Title', name: 'title3'},
+        {label: 'Third Author', name: 'author3'},
+        {label: 'Third Link', name: 'link3'},            
+    ]
+  },
+  featured: {
+    typeOfRow: 'featured',
+    header: 'Featured Section',
+    closable: true,
+    switchable: true,
+    addable: true,
+    fields:  [
+        {label: 'Header', name: 'header', value: 'FEATURED EVENT'},
+        {label: 'Title', name: 'title'},
+        {label: 'Author', name: 'author'},
+        {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+        {label: 'Link', name: 'link'},
+        {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/150'}
+    ]
+  },
+  products: {
+    typeOfRow: 'products',
+    header: 'Products Section',
+    closable: true,
+    switchable: true,
+    addable: true,
+    fields:  [
+        {label: 'Header', name: 'header', value: 'FEATURED PRODUCTS'},
+        {label: 'First Product', name: 'product1'},
+        {label: 'First Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+        {label: 'First Link', name: 'link1'},
+        {label: 'Second Product', name: 'product2'},
+        {label: 'Second Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+        {label: 'Second Link', name: 'link2'},
+        {label: 'Featured Product', name: 'product3'},
+        {label: 'Featured Description', name: 'description3', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+        {label: 'Featured Link', name: 'link3'},
+        {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150'},
+    ]
+  },
+  end: {
+    typeOfRow: 'end',
+    header: 'End of the Email',
+    closable: false,
+    switchable: false,
+    addable: false,
+    fields: []
+  }
 }
+
+export const cced_thematic_initial_state = [
+    rows.beginning,
+    rows.news,
+    rows.ce,
+    rows.center_banner,
+    rows.three_column,
+    rows.featured,
+    rows.products,
+    rows.featured,
+    rows.end
+  ];
 
 export function beginning(fields){
   let emailName = fields[0].value;
