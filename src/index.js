@@ -25,7 +25,7 @@ import IDTLiveWebinarHTML from './components/IDTLiveWebinarHTML';
 
 import Display from './components/Display';
 import Form2 from './components/Form2';
-import {cced_thematic_initial_state} from './templates/cced_thematic';
+import {cced_thematic_initial_state, rows} from './templates/cced_thematic';
 
 
 
@@ -52,6 +52,7 @@ class Container extends React.Component {
     this.handleFieldChange = this.handleFieldChange.bind(this);
     this.handleAddSection = this.handleAddSection.bind(this);
     this.handleDeleteSection = this.handleDeleteSection.bind(this);
+    this.handleFormSwitch = this.handleFormSwitch.bind(this);
   }
 
   componentDidMount() {
@@ -65,12 +66,18 @@ class Container extends React.Component {
   componentDidUpdate(){
       //console.log(this.state);
   }
+  handleFormSwitch(form, value){
+    let stateClone = _.cloneDeep(this.state);
+
+    stateClone[this.state.selected_template].splice(form, 1, rows[value]);
+
+    this.setState(stateClone);
+  }
+
   handleDeleteSection(field){
     
     let stateClone = _.cloneDeep(this.state);
-
     stateClone[this.state.selected_template].splice(field, 1);
-
     this.setState(stateClone);
   }
   handleAddSection(field){
@@ -136,6 +143,7 @@ class Container extends React.Component {
                 onFieldChange={(form, field, value)=>this.handleFieldChange(form, field, value)}
                 onAddSection={(field)=>this.handleAddSection(field)}
                 onDeleteSection={(field)=>this.handleDeleteSection(field)}
+                onFormSwitch = {(form, value)=>this.handleFormSwitch(form, value)}
               /> :
               <Form
               info={this.state}

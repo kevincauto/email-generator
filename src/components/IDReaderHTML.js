@@ -4,10 +4,10 @@ import DOMPurify from 'dompurify';
 
 export default class IDLiveWebinarHTML extends React.Component {
     render(){
-        const {
-          lyrisName = '', 
-          title, date, provider, supporter, cost, credits, description, lo1, lo2, lo3, presenter, link, headshot, tvLink, unsubscribe, disclosure
-        } = this.props.info[this.props.info.selected_template]
+        // const {
+        //   lyrisName = '', 
+        //   title, date, provider, supporter, cost, credits, description, lo1, lo2, lo3, presenter, link, headshot, tvLink, unsubscribe, disclosure
+        // } = this.props.info[this.props.info.selected_template]
         
         const {month, year} = this.props.info;
       
@@ -285,7 +285,7 @@ export default class IDLiveWebinarHTML extends React.Component {
                                 <tr>
                                   <td align="center" style="font-family:'Times New Roman', Times, serif; font-size:12px;  color:#000000; padding-top:0px; border-bottom:1px solid #000000;"><br /><span><em>Inside Dentistry</em> | 104 Pheasant Run, Suite 105 | Newtown, PA 18940</span><br />
                                     <span>To ensure delivery, please add <a href="mailto:reply-207851@news.aegispublications.com" style="color:#000000; text-decoration:none;" target="_blank">reply-207851@news.aegispublications.com</a></span><span> to your address book<br />
-                                    ${unsubscribe} </span><br /><br />
+                                    UNSUBSCRIBE </span><br /><br />
                                   </td>
                                 </tr>
                                 <!--END FOOTER AND UNSUBSCRIBE-->
@@ -315,16 +315,16 @@ export default class IDLiveWebinarHTML extends React.Component {
         html = start;    
         //Sanitize data to avoid XSS attack
         let sanitizedHtml = DOMPurify.sanitize(html); 
-        let textEmail = `Inside Dentistry Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\n${date}\nCommercial Supporter: ${supporter}\nCost: ${cost}\nCredits: ${credits}\nDescription:\n${description}\n\n${link}`;
+        // let textEmail = `Inside Dentistry Webinar\n${title}\n${link}\n\nPresenter: ${presenter}\n${date}\nCommercial Supporter: ${supporter}\nCost: ${cost}\nCredits: ${credits}\nDescription:\n${description}\n\n${link}`;
 
         return(
           <div >
-            <div className="content" dangerouslySetInnerHTML={{__html: sanitizedHtml}}></div><br />
+            {/* <div className="content" dangerouslySetInnerHTML={{__html: sanitizedHtml}}></div><br />
             Generated HTML Code to Copy:< br />
             <textarea value={html} readOnly={true} className="copyArea" /><br />
             <br />
             TEXT EMAIL:< br />
-            <textarea value={textEmail} readOnly={true} className="copyArea"/>
+            <textarea value={textEmail} readOnly={true} className="copyArea"/> */}
           </div>
         );
     }
