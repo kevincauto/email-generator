@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export const rows = {
   beginning: {
     typeOfRow: 'beginning',
@@ -36,6 +38,7 @@ export const rows = {
       {label: 'Masthead Link', name: 'mastheadLink', value: 'https://www.pulpdent.com'},
       {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
       {label: 'Thematic Topic', name: 'topic', value: 'Implantology'},
+      {label: 'Subscribe Link', name: 'subscribe'},
       {label: 'Main Image Link Source', name: 'mainImg', value: 'http://placehold.it/600x150'},
       {label: 'Intro Paragraph', name: 'intro', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
     ]
@@ -154,15 +157,15 @@ export const rows = {
 }
 
 export const cced_thematic_initial_state = [
-    rows.beginning,
-    rows.news,
-    rows.ce,
-    rows.center_banner,
-    rows.three_column,
-    rows.featured,
-    rows.products,
-    rows.featured,
-    rows.end
+    _.cloneDeep(rows.beginning),
+    _.cloneDeep(rows.news),
+      _.cloneDeep(rows.ce),
+        _.cloneDeep(rows.center_banner),
+          _.cloneDeep(rows.three_column),
+            _.cloneDeep(rows.featured),
+              _.cloneDeep(rows.products),
+                _.cloneDeep(rows.featured),
+                  _.cloneDeep(rows.end)
   ];
 
 export function beginning(fields){
@@ -172,8 +175,9 @@ export function beginning(fields){
   let mastheadLink = fields[3].value;
   let mastheadSrc = fields[4].value;
   let topic = fields[5].value;
-  let mainImg = fields[6].value;
-  let intro = fields[7].value;
+  let subscribe = fields[6].value;
+  let mainImg = fields[7].value;
+  let intro = fields[8].value;
   //put the url together
   let url = `https://www.dentalaegis.com/cced/${year}/${month}/newsletter/${topic.toLowerCase()}`
 
@@ -513,7 +517,7 @@ export function beginning(fields){
               <![endif]-->				<table align="center" class="outer" style="border-spacing:0;font-family:sans-serif;color:#333333;Margin:0 auto;width:100%;max-width:600px;">
             <tbody>
               <tr>
-                <td style="padding-top:0px;padding-bottom:;padding-right:0;padding-left:0;">
+                <td style="padding-top:0px;padding-bottom:0px;padding-right:0;padding-left:0;">
                   <div style="text-align:center;font-family:'Times New Roman', Times, serif; font-size:12px; margin:5px 0px;">
                     Having Trouble Viewing This Email? <a href="${url}" style="color:#000;" target="_blank">Click Here</a></div>
                   <table align="center" class="outer" style="border-spacing:0;font-family:sans-serif;color:#333333;Margin:0 auto;width:100%;max-width:600px;">
@@ -557,7 +561,7 @@ export function beginning(fields){
                             <tbody>
                               <tr>
                                 <td style="float:left;">
-                                  <a href="mailto:?subject=Forward: Compendium ${topic}&body=I thought you might be interested in this: "${url}refer=true" style="text-decoration:none; color:#000000; padding-left:10px; font-family:'Times New Roman', serif; font-size:11px;">▶ Forward to a Colleague</a> <a href="http://www.dentalaegis.com/cced/subscribe/thematic?111417a" style="text-decoration:none; color:#000000;padding-left:10px; font-family:'Times New Roman', serif; font-size:11px;" target="_blank">▶ Subscribe</a></td>
+                                  <a href="mailto:?subject=Forward: Compendium ${topic}&body=I thought you might be interested in this: ${url}refer=true" style="text-decoration:none; color:#000000; padding-left:10px; font-family:'Times New Roman', serif; font-size:11px;">▶ Forward to a Colleague</a> <a href="${subscribe}" style="text-decoration:none; color:#000000;padding-left:10px; font-family:'Times New Roman', serif; font-size:11px;" target="_blank">▶ Subscribe</a></td>
                                 <td style="float:right; vertical-align:center;">
                                   <a href="https://www.facebook.com/CompendiumDentistry" style="padding: 0px; margin: 0px" target="_blank"><img src="https://www.dentalaegis.com/media/59236/" style="padding: 0px; margin: 0px; vertical-align:central;" /></a> <a href="https://twitter.com/compendiumced" style="padding: 0px; margin: 0px" target="_blank"><img src="https://www.dentalaegis.com/media/59237/" style="padding: 0px 10px 0px 0px; margin: 0px" /></a></td>
                               </tr>
@@ -623,7 +627,7 @@ export function news(fields){
     
     overflow:auto;">
                               <center>
-                                <div style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top; width:73px; text-align:center;">
+                                <div style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top;  text-align:center;">
                                   ${header}</div>
                                                         </center>
                                                         
@@ -642,7 +646,7 @@ export function news(fields){
                               <div style="font-size:14px;  margin:0 0 0 14px; font-family:'Times New Roman', serif; font-weight:normal;">
                                 ${description2}</div>
                               <div style="font-family:Gotham, sans-serif; font-size:12px; margin:0 0 14px 14px;">
-                                <a href="${link2}}" style="color:#76706a; text-decoration:none; font-weight:normal;" target="_blank">More Info ▶</a></div>
+                                <a href="${link2}" style="color:#76706a; text-decoration:none; font-weight:normal;" target="_blank">More Info ▶</a></div>
                                                         </div>
                                                         
     
@@ -810,7 +814,7 @@ export function three_column(fields){
             <tbody>
               <tr>
                 <td class="inner contents">
-                  <span align="left" style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top; text-align:left; font-weight:normal; text-align:left; width: 110px">${header1}</span><br />
+                  <span align="left" style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top; text-align:left; font-weight:normal; text-align:left;" >${header1}</span><br />
                   <p style="text-align:left; font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none; text-align:left;">
                     <a href="${link1}" style="text-decoration:none;color:#000;" target="_blank">${title1}</a></p>
                   <div style="font-size:14px; font-family:'Times New Roman', serif; margin:0 7px 0 0; text-align:left;">
@@ -858,7 +862,7 @@ ${header2}</span>	`
             <tbody>
               <tr>
                 <td class="inner contents">
-                  <span align="left" style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top; text-align:left; font-weight:normal; text-align:left; width: 110px">${header3}</span><br />
+                  <span align="left" style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top; text-align:left; font-weight:normal; text-align:left;">${header3}</span><br />
                   <p style="text-align:left; font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none; text-align:left; margin-top:0px;">
                     <a href="${link3}" style="text-decoration:none;color:#000;" target="_blank">${title3}</a></p>
                   <div style="font-size:14px; font-family:'Times New Roman', serif; margin:0 7px 0 0; text-align:left;">
@@ -906,7 +910,7 @@ export function featured(fields){
     
     overflow:auto;">
                               <center>
-                                <div style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top; width: 136px">
+                                <div style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top;">
                                   ${header}</div>
                               </center>
                               <table>
@@ -975,7 +979,7 @@ export function products(fields){
                     </tr>
                     <tr>
                       <td class="text" style="padding-bottom:0;padding-right:0;padding-left:10px;padding-top:10px;">
-                        <div style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top; width: 124px">
+                        <div style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top;">
                           ${header}</div>
                         <br />
                         <div style="font-size:16px; font-weight:bold; margin:0 0 0 0px; font-family:'Times New Roman', serif; ">

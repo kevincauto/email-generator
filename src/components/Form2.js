@@ -55,7 +55,7 @@ class App extends React.Component {
   }
 
   handleFormSwitch(form, e){
-    this.props.onFormSwitch(form, e.target.value);
+    this.props.onFormSwitch(form, e);
   }
 
   handleDeleteSection(field, e){
@@ -71,7 +71,7 @@ class App extends React.Component {
   }
 
   handleFieldChange(form,field,e){
-    this.props.onFieldChange(form,field,e.target.value);
+    this.props.onFieldChange(form,field,e);
   }
   onDragEnd(result) {
     // dropped outside the list
