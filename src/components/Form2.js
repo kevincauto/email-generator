@@ -25,8 +25,8 @@ const grid = 8;
 const getItemStyle = (draggableStyle, isDragging) => ({
   // some basic styles to make the items look a bit nicer
   userSelect: 'none',
-  padding: grid * 2,
-  margin: `0 0 ${grid}px 0`,
+  // padding: grid * 2,
+  // margin: `0 0 ${grid}px 0`,
 
   // change background colour if dragging
   background: isDragging ? 'lightgreen' : 'grey',
@@ -35,9 +35,9 @@ const getItemStyle = (draggableStyle, isDragging) => ({
   ...draggableStyle,
 });
 const getListStyle = isDraggingOver => ({
-  background: isDraggingOver ? 'lightblue' : 'lightgrey',
+  background: isDraggingOver ? 'lightblue' : 'lightgray',
   padding: grid,
-  width: 250,
+  width: 300,
 });
 
 class App extends React.Component {
@@ -47,8 +47,32 @@ class App extends React.Component {
       items: getItems(10),
     };
     this.onDragEnd = this.onDragEnd.bind(this);
+    this.handleTemplateChange = this.handleTemplateChange.bind(this);
+    this.handleFieldChange = this.handleFieldChange.bind(this);
+    this.handleAddSection = this.handleAddSection.bind(this);
+    this.handleDeleteSection = this.handleDeleteSection.bind(this);
+    this.handleFormSwitch = this.handleFormSwitch.bind(this);
   }
 
+  handleFormSwitch(form, e){
+    this.props.onFormSwitch(form, e.target.value);
+  }
+
+  handleDeleteSection(field, e){
+    this.props.onDeleteSection(field);
+  };
+
+  handleAddSection(field, e){
+    this.props.onAddSection(field);
+  }
+
+  handleTemplateChange(e) {
+    this.props.onTemplateChange(e.target.value);
+  }
+
+  handleFieldChange(form,field,e){
+    this.props.onFieldChange(form,field,e.target.value);
+  }
   onDragEnd(result) {
     // dropped outside the list
     if (!result.destination) {
@@ -69,6 +93,7 @@ class App extends React.Component {
   // Normally you would want to split things out into separate components.
   // But in this example everything is just done in one place for simplicity
   render() {
+    console.log(this.props.info.selected_template);
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
         <Droppable droppableId="droppable">
@@ -77,8 +102,8 @@ class App extends React.Component {
               ref={provided.innerRef}
               style={getListStyle(snapshot.isDraggingOver)}
             >
-              {this.state.items.map(item => (
-                <Draggable key={item.id} draggableId={item.id}>
+              {this.props.info[this.props.info.selected_template].map((object,i) => (
+                <Draggable key={i} draggableId={i}>
                   {(provided, snapshot) => (
                     <div>
                       <div
@@ -89,7 +114,84 @@ class App extends React.Component {
                         )}
                         {...provided.dragHandleProps}
                       >
-                        {item.content}
+                      <div className="blue" key={i + object.typeOfRow}>
+                      {/* closable? If yes add a red x icon*/}
+                      {
+                        this.props.info[this.props.info.selected_template][i].closable ? 
+                        <i className="icon-remove-sign close" onClick={(e)=>this.handleDeleteSection(i,e)}></i> : 
+                        <i></i> 
+                      }
+                      {/* switchable? If yes, allow a drop down to switch section*/}
+                      {
+                        this.props.info[this.props.info.selected_template][i].switchable ? 
+                          <select className="header-dropdown" onChange={(e)=>this.handleFormSwitch(i,e)}>
+                            <option>{object.header}</option>
+                            {
+                              Object.keys(rows)
+                              .filter(rowName=>rows[rowName].switchable && (rows[rowName].typeOfRow !== object.typeOfRow))
+                              .sort()
+                              .map(rowName => <option key={rowName} value={rowName}>{rows[rowName].header}</option>)
+                            }    
+                          </select> : 
+                          <h3>{object.header}</h3>
+                      }
+      
+                      
+      
+      
+      
+                      {object.fields.map((field,j)=>{
+                      if(field.dropdown){
+                          return(
+                              <div className="label" key={i + '' + j}>
+                                  <select
+                                      form-number={i}
+                                      field-number={j}
+                                      value={this.props.info[this.props.info.selected_template][i].fields[j].value}
+                                      onChange={(e)=>this.handleFieldChange(i,j,e)}
+                                  >
+                                      {field.dropdown
+                                      .map((selection,k) => {
+                                          return(
+                                          <option 
+                                              value={selection.value}
+                                              key={i + '' + j + '' + k}
+                                          >
+                                          {selection.text}
+                                          </option>
+                                          )
+      
+                                      })}
+                                  </select>
+                              </div>
+                          )
+                      }
+                      return(            
+                        <div 
+                          className="label"
+                          key={i + ''+ j + field.name }
+                        >
+                        <input
+                          type="text"
+                          formnumber={i}
+                          fieldnumber={j}
+                          placeholder={field.label}
+                          name={field.name}
+                          value={this.props.info[this.props.info.selected_template][i].fields[j].value}
+                          onChange={(e)=>this.handleFieldChange(i,j,e)}
+                        />
+                        </div>)
+                      })}
+                      {
+                        this.props.info[this.props.info.selected_template][i].addable ? 
+                        <i className="icon-plus-sign add" onClick={(e)=>this.handleAddSection(i,e)}></i> : 
+                        <i></i> 
+                      }
+                      
+                   
+                      
+                      </div>
+                      
                       </div>
                       {provided.placeholder}
                     </div>
@@ -244,7 +346,16 @@ class Form2 extends React.Component{
             <div className="form">
               {display}
             </div>
-            <App />
+            <App 
+                info={this.props.info}
+                onTextChange={this.handleTextChange}
+                onTemplateChange={value => this.handleTemplateChange(value)}
+                onDateChange={this.handleDateChange}
+                onFieldChange={(form, field, value)=>this.handleFieldChange(form, field, value)}
+                onAddSection={(field)=>this.handleAddSection(field)}
+                onDeleteSection={(field)=>this.handleDeleteSection(field)}
+                onFormSwitch = {(form, value)=>this.handleFormSwitch(form, value)}
+            />
           </div>
 
 
