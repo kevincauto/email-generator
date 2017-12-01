@@ -561,7 +561,7 @@ export function beginning(fields){
                             <tbody>
                               <tr>
                                 <td style="float:left;">
-                                  <a href="mailto:?subject=Forward: Compendium ${topic}&body=I thought you might be interested in this: ${url}refer=true" style="text-decoration:none; color:#000000; padding-left:10px; font-family:'Times New Roman', serif; font-size:11px;">▶ Forward to a Colleague</a> <a href="${subscribe}" style="text-decoration:none; color:#000000;padding-left:10px; font-family:'Times New Roman', serif; font-size:11px;" target="_blank">▶ Subscribe</a></td>
+                                  <a href="mailto:?subject=Forward: Compendium ${topic}&body=I thought you might be interested in this: ${url}?refer=true" style="text-decoration:none; color:#000000; padding-left:10px; font-family:'Times New Roman', serif; font-size:11px;">▶ Forward to a Colleague</a> <a href="${subscribe}" style="text-decoration:none; color:#000000;padding-left:10px; font-family:'Times New Roman', serif; font-size:11px;" target="_blank">▶ Subscribe</a></td>
                                 <td style="float:right; vertical-align:center;">
                                   <a href="https://www.facebook.com/CompendiumDentistry" style="padding: 0px; margin: 0px" target="_blank"><img src="https://www.dentalaegis.com/media/59236/" style="padding: 0px; margin: 0px; vertical-align:central;" /></a> <a href="https://twitter.com/compendiumced" style="padding: 0px; margin: 0px" target="_blank"><img src="https://www.dentalaegis.com/media/59237/" style="padding: 0px 10px 0px 0px; margin: 0px" /></a></td>
                               </tr>
