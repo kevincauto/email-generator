@@ -52,6 +52,7 @@ class App extends React.Component {
     this.handleAddSection = this.handleAddSection.bind(this);
     this.handleDeleteSection = this.handleDeleteSection.bind(this);
     this.handleFormSwitch = this.handleFormSwitch.bind(this);
+    this.handleDrag = this.handleDrag.bind(this);
   }
 
   handleFormSwitch(form, e){
@@ -73,12 +74,22 @@ class App extends React.Component {
   handleFieldChange(form,field,e){
     this.props.onFieldChange(form,field,e);
   }
+
+  handleDrag(result){
+    if (!result.destination) {
+      return;
+    }
+
+    this.props.onDrag(result.source.index, result.destination.index);
+
+  }
   onDragEnd(result) {
     // dropped outside the list
     if (!result.destination) {
       return;
     }
-
+    console.log(result.source.index)
+    console.log(result.destination.index)
     const items = reorder(
       this.state.items,
       result.source.index,
@@ -95,7 +106,7 @@ class App extends React.Component {
   render() {
     console.log(this.props.info.selected_template);
     return (
-      <DragDropContext onDragEnd={this.onDragEnd}>
+      <DragDropContext onDragEnd={this.handleDrag}>
         <Droppable droppableId="droppable">
           {(provided, snapshot) => (
             <div
@@ -216,8 +227,11 @@ class Form2 extends React.Component{
         this.handleAddSection = this.handleAddSection.bind(this);
         this.handleDeleteSection = this.handleDeleteSection.bind(this);
         this.handleFormSwitch = this.handleFormSwitch.bind(this);
+        this.handleDrag = this.handleDrag.bind(this);
       }
-
+      handleDrag(startIndex, endIndex){
+        this.props.onDrag(startIndex, endIndex);
+      }
       handleFormSwitch(form, e){
         this.props.onFormSwitch(form, e.target.value);
       }
@@ -355,6 +369,7 @@ class Form2 extends React.Component{
                 onAddSection={(field)=>this.handleAddSection(field)}
                 onDeleteSection={(field)=>this.handleDeleteSection(field)}
                 onFormSwitch = {(form, value)=>this.handleFormSwitch(form, value)}
+                onDrag = {(startIndex, endIndex)=>this.handleDrag(startIndex, endIndex)}
             />
           </div>
 

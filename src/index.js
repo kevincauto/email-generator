@@ -54,6 +54,7 @@ class Container extends React.Component {
     this.handleAddSection = this.handleAddSection.bind(this);
     this.handleDeleteSection = this.handleDeleteSection.bind(this);
     this.handleFormSwitch = this.handleFormSwitch.bind(this);
+    this.handleDrag = this.handleDrag.bind(this);
   }
 
   componentDidMount() {
@@ -65,7 +66,22 @@ class Container extends React.Component {
   }
   
   componentDidUpdate(){
-      //console.log(this.state);
+      console.log(this.state);
+  }
+
+  handleDrag(startIndex, endIndex){
+    let stateClone = _.cloneDeep(this.state);
+    let arrayOfRows = stateClone[this.state.selected_template];
+
+    const removedRow = arrayOfRows.splice(startIndex, 1);
+    console.log(removedRow);
+    arrayOfRows.splice(endIndex, 0, removedRow[0]);
+    console.log(arrayOfRows);
+    stateClone[this.state.selected_template] = arrayOfRows;
+
+
+    this.setState(stateClone);
+
   }
   handleFormSwitch(form, value){
     let stateClone = _.cloneDeep(this.state);
@@ -145,6 +161,7 @@ class Container extends React.Component {
                 onAddSection={(field)=>this.handleAddSection(field)}
                 onDeleteSection={(field)=>this.handleDeleteSection(field)}
                 onFormSwitch = {(form, value)=>this.handleFormSwitch(form, value)}
+                onDrag = {(startIndex, endIndex)=>this.handleDrag(startIndex, endIndex)}
               /> :
               <Form
               info={this.state}
