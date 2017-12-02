@@ -25,7 +25,7 @@ import IDTLiveWebinarHTML from './components/IDTLiveWebinarHTML';
 
 
 import Display from './components/Display';
-import Form2 from './components/Form2';
+import FormSection from './components/FormSection';
 import {cced_thematic_initial_state, rows} from './templates/cced_thematic';
 
 
@@ -51,10 +51,10 @@ class Container extends React.Component {
     this.handleTemplateChange = this.handleTemplateChange.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleFieldChange = this.handleFieldChange.bind(this);
-    this.handleAddSection = this.handleAddSection.bind(this);
-    this.handleDeleteSection = this.handleDeleteSection.bind(this);
+    this.handleFormAdd = this.handleFormAdd.bind(this);
+    this.handleFormDelete = this.handleFormDelete.bind(this);
     this.handleFormSwitch = this.handleFormSwitch.bind(this);
-    this.handleDrag = this.handleDrag.bind(this);
+    this.handleFormDrag = this.handleFormDrag.bind(this);
   }
 
   componentDidMount() {
@@ -69,17 +69,12 @@ class Container extends React.Component {
       console.log(this.state);
   }
 
-  handleDrag(startIndex, endIndex){
+  handleFormDrag(startIndex, endIndex){
     let stateClone = _.cloneDeep(this.state);
     let arrayOfRows = stateClone[this.state.selected_template];
-
     const removedRow = arrayOfRows.splice(startIndex, 1);
-    console.log(removedRow);
     arrayOfRows.splice(endIndex, 0, removedRow[0]);
-    console.log(arrayOfRows);
     stateClone[this.state.selected_template] = arrayOfRows;
-
-
     this.setState(stateClone);
 
   }
@@ -91,13 +86,13 @@ class Container extends React.Component {
     this.setState(stateClone);
   }
 
-  handleDeleteSection(field){
+  handleFormDelete(field){
     
     let stateClone = _.cloneDeep(this.state);
     stateClone[this.state.selected_template].splice(field, 1);
     this.setState(stateClone);
   }
-  handleAddSection(field){
+  handleFormAdd(field){
     let stateClone = _.cloneDeep(this.state);
     // let row = stateClone[this.state.selected_template][field];
     let row =       {
@@ -152,16 +147,14 @@ class Container extends React.Component {
 
       <div id="container">
         {this.state.selected_template === 'cced_thematic' ? 
-              <Form2
+              <FormSection
                 info={this.state}
-                onTextChange={this.handleTextChange}
                 onTemplateChange={value => this.handleTemplateChange(value)}
-                onDateChange={this.handleDateChange}
                 onFieldChange={(form, field, value)=>this.handleFieldChange(form, field, value)}
-                onAddSection={(field)=>this.handleAddSection(field)}
-                onDeleteSection={(field)=>this.handleDeleteSection(field)}
+                onFormAdd={(field)=>this.handleFormAdd(field)}
+                onFormDelete={(field)=>this.handleFormDelete(field)}
                 onFormSwitch = {(form, value)=>this.handleFormSwitch(form, value)}
-                onDrag = {(startIndex, endIndex)=>this.handleDrag(startIndex, endIndex)}
+                onFormDrag = {(startIndex, endIndex)=>this.handleFormDrag(startIndex, endIndex)}
               /> :
               <Form
               info={this.state}

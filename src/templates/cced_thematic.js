@@ -1,5 +1,14 @@
 import _ from 'lodash';
 
+//Auto detect the month and year for the url.  
+let d = new Date();
+let month = d.getMonth() + 1;
+if(month<10){month = '0' + '' + month}
+
+month = month.toString();
+let year = d.getFullYear();
+
+
 export const rows = {
   beginning: {
     typeOfRow: 'beginning',
@@ -9,7 +18,7 @@ export const rows = {
     addable: true,
     fields:  [
       {label: 'Email Name', name: 'emailName', value: 'CCED Bioactivity Thematic'},
-      {label: 'Month', name: 'month', value: '01', 
+      {label: 'Month', name: 'month', value: month, 
           dropdown: [
               {value: '01', text: 'Send Month: January'}, 
               {value: '02', text: 'Send Month: February'},
@@ -159,13 +168,13 @@ export const rows = {
 export const cced_thematic_initial_state = [
     _.cloneDeep(rows.beginning),
     _.cloneDeep(rows.news),
-      _.cloneDeep(rows.ce),
-        _.cloneDeep(rows.center_banner),
-          _.cloneDeep(rows.three_column),
-            _.cloneDeep(rows.featured),
-              _.cloneDeep(rows.products),
-                _.cloneDeep(rows.featured),
-                  _.cloneDeep(rows.end)
+    _.cloneDeep(rows.ce),
+    _.cloneDeep(rows.center_banner),
+    _.cloneDeep(rows.three_column),
+    _.cloneDeep(rows.featured),
+    _.cloneDeep(rows.products),
+    _.cloneDeep(rows.featured),
+    _.cloneDeep(rows.end)
   ];
 
 export function beginning(fields){
