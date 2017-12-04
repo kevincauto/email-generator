@@ -9,7 +9,7 @@ month = month.toString();
 let year = d.getFullYear();
 
 
-export const rows = {
+export const cced_thematic_rows = {
   beginning: {
     typeOfRow: 'beginning',
     header: 'Beginning Section',
@@ -166,15 +166,15 @@ export const rows = {
 }
 
 export const cced_thematic_initial_state = [
-    _.cloneDeep(rows.beginning),
-    _.cloneDeep(rows.news),
-    _.cloneDeep(rows.ce),
-    _.cloneDeep(rows.center_banner),
-    _.cloneDeep(rows.three_column),
-    _.cloneDeep(rows.featured),
-    _.cloneDeep(rows.products),
-    _.cloneDeep(rows.featured),
-    _.cloneDeep(rows.end)
+    _.cloneDeep(cced_thematic_rows.beginning),
+    _.cloneDeep(cced_thematic_rows.news),
+    _.cloneDeep(cced_thematic_rows.ce),
+    _.cloneDeep(cced_thematic_rows.center_banner),
+    _.cloneDeep(cced_thematic_rows.three_column),
+    _.cloneDeep(cced_thematic_rows.featured),
+    _.cloneDeep(cced_thematic_rows.products),
+    _.cloneDeep(cced_thematic_rows.featured),
+    _.cloneDeep(cced_thematic_rows.end)
   ];
 
 export function beginning(fields){
@@ -188,7 +188,7 @@ export function beginning(fields){
   let mainImg = fields[7].value;
   let intro = fields[8].value;
   //put the url together
-  let url = `https://www.dentalaegis.com/cced/${year}/${month}/newsletter/${topic.toLowerCase()}`
+  let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter/${topic.toLowerCase()}`
 
   return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">

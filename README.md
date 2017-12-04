@@ -1,6 +1,12 @@
 Email Generator
 ===============
 
+The Purpose
+-----------
+This app is meant to make putting together templated html emails quick and easy.
+
+Getting Up and Running
+----------------------
 Start by cloning the repo:
 ```
 git clone https://github.com/kevincauto/email-generator.git
@@ -15,6 +21,4 @@ Start the local development server:
 npm start
 ```
 
-The Purpose
------------
-This app is meant to make putting together templated emails quick and easy.
+

@@ -1,6 +1,13 @@
 import React from 'react';
-import {rows} from '../templates/cced_thematic';
+import {cced_thematic_rows} from '../templates/cced_thematic';
+import {idt_thematic_rows} from '../templates/idt_thematic';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+
+let rows ={
+  cced_thematic: cced_thematic_rows,
+  idt_thematic: idt_thematic_rows
+}
+
 
 // using some little inline style helpers to make the app look okay
 const getItemStyle = (draggableStyle, isDragging) => ({
@@ -89,19 +96,15 @@ class Forms extends React.Component {
                           <select className="header-dropdown" onChange={(e)=>this.handleFormSwitch(i,e)}>
                             <option>{object.header}</option>
                             {
-                              Object.keys(rows)
-                              .filter(rowName=>rows[rowName].switchable && (rows[rowName].typeOfRow !== object.typeOfRow))
+                              Object.keys(rows[this.props.info.selected_template])
+                              .filter(rowName=>rows[this.props.info.selected_template][rowName].switchable && (rows[this.props.info.selected_template][rowName].typeOfRow !== object.typeOfRow))
                               .sort()
-                              .map(rowName => <option key={rowName} value={rowName}>{rows[rowName].header}</option>)
+                              .map(rowName => <option key={rowName} value={rowName}>{rows[this.props.info.selected_template][rowName].header}</option>)
                             }    
                           </select> : 
                           <h3>{object.header}</h3>
                       }
-      
-                      
-      
-      
-      
+
                       {object.fields.map((field,j)=>{
                       if(field.dropdown){
                           return(
@@ -179,6 +182,7 @@ class FormSection extends React.Component{
         this.handleFormSwitch = this.handleFormSwitch.bind(this);
         this.handleFormDrag = this.handleFormDrag.bind(this);
       }
+
       handleFormDrag(startIndex, endIndex){
         this.props.onFormDrag(startIndex, endIndex);
       }
@@ -209,22 +213,15 @@ class FormSection extends React.Component{
         return(
             <div id="main-form">
             <h3>1. Select an email template.</h3>
+
             <select
               value={this.props.info.selected_template}
               onChange={this.handleTemplateChange}
             >
-              <option value="">Select an Email Template</option>
-              <option value="cced_live_webinar">CCED Live Webinar</option> 
-              <option value="cced_on_demand_webinar">CCED On-Demand Webinar</option>
-              <option value="cdew_live_webinar">CDEW Live Webinar</option>
-              <option value="id_live_webinar">ID Live Webinar</option>    
-              <option value="id_on_demand_webinar">ID On-Demand Webinar</option>
-              {/* <option value="id_reader">ID Reader</option> */}
               <option value="cced_thematic">CCED Thematic</option>
               <option value="idt_thematic">IDT Thematic</option>
-              <option value="idt_live_webinar">IDT Live Webinar</option>
-              <option value="idt_on_demand_webinar">IDT On-Demand Webinar</option>
             </select>
+
             <h3>2. Complete the form.</h3>
            
             <Forms 

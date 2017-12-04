@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-//Auto detect the month and year for the url.  
+//Auto detect the month and year.  
 let d = new Date();
 let currentMonth = d.getMonth() + 1;
 if(currentMonth<10){currentMonth = '0' + '' + currentMonth}
@@ -8,7 +8,7 @@ currentMonth = currentMonth.toString();
 let currentYear = d.getFullYear().toString();
 
 
-export const rows = {
+export const idt_thematic_rows = {
   beginning: {
     typeOfRow: 'beginning',
     header: 'Beginning Section',
@@ -180,15 +180,15 @@ export const rows = {
 }
 
 export const idt_thematic_initial_state = [
-    _.cloneDeep(rows.beginning),
-    _.cloneDeep(rows.news),
-    _.cloneDeep(rows.ce),
-    _.cloneDeep(rows.resources),
-    _.cloneDeep(rows.center_banner),
-    _.cloneDeep(rows.featured_article),
-    _.cloneDeep(rows.featured_video),
-    _.cloneDeep(rows.products),
-    _.cloneDeep(rows.end)
+    _.cloneDeep(idt_thematic_rows.beginning),
+    _.cloneDeep(idt_thematic_rows.news),
+    _.cloneDeep(idt_thematic_rows.ce),
+    _.cloneDeep(idt_thematic_rows.resources),
+    _.cloneDeep(idt_thematic_rows.center_banner),
+    _.cloneDeep(idt_thematic_rows.featured_article),
+    _.cloneDeep(idt_thematic_rows.featured_video),
+    _.cloneDeep(idt_thematic_rows.products),
+    _.cloneDeep(idt_thematic_rows.end)
   ];
 
 export function beginning(fields){
@@ -199,11 +199,11 @@ export function beginning(fields){
   let mastheadSrc = fields[4].value;
   let subscribe = fields[5].value;
   let topic = fields[6].value;
-
   let mainImg = fields[7].value;
   let intro = fields[8].value;
+  
   //put the url together
-  let url = `https://www.dentalaegis.com/cced/${year}/${month}/newsletter/${topic.toLowerCase()}`
+  let url = `https://www.aegisdentalnetwork.com/idt/${year}/${month}/newsletter/${topic.toLowerCase()}`
 
   return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">
@@ -422,7 +422,7 @@ export function beginning(fields){
                                                                                       <td align="center">
                                                                                           <a href="mailto:?subject=FW: Inside Dental Technology Update&body=I thought you might be interested in this: https://www.dentalaegis.com/idt/${year}/${month}/newsletter/${topic.toLowerCase()}?refer=true" target="_blank"> <img alt="" border="0" src="https://www.dentalaegis.com/media/59864/" style="display:block; margin:0px; max-width:20px;" width="20" /> </a></td>
                                                                                       <td align="center" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:18px; color:#d2232a; padding-left:3px; font-weight:bold;">
-                                                                                          <a href="mailto:?subject=FW: Inside Dental Technology Update&body=I thought you might be interested in this: https://www.dentalaegis.com/idt/${year}/${month}/newsletter/${topic.toLowerCase()}?refer" style="color:#d2232a; text-decoration:none;" target="_blank">Forward to a Colleague</a></td>
+                                                                                          <a href="mailto:?subject=FW: Inside Dental Technology Update&body=I thought you might be interested in this: https://www.dentalaegis.com/idt/${year}/${month}/newsletter/${topic.toLowerCase()}?refer=true" style="color:#d2232a; text-decoration:none;" target="_blank">Forward to a Colleague</a></td>
                                                                                       <td class="hide" width="30">
                                                                                            </td>
                                                                                   </tr>
@@ -432,7 +432,7 @@ export function beginning(fields){
                                                                   </tr>
                                                                   <tr>
                                                                       <td align="center">
-                                                                          <img alt="" border="0" class="w100" src="https://www.dentalaegis.com/media/64340/" style="display:block; margin:0px; max-width:582px;" width="582" /></td>
+                                                                          <img alt="" border="0" class="w100" src="${mainImg}" style="display:block; margin:0px; max-width:582px;" width="582" /></td>
                                                                   </tr>
                                                               </tbody>
                                                           </table>
@@ -455,10 +455,8 @@ export function beginning(fields){
 export function news(fields){
 
   let title1 = fields[0].value;
-
   let link1 = fields[1].value;
   let title2 = fields[2].value;
-
   let link2 = fields[3].value;
 
   return(
@@ -608,6 +606,78 @@ export function ce(fields){
                     <!--END OF CE SECTION -->`
   )
 }
+export function resources(fields){
+let topic = fields[0].value
+let title1 = fields[1].value
+let author1 = fields[2].value
+let description1 = fields[3].value
+let link1 = fields[4].value
+let title2 = fields[5].value
+let author2 = fields[6].value
+let description2 = fields[7].value
+let link2 = fields[8].value
+
+  return `<tr>
+  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#d2232a; font-weight:bold; text-transform:uppercase; padding-top:13px;">
+    ${topic} Resources</td>
+</tr>
+<tr>
+  <td align="center">
+    <table border="0" cellpadding="0" cellspacing="0" style="border-bottom:1px solid #000000;" width="100%">
+      <tbody>
+        <tr>
+          <td align="center">
+            <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="290">
+              <tbody>
+                <tr>
+                  <td align="center" height="8" style="font-size:8px; line-height:8px;">
+                    <img alt="" border="0" height="8" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:8px;" width="10" /></td>
+                </tr>
+                <tr>
+                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px;">
+                    <span style="color:#000000; font-weight:bold;"><a href="${link1}" style="text-decoration:none; color:#000000;" target="_blank">${title1}</a> </span><br />
+                    <em>${author1}</em><br />
+                    ${description1}</td>
+                </tr>
+                <tr>
+                  <td align="left" class="maroon" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#d2232a; font-weight:bold;">
+                    <a href="${link1}" style="color:#d2232a; text-decoration:none;" target="_blank">Read More</a></td>
+                </tr>
+                <tr>
+                  <td align="center" height="15" style="font-size:15px; line-height:15px;">
+                    <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                </tr>
+              </tbody>
+            </table>
+            <table align="right" border="0" cellpadding="0" cellspacing="0" class="w100" width="290">
+              <tbody>
+                <tr>
+                  <td align="center" class="hide" height="8" style="font-size:8px; line-height:8px;">
+                    <img alt="" border="0" height="8" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:8px;" width="8" /></td>
+                </tr>
+                <tr>
+                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px;">
+                    <span style="color:#000000; font-weight:bold;"><a href="${link2}" style="text-decoration:none; color:#000;" target="_blank"><strong>${title2}</strong></a> </span><br />
+                    <em>${author2}</em><br />
+                    ${description2}</td>
+                </tr>
+                <tr>
+                  <td align="left" class="maroon" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#d2232a; font-weight:bold;">
+                    <a href="${link2}" style="color:#d2232a; text-decoration:none;" target="_blank">Read More</a></td>
+                </tr>
+                <tr>
+                  <td align="center" height="15" style="font-size:15px; line-height:15px;">
+                    <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </td>
+</tr>`;
+}
 
 export function center_banner(fields){
   let link = fields[0].value;
@@ -617,7 +687,7 @@ export function center_banner(fields){
      <!-- CENTER BANNER -->
     <tr>
       <td align="center" class="pad" style="padding:16px 10px; border-bottom:1px solid #000000;">
-        <a href="${link}" target="_blank"> <img alt="" border="0" class="w100" src="https://www.dentalaegis.com/media/61049/" style="display:block; margin:0px; max-width:600px;" width="600" /> </a></td>
+        <a href="${link}" target="_blank"> <img alt="" border="0" class="w100" src="${imgLink}" style="display:block; margin:0px; max-width:600px;" width="600" /> </a></td>
                     </tr>
                     <!--END CENTER BANNER -->`
   )
@@ -771,8 +841,8 @@ export function featured_video(fields){
           </tbody>
         </table>
       </td>
-                    </tr>
-                    <!--END FEATURED VIDEO SECTION--> `
+    </tr>
+    <!--END FEATURED VIDEO SECTION--> `
   )
 }
 
