@@ -17,7 +17,7 @@ export const rows = {
     switchable: false,
     addable: true,
     fields:  [
-      {label: 'Email Name', name: 'emailName', value: 'CCED Bioactivity Thematic'},
+      {label: 'Email Name', name: 'emailName'},
       {label: 'Month', name: 'month', value: month, 
           dropdown: [
               {value: '01', text: 'Send Month: January'}, 

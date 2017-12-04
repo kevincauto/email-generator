@@ -3,6 +3,12 @@ import DOMPurify from 'dompurify';
 import {saveAs} from 'file-saver';
 import {html_sections} from '../templates/cced_thematic';
 import * as cced_thematic from '../templates/cced_thematic.js';
+import * as idt_thematic from '../templates/idt_thematic.js';
+
+const TEMPLATES = {
+  cced_thematic,
+  idt_thematic
+}
 
 export default class Display extends React.Component {
     downloadHtml(html, fileName){
@@ -30,7 +36,7 @@ export default class Display extends React.Component {
     //the line of code below calls the functions in the cced_thematic.js
     //It uses the information in the fields array to generate an html row with the proper info
     //The info is mapped to an array and then joined into one string of html
-    let html = layout.map(row=>{ return cced_thematic[row.typeOfRow](row.fields)}).join('');
+    let html = layout.map(row=>{ return TEMPLATES[this.props.info.selected_template][row.typeOfRow](row.fields)}).join('');
     
         //Sanitize data to avoid XSS attack
         //Sanitize strips css from the header and make the email render oddly.  Need to find a solution to clean without

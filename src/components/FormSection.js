@@ -221,6 +221,7 @@ class FormSection extends React.Component{
               <option value="id_on_demand_webinar">ID On-Demand Webinar</option>
               {/* <option value="id_reader">ID Reader</option> */}
               <option value="cced_thematic">CCED Thematic</option>
+              <option value="idt_thematic">IDT Thematic</option>
               <option value="idt_live_webinar">IDT Live Webinar</option>
               <option value="idt_on_demand_webinar">IDT On-Demand Webinar</option>
             </select>

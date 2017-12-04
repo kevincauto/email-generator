@@ -27,6 +27,7 @@ import IDTLiveWebinarHTML from './components/IDTLiveWebinarHTML';
 import Display from './components/Display';
 import FormSection from './components/FormSection';
 import {cced_thematic_initial_state, rows} from './templates/cced_thematic';
+import {idt_thematic_initial_state} from './templates/idt_thematic';
 
 
 
@@ -45,7 +46,8 @@ class Container extends React.Component {
       id_on_demand_webinar: {},
       cdew_live_webinar: {},
       idt_live_webinar: {},
-      idt_on_demand_webinar: {}
+      idt_on_demand_webinar: {},
+      idt_thematic: idt_thematic_initial_state
     };
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleTemplateChange = this.handleTemplateChange.bind(this);
@@ -313,6 +315,7 @@ class TextResults extends React.Component {
    let htmlDisplay = "Nothing to display right now.";
    if(this.props.info.selected_template === 'id_reader'){htmlDisplay = <IDReaderHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'cced_thematic'){htmlDisplay = <Display info={this.props.info} />}
+   if(this.props.info.selected_template === 'idt_thematic'){htmlDisplay = <Display info={this.props.info} />}
    if(this.props.info.selected_template === 'id_on_demand_webinar'){htmlDisplay = <IDOnDemandWebinarHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'cced_live_webinar'){htmlDisplay = <CCEDLiveWebinarHTML info={this.props.info} />}
    if(this.props.info.selected_template === 'cced_on_demand_webinar'){htmlDisplay = <CCEDOnDemandWebinarHTML info={this.props.info} />}
