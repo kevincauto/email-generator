@@ -61,7 +61,7 @@ export const idt_thematic_rows = {
       {label: 'First News Title', name: 'title1'},
       {label: 'First News Link', name: 'link1'},
       {label: 'Second News Title', name: 'title2'},
-      {label: 'First News Link', name: 'link2'},
+      {label: 'Second News Link', name: 'link2'},
     ]
   },
   ce: {

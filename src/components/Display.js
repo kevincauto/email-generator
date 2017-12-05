@@ -4,10 +4,12 @@ import {saveAs} from 'file-saver';
 import {html_sections} from '../templates/cced_thematic';
 import * as cced_thematic from '../templates/cced_thematic.js';
 import * as idt_thematic from '../templates/idt_thematic.js';
+import * as id_thematic from '../templates/id_thematic.js';
 
 const TEMPLATES = {
   cced_thematic,
-  idt_thematic
+  idt_thematic,
+  id_thematic
 }
 
 export default class Display extends React.Component {
@@ -31,9 +33,9 @@ export default class Display extends React.Component {
 
     render() {
     let layout = this.props.info[this.props.info.selected_template];
-    //I would prefer a more dynamic solution in the line below.
-    //cced_thematic should be variable depending on the selected template
-    //the line of code below calls the functions in the cced_thematic.js
+
+    //the line of code below calls the functions in the template file.
+    //functions are named after the rowName
     //It uses the information in the fields array to generate an html row with the proper info
     //The info is mapped to an array and then joined into one string of html
     let html = layout.map(row=>{ return TEMPLATES[this.props.info.selected_template][row.typeOfRow](row.fields)}).join('');
@@ -47,7 +49,7 @@ export default class Display extends React.Component {
     //fix this.
     let emailName =  'Untitled';
         return(
-        <div >
+          <div id="text-results">
         <div className="content" dangerouslySetInnerHTML={{__html: html}}></div>
         <br />
         <h3 className="download-header">3. Copy or download the email.</h3>

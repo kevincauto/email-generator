@@ -9,19 +9,22 @@ import FormSection from './components/FormSection';
 
 import {cced_thematic_initial_state, cced_thematic_rows} from './templates/cced_thematic';
 import {idt_thematic_initial_state, idt_thematic_rows} from './templates/idt_thematic';
+import {id_thematic_initial_state, id_thematic_rows} from './templates/id_thematic';
 
 let rows ={
   cced_thematic: cced_thematic_rows,
-  idt_thematic: idt_thematic_rows
+  idt_thematic: idt_thematic_rows,
+  id_thematic: id_thematic_rows
 }
 
 class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected_template: 'idt_thematic',
+      selected_template: 'id_thematic',
       cced_thematic: cced_thematic_initial_state,
-      idt_thematic: idt_thematic_initial_state
+      idt_thematic: idt_thematic_initial_state,
+      id_thematic: id_thematic_initial_state
     };
 
     this.handleFieldChange = this.handleFieldChange.bind(this);
@@ -46,9 +49,7 @@ class Container extends React.Component {
   }
   handleFormSwitch(form, value){
     let stateClone = _.cloneDeep(this.state);
-
     stateClone[this.state.selected_template].splice(form, 1, rows[this.state.selected_template][value]);
-
     this.setState(stateClone);
   }
 
@@ -57,25 +58,18 @@ class Container extends React.Component {
     stateClone[this.state.selected_template].splice(field, 1);
     this.setState(stateClone);
   }
-  handleFormAdd(field){
+  handleFormAdd(form){
     let stateClone = _.cloneDeep(this.state);
-    // let row = stateClone[this.state.selected_template][field];
-    let row =       {
-      typeOfRow: 'featured',
-      header: 'Featured Section',
-      closable: true,
-      switchable: true,
-      addable: true,
-      fields:  [
-          {label: 'Header', name: 'header', value: 'FEATURED EVENT'},
-          {label: 'Title', name: 'title'},
-          {label: 'Author', name: 'author'},
-          {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-          {label: 'Link', name: 'link'},
-          {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/150'}
-      ]
+
+    //add the first row that is switchable
+    let formToAdd;
+    for (let rowName in rows[this.state.selected_template]) { 
+      if(rows[this.state.selected_template][rowName].switchable === true){
+        formToAdd = rows[this.state.selected_template][rowName];
+        break;
+      }
     }
-    stateClone[this.state.selected_template].splice(field+1, 0, row);
+    stateClone[this.state.selected_template].splice(form+1, 0, formToAdd);
     this.setState(stateClone);
   }
 
@@ -101,14 +95,12 @@ class Container extends React.Component {
           info={this.state}
           onTemplateChange={value => this.handleTemplateChange(value)}
           onFieldChange={(form, field, value)=>this.handleFieldChange(form, field, value)}
-          onFormAdd={(field)=>this.handleFormAdd(field)}
+          onFormAdd={(form)=>this.handleFormAdd(form)}
           onFormDelete={(field)=>this.handleFormDelete(field)}
           onFormSwitch = {(form, value)=>this.handleFormSwitch(form, value)}
           onFormDrag = {(startIndex, endIndex)=>this.handleFormDrag(startIndex, endIndex)}
               /> 
-        <div id="text-results">
           <Display info={this.state} />
-        </div>
       </div>
 
     );

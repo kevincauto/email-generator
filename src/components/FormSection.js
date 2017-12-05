@@ -1,11 +1,13 @@
 import React from 'react';
 import {cced_thematic_rows} from '../templates/cced_thematic';
 import {idt_thematic_rows} from '../templates/idt_thematic';
+import {id_thematic_rows} from '../templates/id_thematic';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 let rows ={
   cced_thematic: cced_thematic_rows,
-  idt_thematic: idt_thematic_rows
+  idt_thematic: idt_thematic_rows,
+  id_thematic: id_thematic_rows
 }
 
 
@@ -15,7 +17,7 @@ const getItemStyle = (draggableStyle, isDragging) => ({
   userSelect: 'none',
 
   // change background color if dragging
-  background: isDragging ? 'lightgreen' : 'white',
+  background: isDragging ? '' : 'white',
 
   // styles we need to apply on draggables
   ...draggableStyle,
@@ -44,8 +46,8 @@ class Forms extends React.Component {
     this.props.onFormDelete(field);
   };
 
-  handleFormAdd(field, e){
-    this.props.onFormAdd(field);
+  handleFormAdd(form, e){
+    this.props.onFormAdd(form);
   }
 
   handleFieldChange(form,field,e){
@@ -195,8 +197,8 @@ class FormSection extends React.Component{
         this.props.onFormDelete(field);
       };
 
-      handleFormAdd(field, e){
-        this.props.onFormAdd(field);
+      handleFormAdd(form, e){
+        this.props.onFormAdd(form);
       }
   
       handleTemplateChange(e) {
@@ -220,6 +222,7 @@ class FormSection extends React.Component{
             >
               <option value="cced_thematic">CCED Thematic</option>
               <option value="idt_thematic">IDT Thematic</option>
+              <option value="id_thematic">ID Thematic</option>
             </select>
 
             <h3>2. Complete the form.</h3>
@@ -229,7 +232,7 @@ class FormSection extends React.Component{
                 onTemplateChange={value => this.handleTemplateChange(value)}
                 onDateChange={this.handleDateChange}
                 onFieldChange={(form, field, value)=>this.handleFieldChange(form, field, value)}
-                onFormAdd={(field)=>this.handleFormAdd(field)}
+                onFormAdd={(form)=>this.handleFormAdd(form)}
                 onFormDelete={(field)=>this.handleFormDelete(field)}
                 onFormSwitch = {(form, value)=>this.handleFormSwitch(form, value)}
                 onFormDrag = {(startIndex, endIndex)=>this.handleFormDrag(startIndex, endIndex)}
