@@ -179,7 +179,7 @@ export function beginning(fields){
   let intro = fields[8].value;
   
   //put the url together
-  let url = `https://www.aegisdentalnetwork.com/id/${year}/${month}/newsletter/${topic.toLowerCase()}`
+  let url = `https://www.aegisdentalnetwork.com/id/${year}/${month}/newsletter/${topic.trim().replace(/\s+/g, '-').toLowerCase()}`;
 
   return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   
@@ -868,7 +868,7 @@ export function beginning(fields){
   
                                                               <td align="center" class="pad" style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:14px;Margin-bottom:0px; color:#fff; font-size:10px; text-transform:uppercase; font-family: Arial;">
   
-                                                                  <a href="http://www.dentalaegis.com/id/resource-center/implants/" style=" text-decoration:none; color:#ffffff" target="_blank">Resource Center</a></td>
+                                                                  <a href="http://www.dentalaegis.com/id/resource-center/" style=" text-decoration:none; color:#ffffff" target="_blank">Resource Center</a></td>
   
                                                               <td class="w50" width="50">
   

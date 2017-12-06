@@ -196,10 +196,14 @@ textarea{
 .blue{
   padding: 5px;
   background-color: rgb(231, 238, 250);
-  background-color: white;
+  background-color: #eee;
   border-radius: 4px; 
   margin: 5px 0px;
-  border: solid 2px #333
+  border: solid 1px #333
+}
+
+.blue:hover{
+  background-color: #e8e8e8;
 }
 
 h4{

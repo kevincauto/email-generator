@@ -188,7 +188,7 @@ export function beginning(fields){
   let mainImg = fields[7].value;
   let intro = fields[8].value;
   //put the url together
-  let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter/${topic.toLowerCase()}`
+  let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter/${topic.trim().replace(/\s+/g, '-').toLowerCase()}`;
 
   return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">
