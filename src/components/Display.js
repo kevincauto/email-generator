@@ -5,11 +5,13 @@ import {html_sections} from '../templates/cced_thematic';
 import * as cced_thematic from '../templates/cced_thematic.js';
 import * as idt_thematic from '../templates/idt_thematic.js';
 import * as id_thematic from '../templates/id_thematic.js';
+import * as idt_reader from '../templates/idt_reader.js';
 
 const TEMPLATES = {
   cced_thematic,
   idt_thematic,
-  id_thematic
+  id_thematic,
+  idt_reader
 }
 
 export default class Display extends React.Component {

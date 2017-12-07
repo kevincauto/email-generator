@@ -2,12 +2,14 @@ import React from 'react';
 import {cced_thematic_rows} from '../templates/cced_thematic';
 import {idt_thematic_rows} from '../templates/idt_thematic';
 import {id_thematic_rows} from '../templates/id_thematic';
+import {idt_reader_rows} from '../templates/id_thematic';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 let rows ={
   cced_thematic: cced_thematic_rows,
   idt_thematic: idt_thematic_rows,
-  id_thematic: id_thematic_rows
+  id_thematic: id_thematic_rows,
+  idt_reader: idt_thematic_rows
 }
 
 
@@ -223,6 +225,7 @@ class FormSection extends React.Component{
               <option value="cced_thematic">CCED Thematic</option>
               <option value="idt_thematic">IDT Thematic</option>
               <option value="id_thematic">ID Thematic</option>
+              <option value="idt_reader">IDT Thematic</option>
             </select>
 
             <h3>2. Complete the form.</h3>
