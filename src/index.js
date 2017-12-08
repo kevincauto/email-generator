@@ -23,7 +23,7 @@ class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected_template: 'id_thematic',
+      selected_template: 'idt_reader',
       cced_thematic: cced_thematic_initial_state,
       idt_thematic: idt_thematic_initial_state,
       id_thematic: id_thematic_initial_state,

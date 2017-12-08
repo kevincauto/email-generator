@@ -62,7 +62,7 @@ export const idt_reader_rows = {
     switchable: true,
     addable: true,
     fields:  [
-      {label: 'Header', name: 'header'},
+      {label: 'Header', name: 'header', value: 'Header'},
       {label: 'Title', name: 'title'},
       {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos. ' },
       {label: 'Author', name: 'author'},
@@ -111,10 +111,9 @@ export const idt_reader_rows = {
       {label: 'Header', name: 'header', value: 'On-Demand Webinar'},
       {label: 'Title', name: 'title'},
       {label: 'Author', name: 'author'},
-      {label: 'Date', name: 'date'},
+      {label: 'Dates', name: 'dates'},
       {label: 'Credit', name: 'credit'},
       {label: 'Cost', name: 'cost'},
-      {label: 'Dates', name: 'dates'},
       {label: 'Provider', name: 'provider'},
       {label: 'Supporter', name: 'supporter'},
       {label: 'Link', name: 'link'},
@@ -128,7 +127,7 @@ export const idt_reader_rows = {
     switchable: true,
     addable: true,
     fields:  [
-      {label: 'Header', name: 'header'},
+      {label: 'Header', name: 'header', value: 'Featured Header'},
       {label: 'Title', name: 'title'},
       {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  '},
       {label: 'Author', name: 'author'},
@@ -603,19 +602,20 @@ export function article(fields){
                                <td align="center">
                                   <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="395">
                                      <tbody>
-                                        <tr>
-                                           <td align="left" style="padding-left:3px; padding-bottom:7px;">
-                                              <table border="0" cellpadding="0" cellspacing="0" style="background-color: #ab1117; box-shadow: -3px 3px 0px #bbbbbb;">
-                                                 <tbody>
-                                                    <tr>
-                                                       <td align="center" style="font-size: 18px; padding: 2px 9px; font-family: Times New Roman, serif; font-style: italic; font-weight: normal; color: #ffffff; text-align: left;">
-                                                          ${header}
-                                                       </td>
-                                                    </tr>
-                                                 </tbody>
-                                              </table>
-                                           </td>
-                                        </tr>
+                                     ${header ? `                                        <tr>
+                                     <td align="left" style="padding-left:3px; padding-bottom:7px;">
+                                        <table border="0" cellpadding="0" cellspacing="0" style="background-color: #ab1117; box-shadow: -3px 3px 0px #bbbbbb;">
+                                           <tbody>
+                                              <tr>
+                                                 <td align="center" style="font-size: 18px; padding: 2px 9px; font-family: Times New Roman, serif; font-style: italic; font-weight: normal; color: #ffffff; text-align: left;">
+                                                    ${header}
+                                                 </td>
+                                              </tr>
+                                           </tbody>
+                                        </table>
+                                     </td>
+                                  </tr>` : ``}
+
                                         <tr>
                                            <td align="left" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:16px; font-weight:bold; line-height:20px;text-transform:uppercase;">
                                               <a href="${link}" style="text-decoration:none; color:#000;" target="_blank">${title}</a>
@@ -741,30 +741,20 @@ let imgSrc = fields[9].value
                                          <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="340">
      
                                              <tbody>
-     
-                                                 <tr>
-     
-                                                     <td align="left" style="padding-left:3px; padding-bottom:7px;">
-     
-                                                         <table border="0" cellpadding="0" cellspacing="0" style="background-color: #ab1117; box-shadow: -3px 3px 0px #bbbbbb;">
-     
-                                                             <tbody>
-     
-                                                                 <tr>
-     
-                                                                     <td align="center" style="font-size: 18px; padding: 2px 9px; font-family: Times New Roman, serif; font-style: italic; font-weight: normal; color: #ffffff; text-align: left;">
-     
-                                                                         ${header}</td>
-     
-                                                                 </tr>
-     
-                                                             </tbody>
-     
-                                                         </table>
-     
-                                                     </td>
-     
-                                                 </tr>
+                                                ${header ? `                                                 
+                                            <tr>
+                                                <td align="left" style="padding-left:3px; padding-bottom:7px;">
+                                                    <table border="0" cellpadding="0" cellspacing="0" style="background-color: #ab1117; box-shadow: -3px 3px 0px #bbbbbb;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center" style="font-size: 18px; padding: 2px 9px; font-family: Times New Roman, serif; font-style: italic; font-weight: normal; color: #ffffff; text-align: left;">
+                                                                    ${header}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>` : ``}
+                                
      
                                                  <tr>
      
@@ -882,7 +872,7 @@ export function on_demand_webinar(fields){
     let header = fields[0].value
     let title = fields[1].value
     let author = fields[2].value
-    let date = fields[3].value
+    let dates = fields[3].value
     let credit = fields[4].value
     let cost = fields[5].value
     let provider = fields[6].value
@@ -891,99 +881,93 @@ export function on_demand_webinar(fields){
     let imgSrc = fields[9].value
   return(
     `                               
-    <!--START ON-DEMAND WEBINAR SECTION -->
-    
-                                                                    
- <tr>
+    <!--START ON-DEMAND WEBINAR SECTION -->                                                             
+    <tr>
     <td align="center">
-       <table border="0" cellpadding="0" cellspacing="0" style="border-bottom:1px dashed #ab1117;" width="100%">
-          <tbody>
-             <tr>
-                <td width="20">
-                </td>
-                <td align="center">
-                   <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tbody>
-                         <tr>
-                            <td align="center" height="20">
-                            </td>
-                         </tr>
-                         <tr>
-                            <td align="center">
-                               <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="340">
-                                  <tbody>
-                                     <tr>
-                                        <td align="left" style="padding-left:3px; padding-bottom:7px;">
-                                           <table border="0" cellpadding="0" cellspacing="0" style="background-color: #ab1117; box-shadow: -3px 3px 0px #bbbbbb;">
-                                              <tbody>
-                                                 <tr>
-                                                    <td align="center" style="font-size: 18px; padding: 2px 9px; font-family: Times New Roman, serif; font-style: italic; font-weight: normal; color: #ffffff; text-align: left;">
-                                                       ${header}
-                                                    </td>
-                                                 </tr>
-                                              </tbody>
-                                           </table>
-                                        </td>
-                                     </tr>
-                                     <tr>
-                                        <td align="left" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:16px; font-weight:bold; line-height:20px; text-transform:uppercase;">
-                                           <a href="${link}" style="text-decoration:none; color:#000;" target="_blank">${title}</a>
-                                        </td>
-                                     </tr>
-                                     <tr>
-                                        <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:16px; color:#000000; padding-bottom:5px;">
-                                           <em>${author}</em><br />
-                                           <strong>DATES:</strong> ${date}<br />
-                                           <strong>CREDIT:</strong> ${credit}<br />
-                                           <strong>COST:</strong> ${cost}<br />
-                                           <strong>PROVIDER:</strong> ${provider}<br />
-                                           <strong>COMMERCIAL SUPPORTER:</strong> <em>${supporter}</em>
-                                        </td>
-                                     </tr>
-                                     <tr>
-                                        <td align="left" class="maroon" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:16px; color:#ab1117; text-transform:uppercase; font-weight:bold;">
-                                           <a href="${link}" style="text-decoration:none;" target="_blank">VIEW WEBINAR ➠</a>
-                                        </td>
-                                     </tr>
-                                     <tr>
-                                        <td align="center" height="20">
-                                        </td>
-                                     </tr>
-                                  </tbody>
-                               </table>
-                               <table align="right" border="0" cellpadding="0" cellspacing="0" class="w100" width="180">
-                                  <tbody>
-                                     <tr>
-                                        <td align="center">
-                                           <table align="left" border="0" cellpadding="0" cellspacing="0" class="w180" width="180">
-                                              <tbody>
-                                                 <tr>
-                                                    <td align="center" valign="top">
-                                                       <a href="${link}" target="_blank"> <img alt="" border="0" src="${imgSrc}" style="display:block; max-width:180px; width:180px;" width="180" /> </a>
-                                                    </td>
-                                                 </tr>
-                                                 <tr>
+        <table border="0" cellpadding="0" cellspacing="0" style="border-bottom:1px dashed #ab1117;" width="100%">
+            <tbody>
+                <tr>
+                    <td width="20">
+                         </td>
+                    <td align="center">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td align="center" height="20">
+                                         </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="340">
+                                            <tbody>
+                                               ${header ? `                                                 
+                                           <tr>
+                                               <td align="left" style="padding-left:3px; padding-bottom:7px;">
+                                                   <table border="0" cellpadding="0" cellspacing="0" style="background-color: #ab1117; box-shadow: -3px 3px 0px #bbbbbb;">
+                                                       <tbody>
+                                                           <tr>
+                                                               <td align="center" style="font-size: 18px; padding: 2px 9px; font-family: Times New Roman, serif; font-style: italic; font-weight: normal; color: #ffffff; text-align: left;">
+                                                                   ${header}</td>
+                                                           </tr>
+                                                       </tbody>
+                                                   </table>
+                                               </td>
+                                           </tr>` : ``}
+                                                <tr>
+                                                    <td align="left" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:16px; font-weight:bold; line-height:20px; text-transform:uppercase;">
+                                                        <a href="${link}" style="text-decoration:none; color:#000;" target="_blank">${title}</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:16px; color:#000000; padding-bottom:5px;">
+                                                        <em>${author}</em><br />
+                                                        <strong>DATES:</strong> ${dates}<br />
+                                                        <strong>CREDIT:</strong> ${credit}<br />
+                                                        <strong>COST:</strong> ${cost}<br />
+                                                        <strong>PROVIDER:</strong> ${provider}<br />
+                                                        <strong>COMMERCIAL SUPPORTER:</strong> <em>${supporter}</em></td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" class="maroon" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:16px; color:#ab1117; text-transform:uppercase; font-weight:bold;">
+                                                        <a href="${link}" style="color:#; text-decoration:none;" target="_blank">VIEW WEBINAR ➠</a></td>
+                                                </tr>
+                                                <tr>
                                                     <td align="center" height="20">
+                                                         </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table align="right" border="0" cellpadding="0" cellspacing="0" class="w100" width="180">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="center">
+                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" class="w180" width="180">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="center" valign="top">
+                                                                        <a href="${link}" target="_blank"> <img alt="" border="0" src="${imgSrc}" style="display:block; max-width:180px; width:180px;" width="180" /> </a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" height="20">
+                                                                         </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
                                                     </td>
-                                                 </tr>
-                                              </tbody>
-                                           </table>
-                                        </td>
-                                     </tr>
-                                  </tbody>
-                               </table>
-                            </td>
-                         </tr>
-                      </tbody>
-                   </table>
-                </td>
-                <td width="20">
-                </td>
-             </tr>
-          </tbody>
-       </table>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td width="20">
+                         </td>
+                </tr>
+            </tbody>
+        </table>
     </td>
- </tr>
+    </tr>
  
  
  
@@ -1004,7 +988,7 @@ export function featured(fields){
   return(
     `     <!--FEATURED GRAY BOX ARTICLE SECTION-->
     
-    <tr>
+    <tr style="background-color: #eee">
        <td align="center">
           <table border="0" cellpadding="0" cellspacing="0" style="border-bottom:1px dashed #ab1117;" width="100%">
              <tbody>
@@ -1022,19 +1006,20 @@ export function featured(fields){
                                <td align="center">
                                   <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="395">
                                      <tbody>
-                                        <tr>
-                                           <td align="left" style="padding-left:3px; padding-bottom:7px;">
-                                              <table border="0" cellpadding="0" cellspacing="0" style="background-color: #ab1117; box-shadow: -3px 3px 0px #bbbbbb;">
-                                                 <tbody>
-                                                    <tr>
-                                                       <td align="center" style="font-size: 18px; padding: 2px 9px; font-family: Times New Roman, serif; font-style: italic; font-weight: normal; color: #ffffff; text-align: left;">
-                                                          ${header}
-                                                       </td>
-                                                    </tr>
-                                                 </tbody>
-                                              </table>
-                                           </td>
-                                        </tr>
+                                     ${header ? `                                        
+                                  <tr>
+                                     <td align="left" style="padding-left:3px; padding-bottom:7px;">
+                                        <table border="0" cellpadding="0" cellspacing="0" style="background-color: #ab1117; box-shadow: -3px 3px 0px #bbbbbb;">
+                                           <tbody>
+                                              <tr>
+                                                 <td align="center" style="font-size: 18px; padding: 2px 9px; font-family: Times New Roman, serif; font-style: italic; font-weight: normal; color: #ffffff; text-align: left;">
+                                                    ${header}
+                                                 </td>
+                                              </tr>
+                                           </tbody>
+                                        </table>
+                                     </td>
+                                  </tr>` : ``}
                                         <tr>
                                            <td align="left" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:16px; font-weight:bold; line-height:20px;text-transform:uppercase;">
                                               <a href="${link}" style="text-decoration:none; color:#000;" target="_blank">${title}</a>

@@ -225,7 +225,7 @@ class FormSection extends React.Component{
               <option value="cced_thematic">CCED Thematic</option>
               <option value="idt_thematic">IDT Thematic</option>
               <option value="id_thematic">ID Thematic</option>
-              <option value="idt_reader">IDT Thematic</option>
+              <option value="idt_reader">IDT Reader</option>
             </select>
 
             <h3>2. Complete the form.</h3>
