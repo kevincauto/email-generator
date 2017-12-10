@@ -6,7 +6,7 @@ let month = d.getMonth() + 1;
 if(month<10){month = '0' + '' + month}
 
 month = month.toString();
-let year = d.getFullYear();
+let year = d.getFullYear().toString();
 
 
 export const cced_reader_rows = {
@@ -34,7 +34,7 @@ export const cced_reader_rows = {
               {value: '12', text: 'Send Month: December'},
           ]
       },
-      {label: 'Year', name: 'year', value: '2017', 
+      {label: 'Year', name: 'year', value: year, 
       dropdown: [
           {value: '2017', text: 'Send Year: 2017'}, 
           {value: '2018', text: 'Send Year: 2018'},
@@ -43,133 +43,132 @@ export const cced_reader_rows = {
           {value: '2021', text: 'Send Year: 2021'}, 
           {value: '2022', text: 'Send Year: 2022'}
       ]
-  },
+      },
       {label: 'Masthead Link', name: 'mastheadLink', value: 'https://www.pulpdent.com'},
       {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
-      {label: 'Thematic Topic', name: 'topic', value: 'Implantology'},
-      {label: 'Subscribe Link', name: 'subscribe'},
-      {label: 'Main Image Link Source', name: 'mainImg', value: 'http://placehold.it/600x150'},
-      {label: 'Intro Paragraph', name: 'intro', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+      {label: 'Subscribe Link', name: 'subscribe'}
     ]
   },
   ce:     {
-    typeOfRow: 'news',
-    header: 'News Section',
-    closable: true,
-    switchable: true,
-    addable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'IN THE NEWS'},
-      {label: 'First News Title', name: 'title1'},
-      {label: 'Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-      {label: 'First News Link', name: 'link1'},
-      {label: 'Second News Title', name: 'title2'},
-      {label: 'Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-      {label: 'First News Link', name: 'link2'},
-
-    ]
-  },
-  center_banner: {
     typeOfRow: 'ce',
-    header: 'Continuing Ed Section',
+    header: 'CE Section',
     closable: true,
     switchable: true,
     addable: true,
     fields:  [
+      {label: 'Header', name: 'header', value: 'New CE Courses'},
       {label: 'Title', name: 'title'},
-      {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+      {label: 'Description', name: 'description'},
       {label: 'Author', name: 'author'},
       {label: 'Credits', name: 'credits'},
       {label: 'Cost', name: 'cost'},
-      {label: 'Source', name: 'source'},
       {label: 'Provider', name: 'provider'},
-      {label: 'Available Dates', name: 'dates'},
+      {label: 'Source', name: 'source'},
+      {label: 'Dates', name: 'dates'},
       {label: 'Link', name: 'link'},
-      {label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/120x100'},
+      {label: 'Image Source', name: 'imgSrc'}
+    ]
+  },
+  center_banner: {
+    typeOfRow: 'center_banner',
+    header: 'Center Banner',
+    closable: true,
+    switchable: true,
+    addable: true,
+    fields:  [
+      {label: 'Link', name: 'link'},
+      {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/600x70'},
     ]
   },
   article: {
-    typeOfRow: 'center_banner',
-    header: "Center Banner Ad",
+    typeOfRow: 'article',
+    header: "Article No Image",
     closable: true,
     switchable: true,
     addable: true,
     fields:  [
+      {label: 'Header', name: 'header', value: 'New CE Courses'},
+      {label: 'Subheader Description', name: 'subheader'},
+      {label: 'Title', name: 'title'},
+      {label: 'Description', name: 'description'},
+      {label: 'Author', name: 'author'},
       {label: 'Link', name: 'link'},
-      {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70'},
     ]
   },
   dotted_line: {
-    typeOfRow: 'three_column',
-    header: '3 Column Section',
+    typeOfRow: 'dotted_line',
+    header: 'Dotted-Line Divider',
     closable: true,
     switchable: true,
     addable: true,
-    fields:  [
-        {label: 'First Header', name: 'header1'},
-        {label: 'First Title', name: 'title1'},
-        {label: 'First Author', name: 'author1'},
-        {label: 'First Link', name: 'link1'},
-        {label: 'Second Header', name: 'header2'},
-        {label: 'Second Title', name: 'title2'},
-        {label: 'Second Author', name: 'author2'},
-        {label: 'Second Link', name: 'link2'},
-        {label: 'Third Header', name: 'header3'},
-        {label: 'Third Title', name: 'title3'},
-        {label: 'Third Author', name: 'author3'},
-        {label: 'Third Link', name: 'link3'},            
-    ]
+    fields:  []
   },
   image_article: {
-    typeOfRow: 'featured',
-    header: 'Featured Section',
+    typeOfRow: 'image_article',
+    header: 'Article With Image',
     closable: true,
     switchable: true,
     addable: true,
     fields:  [
         {label: 'Header', name: 'header', value: 'FEATURED EVENT'},
         {label: 'Title', name: 'title'},
-        {label: 'Author', name: 'author'},
         {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+        {label: 'Author', name: 'author'},
         {label: 'Link', name: 'link'},
-        {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/150'}
+        {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150'}
     ]
   },
   featured_article: {
-    typeOfRow: 'products',
-    header: 'Products Section',
+    typeOfRow: 'featured_article',
+    header: 'Featured Article Gray',
     closable: true,
     switchable: true,
     addable: true,
     fields:  [
-        {label: 'Header', name: 'header', value: 'FEATURED PRODUCTS'},
-        {label: 'First Product', name: 'product1'},
-        {label: 'First Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'First Link', name: 'link1'},
-        {label: 'Second Product', name: 'product2'},
-        {label: 'Second Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'Second Link', name: 'link2'},
-        {label: 'Featured Product', name: 'product3'},
-        {label: 'Featured Description', name: 'description3', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'Featured Link', name: 'link3'},
-        {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150'},
-    ]
+      {label: 'Header', name: 'header', value: 'FEATURED EVENT'},
+      {label: 'Title', name: 'title'},
+      {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+      {label: 'Author', name: 'author'},
+      {label: 'Link', name: 'link'},
+      {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150'}
+  ]
   },
     live_webinar: {
-    typeOfRow: 'end',
-    header: 'End of the Email',
+    typeOfRow: 'live_webinar',
+    header: 'Live Webinar',
     closable: false,
     switchable: false,
     addable: false,
-    fields: []
+    fields: [
+      {label: 'Header', name: 'header', value: 'New CE Courses'},
+      {label: 'Title', name: 'title'},
+      {label: 'Date', name: 'date'},
+      {label: 'Presenter', name: 'presenter'},
+      {label: 'Credits', name: 'credits'},
+      {label: 'Cost', name: 'cost'},
+      {label: 'Provider', name: 'provider'},
+      {label: 'Supporter', name: 'supporter'},
+      {label: 'Link', name: 'link'},
+      {label: 'Image Source', name: 'imgSrc'}
+    ]
   },
   on_demand_webinar: {
-    typeOfRow: 'end',
-    header: 'End of the Email',
+    typeOfRow: 'on_demand_webinar',
+    header: 'On-Demand Webinar',
     closable: false,
     switchable: false,
     addable: false,
-    fields: []
+    fields: [
+      {label: 'Header', name: 'header', value: 'New CE Courses'},
+      {label: 'Title', name: 'title'},
+      {label: 'Presenter', name: 'presenter'},
+      {label: 'Credits', name: 'credits'},
+      {label: 'Cost', name: 'cost'},
+      {label: 'Provider', name: 'provider'},
+      {label: 'Supporter', name: 'supporter'},
+      {label: 'Link', name: 'link'},
+      {label: 'Image Source', name: 'imgSrc'}
+    ]
   },
   end: {
     typeOfRow: 'end',
@@ -177,935 +176,772 @@ export const cced_reader_rows = {
     closable: false,
     switchable: false,
     addable: false,
-    fields: []
+    fields: [
+      {label: 'Month', name: 'month', value: month, 
+      dropdown: [
+          {value: '01', text: 'Send Month: January'}, 
+          {value: '02', text: 'Send Month: February'},
+          {value: '03', text: 'Send Month: March'}, 
+          {value: '04', text: 'Send Month: April'},
+          {value: '05', text: 'Send Month: May'}, 
+          {value: '06', text: 'Send Month: June'},
+          {value: '07', text: 'Send Month: July'}, 
+          {value: '08', text: 'Send Month: August'},
+          {value: '09', text: 'Send Month: September'}, 
+          {value: '10', text: 'Send Month: October'},
+          {value: '11', text: 'Send Month: November'}, 
+          {value: '12', text: 'Send Month: December'},
+      ]
+  },
+    {label: 'Year', name: 'year', value: year, 
+    dropdown: [
+          {value: '2017', text: 'Send Year: 2017'}, 
+          {value: '2018', text: 'Send Year: 2018'},
+          {value: '2019', text: 'Send Year: 2019'}, 
+          {value: '2020', text: 'Send Year: 2020'},
+          {value: '2021', text: 'Send Year: 2021'}, 
+          {value: '2022', text: 'Send Year: 2022'}
+      ]
+    }
+    ]
   }
 }
 
 export const cced_reader_initial_state = [
     _.cloneDeep(cced_reader_rows.beginning),
-    _.cloneDeep(cced_reader_rows.news),
     _.cloneDeep(cced_reader_rows.ce),
     _.cloneDeep(cced_reader_rows.center_banner),
-    _.cloneDeep(cced_reader_rows.three_column),
-    _.cloneDeep(cced_reader_rows.featured),
-    _.cloneDeep(cced_reader_rows.products),
-    _.cloneDeep(cced_reader_rows.featured),
+    _.cloneDeep(cced_reader_rows.article),
+    _.cloneDeep(cced_reader_rows.dotted_line),
+    _.cloneDeep(cced_reader_rows.image_article),
+    _.cloneDeep(cced_reader_rows.featured_article),
     _.cloneDeep(cced_reader_rows.end)
   ];
 
 export function beginning(fields){
+
   let emailName = fields[0].value;
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
   let mastheadSrc = fields[4].value;
-  let topic = fields[5].value;
-  let subscribe = fields[6].value;
-  let mainImg = fields[7].value;
-  let intro = fields[8].value;
-  //put the url together
-  let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter/${topic.trim().replace(/\s+/g, '-').toLowerCase()}`;
+  let subscribe = fields[5].value;
 
-  return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-  <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-      <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-  <!--[if !mso]><!-->		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
-  <!--<![endif]-->		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-      <title></title>
-      <style type="text/css">
-  body {
-      margin: 0 !important;
-      padding: 0;
-      background-color: #ffffff;
-      font-family: "Times New Roman", Times, serif;
+  //put the url together
+  let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter`;
+
+  return `<!DOCTYPE html>
+  <html>
+  <head>
+    <title></title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <style type="text/css">
+    /* BOILERPLATE STYLES */
+    #outlook a {
+       padding: 0;
+    }
+  
+    .ReadMsgBody {
+       width: 100%;
+    }
+  
+    .ExternalClass {
+       width: 100%;
+    }
+  
+    .ExternalClass, .ExternalClass span, .ExternalClass td, .ExternalClass div {
+       line-height: 100%;
+    }
+  
+    body, table, td, a {
+       -webkit-text-size-adjust: 100%;
+       -ms-text-size-adjust: 100%;
+    }
+  
+    table, td {
+       mso-table-lspace: 0pt;
+       mso-table-rspace: 0pt;
+    }
+  
+    img {
+       -ms-interpolation-mode: bicubic;
+    }
+  
+    body {
+       height: 100% !important;
+       margin: 0;
+       padding: 0;
+       width: 100% !important;
+    }
+  
+    img {
+       border: 0;
+       height: auto;
+       line-height: 100%;
+       outline: none;
+       text-decoration: none;
+    }
+  
+    /* LINK STYLES */
+  
+    .white a, .white a:link, .white a:active, .white a:visited {
+       color: #FFFFFF !important;
+       text-decoration: none !important;
+    }
+  
+    .black a, .black a:link, .black a:active, .black a:visited {
+       color: #000000 !important;
+       text-decoration: none !important;
+    }
+  
+    .grey a, .grey a:link, .grey a:active, .grey a:visited {
+       color: #6d6f72 !important;
+       text-decoration: none !important;
+    }
+  
+    .maroon a, .maroon a:link, .maroon a:active, .maroon a:visited {
+       color: #ab1117 !important;
+       text-decoration: none !important;
+    }
+  
+    .link-hover:hover {
+       text-decoration: none !important;
+    }
+  
+    @media screen and (max-width: 600px), screen and (max-device-width: 600px) {
+  
+    body {
+       width: 100% !important;
+       height: auto !important;
+    }
+  
+    table.w600 {
+       width: 100% !important;
+       height: auto !important;
+       min-width: 100% !important;
+    }
+  
+    table.w100, td.w100, img.w100 {
+       width: 100% !important;
+       height: auto !important;
+    }
+  
+    .w28 {
+       width: 15px !important;
+       height: auto !important;
+    }
+  
+    .pad {
+       padding: 15px 10px !important;
+    }
+  
+    .padT {
+       padding-top: 0px !important;
+    }
+  
+    .f16 {
+       font-size: 14px !important;
+       line-height: 18px !important;
+    }
+  
+    .f14 {
+       font-size: 13px !important;
+       line-height: 18px !important;
+    }
+  
+    .hide {
+       display: none!important;
+    }
+  
+    .menu {
+       padding: 7px 3px !important;
+       font-size: 8px !important;
+       line-height: 11px !important;
+    }
+  
+    }
+  
+    </style><!--[if gte mso 9]>
+  <style type="text/css">
+  body, p, a, span, td, table {
+   font-family:Arial, Helvetica, sans-serif !important;
   }
   
-  table {
-      border-spacing: 0;
-      font-family: sans-serif;
-      color: #333333;
-  }
+  </style>
   
-  td {
-      padding: 0;
-  }
-  
-  img {
-      border: 0;
-  }
-  
-  div[style*="margin: 16px 0"] { 
-      margin:0 !important;
-  }
-  
-  .wrapper {
-      width: 100%;
-      table-layout: fixed;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-  }
-  
-  .webkit {
-      max-width: 600px;
-      margin: 0 auto;
-  }
-  
-  .outer {
-  Margin: 0 auto;
-      width: 100%;
-      max-width: 600px;
-  }
-  
-  .full-width-image img {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-  }
-  
-  .inner {
-  padding: 10px;
-  }
-  
-  p {
-      Margin: 0;
-     font-family: "Times New Roman", Times, serif;
-  }
-  
-  a {
-      color: #ee6a56;
-      text-decoration: underline;
-  }
-  
-  .h1 {
-      font-size: 21px;
-      font-weight: bold;
-      Margin-bottom: 18px;
-  }
-  
-  .h2 {
-      font-size: 18px;
-      font-weight: bold;
-      Margin-bottom: 12px;
-  }
-  
-  .one-column .contents {
-      text-align: left;
-  }
-  
-  .one-column p {
-      font-size: 14px;
-      Margin-bottom: 10px;
-  }
-  
-  .two-column {
-      text-align: center;
-      font-size: 0;
-  }
-  
-  .two-column .column {
-      width: 100%;
-      max-width: 300px;
-      display: inline-block;
-      vertical-align: top;
-  }
-  
-  .two-column .contents {
-  font-size: 14px;
-      text-align: left;
-  }
-  
-  .two-column img {
-      width: 100%;
-      max-width: 280px;
-      height: auto;
-  }
-  
-  .two-column .text {
-      padding-top: 10px;
-  }
-  
-  .three-column {
-      /*text-align: center;*/
-      font-size: 0;
-      padding-top: 10px;
-      padding-bottom: 10px;
-  }
-  
-  .three-column .column {
-      width: 100%;
-      max-width: 200px;
-      display: inline-block;
-      vertical-align: top;
-  }
-  
-  .three-column .contents {
-      font-size: 14px;
-      /*text-align: center;*/
-  }
-  
-  .three-column img {
-      width: 100%;
-      max-width: 180px;
-      height: auto;
-  }
-  
-  .three-column .text {
-      padding-top: 10px;
-  }
-  
-  .four-column {
-      text-align: center;
-      font-size: 0;
-  }
-  
-  .four-column .column {
-      width: 100%;
-      max-width: 150px;
-      display: inline-block;
-      vertical-align: top;
-  }
-  
-  .four-column .contents {
-      font-size: 14px;
-      text-align: center;
-  }
-  
-  .four-column img {
-      width: 100%;
-      max-width: 130px;
-      height: auto;
-  }
-  
-  .four-column .text {
-      padding-top: 10px;
-  }
-  
-  
-  .left-sidebar {
-  text-align: center;
-      font-size: 0;
-  }
-  
-  .left-sidebar .column {
-      width: 100%;
-      display: inline-block;
-      vertical-align: middle;
-  }
-  
-  .left-sidebar .left {
-      max-width: 100px;
-  }
-  
-  .left-sidebar .right {
-      max-width: 500px;
-  }
-  
-  .left-sidebar .img {
-      width: 100%;
-      max-width: 80px;
-      height: auto;
-  }
-  
-  .left-sidebar .contents {
-  font-size: 14px;
-      text-align: center;
-  }
-  
-  .left-sidebar a {
-      color: #85ab70;
-  }
-  
-  .right-sidebar {
-  text-align: center;
-      font-size: 0;
-  }
-  
-  .right-sidebar .column {
-      width: 100%;
-      display: inline-block;
-      vertical-align: middle;
-  }
-  
-  .right-sidebar .left {
-      max-width: 100px;
-  }
-  
-  .right-sidebar .right {
-      max-width: 500px;
-  }
-  
-  .right-sidebar .img {
-      width: 100%;
-      max-width: 80px;
-      height: auto;
-  }
-  
-  .right-sidebar .contents {
-      font-size: 14px;
-      text-align: center;
-  }
-  
-  .right-sidebar a {
-      color: #70bbd9;
-  }
-  
-  @media screen and (max-width: 500px) {
-  .two-column .column,
-      .three-column .column {
-          max-width: 100% !important;
-      }
-  
-  /*    .two-column img {
-          max-width: 100% !important;
-      }*/
-  
-    .two-column .text{
-      max-width: 80% !important;
-      }
-  
-      .three-column img {
-          max-width: 50% !important;
-      }
-  
-  }
-  
-  @media screen and (min-width: 501px) and (max-width: 620px) {
-  .three-column .column {
-          max-width: 33% !important;
-      }
-  
-      .two-column .column {
-          max-width: 50% !important;
-      }
-  }
-  
-  
-  
-  .right-sidebar {
-  text-align: center;
-      font-size: 0;
-  }
-  
-  .right-sidebar .column {
-      width: 100%;
-      display: inline-block;
-      vertical-align: middle;
-  }
-  
-  .right-sidebar .left {
-      max-width: 100px;
-  }
-  
-  .right-sidebar .right {
-      max-width: 500px;
-  }
-  
-  .right-sidebar .img {
-      width: 100%;
-      max-width: 80px;
-      height: auto;
-  }
-  
-  .right-sidebar .contents {
-      font-size: 14px;
-      text-align: center;
-  }
-  
-  .right-sidebar a {
-      color: #70bbd9;
-  }		</style>
-  <!--[if (gte mso 9)|(IE)]>
-  
-      <style type="text/css">
-  
-          table {border-collapse: collapse !important !important !important;}
-  
-      </style>
-  
-      <![endif]-->	
+  <![endif]-->
   </head>
-  
-    <body style="margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;background-color:#ffffff;font-family:'Times New Roman', Times, serif;">
-  <!-- g link -->		
-  <a href="https://www.dentalaegis.com/cced/"></a>
-  <center class="wrapper" style="width:100%;table-layout:fixed;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
-        <div class="webkit" style="max-width:600px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;">
-  <!--[if (gte mso 9)|(IE)]>
-  
-              <table width="600" align="center" style="border-spacing:0;font-family:sans-serif;color:#333333;" >
-  
-              <tr>
-  
-              <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
-  
-              <![endif]-->				<table align="center" class="outer" style="border-spacing:0;font-family:sans-serif;color:#333333;Margin:0 auto;width:100%;max-width:600px;">
-            <tbody>
-              <tr>
-                <td style="padding-top:0px;padding-bottom:0px;padding-right:0;padding-left:0;">
-                  <div style="text-align:center;font-family:'Times New Roman', Times, serif; font-size:12px; margin:5px 0px;">
-                    Having Trouble Viewing This Email? <a href="${url}" style="color:#000;" target="_blank">Click Here</a></div>
-                  <table align="center" class="outer" style="border-spacing:0;font-family:sans-serif;color:#333333;Margin:0 auto;width:100%;max-width:600px;">
-                    <tbody>
-                      <tr>
-                        <td class="full-width-image" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
-                          <a href="${mastheadLink}" style="color:#ee6a56;text-decoration:underline;" target="_blank"> <img alt="" src="${mastheadSrc}" style="border-width:0;width:100%;max-width:600px;height:auto;" /> </a></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-                          </tr>
-                          
+  <body bgcolor="#FFFFFF">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td align="center">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <tr>
-                <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
-                  <table style="border-spacing:0;font-family:sans-serif;color:#333333; " width="100%">
-                    <tbody>
-                      <tr>
-                        <td class="inner contents" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px;text-align:left;">
-                          <div bgcolor="#eeede9" style="background-color:#eeede9; background-image:url(https://www.dentalaegis.com/media/59254/); background-repeat:repeat-x; font-family:Arial, san-serif; padding: 0px 10px 10px; margin: 0px 0px 0px; font-size: 13px; text-align: left; font-weight: 300; letter-spacing: .8; display:block;
-  
-  overflow:auto;">
-                            <div style="font-family:'Times New Roman', Times, serif;font-size:28px;font-weight:lighter; color:#444; padding:10px 10px;">
-                              ${topic} eNews</div>
+              <td width="5"></td>
+              <td align="center">
+                <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td align="center" height="20"></td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                      <table border="0" cellpadding="0" cellspacing="0" class="w600" style="min-width:600px; border:1px solid #000000;" width="600">
+                        <tr>
+                          <td align="center" height="20" style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:10px; color:#6d6f72; text-transform:uppercase;">Having trouble viewing this email? <span class="grey"><a href="https://www.dentalaegis.com/cced/2017/11/newsletter" style="color:#ffffff; text-decoration:none;" target="_blank">Click here.</a></span></td>
+                        </tr>
+                        <tr>
+                          <td align="center"><a href="http://straumanneducation.com/symposium/"><img alt="" border="0" class="w100" src="https://www.aegisdentalnetwork.com/media/65049/" style="display:block; margin:0px; max-width:600px;" width="600"></a></td>
+                        </tr>
+                        <tr>
+                          <td align="center"><img alt="" border="0" class="w100" src="http://aegispublications.com/news/cced/2017/dash-3.jpg" style="display:block; margin:0px; max-width:600px;" width="600"></td>
+                        </tr>
+                        <tr>
+                          <td align="center">
                             <center>
-                              <img src="https://www.dentalaegis.com/img/layout/general/cced-logo-large.png" style="width:70%" /></center>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr bgcolor="#eeede9">
-                <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
-                  <table style="border-spacing:0;color:#333333; " width="100%">
-                    <tbody>
-                      <tr>
-                        <td align="center" class="inner contents" colspan="3" style="padding-top:10px;padding-bottom:10px;padding-right:0px;padding-left:0px;text-align:center;font-family:'Times New Roman', serif; font-size:11px; color:#000000; padding:2px 0 7px 0; vertical-align:middle;" valign="top">
-                          <table width="100%">
-                            <tbody>
+                              <a href="http://www.dentalaegis.com/cced" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/59468/" style="display:block; margin:0px; max-width:300px; width: 100%"></a>
+                            </center>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="center" bgcolor="#9C8C30" class="f14" style="background-color:#9c8c30; color:#ffffff; margin:0px; padding: 7px 0px; font-size:14px; font-family:'Times New Roman', Times, serif; border-bottom:2px solid #ffffff;"><a href="http://www.dentalaegis.com/cced/2017/11" style="text-decoration: none; color:#ffffff">November/December 2017 | Vol. 38 No. 11</a> | <span class="hide"><a href="http://www.dentalaegis.com/cced/" style="text-decoration: none; color:#ffffff">compendiumlive.com</a> |</span> <a href="mailto:?subject=FW:%20November/December%202017%20Issue%20Available%20Now&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/cced/2017/11/newsletter?refer=true" style="text-decoration: none; color:#ffffff">Forward to a Colleague</a></td>
+                        </tr>
+                        <tr>
+                          <td align="center" bgcolor="#8E682A" style="background-color:#8E682A;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
                               <tr>
-                                <td style="float:left;">
-                                  <a href="mailto:?subject=Forward: Compendium ${topic}&body=I thought you might be interested in this: ${url}?refer=true" style="text-decoration:none; color:#000000; padding-left:10px; font-family:'Times New Roman', serif; font-size:11px;">▶ Forward to a Colleague</a> <a href="${subscribe}" style="text-decoration:none; color:#000000;padding-left:10px; font-family:'Times New Roman', serif; font-size:11px;" target="_blank">▶ Subscribe</a></td>
-                                <td style="float:right; vertical-align:center;">
-                                  <a href="https://www.facebook.com/CompendiumDentistry" style="padding: 0px; margin: 0px" target="_blank"><img src="https://www.dentalaegis.com/media/59236/" style="padding: 0px; margin: 0px; vertical-align:central;" /></a> <a href="https://twitter.com/compendiumced" style="padding: 0px; margin: 0px" target="_blank"><img src="https://www.dentalaegis.com/media/59237/" style="padding: 0px 10px 0px 0px; margin: 0px" /></a></td>
+                                <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 8px 10px 19px; border-right:1px solid #775623;"><a href="http://www.dentalaegis.com/cced/2017/11/" style=" text-decoration:none; color:#ffffff" target="_blank">Articles</a></td>
+                                <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 8px; border-right:1px solid #775623;"><a href="http://www.dentalaegis.com/cced/archive" style=" text-decoration:none; color:#ffffff" target="_blank">Archive</a></td>
+                                <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 7px; border-right:1px solid #775623;"><a href="http://cced.cdeworld.com/" style=" text-decoration:none; color:#ffffff" target="_blank">ce</a></td>
+                                <td align="center" class="menu" style=" color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 6px; border-right:1px solid #775623;"><a href="http://www.dentalaegis.com/cced/webinars" style=" text-decoration:none; color:#ffffff" target="_blank">webinars</a></td>
+                                <td align="center" class="menu" style=" color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 8px; border-right:1px solid #775623;"><a href="http://www.dentalaegis.com/news" style=" text-decoration:none; color:#ffffff" target="_blank">news</a></td>
+                                <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 5px; border-right:1px solid #775623;"><a href="https://www.dentalaegis.com/cced/subscribe/thematic?campaign=7834" style=" text-decoration:none; color:#ffffff" target="_blank">subscribe</a></td>
+                                <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 20px 10px 8px;"><a href="http://www.dentalaegis.com/cced/2017/11/digital" style=" text-decoration:none; color:#ffffff" target="_blank">Digital Edition</a></td>
                               </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
-                  <table align="center" class="outer" style="border-spacing:0;font-family:sans-serif;color:#333333;Margin:0 auto;width:100%;max-width:600px;">
-                    <tbody>
-                      <tr>
-                        <td align="center" class="full-width-image" style="padding-top:0px;padding-bottom:0;padding-right:0;padding-left:0;">
-                          <center>
-                            <img alt="" src="${mainImg}" style="border-width:0;width:100%;max-width:598px;height:auto; border:solid 1px #ddd;" /></center>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
-                  <table style="border-spacing:0;font-family:sans-serif;color:#333333; " width="100%">
-                    <tbody>
-                      <tr>
-                        <td class="inner contents" style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;text-align:left;">
-                          <p style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:14px;Margin-bottom:0px;">
-                            ${intro}</p>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-                          </tr>
-  <!--END BEGINNING SECTION-->                       
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="center"><img alt="" border="0" class="w100" src="http://aegispublications.com/news/cced/2017/dash-3.jpg" style="display:block; margin:0px; max-width:600px;" width="600"></td>
+                        </tr><!--END OF BEGINNING -->                  
   `
 }
 
-export function news(fields){
+export function ce(fields){
   let header = fields[0].value;
-  let title1 = fields[1].value;
-  let description1 = fields[2].value;
-  let link1 = fields[3].value;
-  let title2 = fields[4].value;
-  let description2 = fields[5].value;
-  let link2 = fields[6].value;
+  let title = fields[1].value;
+  let description = fields[2].value;
+  let author = fields[3].value;
+  let credits = fields[4].value;
+  let cost = fields[5].value;
+  let provider = fields[6].value;
+  let source = fields[7].value;
+  let dates = fields[8].value;
+  let link = fields[9].value;
+  let imgSrc = fields[10].value;
 
   return(
     `
-    <!-- NEWS ITEMS -->
+    <!--START CE -->
+    <tr>
+      <td align="center">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td class="w28" width="28"></td>
+            <td align="center">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
-                    <table style="border-spacing:0;font-family:sans-serif;color:#333333; " width="100%">
-                      <tbody>
-                        <tr>
-                          <td class="inner contents" style="padding-top:10px;padding-bottom:10px;padding-right:0px;padding-left:0px;text-align:left;">
-                            <div style=" border-top:solid 1px #d0d0d2; border-bottom:solid 1px #d0d0d2; background-image:url(http://aegispublications.com/news/cced/2016/02/webinar-bg.jpg); background-repeat:repeat-x; font-family:Arial, san-serif; padding: 0px 10px 10px; margin: 0px 0px 0px; font-size: 13px; text-align: left; color:#000; font-weight: 300; letter-spacing: .8; display:block;
-    
-    overflow:auto;">
-                              <center>
-                                <div style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top;  text-align:center;">
-                                  ${header}</div>
-                                                        </center>
-                                                        
-                                                        <!--SINGLE NEWS ITEM -->
-                              <div style="font-size:16px; font-weight:bold; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
-                                <a href="${link1}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">
-                                ${title1}</a></div>
-                              <div style="font-size:14px; margin:0 0 0 14px; font-family:'Times New Roman', serif; font-weight:normal;">
-                                ${description1}</div>
-                              <div style="font-family:Gotham, sans-serif; font-size:12px; margin:0 0 14px 14px;">
-                                                            <a href="${link1}" style="color:#76706a; text-decoration:none; font-weight:normal;" target="_blank">More Info ▶</a></div>
-                                                        <!--END SINGLE NEWS ITEM -->    
-  <!--SECOND NEWS ITEM --> 
-                              <div style="font-size:16px; font-weight:bold; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
-                                <a href="${link2}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">${title2}</a></div>
-                              <div style="font-size:14px;  margin:0 0 0 14px; font-family:'Times New Roman', serif; font-weight:normal;">
-                                ${description2}</div>
-                              <div style="font-family:Gotham, sans-serif; font-size:12px; margin:0 0 14px 14px;">
-                                <a href="${link2}" style="color:#76706a; text-decoration:none; font-weight:normal;" target="_blank">More Info ▶</a></div>
-                                                        </div>
-                                                        
-    
-                          </td>
-                        </tr>
-                      </tbody>
+                  <td align="center" height="20"></td>
+                </tr>
+                <tr>
+                  <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">New CE Courses</td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="345">
+                      <tr>
+                        <td align="center" height="12" style="font-size:12px; line-height:12px;"></td>
+                      </tr>
+                      <tr>
+                        <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><a href="https://cced.cdeworld.com/courses/5111-Early_Diagnosis_and_Treatment_of_Asymptomatic_Vertical_Enamel_and_Dentin_Cracks" style="text-decoration:none; color:#4c4c4c;" target="blank"><strong>Early Diagnosis and Treatment of Asymptomatic Vertical Enamel and Dentin Cracks</strong></a><br>
+                        The author reviews the rationales and presents a systematic approach for early intervention of asymptomatic vertical enamel and dentin cracks based on current evidence. The discussion includes pathologic consequences of vertical cracks and diagnostic tools.<br>
+                        <em>Samer S. Alassaad, DDS</em><br>
+                        <br>
+                        <strong>Credits:</strong> 2 SI<br>
+                        <strong>Cost:</strong> $16.00<br>
+                        <strong>Provider:</strong> AEGIS Publications, LLC<br>
+                        <strong>Source:</strong> <em>Compendium of Continuing Education in Dentistry</em><br>
+                        <strong>Dates:</strong> November 1, 2017 – December 31, 2020</td>
+                      </tr>
+                      <tr>
+                        <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="https://cced.cdeworld.com/courses/5111-Early_Diagnosis_and_Treatment_of_Asymptomatic_Vertical_Enamel_and_Dentin_Cracks" style="color:#9c8d30; text-decoration:none;" target="_blank">VIEW COURSE</a></td>
+                      </tr>
+                    </table>
+                    <table align="right" border="0" cellpadding="0" cellspacing="0" class="w100" width="165">
+                      <tr>
+                        <td align="center">
+                          <table align="left" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+                            </tr>
+                            <tr>
+                              <td align="center" valign="top"><a href="https://cced.cdeworld.com/courses/5111-Early_Diagnosis_and_Treatment_of_Asymptomatic_Vertical_Enamel_and_Dentin_Cracks" target="_blank"><img alt="" border="0" src="https://cced.cdeworld.com/media/15182" style="display:block; max-width:165px; width:165px;" width="165"></a></td>
+                            </tr>
+                            <tr>
+                              <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
                     </table>
                   </td>
-                            </tr>
-                <!-- END NEWS ITEMS -->       
-    `
-  )
-}
-
-export function ce(fields){
-  let title = fields[0].value;
-  let description = fields[1].value;
-  let author = fields[2].value;
-  let credits = fields[3].value;
-  let cost = fields[4].value;
-  let source = fields[5].value;
-  let provider = fields[6].value;
-  let dates = fields[7].value;
-  let link = fields[8].value;
-  let imgSrc = fields[9].value;
-  return(
-    `        <!--START SINGLE CE -->
-    
+                </tr>
                 <tr>
-                  <td class="two-column" dir="rtl" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;text-align:center;font-size:0;">
-    <!--[if (gte mso 9)|(IE)]>
-    
-                            <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;" >
-    
-                            <tr>
-    
-                            <td width="75%" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
-    
-                            <![endif]-->								<div class="column" dir="ltr" style="width:100%;max-width:450px;display:inline-block;vertical-align:top;">
-                      <table style="border-spacing:0;font-family:sans-serif;color:#333333;" width="100%">
-                        <tbody>
-                          <tr>
-                            <td class="inner" style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;">
-                              <table class="contents" style="border-spacing:0;font-family:sans-serif;color:#333333;font-size:14px;text-align:left;">
-                                <tbody>
-                                  <tr>
-                                    <td class="text" style="padding-bottom:0;padding-right:0;padding-left:10px;padding-top:10px;">
-                                      <div style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0 14px 0; width:78px;">
-                                        Featured CE</div>
-                                      <br />
-                                      <div style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif;">
-                                        <a href="${link}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">${title}</a></div>
-                                    <div style="font-size:14px; font-family:'Times New Roman', serif;">
-                                        ${description}<br />
-                                        <em>${author} </em><br />
-                                        <strong>Credits:</strong> ${credits}<br />
-                                        <strong>Cost:</strong> ${cost}<br />
-                                        <strong>Source:</strong> <em>${source}</em><br />
-                                        <strong>Provider:</strong> ${provider}<br />
-                                        <strong>Available Dates: </strong>${dates}</div>
-                                      <div style="font-family:Gotham, sans-serif; font-size:12px; margin:0 0 14px 0;">
-                                                                            <a href="${link}" style="color:#76706a; text-decoration:none; " target="_blank">Read More ▶</a></div>
-                                                                            
-                                                                            
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-    <!--[if (gte mso 9)|(IE)]>
-    
-                            </td><td width="25%" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
-    
-                            <![endif]-->								<div class="column" dir="ltr" style="width:100%;max-width:150px;display:inline-block;">
-                      <table style="border-spacing:0;font-family:sans-serif;color:#333333;" width="100%">
-                        <tbody>
-                          <tr>
-                            <td class="inner" style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;">
-                              <center>
-                                <table align="center" class="contents" style="border-spacing:0;font-family:sans-serif;color:#333333;font-size:14px;text-align:center;">
-                                  <tbody>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                      <td style="padding-bottom:0;padding-right:10px;padding-left:0;padding-top:10px; ">
-                                        <center>
-                                          <a href="${link}" target="_blank"><img alt="" src="${imgSrc}" style="border-width:0;max-width:120px; border: 1px solid #666" width="120" /></a></center>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </center>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-    <!--[if (gte mso 9)|(IE)]>
-    
-                            </td>
-    
-                            </tr>
-    
-                            </table>
-    
-                            <![endif]-->							</td>
-                            </tr>
-    
-    <!--END SINGLE CE -->`
+                  <td align="center" class="hide" height="20"></td>
+                </tr>													
+              </table>
+            </td>
+            <td class="w28" width="28"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <!--END CE SECTION-->   
+    `
   )
 }
 
 export function center_banner(fields){
+
   let link = fields[0].value;
-  let imgLink = fields[1].value;
+  let imgSrc = fields[1].value;
   return(
-    `<!-- START CENTER BANNER -->
+    `       <!--CENTER BANNER AD-->
     <tr>
-      <td style="padding-top:0px;padding-bottom:;padding-right:0;padding-left:0;">
-        <table align="center" class="outer" style="border-spacing:0;font-family:sans-serif;color:#333333;Margin:0 auto;width:100%;max-width:600px;">
-          <tbody>
-            <tr>
-              <td class="full-width-image" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
-                <a href="${link}" style="color:#ee6a56;text-decoration:underline;" target="_blank"> <img alt="" src="${imgLink}" style="border-width:0;width:100%;max-width:600px;height:auto; padding-bottom: 3px; margin-bottom:3px; border-bottom:solid 1px #bbb;" /> </a></td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-                </tr>
-<!-- END CENTER BANNER -->   `
+      <td align="center" style="padding-bottom:10px;"><img alt="" border="0" class="w100" src="http://aegispublications.com/news/cced/2017/dash-3.jpg" style="display:block; margin:0px; max-width:600px;" width="600"></td>
+    </tr>
+    <tr>
+      <td align="center" style=" border:1px solid #aaaaaa;"><a href="http://www.bisco.com/theracem-/" target="_blank"><img alt="" border="0" class="w100" src="https://www.dentalaegis.com/media/64538/" style="display:block; margin:0px; max-width:600px;" width="600"></a></td>
+    </tr>
+    <tr>
+      <td align="center" style="padding-top:10px;"><img alt="" border="0" class="w100" src="http://aegispublications.com/news/cced/2017/dash-3.jpg" style="display:block; margin:0px; max-width:600px;" width="600"></td>
+    </tr>
+    <tr>
+      <td align="center"><img alt="" border="0" class="w100" src="http://aegispublications.com/news/cced/2017/dash-3.jpg" style="display:block; margin:0px; max-width:600px;" width="600"></td>
+    </tr>
+            <!--END CENTER BANNER AD-->`
   )
 }
 
-export function three_column(fields){
-  let header1 = fields[0].value;
-  let title1 = fields[1].value;
-  let author1 = fields[2].value;
-  let link1 = fields[3].value;
-  let header2 = fields[4].value;
-  let title2 = fields[5].value;
-  let author2 = fields[6].value;
-  let link2 = fields[7].value;
-  let header3 = fields[8].value;
-  let title3 = fields[9].value;
-  let author3 = fields[10].value;
-  let link3 = fields[11].value;
+export function article(fields){
+
+  let header = fields[0].value;
+  let subheader = fields[1].value;
+  let title = fields[2].value;
+  let description = fields[3].value;
+  let author = fields[4].value;
+  let link = fields[5].value;
+
   return(
-    `<!--START 3 COLUMN-->
+    `<!--ARTICLE-->
     <tr>
-      <td class="three-column">
-<!--[if (gte mso 9)|(IE)]>
-
-    <table width="100%">
-
-    <tr>
-
-    <td width="200" valign="top">
-
-    <![endif]-->								<div class="column">
-          <table width="100%">
-            <tbody>
-              <tr>
-                <td class="inner contents">
-                  <span align="left" style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top; text-align:left; font-weight:normal; text-align:left;" >${header1}</span><br />
-                  <p style="text-align:left; font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none; text-align:left;">
-                    <a href="${link1}" style="text-decoration:none;color:#000;" target="_blank">${title1}</a></p>
-                  <div style="font-size:14px; font-family:'Times New Roman', serif; margin:0 7px 0 0; text-align:left;">
-                    <em>${author1}</em></div>
-                  <div style="font-family:Gotham, sans-serif; font-size:12px; margin:0 0 0px 0; text-align:left;">
-                    <a href="${link1}" style="color:#76706a; text-decoration:none;" target="_blank">Read More ▶</a></div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-<!--[if (gte mso 9)|(IE)]>
-
-    </td><td width="200" valign="top">
-
-                <![endif]-->
-                        <div class="column">
-          <table width="100%">
-            <tbody>
-              <tr>
-                <td class="inner contents">
-${header2 ?
-`<span align="left" style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top; text-align:left; font-weight:normal; text-align:left;">
-${header2}</span>	`
-:
-``}
-												<br />
-                  <p style="text-align:left; font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none; text-align:left; margin-top:12px;">
-                    <a href="${link2}" style="text-decoration:none;color:#000;" target="_blank">${title2}</a></p>
-                  <div style="font-size:14px; font-family:'Times New Roman', serif; margin:0 7px 0 0; text-align:left;">
-                    <em>${author2}</em></div>
-                  <div style="font-family:Gotham, sans-serif; font-size:12px; margin:0 0 0px 0; text-align:left;">
-                    <a href="${link2}" style="color:#76706a; text-decoration:none;" target="_blank">Read More ▶</a></div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-<!--[if (gte mso 9)|(IE)]>
-
-    </td><td width="200" valign="top">
-
-    <![endif]-->								<div class="column">
-          <table width="100%">
-            <tbody>
-              <tr>
-                <td class="inner contents">
-                  <span align="left" style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top; text-align:left; font-weight:normal; text-align:left;">${header3}</span><br />
-                  <p style="text-align:left; font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none; text-align:left; margin-top:0px;">
-                    <a href="${link3}" style="text-decoration:none;color:#000;" target="_blank">${title3}</a></p>
-                  <div style="font-size:14px; font-family:'Times New Roman', serif; margin:0 7px 0 0; text-align:left;">
-                  <em>${author3}</em></div>
-                  <div style="font-family:Gotham, sans-serif; font-size:12px; margin:0 0 0px 0; text-align:left;">
-                    <a href="${link3}" style="color:#76706a; text-decoration:none;" target="_blank">Read More ▶</a></div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-                <!--[if (gte mso 9)|(IE)]>
-
-    </td>
-    </tr>
-    </table>
-
-                <![endif]-->							
-                    </td>
+      <td align="center">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td class="w28" width="28"></td>
+            <td align="center">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
                 </tr>
-<!--END 3 COLUMN-->      
+                <tr>
+                  <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">Case Reports</td>
+                </tr>
+<tr>
+                  <td align="center" height="12" style="font-size:12px; line-height:12px;"></td>
+                </tr>
+                                                  <!--OPTIONAL PRE-HEADER-->
+                <tr>
+                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px; padding-bottom:10px;">An in-depth look at products that complement this category</td>
+                </tr>
+<!--END OPTIONAL PRE-HEADER-->
+                <tr>
+                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="https://www.aegisdentalnetwork.com/cced/2017/11/redesigning-existing-provisional-restorations-while-maintaining-established-transmucosal-anatomy-in-a-multi-system-implant-natural-tooth-full-arch-case?utm_source=Email&utm_medium=Reader&utm_campaign=December" style="text-decoration:none; color:#4c4c4c" target="blank">Redesigning Existing Provisional Restorations While Maintaining Established Transmucosal Anatomy in a Multi-Implant System/Natural Tooth, Full-Arch Case</a></strong><br>
+                  This case report features a redesign of existing provisional restorations using an in-office approach in which a segmented PVS matrix is utilized.<br>
+                  <em>Michael A. Weiss, DDS; Barry P. Levin, DMD; and Kevan S. Green, DMD</em></td>
+                </tr>
+                <tr>
+                  <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="https://www.aegisdentalnetwork.com/cced/2017/11/redesigning-existing-provisional-restorations-while-maintaining-established-transmucosal-anatomy-in-a-multi-system-implant-natural-tooth-full-arch-case?utm_source=Email&utm_medium=Reader&utm_campaign=December" style="text-decoration:none; color:#9c8d30;" target="_blank">READ MORE</a></td>
+                </tr>
+                <tr>
+                  <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+                </tr>
+              </table>
+            </td>
+            <td class="w28" width="28"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+<!--END ARTICLE-->`
+  )
+}
+
+export function dotted_line(fields){
+  return(
+    `<!--DOTTED LINE-->
+    <tr>
+      <td align="center"><img alt="" border="0" class="w100" src="http://aegispublications.com/news/cced/2017/dash-3.jpg" style="display:block; margin:0px; max-width:600px;" width="600"></td>
+    </tr>
+    <!--END DOTTED LINE -->    
 `
   )
 }
 
-export function featured(fields){
+export function image_article(fields){
+
   let header = fields[0].value;
   let title = fields[1].value;
-  let author = fields[2].value;
-  let description = fields[3].value;
+  let description = fields[2].value;
+  let author = fields[3].value;
   let link = fields[4].value;
-  let imgLink = fields[5].value;
+  let imgSrc = fields[5].value;
 
   return(
     `
-    <!-- Featured Section -->
-    
+    <!--START IMAGE ARTICLE -->
+    <tr>
+      <td align="center">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td class="w28" width="28"></td>
+            <td align="center">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
-                    <table style="border-spacing:0;font-family:sans-serif;color:#333333; " width="100%">
-                      <tbody>
-                        <tr>
-                          <td class="inner contents" style="padding-top:10px;padding-bottom:10px;padding-right:0px;padding-left:0px;text-align:left;">
-                            <div style=" border-top:solid 1px #d0d0d2; border-bottom:solid 1px #d0d0d2; background-image:url(http://aegispublications.com/news/cced/2016/02/webinar-bg.jpg); background-repeat:repeat-x; font-family:Arial, san-serif; padding: 0px 10px 10px; margin: 0px 0px 0px; font-size: 13px; text-align: left; color:#000; font-weight: 300; letter-spacing: .8; display:block;
-    
-    overflow:auto;">
-                              <center>
-                                <div style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top;">
-                                  ${header}</div>
-                              </center>
-                              <table>
-                                <tbody>
-                                  <tr>
-                                    <td width="60%">
-                                      <div style="font-size:16px; font-weight:bold; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
-                                        <a href="${link}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">${title}</a></div>
-                                      <div style="font-size:14px; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
-                                        ${description}<br />
-                                        <a href="${link}" style="color:#76706a; text-decoration:none; font-family:Gotham, sans-serif; font-size:12px;" target="_blank">Learn More ▶</a></div>
-                                    </td>
-                                    <td width="40%">
-                                      <center>
-                                        <a href="${link}" target="_blank"><img align="right" alt="" src="${imgLink}" style="border-width:0;max-width:150px; margin-right:10px;" width="150" /></a></center>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
-                          </td>
-                        </tr>
-                      </tbody>
+                  <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+                </tr>
+                <tr>
+                  <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">Featured Product</td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="355">
+                      <tr>
+                        <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+                      </tr>
+                      <tr>
+                        <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="http://www.straumann.us/en/professionals/products-and-solutions/surgical-and-restorative-solutions/implants/bone-level-tapered-implants.html?utm_source=/blt.html&utm_medium=website&utm_campaign=VanityURL" style="text-decoration:none; color:#4c4c4c" target="blank">The Straumann® Bone Level Tapered Implant</a></strong><br>
+                        The shape, surface and material combination are designed to deliver primary stability in all bone classes, making the Straumann Bone Level Tapered Implant ideal for immediate placement and loading even in challenging protocols. The tapered form enables placement in the underprepared osteotomy<br></td>
+                      </tr>
+                      <tr>
+                        <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="http://www.straumann.us/en/professionals/products-and-solutions/surgical-and-restorative-solutions/implants/bone-level-tapered-implants.html?utm_source=/blt.html&utm_medium=website&utm_campaign=VanityURL" style="text-decoration:none; color:#9c8d30;" target="_blank">LEARN NOW</a></td>
+                      </tr>
+                      <tr>
+                        <td align="center" class="hide" height="15" style="font-size:15px; line-height:15px;"></td>
+                      </tr>
+                    </table>
+                    <table align="right" border="0" cellpadding="0" cellspacing="0" class="w100" width="120">
+                      <tr>
+                        <td align="center">
+                          <table align="left" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+                            </tr>
+                            <tr>
+                              <td align="center" valign="top"><a href="http://www.straumann.us/en/professionals/products-and-solutions/surgical-and-restorative-solutions/implants/bone-level-tapered-implants.html?utm_source=/blt.html&utm_medium=website&utm_campaign=VanityURL" target="_blank"><img alt="" border="0" src="https://www.aegisdentalnetwork.com/media/65057/" style="display:block; max-width:120px; width:120px;" width="120"></a></td>
+                            </tr>
+                            <tr>
+                              <td align="center" height="20"></td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
                     </table>
                   </td>
-                            </tr>
-    <!-- FEATURED SECTION -->  `
+                </tr>
+              </table>
+            </td>
+            <td class="w28" width="28"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <!--END IMAGE ARTICLE -->`
   )
 }
 
-export function products(fields){
-  let header = fields[0].value;
-  let product1 = fields[1].value;
-  let description1 = fields[2].value;
-  let link1 = fields[3].value;
-  let product2 = fields[4].value;
-  let description2 = fields[5].value;
-  let link2 = fields[6].value;
-  let product3 = fields[7].value;
-  let description3 = fields[8].value;
-  let link3 = fields[9].value;
-  let imgSrc = fields[10].value;
+export function featured_article(fields){
+
+
+let header = fields[0].value;
+let subheader = fields[1].value;
+let title = fields[2].value;
+let description = fields[3].value;
+let author = fields[4].value;
+let link = fields[5].value;
 
   return(`
-  <!--PRODUCT SECTION -->
-  <tr>
-    <td class="two-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;text-align:center;font-size:0; ">
-<!--[if (gte mso 9)|(IE)]>
-
-              <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;" >
-
-              <tr>
-
-              <td width="50%" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
-
-              <![endif]-->								<div class="column" style="width:100%;max-width:300px;display:inline-block;vertical-align:top;">
-        <table style="border-spacing:0;font-family:sans-serif;color:#333333;" width="100%">
-          <tbody>
+  <tr bgcolor="#EFEFEF">
+  <td align="center">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="w28" width="28"></td>
+        <td align="center">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <tr>
-              <td class="inner" style="padding-top:10px;padding-bottom:10px;padding-right:0px;padding-left:0px;">
-                <table class="contents" style="border-spacing:0;font-family:sans-serif;color:#333333;font-size:14px;text-align:left;">
-                  <tbody>
-                    <tr>
-                      <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
-                         </td>
-                    </tr>
-                    <tr>
-                      <td class="text" style="padding-bottom:0;padding-right:0;padding-left:10px;padding-top:10px;">
-                        <div style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top;">
-                          ${header}</div>
-                        <br />
-                        <div style="font-size:16px; font-weight:bold; margin:0 0 0 0px; font-family:'Times New Roman', serif; ">
-                          <a href="${link1}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">${product1}</a></div>
-                        <div style="font-size:14px; margin:0 0 0 0px; font-family:'Times New Roman', serif;">
-                          ${description1}<br />
-                          <a href="${link1}" style="color:#76706a; text-decoration:none; font-family:Gotham, sans-serif; font-size:12px;" target="_blank">Learn More ▶</a></div>
-                        <br />
-                        <div style="font-size:16px; font-weight:bold; margin:0 0 0 0px; font-family:'Times New Roman', serif; ">
-                          <a href="${link2}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">${product2}</a></div>
-                        <div style="font-size:14px; margin:0 0 0 0px; font-family:'Times New Roman', serif;">
-                          ${description2}<br />
-                          <a href="${link2}" style="color:#76706a; text-decoration:none; font-family:Gotham, sans-serif; font-size:12px;" target="_blank">Learn More ▶</a></div>
-                      </td>
-                    </tr>
-                  </tbody>
+              <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+            </tr>
+            <tr>
+              <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">Featured Whitepaper</td>
+            </tr>
+            <tr>
+              <td align="center">
+                <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="355">
+                  <tr>
+                    <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+                  </tr>
+                  <tr>
+                    <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="https://www.aegisdentalnetwork.com/whitepapers/innovative-attachment-to-secure-implant-supported-fixed-full-arch-restorations?utm_source=Zest&utm_medium=Reader&utm_campaign=Whitepaper" style="text-decoration:none; color:#4c4c4c" target="blank">Innovative Attachment to Secure Implant-Supported Fixed Full-Arch Restorations</a></strong><br>
+                    Indicated for the rigid connection of full-arch restorations onto endosseous dental implants, the Locator F-Tx fixed attachment system involves a protocol that is simpler to place, easier to maintain, and more cost-effective and convenient for both dentists and patients.<br>
+                    <em>Nadim Z. Baba, DMD, MSD</em></td>
+                  </tr>
+                  <tr>
+                    <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="https://www.aegisdentalnetwork.com/whitepapers/innovative-attachment-to-secure-implant-supported-fixed-full-arch-restorations?utm_source=Zest&utm_medium=Reader&utm_campaign=Whitepaper" style="text-decoration:none; color:#9c8d30;" target="_blank">DOWNLOAD NOW</a></td>
+                  </tr>
+                  <tr>
+                    <td align="center" class="hide" height="15" style="font-size:15px; line-height:15px;"></td>
+                  </tr>
+                </table>
+                <table align="right" border="0" cellpadding="0" cellspacing="0" class="w100" width="120">
+                  <tr>
+                    <td align="center">
+                      <table align="left" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+                        </tr>
+                        <tr>
+                          <td align="center" valign="top"><a href="https://www.aegisdentalnetwork.com/whitepapers/innovative-attachment-to-secure-implant-supported-fixed-full-arch-restorations?utm_source=Zest&utm_medium=Reader&utm_campaign=Whitepaper" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/64480" style="display:block; max-width:120px; width:120px;" width="120"></a></td>
+                        </tr>
+                        <tr>
+                          <td align="center" height="20"></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
                 </table>
               </td>
             </tr>
-          </tbody>
-        </table>
-      </div>
-<!--[if (gte mso 9)|(IE)]>
-
-              </td><td width="50%" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
-
-              <![endif]-->								<div class="column" style="width:100%;max-width:300px;  display:inline-block;">
-        <table style="border-spacing:0;font-family:sans-serif;color:#333333;" width="100%">
-          <tbody>
-            <tr>
-              <td class="inner" style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;">
-                <center>
-                  <table align="left" class="contents" style="border-spacing:0;font-family:sans-serif;color:#333333;font-size:14px;text-align:left;">
-                    <tbody>
-                      <tr>
-                        <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
-                           </td>
-                      </tr>
-                      <tr>
-                        <td class="text" style="padding-bottom:10px;padding-right:10px;padding-left:10px;padding-top:10px; border: solid 1px #aaaaaa">
-                          <div style="font-size:16px; font-weight:bold; margin:0 0 0 0px; font-family:'Times New Roman', serif; ">
-                            <a href="${link3}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">${product3}</a></div>
-                          <div style="font-size:14px; margin:0 0 0 0px; font-family:'Times New Roman', serif;">
-                            ${description3}<br />
-                            <a href="${link3}" style="color:#76706a; text-decoration:none; font-family:Gotham, sans-serif; font-size:12px;" target="_blank">Learn More ▶</a></div>
-                          <br />
-                          <center>
-                            <a href="${link3}" target="_blank"><img alt="" src="${imgSrc}" style="margin:0 0 0 0; clear:both; border:solid 1px #aaaaaa; margin:0 0 0 0px; width:150px;" width="150" /></a></center>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </center>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-<!--[if (gte mso 9)|(IE)]>
-
-              </td>
-
-              </tr>
-
-              </table>
-
-              <![endif]-->							</td>
-  </tr>
+          </table>
+        </td>
+        <td class="w28" width="28"></td>
+      </tr>
+    </table>
+  </td>
+</tr>
   `)
 }
 
-export function end(){
+export function live_webinar(fields){
+
+  let header = fields[0].value;
+  let title = fields[1].value;
+  let date = fields[2].value;
+  let presenter = fields[3].value;
+  let credits = fields[4].value;
+  let cost = fields[5].value;
+  let provider = fields[6].value;
+  let supporter = fields[7].value;
+  let link = fields[8].value;
+  let imgSrc = fields[9].value;
+
   return(
     `<tr>
-    <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
-      <table style="border-spacing:0;font-family:sans-serif;color:#333333; " width="100%">
-        <tbody>
-          <tr>
-            <td class="inner contents" style="padding-top:0px;padding-bottom:10px;padding-right:10px;padding-left:10px;text-align:left;">
-              <center>
-                <div style="font-family:Gotham, sans-serif; display:block; padding:0 10px 0 10px; margin:0; font-size:10px; color:#000; text-decoration:none;">
-                  <em>Compendium</em> | 104 Pheasant Run, Suite 105 | Newtown, PA 18940</div>
-                <small style="font-family:Gotham, sans-serif; display:block; padding:0 10px 0 10px; margin:0; font-size:10px; color:#000; text-decoration:none;">To ensure delivery, please add reply-207851@news.aegispublications.com to your address book</small> <small style="font-family:Gotham, sans-serif; display:block; padding:0 10px 0 10px; margin:0; font-size:10px; color:#000; text-decoration:none;">%%PLUGIN_UNSUBSCRIBE: 1089099-CCED UNSUBSCRIBE%%</small></center>
-            </td>
-          </tr>
-        </tbody>
+    <td align="center">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td class="w28" width="28"></td>
+          <td align="center">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+              </tr>
+              <tr>
+                <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">Upcoming Live Webinar</td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="355">
+                    <tr>
+                      <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+                    </tr>
+                    <tr>
+                      <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="https://cdeworld.com/webinar_series/nobel/registration" style="text-decoration:none; color:#4c4c4c" target="blank">The Evolution of Immediate Implant With Immediate Provisional Restoration</a></strong><br>
+                      <strong>When:</strong> 7:00 pm EDT | Thursday, December 14, 2017<br>
+                      <strong>Presenter:</strong> David Gelb, DDS<br>
+                      <strong>Credits:</strong> 1 Interactive CEU<br>
+                      <strong>Cost:</strong> FREE<br>
+                      <strong>Provider:</strong> AEGIS Publications, LLC<br>
+                      <strong>Commercial Supporter:</strong> <em>Nobel Biocare</em></td>
+                    </tr>
+                    <tr>
+                      <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="https://cdeworld.com/webinar_series/nobel/registration" style="text-decoration:none; color:#9c8d30;" target="_blank">REGISTER TODAY</a></td>
+                    </tr>
+                    <tr>
+                      <td align="center" class="hide" height="15" style="font-size:15px; line-height:15px;"></td>
+                    </tr>
+                  </table>
+                  <table align="right" border="0" cellpadding="0" cellspacing="0" class="w100" width="120">
+                    <tr>
+                      <td align="center">
+                        <table align="left" border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+                          </tr>
+                          <tr>
+                            <td align="center" valign="top"><a href="https://cdeworld.com/webinar_series/nobel/registration" target="_blank"><img alt="" border="0" src="https://cdeworld.com/media/5903" style="display:block; max-width:120px; width:120px;" width="120"></a></td>
+                          </tr>
+                          <tr>
+                            <td align="center" height="20"></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="w28" width="28"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>`
+  )
+}
+export function on_demand_webinar(fields){
+  return(
+    `<tr>
+    <td align="center">
+      <table border="0" cellpadding="0" cellspacing="0" style="border-bottom:2px solid #989797;" width="100%">
+        <tr>
+          <td class="w28" width="28"></td>
+          <td align="center">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+              </tr>
+              <tr>
+                <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">On-Demand Webinar</td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="355">
+                    <tr>
+                      <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+                    </tr>
+                    <tr>
+                      <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="https://cdeworld.com/webinars/20836-Advancements_in_Root_Canal_Therapy" style="text-decoration:none; color:#4c4c4c" target="blank">Advancements in Root Canal Therapy</a></strong><br>
+                      <strong>Presenter:</strong> Thomas V. McClammy, DMD, MS; and Enrico E. DiVito, DDS<br>
+                      <strong>Credits:</strong> 1 Interactive CEU<br>
+                      <strong>Cost:</strong> FREE<br>
+                      <strong>Provider:</strong> AEGIS Publications, LLC<br>
+                      <strong>Commercial Supporter:</strong> <em>Sonendo</em></td>
+                    </tr>
+                    <tr>
+                      <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="https://cdeworld.com/webinars/20836-Advancements_in_Root_Canal_Therapy" style="text-decoration:none; color:#9c8d30;" target="_blank">REGISTER TODAY</a></td>
+                    </tr>
+                    <tr>
+                      <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+                    </tr>
+                  </table>
+                  <table align="right" border="0" cellpadding="0" cellspacing="0" class="w100" width="120">
+                    <tr>
+                      <td align="center">
+                        <table align="left" border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td align="center" height="15" style="font-size:15px; line-height:20px;"></td>
+                          </tr>
+                          <tr>
+                            <td align="center" valign="top"><a href="https://cdeworld.com/webinars/20836-Advancements_in_Root_Canal_Therapy" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/64474/" style="display:block; max-width:120px; width:120px;" width="120"></a></td>
+                          </tr>
+                          <tr>
+                            <td align="center" height="12" style="font-size:12px; line-height:12px;"></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="w28" width="28"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>`
+  )
+}
+export function end(fields){
+  let month = fields[0].value;
+  let year = fields[1].value;
+  //put the url together
+  let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter`;
+
+  return(
+    `<tr>
+    <td align="center">
+      <table border="0" cellpadding="0" cellspacing="0" style="border-bottom:2px solid #989797;" width="100%">
+        <tr>
+          <td width="20"></td>
+          <td align="center">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td align="center" style="font-family:Arial, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-align:center; text-transform:uppercase; font-weight:bold; padding:15px 0px 10px;">Connect with <em>Compendium</em></td>
+              </tr>
+              <tr>
+                <td align="center" style="padding-bottom:10px;">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td align="center"><a href="https://www.facebook.com/CompendiumDentistry" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/59473/" style="display:block; margin:0px; max-width:32px;" width="32"></a></td>
+                      <td width="23"></td>
+                      <td align="center"><a href="https://twitter.com/compendiumced" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/59474/" style="display:block; margin:0px; max-width:32px;" width="32"></a></td>
+                      <td width="23"></td>
+                      <td align="center"><a href="mailto:?subject=FW:%20November/December%202017%20Issue%20Available%20Now&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/cced/2017/11/newsletter?refer=true" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/59475/" style="display:block; margin:0px; max-width:31px;" width="31"></a></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td width="20"></td>
+        </tr>
       </table>
     </td>
   </tr>
-</tbody>
-</table>
-<!--[if (gte mso 9)|(IE)]>
-
-  </td>
-
+  <tr>
+    <td align="center" height="10"></td>
   </tr>
-
-  </table>
-
-  <![endif]-->			</div>
-</center>
+  <tr>
+    <td align="center" class="grey1" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#666666; padding-bottom:10px;">To ensure delivery, please add reply-207852@news.aegispublications.com to your address book<br>
+    Compendium | 104 Pheasant Run, Suite 105 | Newtown, PA 18940<br>
+    %%PLUGIN_UNSUBSCRIBE: 1089099-CCED UNSUBSCRIBE%%</td>
+  </tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" height="20"></td>
+</tr>
+</table>
+</td>
+<td width="5"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
 </body>
 </html>`
   )

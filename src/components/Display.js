@@ -1,17 +1,18 @@
 import React from 'react';
 import DOMPurify from 'dompurify';
 import {saveAs} from 'file-saver';
-import {html_sections} from '../templates/cced_thematic';
 import * as cced_thematic from '../templates/cced_thematic.js';
 import * as idt_thematic from '../templates/idt_thematic.js';
 import * as id_thematic from '../templates/id_thematic.js';
 import * as idt_reader from '../templates/idt_reader.js';
+import * as cced_reader from '../templates/cced_reader.js';
 
 const TEMPLATES = {
   cced_thematic,
   idt_thematic,
   id_thematic,
-  idt_reader
+  idt_reader,
+  cced_reader
 }
 
 export default class Display extends React.Component {

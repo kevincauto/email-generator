@@ -3,13 +3,15 @@ import {cced_thematic_rows} from '../templates/cced_thematic';
 import {idt_thematic_rows} from '../templates/idt_thematic';
 import {id_thematic_rows} from '../templates/id_thematic';
 import {idt_reader_rows} from '../templates/id_thematic';
+import {cced_reader_rows} from '../templates/cced_reader';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 let rows ={
   cced_thematic: cced_thematic_rows,
   idt_thematic: idt_thematic_rows,
   id_thematic: id_thematic_rows,
-  idt_reader: idt_thematic_rows
+  idt_reader: idt_thematic_rows,
+  cced_reader: cced_reader_rows
 }
 
 
@@ -87,6 +89,7 @@ class Forms extends React.Component {
                         )}
                         {...provided.dragHandleProps}
                       >
+
                       <div className="blue" key={i + object.typeOfRow}>
                       {/* closable? If yes add a red x icon*/}
                       {
@@ -226,6 +229,7 @@ class FormSection extends React.Component{
               <option value="idt_thematic">IDT Thematic</option>
               <option value="id_thematic">ID Thematic</option>
               <option value="idt_reader">IDT Reader</option>
+              <option value="cced_reader">CCED Reader</option>
             </select>
 
             <h3>2. Complete the form.</h3>
