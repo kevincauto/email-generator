@@ -58,7 +58,7 @@ export const cced_reader_rows = {
     fields:  [
       {label: 'Header', name: 'header', value: 'New CE Courses'},
       {label: 'Title', name: 'title'},
-      {label: 'Description', name: 'description'},
+      {label: 'Description', name: 'description', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '},
       {label: 'Author', name: 'author'},
       {label: 'Credits', name: 'credits'},
       {label: 'Cost', name: 'cost'},
@@ -66,7 +66,7 @@ export const cced_reader_rows = {
       {label: 'Source', name: 'source'},
       {label: 'Dates', name: 'dates'},
       {label: 'Link', name: 'link'},
-      {label: 'Image Source', name: 'imgSrc'}
+      {label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/165'}
     ]
   },
   center_banner: {
@@ -87,10 +87,10 @@ export const cced_reader_rows = {
     switchable: true,
     addable: true,
     fields:  [
-      {label: 'Header', name: 'header', value: 'New CE Courses'},
+      {label: 'Header', name: 'header', value: 'Header'},
       {label: 'Subheader Description', name: 'subheader'},
       {label: 'Title', name: 'title'},
-      {label: 'Description', name: 'description'},
+      {label: 'Description', name: 'description', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '},
       {label: 'Author', name: 'author'},
       {label: 'Link', name: 'link'},
     ]
@@ -110,7 +110,7 @@ export const cced_reader_rows = {
     switchable: true,
     addable: true,
     fields:  [
-        {label: 'Header', name: 'header', value: 'FEATURED EVENT'},
+        {label: 'Header', name: 'header', value: 'Featured Event'},
         {label: 'Title', name: 'title'},
         {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
         {label: 'Author', name: 'author'},
@@ -125,7 +125,7 @@ export const cced_reader_rows = {
     switchable: true,
     addable: true,
     fields:  [
-      {label: 'Header', name: 'header', value: 'FEATURED EVENT'},
+      {label: 'Header', name: 'header', value: 'Featured eBook'},
       {label: 'Title', name: 'title'},
       {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
       {label: 'Author', name: 'author'},
@@ -136,11 +136,11 @@ export const cced_reader_rows = {
     live_webinar: {
     typeOfRow: 'live_webinar',
     header: 'Live Webinar',
-    closable: false,
-    switchable: false,
-    addable: false,
+    closable: true,
+    switchable: true,
+    addable: true,
     fields: [
-      {label: 'Header', name: 'header', value: 'New CE Courses'},
+      {label: 'Header', name: 'header', value: 'Live Webinar'},
       {label: 'Title', name: 'title'},
       {label: 'Date', name: 'date'},
       {label: 'Presenter', name: 'presenter'},
@@ -149,17 +149,17 @@ export const cced_reader_rows = {
       {label: 'Provider', name: 'provider'},
       {label: 'Supporter', name: 'supporter'},
       {label: 'Link', name: 'link'},
-      {label: 'Image Source', name: 'imgSrc'}
+      {label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/150'}
     ]
   },
   on_demand_webinar: {
     typeOfRow: 'on_demand_webinar',
     header: 'On-Demand Webinar',
-    closable: false,
-    switchable: false,
-    addable: false,
+    closable: true,
+    switchable: true,
+    addable: true,
     fields: [
-      {label: 'Header', name: 'header', value: 'New CE Courses'},
+      {label: 'Header', name: 'header', value: 'On-Demand Webinar'},
       {label: 'Title', name: 'title'},
       {label: 'Presenter', name: 'presenter'},
       {label: 'Credits', name: 'credits'},
@@ -167,7 +167,7 @@ export const cced_reader_rows = {
       {label: 'Provider', name: 'provider'},
       {label: 'Supporter', name: 'supporter'},
       {label: 'Link', name: 'link'},
-      {label: 'Image Source', name: 'imgSrc'}
+      {label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/150'}
     ]
   },
   end: {
@@ -214,7 +214,14 @@ export const cced_reader_initial_state = [
     _.cloneDeep(cced_reader_rows.article),
     _.cloneDeep(cced_reader_rows.dotted_line),
     _.cloneDeep(cced_reader_rows.image_article),
+    _.cloneDeep(cced_reader_rows.dotted_line),
     _.cloneDeep(cced_reader_rows.featured_article),
+    _.cloneDeep(cced_reader_rows.dotted_line),
+    _.cloneDeep(cced_reader_rows.live_webinar),
+    _.cloneDeep(cced_reader_rows.dotted_line),
+    _.cloneDeep(cced_reader_rows.on_demand_webinar),
+    _.cloneDeep(cced_reader_rows.on_demand_webinar),
+    _.cloneDeep(cced_reader_rows.dotted_line),
     _.cloneDeep(cced_reader_rows.end)
   ];
 
@@ -389,10 +396,10 @@ export function beginning(fields){
                     <td align="center">
                       <table border="0" cellpadding="0" cellspacing="0" class="w600" style="min-width:600px; border:1px solid #000000;" width="600">
                         <tr>
-                          <td align="center" height="20" style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:10px; color:#6d6f72; text-transform:uppercase;">Having trouble viewing this email? <span class="grey"><a href="https://www.dentalaegis.com/cced/2017/11/newsletter" style="color:#ffffff; text-decoration:none;" target="_blank">Click here.</a></span></td>
+                          <td align="center" height="20" style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:10px; color:#6d6f72; text-transform:uppercase;">Having trouble viewing this email? <span class="grey"><a href="https://www.dentalaegis.com/cced/${year}/${month}/newsletter" style="color:#ffffff; text-decoration:none;" target="_blank">Click here.</a></span></td>
                         </tr>
                         <tr>
-                          <td align="center"><a href="http://straumanneducation.com/symposium/"><img alt="" border="0" class="w100" src="https://www.aegisdentalnetwork.com/media/65049/" style="display:block; margin:0px; max-width:600px;" width="600"></a></td>
+                          <td align="center"><a href="${mastheadLink}"><img alt="" border="0" class="w100" src="${mastheadSrc}" style="display:block; margin:0px; max-width:600px;" width="600"></a></td>
                         </tr>
                         <tr>
                           <td align="center"><img alt="" border="0" class="w100" src="http://aegispublications.com/news/cced/2017/dash-3.jpg" style="display:block; margin:0px; max-width:600px;" width="600"></td>
@@ -411,13 +418,13 @@ export function beginning(fields){
                           <td align="center" bgcolor="#8E682A" style="background-color:#8E682A;">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%">
                               <tr>
-                                <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 8px 10px 19px; border-right:1px solid #775623;"><a href="http://www.dentalaegis.com/cced/2017/11/" style=" text-decoration:none; color:#ffffff" target="_blank">Articles</a></td>
+                                <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 8px 10px 19px; border-right:1px solid #775623;"><a href="http://www.dentalaegis.com/cced/${year}/${month}/" style=" text-decoration:none; color:#ffffff" target="_blank">Articles</a></td>
                                 <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 8px; border-right:1px solid #775623;"><a href="http://www.dentalaegis.com/cced/archive" style=" text-decoration:none; color:#ffffff" target="_blank">Archive</a></td>
                                 <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 7px; border-right:1px solid #775623;"><a href="http://cced.cdeworld.com/" style=" text-decoration:none; color:#ffffff" target="_blank">ce</a></td>
                                 <td align="center" class="menu" style=" color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 6px; border-right:1px solid #775623;"><a href="http://www.dentalaegis.com/cced/webinars" style=" text-decoration:none; color:#ffffff" target="_blank">webinars</a></td>
                                 <td align="center" class="menu" style=" color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 8px; border-right:1px solid #775623;"><a href="http://www.dentalaegis.com/news" style=" text-decoration:none; color:#ffffff" target="_blank">news</a></td>
                                 <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 5px; border-right:1px solid #775623;"><a href="https://www.dentalaegis.com/cced/subscribe/thematic?campaign=7834" style=" text-decoration:none; color:#ffffff" target="_blank">subscribe</a></td>
-                                <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 20px 10px 8px;"><a href="http://www.dentalaegis.com/cced/2017/11/digital" style=" text-decoration:none; color:#ffffff" target="_blank">Digital Edition</a></td>
+                                <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 20px 10px 8px;"><a href="http://www.dentalaegis.com/cced/${year}/${month}/digital" style=" text-decoration:none; color:#ffffff" target="_blank">Digital Edition</a></td>
                               </tr>
                             </table>
                           </td>
@@ -455,7 +462,7 @@ export function ce(fields){
                   <td align="center" height="20"></td>
                 </tr>
                 <tr>
-                  <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">New CE Courses</td>
+                  <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">${header}</td>
                 </tr>
                 <tr>
                   <td align="center">
@@ -464,18 +471,18 @@ export function ce(fields){
                         <td align="center" height="12" style="font-size:12px; line-height:12px;"></td>
                       </tr>
                       <tr>
-                        <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><a href="https://cced.cdeworld.com/courses/5111-Early_Diagnosis_and_Treatment_of_Asymptomatic_Vertical_Enamel_and_Dentin_Cracks" style="text-decoration:none; color:#4c4c4c;" target="blank"><strong>Early Diagnosis and Treatment of Asymptomatic Vertical Enamel and Dentin Cracks</strong></a><br>
-                        The author reviews the rationales and presents a systematic approach for early intervention of asymptomatic vertical enamel and dentin cracks based on current evidence. The discussion includes pathologic consequences of vertical cracks and diagnostic tools.<br>
-                        <em>Samer S. Alassaad, DDS</em><br>
+                        <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><a href="${link}" style="text-decoration:none; color:#4c4c4c;" target="blank"><strong>${title}</strong></a><br>
+                       ${description}<br>
+                        <em>${author}</em><br>
                         <br>
-                        <strong>Credits:</strong> 2 SI<br>
-                        <strong>Cost:</strong> $16.00<br>
-                        <strong>Provider:</strong> AEGIS Publications, LLC<br>
-                        <strong>Source:</strong> <em>Compendium of Continuing Education in Dentistry</em><br>
-                        <strong>Dates:</strong> November 1, 2017 – December 31, 2020</td>
+                        <strong>Credits:</strong> ${credits}<br>
+                        <strong>Cost:</strong> ${cost}<br>
+                        <strong>Provider:</strong> ${provider}<br>
+                        <strong>Source:</strong> <em>${source}</em><br>
+                        <strong>Dates:</strong> ${dates}</td>
                       </tr>
                       <tr>
-                        <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="https://cced.cdeworld.com/courses/5111-Early_Diagnosis_and_Treatment_of_Asymptomatic_Vertical_Enamel_and_Dentin_Cracks" style="color:#9c8d30; text-decoration:none;" target="_blank">VIEW COURSE</a></td>
+                        <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="${link}" style="color:#9c8d30; text-decoration:none;" target="_blank">VIEW COURSE</a></td>
                       </tr>
                     </table>
                     <table align="right" border="0" cellpadding="0" cellspacing="0" class="w100" width="165">
@@ -486,7 +493,7 @@ export function ce(fields){
                               <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
                             </tr>
                             <tr>
-                              <td align="center" valign="top"><a href="https://cced.cdeworld.com/courses/5111-Early_Diagnosis_and_Treatment_of_Asymptomatic_Vertical_Enamel_and_Dentin_Cracks" target="_blank"><img alt="" border="0" src="https://cced.cdeworld.com/media/15182" style="display:block; max-width:165px; width:165px;" width="165"></a></td>
+                              <td align="center" valign="top"><a href="${link}" target="_blank"><img alt="" border="0" src="${imgSrc}" style="display:block; max-width:165px; width:165px;" width="165"></a></td>
                             </tr>
                             <tr>
                               <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
@@ -522,13 +529,10 @@ export function center_banner(fields){
       <td align="center" style="padding-bottom:10px;"><img alt="" border="0" class="w100" src="http://aegispublications.com/news/cced/2017/dash-3.jpg" style="display:block; margin:0px; max-width:600px;" width="600"></td>
     </tr>
     <tr>
-      <td align="center" style=" border:1px solid #aaaaaa;"><a href="http://www.bisco.com/theracem-/" target="_blank"><img alt="" border="0" class="w100" src="https://www.dentalaegis.com/media/64538/" style="display:block; margin:0px; max-width:600px;" width="600"></a></td>
+      <td align="center" style=" border:1px solid #aaaaaa;"><a href="${link}" target="_blank"><img alt="" border="0" class="w100" src="${imgSrc}" style="display:block; margin:0px; max-width:600px;" width="600"></a></td>
     </tr>
     <tr>
       <td align="center" style="padding-top:10px;"><img alt="" border="0" class="w100" src="http://aegispublications.com/news/cced/2017/dash-3.jpg" style="display:block; margin:0px; max-width:600px;" width="600"></td>
-    </tr>
-    <tr>
-      <td align="center"><img alt="" border="0" class="w100" src="http://aegispublications.com/news/cced/2017/dash-3.jpg" style="display:block; margin:0px; max-width:600px;" width="600"></td>
     </tr>
             <!--END CENTER BANNER AD-->`
   )
@@ -552,27 +556,38 @@ export function article(fields){
             <td class="w28" width="28"></td>
             <td align="center">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+                ${header?`      
+              <tr>
+                <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+              </tr>          
+              <tr>
+                <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">${header}</td>
+              </tr>
+              <tr>
+                <td align="center" height="12" style="font-size:12px; line-height:12px;"></td>
+              </tr>`:``}
+
+              ${subheader? `
+            <!--OPTIONAL SUB-HEADER-->
+              <tr>
+                <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px; padding-bottom:10px;">${subheader}</td>
+              </tr>
+            <!--END OPTIONAL SUB-HEADER-->` : ``}
+
                 <tr>
-                  <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="${link}" style="text-decoration:none; color:#4c4c4c" target="blank">${title}</a></strong><br>
+                  ${description?`${description}`:``}
+                  ${author?`
+                  <br />
+                  <em>${author}</em>`:
+                  ``}
+
+                  
+                  </td>
                 </tr>
                 <tr>
-                  <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">Case Reports</td>
-                </tr>
-<tr>
-                  <td align="center" height="12" style="font-size:12px; line-height:12px;"></td>
-                </tr>
-                                                  <!--OPTIONAL PRE-HEADER-->
-                <tr>
-                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px; padding-bottom:10px;">An in-depth look at products that complement this category</td>
-                </tr>
-<!--END OPTIONAL PRE-HEADER-->
-                <tr>
-                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="https://www.aegisdentalnetwork.com/cced/2017/11/redesigning-existing-provisional-restorations-while-maintaining-established-transmucosal-anatomy-in-a-multi-system-implant-natural-tooth-full-arch-case?utm_source=Email&utm_medium=Reader&utm_campaign=December" style="text-decoration:none; color:#4c4c4c" target="blank">Redesigning Existing Provisional Restorations While Maintaining Established Transmucosal Anatomy in a Multi-Implant System/Natural Tooth, Full-Arch Case</a></strong><br>
-                  This case report features a redesign of existing provisional restorations using an in-office approach in which a segmented PVS matrix is utilized.<br>
-                  <em>Michael A. Weiss, DDS; Barry P. Levin, DMD; and Kevan S. Green, DMD</em></td>
-                </tr>
-                <tr>
-                  <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="https://www.aegisdentalnetwork.com/cced/2017/11/redesigning-existing-provisional-restorations-while-maintaining-established-transmucosal-anatomy-in-a-multi-system-implant-natural-tooth-full-arch-case?utm_source=Email&utm_medium=Reader&utm_campaign=December" style="text-decoration:none; color:#9c8d30;" target="_blank">READ MORE</a></td>
+                  <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="${link}" style="text-decoration:none; color:#9c8d30;" target="_blank">READ MORE</a></td>
                 </tr>
                 <tr>
                   <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
@@ -622,7 +637,7 @@ export function image_article(fields){
                   <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
                 </tr>
                 <tr>
-                  <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">Featured Product</td>
+                  <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">${header}</td>
                 </tr>
                 <tr>
                   <td align="center">
@@ -631,11 +646,11 @@ export function image_article(fields){
                         <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
                       </tr>
                       <tr>
-                        <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="http://www.straumann.us/en/professionals/products-and-solutions/surgical-and-restorative-solutions/implants/bone-level-tapered-implants.html?utm_source=/blt.html&utm_medium=website&utm_campaign=VanityURL" style="text-decoration:none; color:#4c4c4c" target="blank">The Straumann® Bone Level Tapered Implant</a></strong><br>
-                        The shape, surface and material combination are designed to deliver primary stability in all bone classes, making the Straumann Bone Level Tapered Implant ideal for immediate placement and loading even in challenging protocols. The tapered form enables placement in the underprepared osteotomy<br></td>
+                        <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="${link}" style="text-decoration:none; color:#4c4c4c" target="blank">${title}</a></strong><br>
+                        ${description}<br></td>
                       </tr>
                       <tr>
-                        <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="http://www.straumann.us/en/professionals/products-and-solutions/surgical-and-restorative-solutions/implants/bone-level-tapered-implants.html?utm_source=/blt.html&utm_medium=website&utm_campaign=VanityURL" style="text-decoration:none; color:#9c8d30;" target="_blank">LEARN NOW</a></td>
+                        <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="${link}" style="text-decoration:none; color:#9c8d30;" target="_blank">LEARN NOW</a></td>
                       </tr>
                       <tr>
                         <td align="center" class="hide" height="15" style="font-size:15px; line-height:15px;"></td>
@@ -649,7 +664,7 @@ export function image_article(fields){
                               <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
                             </tr>
                             <tr>
-                              <td align="center" valign="top"><a href="http://www.straumann.us/en/professionals/products-and-solutions/surgical-and-restorative-solutions/implants/bone-level-tapered-implants.html?utm_source=/blt.html&utm_medium=website&utm_campaign=VanityURL" target="_blank"><img alt="" border="0" src="https://www.aegisdentalnetwork.com/media/65057/" style="display:block; max-width:120px; width:120px;" width="120"></a></td>
+                              <td align="center" valign="top"><a href="${link}" target="_blank"><img alt="" border="0" src="${imgSrc}" style="display:block; max-width:120px; width:120px;" width="120"></a></td>
                             </tr>
                             <tr>
                               <td align="center" height="20"></td>
@@ -675,11 +690,11 @@ export function featured_article(fields){
 
 
 let header = fields[0].value;
-let subheader = fields[1].value;
-let title = fields[2].value;
-let description = fields[3].value;
-let author = fields[4].value;
-let link = fields[5].value;
+let title = fields[1].value;
+let description = fields[2].value;
+let author = fields[3].value;
+let link = fields[4].value;
+let imgSrc = fields[5].value;
 
   return(`
   <tr bgcolor="#EFEFEF">
@@ -693,7 +708,7 @@ let link = fields[5].value;
               <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
             </tr>
             <tr>
-              <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">Featured Whitepaper</td>
+              <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">${header}</td>
             </tr>
             <tr>
               <td align="center">
@@ -702,12 +717,12 @@ let link = fields[5].value;
                     <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
                   </tr>
                   <tr>
-                    <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="https://www.aegisdentalnetwork.com/whitepapers/innovative-attachment-to-secure-implant-supported-fixed-full-arch-restorations?utm_source=Zest&utm_medium=Reader&utm_campaign=Whitepaper" style="text-decoration:none; color:#4c4c4c" target="blank">Innovative Attachment to Secure Implant-Supported Fixed Full-Arch Restorations</a></strong><br>
-                    Indicated for the rigid connection of full-arch restorations onto endosseous dental implants, the Locator F-Tx fixed attachment system involves a protocol that is simpler to place, easier to maintain, and more cost-effective and convenient for both dentists and patients.<br>
-                    <em>Nadim Z. Baba, DMD, MSD</em></td>
+                    <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="${link}" style="text-decoration:none; color:#4c4c4c" target="blank">${title}</a></strong><br>
+                    ${description}<br>
+                    <em>${author}</em></td>
                   </tr>
                   <tr>
-                    <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="https://www.aegisdentalnetwork.com/whitepapers/innovative-attachment-to-secure-implant-supported-fixed-full-arch-restorations?utm_source=Zest&utm_medium=Reader&utm_campaign=Whitepaper" style="text-decoration:none; color:#9c8d30;" target="_blank">DOWNLOAD NOW</a></td>
+                    <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="${link}" style="text-decoration:none; color:#9c8d30;" target="_blank">DOWNLOAD NOW</a></td>
                   </tr>
                   <tr>
                     <td align="center" class="hide" height="15" style="font-size:15px; line-height:15px;"></td>
@@ -721,7 +736,7 @@ let link = fields[5].value;
                           <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
                         </tr>
                         <tr>
-                          <td align="center" valign="top"><a href="https://www.aegisdentalnetwork.com/whitepapers/innovative-attachment-to-secure-implant-supported-fixed-full-arch-restorations?utm_source=Zest&utm_medium=Reader&utm_campaign=Whitepaper" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/64480" style="display:block; max-width:120px; width:120px;" width="120"></a></td>
+                          <td align="center" valign="top"><a href="${link}" target="_blank"><img alt="" border="0" src="${imgSrc}" style="display:block; max-width:120px; width:120px;" width="120"></a></td>
                         </tr>
                         <tr>
                           <td align="center" height="20"></td>
@@ -763,12 +778,14 @@ export function live_webinar(fields){
           <td class="w28" width="28"></td>
           <td align="center">
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
-              <tr>
-                <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
-              </tr>
-              <tr>
-                <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">Upcoming Live Webinar</td>
-              </tr>
+            ${header?`              
+          <tr>
+            <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+          </tr>
+          <tr>
+            <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">${header}</td>
+          </tr>`:``}
+
               <tr>
                 <td align="center">
                   <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="355">
@@ -776,16 +793,16 @@ export function live_webinar(fields){
                       <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
                     </tr>
                     <tr>
-                      <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="https://cdeworld.com/webinar_series/nobel/registration" style="text-decoration:none; color:#4c4c4c" target="blank">The Evolution of Immediate Implant With Immediate Provisional Restoration</a></strong><br>
-                      <strong>When:</strong> 7:00 pm EDT | Thursday, December 14, 2017<br>
-                      <strong>Presenter:</strong> David Gelb, DDS<br>
-                      <strong>Credits:</strong> 1 Interactive CEU<br>
-                      <strong>Cost:</strong> FREE<br>
-                      <strong>Provider:</strong> AEGIS Publications, LLC<br>
-                      <strong>Commercial Supporter:</strong> <em>Nobel Biocare</em></td>
+                      <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="${link}" style="text-decoration:none; color:#4c4c4c" target="blank">${title}</a></strong><br>
+                      <strong>When:</strong> ${date}<br>
+                      <strong>Presenter:</strong> ${presenter}<br>
+                      <strong>Credits:</strong> ${credits}<br>
+                      <strong>Cost:</strong> ${cost}<br>
+                      <strong>Provider:</strong> ${provider}<br>
+                      <strong>Commercial Supporter:</strong> <em>${supporter}</em></td>
                     </tr>
                     <tr>
-                      <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="https://cdeworld.com/webinar_series/nobel/registration" style="text-decoration:none; color:#9c8d30;" target="_blank">REGISTER TODAY</a></td>
+                      <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="${link}" style="text-decoration:none; color:#9c8d30;" target="_blank">REGISTER TODAY</a></td>
                     </tr>
                     <tr>
                       <td align="center" class="hide" height="15" style="font-size:15px; line-height:15px;"></td>
@@ -799,7 +816,7 @@ export function live_webinar(fields){
                             <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
                           </tr>
                           <tr>
-                            <td align="center" valign="top"><a href="https://cdeworld.com/webinar_series/nobel/registration" target="_blank"><img alt="" border="0" src="https://cdeworld.com/media/5903" style="display:block; max-width:120px; width:120px;" width="120"></a></td>
+                            <td align="center" valign="top"><a href="${link}" target="_blank"><img alt="" border="0" src="${imgSrc}" style="display:block; max-width:120px; width:120px;" width="120"></a></td>
                           </tr>
                           <tr>
                             <td align="center" height="20"></td>
@@ -820,20 +837,32 @@ export function live_webinar(fields){
   )
 }
 export function on_demand_webinar(fields){
+
+  let header = fields[0].value;
+  let title = fields[1].value;
+  let presenter = fields[2].value;
+  let credits = fields[3].value;
+  let cost = fields[4].value;
+  let provider = fields[5].value;
+  let supporter = fields[6].value;
+  let link = fields[7].value;
+  let imgSrc = fields[8].value;
+
   return(
     `<tr>
     <td align="center">
-      <table border="0" cellpadding="0" cellspacing="0" style="border-bottom:2px solid #989797;" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
           <td class="w28" width="28"></td>
           <td align="center">
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
-              <tr>
-                <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
-              </tr>
-              <tr>
-                <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">On-Demand Webinar</td>
-              </tr>
+            ${header?`              
+            <tr>
+              <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
+            </tr>
+            <tr>
+              <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">${header}</td>
+            </tr>`:``}
               <tr>
                 <td align="center">
                   <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="355">
@@ -841,15 +870,15 @@ export function on_demand_webinar(fields){
                       <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
                     </tr>
                     <tr>
-                      <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="https://cdeworld.com/webinars/20836-Advancements_in_Root_Canal_Therapy" style="text-decoration:none; color:#4c4c4c" target="blank">Advancements in Root Canal Therapy</a></strong><br>
-                      <strong>Presenter:</strong> Thomas V. McClammy, DMD, MS; and Enrico E. DiVito, DDS<br>
-                      <strong>Credits:</strong> 1 Interactive CEU<br>
-                      <strong>Cost:</strong> FREE<br>
-                      <strong>Provider:</strong> AEGIS Publications, LLC<br>
-                      <strong>Commercial Supporter:</strong> <em>Sonendo</em></td>
+                      <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="${link}" style="text-decoration:none; color:#4c4c4c" target="blank">${title}</a></strong><br>
+                      <strong>Presenter:</strong> ${presenter}<br>
+                      <strong>Credits:</strong> ${credits}<br>
+                      <strong>Cost:</strong> ${cost}<br>
+                      <strong>Provider:</strong> ${provider}<br>
+                      <strong>Commercial Supporter:</strong> <em>${supporter}</em></td>
                     </tr>
                     <tr>
-                      <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="https://cdeworld.com/webinars/20836-Advancements_in_Root_Canal_Therapy" style="text-decoration:none; color:#9c8d30;" target="_blank">REGISTER TODAY</a></td>
+                      <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="${link}" style="text-decoration:none; color:#9c8d30;" target="_blank">REGISTER TODAY</a></td>
                     </tr>
                     <tr>
                       <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
@@ -863,7 +892,7 @@ export function on_demand_webinar(fields){
                             <td align="center" height="15" style="font-size:15px; line-height:20px;"></td>
                           </tr>
                           <tr>
-                            <td align="center" valign="top"><a href="https://cdeworld.com/webinars/20836-Advancements_in_Root_Canal_Therapy" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/64474/" style="display:block; max-width:120px; width:120px;" width="120"></a></td>
+                            <td align="center" valign="top"><a href="${link}" target="_blank"><img alt="" border="0" src="${imgSrc}" style="display:block; max-width:120px; width:120px;" width="120"></a></td>
                           </tr>
                           <tr>
                             <td align="center" height="12" style="font-size:12px; line-height:12px;"></td>
@@ -886,6 +915,19 @@ export function on_demand_webinar(fields){
 export function end(fields){
   let month = fields[0].value;
   let year = fields[1].value;
+  let monthName;
+  if(month == '01'){monthName = 'January'};
+  if(month == '02'){monthName = 'February'};
+  if(month == '03'){monthName = 'March'};
+  if(month == '04'){monthName = 'April'};
+  if(month == '05'){monthName = 'May'};
+  if(month == '06'){monthName = 'June'};
+  if(month == '07'){monthName = 'July'};
+  if(month == '08'){monthName = 'August'};
+  if(month == '09'){monthName = 'September'};
+  if(month == '10'){monthName = 'October'};
+  if(month == '11'){monthName = 'November'};
+  if(month == '12'){monthName = 'December'};
   //put the url together
   let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter`;
 
@@ -908,7 +950,7 @@ export function end(fields){
                       <td width="23"></td>
                       <td align="center"><a href="https://twitter.com/compendiumced" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/59474/" style="display:block; margin:0px; max-width:32px;" width="32"></a></td>
                       <td width="23"></td>
-                      <td align="center"><a href="mailto:?subject=FW:%20November/December%202017%20Issue%20Available%20Now&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/cced/2017/11/newsletter?refer=true" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/59475/" style="display:block; margin:0px; max-width:31px;" width="31"></a></td>
+                      <td align="center"><a href="mailto:?subject=FW:%20${monthName}%202017%20Issue%20Available%20Now&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/cced/${year}/${month}/newsletter?refer=true" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/59475/" style="display:block; margin:0px; max-width:31px;" width="31"></a></td>
                     </tr>
                   </table>
                 </td>
