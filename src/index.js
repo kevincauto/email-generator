@@ -12,25 +12,28 @@ import {idt_thematic_initial_state, idt_thematic_rows} from './templates/idt_the
 import {id_thematic_initial_state, id_thematic_rows} from './templates/id_thematic';
 import {idt_reader_initial_state, idt_reader_rows} from './templates/idt_reader';
 import {cced_reader_initial_state, cced_reader_rows} from './templates/cced_reader';
+import {id_reader_initial_state, id_reader_rows} from './templates/id_reader';
 
 let rows ={
   cced_thematic: cced_thematic_rows,
   idt_thematic: idt_thematic_rows,
   id_thematic: id_thematic_rows,
   idt_reader: idt_reader_rows,
-  cced_reader: cced_reader_rows
+  cced_reader: cced_reader_rows,
+  id_reader: id_reader_rows
 }
 
 class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected_template: 'cced_reader',
+      selected_template: 'id_reader',
       cced_thematic: cced_thematic_initial_state,
       idt_thematic: idt_thematic_initial_state,
       id_thematic: id_thematic_initial_state,
       idt_reader: idt_reader_initial_state,
-      cced_reader: cced_reader_initial_state
+      cced_reader: cced_reader_initial_state,
+      id_reader: id_reader_initial_state
     };
 
     this.handleFieldChange = this.handleFieldChange.bind(this);
