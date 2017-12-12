@@ -18,33 +18,33 @@ export const id_digital_rows = {
     fields:  [
       {label: 'Email Name', name: 'emailName'},
       {label: 'Month', name: 'month', value: currentMonth, 
-          dropdown: [
-              {value: '01', text: 'Send Month: January'}, 
-              {value: '02', text: 'Send Month: February'},
-              {value: '03', text: 'Send Month: March'}, 
-              {value: '04', text: 'Send Month: April'},
-              {value: '05', text: 'Send Month: May'}, 
-              {value: '06', text: 'Send Month: June'},
-              {value: '07', text: 'Send Month: July'}, 
-              {value: '08', text: 'Send Month: August'},
-              {value: '09', text: 'Send Month: September'}, 
-              {value: '10', text: 'Send Month: October'},
-              {value: '11', text: 'Send Month: November'}, 
-              {value: '12', text: 'Send Month: December'},
-          ]
-      },
-      {label: 'Year', name: 'year', value: currentYear, 
       dropdown: [
-          {value: '2017', text: 'Send Year: 2017'}, 
-          {value: '2018', text: 'Send Year: 2018'},
-          {value: '2019', text: 'Send Year: 2019'}, 
-          {value: '2020', text: 'Send Year: 2020'},
-          {value: '2021', text: 'Send Year: 2021'}, 
-          {value: '2022', text: 'Send Year: 2022'}
+          {value: '01', text: 'Send Month: January'}, 
+          {value: '02', text: 'Send Month: February'},
+          {value: '03', text: 'Send Month: March'}, 
+          {value: '04', text: 'Send Month: April'},
+          {value: '05', text: 'Send Month: May'}, 
+          {value: '06', text: 'Send Month: June'},
+          {value: '07', text: 'Send Month: July'}, 
+          {value: '08', text: 'Send Month: August'},
+          {value: '09', text: 'Send Month: September'}, 
+          {value: '10', text: 'Send Month: October'},
+          {value: '11', text: 'Send Month: November'}, 
+          {value: '12', text: 'Send Month: December'},
       ]
-      },
-      {label: 'Header Image Source', name: 'headerSrc', value: 'http://placehold.it/600x120'},
-      {label: 'Subscribe Link', name: 'subscribe'},
+    },
+     {label: 'Year', name: 'year', value: currentYear, 
+    dropdown: [
+      {value: '2017', text: 'Send Year: 2017'}, 
+      {value: '2018', text: 'Send Year: 2018'},
+      {value: '2019', text: 'Send Year: 2019'}, 
+      {value: '2020', text: 'Send Year: 2020'},
+      {value: '2021', text: 'Send Year: 2021'}, 
+      {value: '2022', text: 'Send Year: 2022'}
+         ]
+    },
+      {label: 'Header Image Source', name: 'headerSrc', value: 'https://www.dentalaegis.com/media/64933/'},
+      {label: 'Cover Image Source', name: 'coverSrc', value: 'http://placehold.it/180x220'},
       {label: 'Digimag Link', name: 'link'}
     ]
   },
@@ -55,7 +55,7 @@ export const id_digital_rows = {
     switchable: true,
     addable: true,
     fields:  [
-      {label: 'Header', name: 'header'},
+      {label: 'Header', name: 'header', value: 'Header'},
       {label: 'Title', name: 'title'},
       {label: 'Author', name: 'author'},
       {label: 'Link', name: 'link'}
@@ -72,9 +72,9 @@ export const id_digital_rows = {
   end: {
     typeOfRow: 'end',
     header: 'End of the Email',
-    closable: true,
-    switchable: true,
-    addable: true,
+    closable: false,
+    switchable: false,
+    addable: false,
     fields:  [
         {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
         {label: 'Link', name: 'link'},
@@ -104,6 +104,7 @@ export const id_digital_rows = {
         {value: '2022', text: 'Send Year: 2022'}
     ]
     },
+    {label: 'Subscribe Link', name: 'subscribe'},
     ]
   }
 }
@@ -123,7 +124,7 @@ export function beginning(fields){
   let month = fields[1].value;
   let year = fields[2].value;
   let headerSrc = fields[3].value;
-  let subscribe = fields[4].value;
+  let coverSrc = fields[4].value;
   let link = fields[5].value;
   
 
@@ -159,7 +160,7 @@ export function beginning(fields){
                                                                   Is Here!</a></div>
                                                               <a href="${link}" target="_blank"><img src="http://aegispublications.com/news/id/2016/11/digital-btn.png" style="margin:0 0 0 22px;" width="257" /></a></td>
                                                           <td width="203">
-                                                              <a href="${link}" target="_blank"><img alt="" src="https://www.dentalaegis.com/media/64923/" style="margin:11% 4% 11% 4%;" width="164" /></a></td>
+                                                              <a href="${link}" target="_blank"><img alt="" src="${coverSrc}" style="margin:11% 4% 11% 4%;" width="164" /></a></td>
                                                       </tr>
                                                   </tbody>
                                               </table>
@@ -184,18 +185,21 @@ export function article(fields){
 
   return(
     `<!--START OF ARTICLE-->
+    ${header?`
     <tr>
-        <td colspan="2" valign="top">
-            <div style="font-family:Arial, sans-serif; font-size:20px; color:#000; margin:0 28px 0 29px; width:326px;">
-                <strong>${header}</strong></div>
-        </td>
-    </tr>
+    <td colspan="2" valign="top">
+        <div style="font-family:Arial, sans-serif; font-size:20px; color:#000; margin:0 28px 0 29px; width:326px;">
+            <strong>${header}</strong></div>
+    </td>
+    </tr>`:``}
+
     <tr>
         <td colspan="2">
             <div style="font-family:Arial, sans-serif; color:#4c4c4c; font-size:14px; text-align:left; clear:both; margin:11px 8px 4px 29px; width:541px; font-weight:bold;">
                 <a href="${link}" style="text-decoration:none; color:#000;" target="_blank">${title}</a></div>
-            <div style="font-family:Arial, sans-serif; color:#000; font-size:14px; text-align:left; clear:both; font-style:italic; margin:4px 28px 4px 29px; width:541px;">
-                ${author}</div>
+            ${author? `<div style="font-family:Arial, sans-serif; color:#000; font-size:14px; text-align:left; clear:both; font-style:italic; margin:4px 28px 4px 29px; width:541px;">
+            ${author}</div>` : ``}
+
             <div style="font-family:Arial, sans-serif; color:#d99316; font-size:13px; text-align:left; clear:both; font-weight:bold; margin:0 1px 11px 29px; width:326px;">
                 <a href="${link}" style="text-decoration:none; color:#9d0707; font-size:13px;" target="_blank">READ MORE</a></div>
         </td>
@@ -223,6 +227,20 @@ export function end(fields){
     let link = fields[1].value;
     let month = fields[2].value;
     let year = fields[3].value;
+    let subscribe = fields[4].value;
+    let monthName;
+    if(month == '01'){monthName = 'January'};
+    if(month == '02'){monthName = 'February'};
+    if(month == '03'){monthName = 'March'};
+    if(month == '04'){monthName = 'April'};
+    if(month == '05'){monthName = 'May'};
+    if(month == '06'){monthName = 'June'};
+    if(month == '07'){monthName = 'July'};
+    if(month == '08'){monthName = 'August'};
+    if(month == '09'){monthName = 'September'};
+    if(month == '10'){monthName = 'October'};
+    if(month == '11'){monthName = 'November'};
+    if(month == '12'){monthName = 'December'};
   return(`
   <!--END-->
   <tr>
@@ -262,7 +280,7 @@ To ensure delivery, please add reply-289795@news.aegispublications.com to your a
 </table>
 </center>
 <p>
-<map name="Map"><area coords="371,4,441,29" href="https://twitter.com/insidedentistry" shape="rect" target="_blank" /> <area coords="454,4,536,29" href="https://www.facebook.com/InsideDentistry" shape="rect" target="_blank" /></map><map name="Map2"><area coords="44,92,231,114" href="https://www.dentalaegis.com/id/${year}/${month}" shape="rect" target="_blank" /> <area coords="232,93,338,112" href="https://www.dentalaegis.com/id/" shape="rect" target="_blank" /> <area coords="341,91,402,111" href="http://www.dentalaegis.com/id/subscribe/digital?120417b" shape="rect" target="_blank" /> <area coords="402,94,537,113" href="mailto:?subject=FW:%20Your%20December%20Digital%20Edition%20is%20Available&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/id/2017/12/newsletter/digital?refer=true" shape="rect" target="_blank" /></map><map name="Map3"><area coords="3,2,34,35" href="https://www.facebook.com/InsideDentistry" shape="rect" target="_blank" /> <area coords="57,3,85,30" href="https://twitter.com/insidedentistry" shape="rect" target="_blank" /> <area coords="108,4,138,29" href="mailto:?subject=FW:%20Your%20December%20Digital%20Edition%20is%20Available&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/id/2017/12/newsletter/digital?refer=true" shape="rect" target="_blank" /></map></p>
+<map name="Map"><area coords="371,4,441,29" href="https://twitter.com/insidedentistry" shape="rect" target="_blank" /> <area coords="454,4,536,29" href="https://www.facebook.com/InsideDentistry" shape="rect" target="_blank" /></map><map name="Map2"><area coords="44,92,231,114" href="https://www.dentalaegis.com/id/${year}/${month}" shape="rect" target="_blank" /> <area coords="232,93,338,112" href="https://www.dentalaegis.com/id/" shape="rect" target="_blank" /> <area coords="341,91,402,111" href="${subscribe}" shape="rect" target="_blank" /> <area coords="402,94,537,113" href="mailto:?subject=FW:%20Your%20${monthName}%20Digital%20Edition%20is%20Available&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/id/${year}/${month}/newsletter/digital?refer=true" shape="rect" target="_blank" /></map><map name="Map3"><area coords="3,2,34,35" href="https://www.facebook.com/InsideDentistry" shape="rect" target="_blank" /> <area coords="57,3,85,30" href="https://twitter.com/insidedentistry" shape="rect" target="_blank" /> <area coords="108,4,138,29" href="mailto:?subject=FW:%20Your%20${monthName}%20Digital%20Edition%20is%20Available&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/id/${year}/${month}/newsletter/digital?refer=true" shape="rect" target="_blank" /></map></p>
 </body>
 </html>`)
 }

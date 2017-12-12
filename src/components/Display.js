@@ -7,6 +7,7 @@ import * as id_thematic from '../templates/id_thematic.js';
 import * as idt_reader from '../templates/idt_reader.js';
 import * as cced_reader from '../templates/cced_reader.js';
 import * as id_reader from '../templates/id_reader.js';
+import * as id_digital from '../templates/id_digital.js';
 
 const TEMPLATES = {
   cced_thematic,
@@ -14,7 +15,8 @@ const TEMPLATES = {
   id_thematic,
   idt_reader,
   cced_reader,
-  id_reader
+  id_reader,
+  id_digital
 }
 
 export default class Display extends React.Component {

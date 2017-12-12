@@ -1,11 +1,14 @@
 import React from 'react';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+
 import {cced_thematic_rows} from '../templates/cced_thematic';
 import {idt_thematic_rows} from '../templates/idt_thematic';
 import {id_thematic_rows} from '../templates/id_thematic';
 import {idt_reader_rows} from '../templates/id_thematic';
 import {cced_reader_rows} from '../templates/cced_reader';
 import {id_reader_rows} from '../templates/id_reader';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import {id_digital_rows} from '../templates/id_digital';
+
 
 let rows ={
   cced_thematic: cced_thematic_rows,
@@ -13,7 +16,8 @@ let rows ={
   id_thematic: id_thematic_rows,
   idt_reader: idt_thematic_rows,
   cced_reader: cced_reader_rows,
-  id_reader: id_reader_rows
+  id_reader: id_reader_rows,
+  id_digital: id_digital_rows
 }
 
 
@@ -230,9 +234,10 @@ class FormSection extends React.Component{
               <option value="cced_thematic">CCED Thematic</option>
               <option value="idt_thematic">IDT Thematic</option>
               <option value="id_thematic">ID Thematic</option>
-              <option value="idt_reader">IDT Reader</option>
-              <option value="cced_reader">CCED Reader</option>
+              <option value="idt_reader">IDT Reader Newsletter</option>
+              <option value="cced_reader">CCED Reader Newsletter</option>
               <option value="id_reader">ID Reader</option>
+              <option value="id_digital">ID Digital Edition Newsletter</option>
             </select>
 
             <h3>2. Complete the form.</h3>
