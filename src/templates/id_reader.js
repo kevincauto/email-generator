@@ -705,10 +705,11 @@ export function article(fields){
                 </tr>
                 <tr>
                   <td align="left" style="font-size:16px;  color:#9d0707; font-family:Helvetica, Arial, sans-serif; font-size:14px; line-height:18px;">
-                    <span class="maroon"><strong>${header}</strong></span><br />
-                    <span style="font-size:13px; line-height:16px; color:#333333;"><a href="${link}" style="text-decoration:none; color:#333333; font-family:Helvetica, sans-serif; font-size:13px; " target="_blank"><strong>${title}</strong>
+                  ${header? `<span class="maroon"><strong>${header}</strong></span><br />`: ``}
+
+                    <span style="font-size:13px; line-height:16px; color:#333333;"><a href="${link}" style="text-decoration:none; color:#333333; font-family:Helvetica, sans-serif; font-size:13px; " target="_blank"><strong>${title}</strong></a></span>
                         <br />
-                    <span style="font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#333333;"><em>${author}</em></span></a></span>
+                    ${author?`<span style="font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#333333;"><em>${author}</em></span>`:``}
                   </td>
                 </tr>
                 <tr>
