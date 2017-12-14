@@ -1,25 +1,27 @@
 import React from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-import {cced_thematic_rows} from '../templates/cced_thematic';
-import {idt_thematic_rows} from '../templates/idt_thematic';
-import {id_thematic_rows} from '../templates/id_thematic';
-import {idt_reader_rows} from '../templates/id_thematic';
+import {cced_digital_rows} from '../templates/cced_digital';
 import {cced_reader_rows} from '../templates/cced_reader';
-import {id_reader_rows} from '../templates/id_reader';
+import {cced_thematic_rows} from '../templates/cced_thematic';
 import {id_digital_rows} from '../templates/id_digital';
-
+import {id_reader_rows} from '../templates/id_reader';
+import {id_thematic_rows} from '../templates/id_thematic';
+import {idt_digital_rows} from '../templates/idt_digital';
+import {idt_reader_rows} from '../templates/idt_reader';
+import {idt_thematic_rows} from '../templates/idt_thematic';
 
 let rows ={
-  cced_thematic: cced_thematic_rows,
-  idt_thematic: idt_thematic_rows,
-  id_thematic: id_thematic_rows,
-  idt_reader: idt_thematic_rows,
+  cced_digital: cced_digital_rows,
   cced_reader: cced_reader_rows,
+  cced_thematic: cced_thematic_rows,
+  id_digital: id_digital_rows,
   id_reader: id_reader_rows,
-  id_digital: id_digital_rows
+  id_thematic: id_thematic_rows,
+  idt_thematic: idt_thematic_rows,
+  idt_reader: idt_reader_rows,
+  idt_digital: idt_digital_rows,
 }
-
 
 // using some little inline style helpers to make the app look okay
 const getItemStyle = (draggableStyle, isDragging) => ({
@@ -48,16 +50,25 @@ class Forms extends React.Component {
     this.handleFormDrag = this.handleFormDrag.bind(this);
   }
 
-  handleFormSwitch(form, e){
-    this.props.onFormSwitch(form, e);
+  handleFormSwitch(formIndex, e){
+    let formToSwitch = rows[this.props.info.selected_template][e.target.value]
+    this.props.onFormSwitch(formIndex, formToSwitch);
   }
 
   handleFormDelete(field, e){
     this.props.onFormDelete(field);
   };
 
-  handleFormAdd(form, e){
-    this.props.onFormAdd(form);
+  handleFormAdd(formIndex, e){
+        //add the first row that is switchable
+        let formToAdd;
+        for (let rowName in rows[this.props.info.selected_template]) { 
+          if(rows[this.props.info.selected_template][rowName].switchable === true){
+            formToAdd = rows[this.props.info.selected_template][rowName];
+            break;
+          }
+        }
+    this.props.onFormAdd(formIndex,formToAdd);
   }
 
   handleFieldChange(form,field,e){
@@ -69,10 +80,8 @@ class Forms extends React.Component {
     if (!result.destination) {
       return;
     }
-
     this.props.onFormDrag(result.source.index, result.destination.index);
   }
-
 
   render() {
     return (
@@ -123,8 +132,6 @@ class Forms extends React.Component {
                           return(
                               <div className="label" key={i + '' + j}>
                                   <select
-                                      form-number={i}
-                                      field-number={j}
                                       value={this.props.info[this.props.info.selected_template][i].fields[j].value}
                                       onChange={(e)=>this.handleFieldChange(i,j,e)}
                                   >
@@ -138,7 +145,6 @@ class Forms extends React.Component {
                                           {selection.text}
                                           </option>
                                           )
-      
                                       })}
                                   </select>
                               </div>
@@ -151,8 +157,6 @@ class Forms extends React.Component {
                         >
                         <input
                           type="text"
-                          formnumber={i}
-                          fieldnumber={j}
                           placeholder={field.label}
                           name={field.name}
                           value={this.props.info[this.props.info.selected_template][i].fields[j].value}
@@ -165,10 +169,8 @@ class Forms extends React.Component {
                         this.props.info[this.props.info.selected_template][i].addable ? 
                         <i className="icon-plus-sign add" onClick={(e)=>this.handleFormAdd(i,e)}></i> : 
                         <i></i> 
-                      }
-                      
+                      } 
                       </div>
-                      
                       </div>
                       {provided.placeholder}
                     </div>
@@ -200,16 +202,16 @@ class FormSection extends React.Component{
         this.props.onFormDrag(startIndex, endIndex);
       }
       
-      handleFormSwitch(form, e){
-        this.props.onFormSwitch(form, e.target.value);
+      handleFormSwitch(formIndex, formToSwitch){
+        this.props.onFormSwitch(formIndex, formToSwitch);
       }
 
       handleFormDelete(field, e){
         this.props.onFormDelete(field);
       };
 
-      handleFormAdd(form, e){
-        this.props.onFormAdd(form);
+      handleFormAdd(formIndex, formToAdd){
+        this.props.onFormAdd(formIndex, formToAdd);
       }
   
       handleTemplateChange(e) {
@@ -238,6 +240,8 @@ class FormSection extends React.Component{
               <option value="cced_reader">CCED Reader Newsletter</option>
               <option value="id_reader">ID Reader</option>
               <option value="id_digital">ID Digital Edition Newsletter</option>
+              <option value="idt_digital">IDT Digital Edition Newsletter</option>
+              <option value="cced_digital">CCED Digital Edition Newsletter</option>
             </select>
 
             <h3>2. Complete the form.</h3>
@@ -247,9 +251,9 @@ class FormSection extends React.Component{
                 onTemplateChange={value => this.handleTemplateChange(value)}
                 onDateChange={this.handleDateChange}
                 onFieldChange={(form, field, value)=>this.handleFieldChange(form, field, value)}
-                onFormAdd={(form)=>this.handleFormAdd(form)}
+                onFormAdd={(formIndex,formToAdd)=>this.handleFormAdd(formIndex,formToAdd)}
                 onFormDelete={(field)=>this.handleFormDelete(field)}
-                onFormSwitch = {(form, value)=>this.handleFormSwitch(form, value)}
+                onFormSwitch = {(formIndex, formToSwitch)=>this.handleFormSwitch(formIndex, formToSwitch)}
                 onFormDrag = {(startIndex, endIndex)=>this.handleFormDrag(startIndex, endIndex)}
             />
           </div>

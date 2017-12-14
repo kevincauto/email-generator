@@ -1,6 +1,7 @@
 import React from 'react';
 import DOMPurify from 'dompurify';
 import {saveAs} from 'file-saver';
+
 import * as cced_thematic from '../templates/cced_thematic.js';
 import * as idt_thematic from '../templates/idt_thematic.js';
 import * as id_thematic from '../templates/id_thematic.js';
@@ -8,6 +9,8 @@ import * as idt_reader from '../templates/idt_reader.js';
 import * as cced_reader from '../templates/cced_reader.js';
 import * as id_reader from '../templates/id_reader.js';
 import * as id_digital from '../templates/id_digital.js';
+import * as idt_digital from '../templates/idt_digital.js';
+import * as cced_digital from '../templates/cced_digital.js';
 
 const TEMPLATES = {
   cced_thematic,
@@ -16,7 +19,9 @@ const TEMPLATES = {
   idt_reader,
   cced_reader,
   id_reader,
-  id_digital
+  id_digital,
+  idt_digital,
+  cced_digital
 }
 
 export default class Display extends React.Component {

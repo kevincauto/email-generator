@@ -1,12 +1,10 @@
 import _ from 'lodash';
 
-//Auto detect the month and year.  
 let d = new Date();
 let currentMonth = d.getMonth() + 1;
 if(currentMonth<10){currentMonth = '0' + '' + currentMonth}
 currentMonth = currentMonth.toString();
 let currentYear = d.getFullYear().toString();
-
 
 export const idt_thematic_rows = {
   beginning: {
@@ -80,7 +78,7 @@ export const idt_thematic_rows = {
       {label: 'Provider', name: 'provider'},
       {label: 'Available Dates', name: 'dates'},
       {label: 'Link', name: 'link'},
-      {label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/120x100'},
+      {label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/150x120'},
     ]
   },
   resources: {
@@ -93,11 +91,11 @@ export const idt_thematic_rows = {
         {label: 'Thematic Topic', name: 'topic', value: 'DIGITAL DENTURES'},
         {label: 'First Title', name: 'title1'},
         {label: 'First Author', name: 'author1'},
-        {label: 'First Description', name: 'description1'},
+        {label: 'First Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
         {label: 'First Link', name: 'link1'},  
         {label: 'Second Title', name: 'title2'},
         {label: 'Second Author', name: 'author2'},
-        {label: 'Second Product Description', name: 'description2'},
+        {label: 'Second Product Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
         {label: 'Second Product Link', name: 'link2'}
     ]
   },
@@ -152,19 +150,19 @@ export const idt_thematic_rows = {
         {label: 'Header', name: 'header', value: 'FEATURED WORKSHOP'},
         {label: 'Title', name: 'title'},
         {label: 'Author', name: 'author'},
-        {label: 'Description', name: 'description'},
+        {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
         {label: 'Link', name: 'link'},
         
         {label: 'First Product Name', name: 'product1'},
-        {label: 'First Product Description', name: 'description1'},
+        {label: 'First Product Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
         {label: 'First Product Link', name: 'link1'},
         
         {label: 'Second Product Name', name: 'product2'},
-        {label: 'Second Product Description', name: 'description2'},
+        {label: 'Second Product Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
         {label: 'Second Product Link', name: 'link2'},
 
         {label: 'Featured Product Name', name: 'product3'},
-        {label: 'Featured Product Description', name: 'description3'},
+        {label: 'Featured Product Description', name: 'description3', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
         {label: 'Featured Link', name: 'link3'},
         {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150'}
     ]
@@ -420,9 +418,9 @@ export function beginning(fields){
                                                                               <tbody>
                                                                                   <tr>
                                                                                       <td align="center">
-                                                                                          <a href="mailto:?subject=FW: Inside Dental Technology Update&body=I thought you might be interested in this: https://www.dentalaegis.com/idt/${year}/${month}/newsletter/${topic.toLowerCase()}?refer=true" target="_blank"> <img alt="" border="0" src="https://www.dentalaegis.com/media/59864/" style="display:block; margin:0px; max-width:20px;" width="20" /> </a></td>
+                                                                                          <a href="mailto:?subject=FW: Inside Dental Technology Update&body=I thought you might be interested in this: ${url}?refer=true" target="_blank"> <img alt="" border="0" src="https://www.dentalaegis.com/media/59864/" style="display:block; margin:0px; max-width:20px;" width="20" /> </a></td>
                                                                                       <td align="center" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:18px; color:#d2232a; padding-left:3px; font-weight:bold;">
-                                                                                          <a href="mailto:?subject=FW: Inside Dental Technology Update&body=I thought you might be interested in this: https://www.dentalaegis.com/idt/${year}/${month}/newsletter/${topic.toLowerCase()}?refer=true" style="color:#d2232a; text-decoration:none;" target="_blank">Forward to a Colleague</a></td>
+                                                                                          <a href="mailto:?subject=FW: Inside Dental Technology Update&body=I thought you might be interested in this: ${url}?refer=true" style="color:#d2232a; text-decoration:none;" target="_blank">Forward to a Colleague</a></td>
                                                                                       <td class="hide" width="30">
                                                                                            </td>
                                                                                   </tr>
@@ -979,7 +977,7 @@ export function products(fields){
                                           </tr>
                                           <tr>
                                             <td align="left" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px; padding-left:15px;">
-                                              <span class="maroon1" style="color:#f26647; font-weight:bold;"><a href="#" style="text-decoration:none; color:#f26647;" target="_blank">FEATURED PRODUCT</a></span><br />
+                                              <span class="maroon1" style="color:#f26647; font-weight:bold;">FEATURED PRODUCT</span><br />
                                               <span class="black" style="color:#000000; font-weight:bold;"><a href="${link3}" style="text-decoration:none; color:#000;" target="_blank">${product3}</a></span><br />
                                               ${description3}</td>
                                           </tr>
