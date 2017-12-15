@@ -8,7 +8,7 @@ currentMonth = currentMonth.toString();
 let currentYear = d.getFullYear().toString();
 
 
-export const id_thematic_rows = {
+export const id_thematic_forms = {
   beginning: {
     typeOfRow: 'beginning',
     header: 'Beginning Section',
@@ -153,18 +153,18 @@ export const id_thematic_rows = {
 }
 
 export const id_thematic_initial_state = [
-    _.cloneDeep(id_thematic_rows.beginning),
-    _.cloneDeep(id_thematic_rows.news),
-    _.cloneDeep(id_thematic_rows.ce),
-    _.cloneDeep(id_thematic_rows.article),
-    _.cloneDeep(id_thematic_rows.article),
-    _.cloneDeep(id_thematic_rows.center_banner),
-    _.cloneDeep(id_thematic_rows.article),
-    _.cloneDeep(id_thematic_rows.article),
-    _.cloneDeep(id_thematic_rows.article),
-    _.cloneDeep(id_thematic_rows.featured),
-    _.cloneDeep(id_thematic_rows.products),
-    _.cloneDeep(id_thematic_rows.end)
+    _.cloneDeep(id_thematic_forms.beginning),
+    _.cloneDeep(id_thematic_forms.news),
+    _.cloneDeep(id_thematic_forms.ce),
+    _.cloneDeep(id_thematic_forms.article),
+    _.cloneDeep(id_thematic_forms.article),
+    _.cloneDeep(id_thematic_forms.center_banner),
+    _.cloneDeep(id_thematic_forms.article),
+    _.cloneDeep(id_thematic_forms.article),
+    _.cloneDeep(id_thematic_forms.article),
+    _.cloneDeep(id_thematic_forms.featured),
+    _.cloneDeep(id_thematic_forms.products),
+    _.cloneDeep(id_thematic_forms.end)
   ];
 
 export function beginning(fields){

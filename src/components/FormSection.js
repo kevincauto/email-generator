@@ -1,26 +1,26 @@
 import React from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-import {cced_digital_rows} from '../templates/cced_digital';
-import {cced_reader_rows} from '../templates/cced_reader';
-import {cced_thematic_rows} from '../templates/cced_thematic';
-import {id_digital_rows} from '../templates/id_digital';
-import {id_reader_rows} from '../templates/id_reader';
-import {id_thematic_rows} from '../templates/id_thematic';
-import {idt_digital_rows} from '../templates/idt_digital';
-import {idt_reader_rows} from '../templates/idt_reader';
-import {idt_thematic_rows} from '../templates/idt_thematic';
+import {cced_digital_forms} from '../templates/cced_digital';
+import {cced_reader_forms} from '../templates/cced_reader';
+import {cced_thematic_forms} from '../templates/cced_thematic';
+import {id_digital_forms} from '../templates/id_digital';
+import {id_reader_forms} from '../templates/id_reader';
+import {id_thematic_forms} from '../templates/id_thematic';
+import {idt_digital_forms} from '../templates/idt_digital';
+import {idt_reader_forms} from '../templates/idt_reader';
+import {idt_thematic_forms} from '../templates/idt_thematic';
 
-let rows ={
-  cced_digital: cced_digital_rows,
-  cced_reader: cced_reader_rows,
-  cced_thematic: cced_thematic_rows,
-  id_digital: id_digital_rows,
-  id_reader: id_reader_rows,
-  id_thematic: id_thematic_rows,
-  idt_thematic: idt_thematic_rows,
-  idt_reader: idt_reader_rows,
-  idt_digital: idt_digital_rows,
+let forms ={
+  cced_digital: cced_digital_forms,
+  cced_reader: cced_reader_forms,
+  cced_thematic: cced_thematic_forms,
+  id_digital: id_digital_forms,
+  id_reader: id_reader_forms,
+  id_thematic: id_thematic_forms,
+  idt_thematic: idt_thematic_forms,
+  idt_reader: idt_reader_forms,
+  idt_digital: idt_digital_forms,
 }
 
 // using some little inline style helpers to make the app look okay
@@ -51,7 +51,7 @@ class Forms extends React.Component {
   }
 
   handleFormSwitch(formIndex, e){
-    let formToSwitch = rows[this.props.info.selected_template][e.target.value]
+    let formToSwitch = forms[this.props.info.selected_template][e.target.value]
     this.props.onFormSwitch(formIndex, formToSwitch);
   }
 
@@ -62,9 +62,9 @@ class Forms extends React.Component {
   handleFormAdd(formIndex, e){
         //add the first row that is switchable
         let formToAdd;
-        for (let rowName in rows[this.props.info.selected_template]) { 
-          if(rows[this.props.info.selected_template][rowName].switchable === true){
-            formToAdd = rows[this.props.info.selected_template][rowName];
+        for (let rowName in forms[this.props.info.selected_template]) { 
+          if(forms[this.props.info.selected_template][rowName].switchable === true){
+            formToAdd = forms[this.props.info.selected_template][rowName];
             break;
           }
         }
@@ -118,10 +118,10 @@ class Forms extends React.Component {
                           <select className="header-dropdown" onChange={(e)=>this.handleFormSwitch(i,e)}>
                             <option>{object.header}</option>
                             {
-                              Object.keys(rows[this.props.info.selected_template])
-                              .filter(rowName=>rows[this.props.info.selected_template][rowName].switchable && (rows[this.props.info.selected_template][rowName].typeOfRow !== object.typeOfRow))
+                              Object.keys(forms[this.props.info.selected_template])
+                              .filter(rowName=>forms[this.props.info.selected_template][rowName].switchable && (forms[this.props.info.selected_template][rowName].typeOfRow !== object.typeOfRow))
                               .sort()
-                              .map(rowName => <option key={rowName} value={rowName}>{rows[this.props.info.selected_template][rowName].header}</option>)
+                              .map(rowName => <option key={rowName} value={rowName}>{forms[this.props.info.selected_template][rowName].header}</option>)
                             }    
                           </select> : 
                           <h3>{object.header}</h3>

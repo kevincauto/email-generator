@@ -9,7 +9,7 @@ month = month.toString();
 let year = d.getFullYear();
 
 
-export const cced_thematic_rows = {
+export const cced_thematic_forms = {
   beginning: {
     typeOfRow: 'beginning',
     header: 'Beginning Section',
@@ -166,15 +166,15 @@ export const cced_thematic_rows = {
 }
 
 export const cced_thematic_initial_state = [
-    _.cloneDeep(cced_thematic_rows.beginning),
-    _.cloneDeep(cced_thematic_rows.news),
-    _.cloneDeep(cced_thematic_rows.ce),
-    _.cloneDeep(cced_thematic_rows.center_banner),
-    _.cloneDeep(cced_thematic_rows.three_column),
-    _.cloneDeep(cced_thematic_rows.featured),
-    _.cloneDeep(cced_thematic_rows.products),
-    _.cloneDeep(cced_thematic_rows.featured),
-    _.cloneDeep(cced_thematic_rows.end)
+    _.cloneDeep(cced_thematic_forms.beginning),
+    _.cloneDeep(cced_thematic_forms.news),
+    _.cloneDeep(cced_thematic_forms.ce),
+    _.cloneDeep(cced_thematic_forms.center_banner),
+    _.cloneDeep(cced_thematic_forms.three_column),
+    _.cloneDeep(cced_thematic_forms.featured),
+    _.cloneDeep(cced_thematic_forms.products),
+    _.cloneDeep(cced_thematic_forms.featured),
+    _.cloneDeep(cced_thematic_forms.end)
   ];
 
 export function beginning(fields){

@@ -8,7 +8,7 @@ currentMonth = currentMonth.toString();
 let currentYear = d.getFullYear().toString();
 
 
-export const idt_reader_rows = {
+export const idt_reader_forms = {
   beginning: {
     typeOfRow: 'beginning',
     header: 'Beginning Section',
@@ -177,17 +177,17 @@ export const idt_reader_rows = {
 }
 
 export const idt_reader_initial_state = [
-    _.cloneDeep(idt_reader_rows.beginning),
-    _.cloneDeep(idt_reader_rows.article),
-    _.cloneDeep(idt_reader_rows.center_banner),
-    _.cloneDeep(idt_reader_rows.article),
-    _.cloneDeep(idt_reader_rows.article),
-    _.cloneDeep(idt_reader_rows.featured),
-    _.cloneDeep(idt_reader_rows.article),
-    _.cloneDeep(idt_reader_rows.article),
-    _.cloneDeep(idt_reader_rows.live_webinar),
-    _.cloneDeep(idt_reader_rows.on_demand_webinar),
-    _.cloneDeep(idt_reader_rows.end)
+    _.cloneDeep(idt_reader_forms.beginning),
+    _.cloneDeep(idt_reader_forms.article),
+    _.cloneDeep(idt_reader_forms.center_banner),
+    _.cloneDeep(idt_reader_forms.article),
+    _.cloneDeep(idt_reader_forms.article),
+    _.cloneDeep(idt_reader_forms.featured),
+    _.cloneDeep(idt_reader_forms.article),
+    _.cloneDeep(idt_reader_forms.article),
+    _.cloneDeep(idt_reader_forms.live_webinar),
+    _.cloneDeep(idt_reader_forms.on_demand_webinar),
+    _.cloneDeep(idt_reader_forms.end)
   ];
 
 export function beginning(fields){

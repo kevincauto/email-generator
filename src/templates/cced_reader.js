@@ -9,7 +9,7 @@ month = month.toString();
 let year = d.getFullYear().toString();
 
 
-export const cced_reader_rows = {
+export const cced_reader_forms = {
   beginning: {
     typeOfRow: 'beginning',
     header: 'Beginning Section',
@@ -208,21 +208,21 @@ export const cced_reader_rows = {
 }
 
 export const cced_reader_initial_state = [
-    _.cloneDeep(cced_reader_rows.beginning),
-    _.cloneDeep(cced_reader_rows.ce),
-    _.cloneDeep(cced_reader_rows.center_banner),
-    _.cloneDeep(cced_reader_rows.article),
-    _.cloneDeep(cced_reader_rows.dotted_line),
-    _.cloneDeep(cced_reader_rows.image_article),
-    _.cloneDeep(cced_reader_rows.dotted_line),
-    _.cloneDeep(cced_reader_rows.featured_article),
-    _.cloneDeep(cced_reader_rows.dotted_line),
-    _.cloneDeep(cced_reader_rows.live_webinar),
-    _.cloneDeep(cced_reader_rows.dotted_line),
-    _.cloneDeep(cced_reader_rows.on_demand_webinar),
-    _.cloneDeep(cced_reader_rows.on_demand_webinar),
-    _.cloneDeep(cced_reader_rows.dotted_line),
-    _.cloneDeep(cced_reader_rows.end)
+    _.cloneDeep(cced_reader_forms.beginning),
+    _.cloneDeep(cced_reader_forms.ce),
+    _.cloneDeep(cced_reader_forms.center_banner),
+    _.cloneDeep(cced_reader_forms.article),
+    _.cloneDeep(cced_reader_forms.dotted_line),
+    _.cloneDeep(cced_reader_forms.image_article),
+    _.cloneDeep(cced_reader_forms.dotted_line),
+    _.cloneDeep(cced_reader_forms.featured_article),
+    _.cloneDeep(cced_reader_forms.dotted_line),
+    _.cloneDeep(cced_reader_forms.live_webinar),
+    _.cloneDeep(cced_reader_forms.dotted_line),
+    _.cloneDeep(cced_reader_forms.on_demand_webinar),
+    _.cloneDeep(cced_reader_forms.on_demand_webinar),
+    _.cloneDeep(cced_reader_forms.dotted_line),
+    _.cloneDeep(cced_reader_forms.end)
   ];
 
 export function beginning(fields){

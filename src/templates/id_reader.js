@@ -8,7 +8,7 @@ currentMonth = currentMonth.toString();
 let currentYear = d.getFullYear().toString();
 
 
-export const id_reader_rows = {
+export const id_reader_forms = {
   beginning: {
     typeOfRow: 'beginning',
     header: 'Beginning Section',
@@ -167,19 +167,19 @@ export const id_reader_rows = {
 }
 
 export const id_reader_initial_state = [
-    _.cloneDeep(id_reader_rows.beginning),
-    _.cloneDeep(id_reader_rows.red_header),
-    _.cloneDeep(id_reader_rows.ce),
-    _.cloneDeep(id_reader_rows.red_header),
-    _.cloneDeep(id_reader_rows.peer_reviewed),
-    _.cloneDeep(id_reader_rows.peer_reviewed),
-    _.cloneDeep(id_reader_rows.red_header),
-    _.cloneDeep(id_reader_rows.article),
-    _.cloneDeep(id_reader_rows.featured),
-    _.cloneDeep(id_reader_rows.red_header),
-    _.cloneDeep(id_reader_rows.article),
-    _.cloneDeep(id_reader_rows.article),
-    _.cloneDeep(id_reader_rows.end)
+    _.cloneDeep(id_reader_forms.beginning),
+    _.cloneDeep(id_reader_forms.red_header),
+    _.cloneDeep(id_reader_forms.ce),
+    _.cloneDeep(id_reader_forms.red_header),
+    _.cloneDeep(id_reader_forms.peer_reviewed),
+    _.cloneDeep(id_reader_forms.peer_reviewed),
+    _.cloneDeep(id_reader_forms.red_header),
+    _.cloneDeep(id_reader_forms.article),
+    _.cloneDeep(id_reader_forms.featured),
+    _.cloneDeep(id_reader_forms.red_header),
+    _.cloneDeep(id_reader_forms.article),
+    _.cloneDeep(id_reader_forms.article),
+    _.cloneDeep(id_reader_forms.end)
   ];
 
 export function beginning(fields){

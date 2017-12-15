@@ -31,7 +31,6 @@ class Container extends React.Component {
       idt_thematic: idt_thematic_initial_state,
       idt_reader: idt_reader_initial_state,
       idt_digital: idt_digital_initial_state,
-
     };
 
     this.handleFieldChange = this.handleFieldChange.bind(this);

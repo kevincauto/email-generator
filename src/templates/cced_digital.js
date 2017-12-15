@@ -7,8 +7,8 @@ if(currentMonth<10){currentMonth = '0' + '' + currentMonth}
 currentMonth = currentMonth.toString();
 let currentYear = d.getFullYear().toString();
 
-
-export const cced_digital_rows = {
+//Establish every type of form, the attributes of the form, and all the fields within it.
+export const cced_digital_forms = {
   beginning: {
     typeOfRow: 'beginning',
     header: 'Beginning Section',
@@ -33,15 +33,14 @@ export const cced_digital_rows = {
           {value: '12', text: 'Send Month: December'},
       ]
     },
-     {label: 'Year', name: 'year', value: currentYear, 
-    dropdown: [
-      {value: '2017', text: 'Send Year: 2017'}, 
-      {value: '2018', text: 'Send Year: 2018'},
-      {value: '2019', text: 'Send Year: 2019'}, 
-      {value: '2020', text: 'Send Year: 2020'},
-      {value: '2021', text: 'Send Year: 2021'}, 
-      {value: '2022', text: 'Send Year: 2022'}
-         ]
+      {label: 'Year', name: 'year', value: currentYear, dropdown: [
+        {value: '2017', text: 'Send Year: 2017'}, 
+        {value: '2018', text: 'Send Year: 2018'},
+        {value: '2019', text: 'Send Year: 2019'}, 
+        {value: '2020', text: 'Send Year: 2020'},
+        {value: '2021', text: 'Send Year: 2021'}, 
+        {value: '2022', text: 'Send Year: 2022'}
+      ]
     },
       {label: 'Header Image Source', name: 'headerSrc', value: 'https://www.dentalaegis.com/media/64933/'},
       {label: 'Cover Image Source', name: 'coverSrc', value: 'http://placehold.it/180x220'},
@@ -110,16 +109,18 @@ export const cced_digital_rows = {
   }
 }
 
+//create a base layout.  (Be sure to include at least one of each form.)
 export const cced_digital_initial_state = [
-    _.cloneDeep(cced_digital_rows.beginning),
-    _.cloneDeep(cced_digital_rows.article),
-    _.cloneDeep(cced_digital_rows.article),
-    _.cloneDeep(cced_digital_rows.dotted_line),
-    _.cloneDeep(cced_digital_rows.article),
-    _.cloneDeep(cced_digital_rows.article),
-    _.cloneDeep(cced_digital_rows.end)
+    _.cloneDeep(cced_digital_forms.beginning),
+    _.cloneDeep(cced_digital_forms.article),
+    _.cloneDeep(cced_digital_forms.article),
+    _.cloneDeep(cced_digital_forms.dotted_line),
+    _.cloneDeep(cced_digital_forms.article),
+    _.cloneDeep(cced_digital_forms.article),
+    _.cloneDeep(cced_digital_forms.end)
   ];
 
+//Several functions to generate the html sections of the email
 export function beginning(fields){
   let emailName = fields[0].value;
   let month = fields[1].value;
@@ -141,7 +142,6 @@ export function beginning(fields){
   if(month === '10'){monthName = 'October'};
   if(month === '11'){monthName = 'November'};
   if(month === '12'){monthName = 'December'};
-
   return (`
   <!doctype html>
   <html>
@@ -189,12 +189,10 @@ export function beginning(fields){
 }
 
 export function article(fields){
-
   let header = fields[0].value;
   let title = fields[1].value;
   let author = fields[2].value;
   let link = fields[3].value;
-
   return(
     `<!--START OF ARTICLE-->
     ${header?`
@@ -204,7 +202,6 @@ export function article(fields){
             <strong>${header}</strong></div>
     </td>
     </tr>`:``}
-
     <tr>
         <td colspan="2">
             <div style="font-family:Arial, sans-serif; color:#4c4c4c; font-size:14px; text-align:left; clear:both; margin:11px 8px 4px 29px; width:541px; font-weight:bold;">

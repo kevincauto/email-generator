@@ -6,7 +6,7 @@ if(currentMonth<10){currentMonth = '0' + '' + currentMonth}
 currentMonth = currentMonth.toString();
 let currentYear = d.getFullYear().toString();
 
-export const idt_thematic_rows = {
+export const idt_thematic_forms = {
   beginning: {
     typeOfRow: 'beginning',
     header: 'Beginning Section',
@@ -178,15 +178,15 @@ export const idt_thematic_rows = {
 }
 
 export const idt_thematic_initial_state = [
-    _.cloneDeep(idt_thematic_rows.beginning),
-    _.cloneDeep(idt_thematic_rows.news),
-    _.cloneDeep(idt_thematic_rows.ce),
-    _.cloneDeep(idt_thematic_rows.resources),
-    _.cloneDeep(idt_thematic_rows.center_banner),
-    _.cloneDeep(idt_thematic_rows.featured_article),
-    _.cloneDeep(idt_thematic_rows.featured_video),
-    _.cloneDeep(idt_thematic_rows.products),
-    _.cloneDeep(idt_thematic_rows.end)
+    _.cloneDeep(idt_thematic_forms.beginning),
+    _.cloneDeep(idt_thematic_forms.news),
+    _.cloneDeep(idt_thematic_forms.ce),
+    _.cloneDeep(idt_thematic_forms.resources),
+    _.cloneDeep(idt_thematic_forms.center_banner),
+    _.cloneDeep(idt_thematic_forms.featured_article),
+    _.cloneDeep(idt_thematic_forms.featured_video),
+    _.cloneDeep(idt_thematic_forms.products),
+    _.cloneDeep(idt_thematic_forms.end)
   ];
 
 export function beginning(fields){

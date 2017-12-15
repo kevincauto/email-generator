@@ -8,7 +8,7 @@ currentMonth = currentMonth.toString();
 let currentYear = d.getFullYear().toString();
 
 
-export const id_digital_rows = {
+export const id_digital_forms = {
   beginning: {
     typeOfRow: 'beginning',
     header: 'Beginning Section',
@@ -110,13 +110,13 @@ export const id_digital_rows = {
 }
 
 export const id_digital_initial_state = [
-    _.cloneDeep(id_digital_rows.beginning),
-    _.cloneDeep(id_digital_rows.article),
-    _.cloneDeep(id_digital_rows.article),
-    _.cloneDeep(id_digital_rows.dotted_line),
-    _.cloneDeep(id_digital_rows.article),
-    _.cloneDeep(id_digital_rows.article),
-    _.cloneDeep(id_digital_rows.end)
+    _.cloneDeep(id_digital_forms.beginning),
+    _.cloneDeep(id_digital_forms.article),
+    _.cloneDeep(id_digital_forms.article),
+    _.cloneDeep(id_digital_forms.dotted_line),
+    _.cloneDeep(id_digital_forms.article),
+    _.cloneDeep(id_digital_forms.article),
+    _.cloneDeep(id_digital_forms.end)
   ];
 
 export function beginning(fields){
