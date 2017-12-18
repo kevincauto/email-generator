@@ -193,7 +193,7 @@ textarea{
 .text-copy{
   padding: 0px 0px 0px 5px;
 }
-.blue{
+.individual-form{
   padding: 5px;
   background-color: rgb(231, 238, 250);
   background-color: #eee;
@@ -202,7 +202,7 @@ textarea{
   border: solid 1px #333
 }
 
-.blue:hover{
+.individual-form:hover{
   background-color: #e8e8e8;
 }
 

@@ -10,6 +10,7 @@ import {id_thematic_forms} from '../templates/id_thematic';
 import {idt_digital_forms} from '../templates/idt_digital';
 import {idt_reader_forms} from '../templates/idt_reader';
 import {idt_thematic_forms} from '../templates/idt_thematic';
+import {cdew_da_forms} from '../templates/cdew_da';
 
 let forms ={
   cced_digital: cced_digital_forms,
@@ -21,6 +22,7 @@ let forms ={
   idt_thematic: idt_thematic_forms,
   idt_reader: idt_reader_forms,
   idt_digital: idt_digital_forms,
+  cdew_da: cdew_da_forms
 }
 
 // using some little inline style helpers to make the app look okay
@@ -105,7 +107,7 @@ class Forms extends React.Component {
                         {...provided.dragHandleProps}
                       >
 
-                      <div className="blue" key={i + object.typeOfRow}>
+                      <div className="individual-form" key={i + object.typeOfRow}>
                       {/* closable? If yes add a red x icon*/}
                       {
                         this.props.info[this.props.info.selected_template][i].closable ? 
@@ -242,6 +244,7 @@ class FormSection extends React.Component{
               <option value="id_digital">ID Digital Edition Newsletter</option>
               <option value="idt_digital">IDT Digital Edition Newsletter</option>
               <option value="cced_digital">CCED Digital Edition Newsletter</option>
+              <option value="cdew_da">CDEWorld Dental Assistant Newsletter</option>
             </select>
 
             <h3>2. Complete the form.</h3>

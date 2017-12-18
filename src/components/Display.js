@@ -11,6 +11,7 @@ import * as id_reader from '../templates/id_reader.js';
 import * as id_digital from '../templates/id_digital.js';
 import * as idt_digital from '../templates/idt_digital.js';
 import * as cced_digital from '../templates/cced_digital.js';
+import * as cdew_da from '../templates/cdew_da.js';
 
 const TEMPLATES = {
   cced_thematic,
@@ -21,7 +22,8 @@ const TEMPLATES = {
   id_reader,
   id_digital,
   idt_digital,
-  cced_digital
+  cced_digital,
+  cdew_da
 }
 
 export default class Display extends React.Component {
@@ -50,7 +52,9 @@ export default class Display extends React.Component {
     //functions are named after the rowName
     //It uses the information in the fields array to generate an html row with the proper info
     //The info is mapped to an array and then joined into one string of html
-    let html = layout.map(row=>{ return TEMPLATES[this.props.info.selected_template][row.typeOfRow](row.fields)}).join('');
+    let html = layout.map(row=>{ 
+      console.log(row);
+      return TEMPLATES[this.props.info.selected_template][row.typeOfRow](row.fields)}).join('');
     
         //Sanitize data to avoid XSS attack
         //Sanitize strips css from the header and make the email render oddly.  Need to find a solution to clean without
