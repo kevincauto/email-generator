@@ -17,7 +17,7 @@ export const cdew_da_forms = {
     switchable: false,
     addable: true,
     fields:  [
-      {label: 'Email Name', name: 'emailName'},
+      {label: 'Email Name', name: 'emailName', value: 'ce3'},
       {label: 'Month', name: 'month', value: month, 
           dropdown: [
               {value: '01', text: 'Send Month: January'}, 
@@ -64,6 +64,7 @@ export const cdew_da_forms = {
       {label: 'Commercial Supporter', name: 'supporter'},
       {label: 'Cost', name: 'cost'},
       {label: 'Credits', name: 'credits'},
+      {label: 'Link', name: 'link'}
     ]
   },
   live_webinar_wo_header: {
@@ -80,6 +81,7 @@ export const cdew_da_forms = {
       {label: 'Commercial Supporter', name: 'supporter'},
       {label: 'Cost', name: 'cost'},
       {label: 'Credits', name: 'credits'},
+      {label: 'Link', name: 'link'}
     ]
   },
   on_demand_webinar_w_header: {
@@ -95,7 +97,8 @@ export const cdew_da_forms = {
       {label: 'Provider', name: 'provider'},
       {label: 'Commercial Supporter', name: 'supporter'},
       {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'}
+      {label: 'Credits', name: 'credits'},
+      {label: 'Link', name: 'link'}
     ]
   },
   on_demand_webinar_wo_header: {
@@ -110,7 +113,8 @@ export const cdew_da_forms = {
       {label: 'Provider', name: 'provider'},
       {label: 'Commercial Supporter', name: 'supporter'},
       {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'}
+      {label: 'Credits', name: 'credits'},
+      {label: 'Link', name: 'link'}
     ]
   },
   center_banner: {
@@ -121,7 +125,7 @@ export const cdew_da_forms = {
     addable: true,
     fields:  [
       {label: 'Link', name: 'link'},
-      {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70'},
+      {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/600x70'},
     ]
   },
   new_content_w_header: {
@@ -137,7 +141,8 @@ export const cdew_da_forms = {
       {label: 'Provider', name: 'provider'},
       {label: 'Source', name: 'source'},
       {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'}
+      {label: 'Credits', name: 'credits'},
+      {label: 'Link', name: 'link'}
     ]
   },
   new_content_wo_header: {
@@ -153,7 +158,8 @@ export const cdew_da_forms = {
       {label: 'Provider', name: 'provider'},
       {label: 'Source', name: 'source'},
       {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'}
+      {label: 'Credits', name: 'credits'},
+      {label: 'Link', name: 'link'}
     ]
   },
   end: {
@@ -206,11 +212,12 @@ export const cdew_da_initial_state = [
   ];
 
 export function beginning(fields){
-    let month = fields[0].value;
-    let year = fields[1].value;
-    let mastheadLink = fields[2].value;
-    let mastheadSrc = fields[3].value;
-    let subscribe = fields[4].value;
+    let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
+    let month = fields[1].value;
+    let year = fields[2].value;
+    let mastheadLink = fields[3].value;
+    let mastheadSrc = fields[4].value;
+    let subscribe = fields[5].value;
 
   //put the url together
   //let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter/${topic.trim().replace(/\s+/g, '-').toLowerCase()}`;
@@ -355,7 +362,7 @@ export function beginning(fields){
             <td height="20" align="center"></td>
           </tr>
           <tr>
-            <td align="center" style="padding:0px 10px;"><a href="http://marketing.sdi.com.au/pola-visibly-whiter-teeth/" target="_blank"> <img src="http://aegispublications.com/news/ce/2017/04/images/sdi-banner.jpg" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </a></td>
+            <td align="center" style="padding:0px 10px;"><a href="${mastheadLink}" target="_blank"> <img src="${mastheadSrc}" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </a></td>
           </tr>
           <tr>
             <td height="20" align="center"></td>
@@ -391,7 +398,7 @@ export function beginning(fields){
                             <tr>
                               <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#2f84c0">
                                   <tr>
-                                    <td align="center" class="f12" height="50" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#ffffff; padding-left:20px;"><span class="white">December 2017 </span> | <span class="white1"> <a href="http://www.cdeworld.com" target="_blank" style="color:#ffffff;">Visit Our Website</a></span> | <span class="white1"><a href="http://aegispublications.com/news/ce/2017/12/ce3.html" target="_blank" style="color:#ffffff;">Read Online</a></span> | <span class="white1"><a href="mailto:?subject=FW: Dental Assistant News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/2017/12/ce3.html" target="_blank" style="color:#ffffff;">Forward&nbsp;to&nbsp;a&nbsp;Colleague</a></span></td>
+                                    <td align="center" class="f12" height="50" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#ffffff; padding-left:20px;"><span class="white">December 2017 </span> | <span class="white1"> <a href="http://www.cdeworld.com" target="_blank" style="color:#ffffff;">Visit Our Website</a></span> | <span class="white1"><a href="http://aegispublications.com/news/ce/2017/12/ce3.html" target="_blank" style="color:#ffffff;">Read Online</a></span> | <span class="white1"><a href="mailto:?subject=FW: Dental Assistant News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/${emailName}.html" target="_blank" style="color:#ffffff;">Forward&nbsp;to&nbsp;a&nbsp;Colleague</a></span></td>
                                     <td width="25"><a href="https://www.facebook.com/CDEWorldDentistry/" target="_blank"> <img src="https://www.dentalaegis.com/media/60420/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                                     <td width="25"><a href="https://twitter.com/CDEWorld" target="_blank"> <img src="https://www.dentalaegis.com/media/60421/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                                     <td width="35" class="w35"></td>
@@ -429,6 +436,7 @@ export function live_webinar_w_header(fields){
   let supporter = fields[5].value;
   let cost = fields[6].value;
   let credits = fields[7].value;
+  let link = fields[8].value;
 
   return(
     `<!--LIVE WEBINAR WITH HEADER-->
@@ -436,24 +444,24 @@ export function live_webinar_w_header(fields){
       <td height="30" align="center"></td>
     </tr>
 <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">Upcoming Live Webinar</td>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">${header}</td>
     </tr>
     <tr>
       <td height="20" align="center"></td>
     </tr>
 
 <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>Oral Pathology: Techniques for Detection and Differential Diagnosis</strong><br />
-        <span class="black">Wednesday, December 13, 2017: 7 PM ET (4 PM PT)</span></td>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>${title}</strong><br />
+        <span class="black">${date}</span></td>
     </tr>
     <tr>
       <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
             <td align="center"><table cellpadding="0" cellspacing="0" border="0" align="left" class="w100" width="305">
                 <tr>
-                  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333; width:305"> Presenter: Cynthia Blendermann Perone, DDS<br>
-                    Provider: Dental Learning Systems, LLC<br>
-                    Commercial Supporter: <em>Pacific Dental Services</em></td>
+                  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333; width:305"> Presenter: ${presenter}<br>
+                    Provider: ${provider}<br>
+                    Commercial Supporter: <em>${supporter}</em></td>
                 </tr>
               </table>
               
@@ -464,8 +472,8 @@ export function live_webinar_w_header(fields){
               
               <table cellpadding="0" cellspacing="0" border="0" width="265" align="left" style="margin:0 0 0 14px;" class="w100">
                 <tr>
-                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: Free<br />
-                    Credits: 1 Interactive CEU </td>
+                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: ${cost}<br />
+                    Credits: ${credits}</td>
                 </tr>
               </table></td>
           </tr>
@@ -486,6 +494,7 @@ export function live_webinar_wo_header(fields){
   let supporter = fields[4].value;
   let cost = fields[5].value;
   let credits = fields[6].value;
+  let link = fields[7].value;
   return(
     `
     <!--LIVE WEBINAR WITHOUT HEADER-->
@@ -494,17 +503,17 @@ export function live_webinar_wo_header(fields){
     </tr>
 
 <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>Oral Pathology: Techniques for Detection and Differential Diagnosis</strong><br />
-        <span class="black">Wednesday, December 13, 2017: 7 PM ET (4 PM PT)</span></td>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>${title}</strong><br />
+        <span class="black">${date}</span></td>
     </tr>
     <tr>
       <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
             <td align="center"><table cellpadding="0" cellspacing="0" border="0" align="left" class="w100" width="305">
                 <tr>
-                  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333; width:305"> Presenter: Cynthia Blendermann Perone, DDS<br>
-                    Provider: Dental Learning Systems, LLC<br>
-                    Commercial Supporter: <em>Pacific Dental Services</em></td>
+                  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333; width:305"> Presenter: ${presenter}<br>
+                    Provider: ${provider}<br>
+                    Commercial Supporter: <em>${supporter}</em></td>
                 </tr>
               </table>
               
@@ -515,15 +524,15 @@ export function live_webinar_wo_header(fields){
               
               <table cellpadding="0" cellspacing="0" border="0" width="265" align="left" style="margin:0 0 0 14px;" class="w100">
                 <tr>
-                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: Free<br />
-                    Credits: 1 Interactive CEU </td>
+                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: ${cost}<br />
+                    Credits: ${credits}</td>
                 </tr>
               </table></td>
           </tr>
         </table></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="https://cdeworld.com/webinars/register/20856" target="_blank" style="color:#2f84c0; text-decoration:underline;">REGISTER HERE</a></td>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">REGISTER HERE</a></td>
     </tr>
     <!--END LIVE WEBINAR-->`
   )
@@ -537,6 +546,7 @@ export function on_demand_webinar_w_header(fields){
   let supporter = fields[4].value;
   let cost = fields[5].value;
   let credits = fields[6].value;
+  let link = fields[7].value;
 
   return(
     `<!--ON-DEMAND WEBINAR WITH HEADER-->
@@ -544,7 +554,7 @@ export function on_demand_webinar_w_header(fields){
       <td height="30" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">Featured On-Demand Webinars</td>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">${header}</td>
     </tr>
     <tr>
       <td height="20" align="center"></td>
@@ -553,7 +563,7 @@ export function on_demand_webinar_w_header(fields){
       <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:12px;"><table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tbody>
           <tr>
-            <td align="left"><strong>Finishing and Polishing Composite Resins to Create Natural-Looking Restorations</strong></td>
+            <td align="left"><strong>${title}</strong></td>
           </tr>
           <tr></tr>
         </tbody>
@@ -565,9 +575,9 @@ export function on_demand_webinar_w_header(fields){
           <tr>
             <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="305" align="left" class="w100">
                 <tr>
-                  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Presenter: Robert Margeas, DDS  <br>
-                    Provider: AEGIS Publications, LLC<br>
-                    Commercial Supporter: <em>Brasseler USA</em></td>
+                  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Presenter: ${presenter}  <br>
+                    Provider: ${provider}<br>
+                    Commercial Supporter: <em>${supporter}</em></td>
                 </tr>
               </table>
               
@@ -586,7 +596,7 @@ export function on_demand_webinar_w_header(fields){
         </table></td>
     </tr>
     <tr>
-      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:10px;"><a href="https://cdeworld.com/webinars/20848-Finishing_and_Polishing_Composite_Resins_to_Create_Natural-Looking_Restorations" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR</a></td>
+      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:10px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR</a></td>
     </tr>
     <!--END ON-DEMAND WEBINAR WITH HEADER-->`
   )
@@ -600,6 +610,7 @@ export function on_demand_webinar_wo_header(fields){
   let supporter = fields[3].value;
   let cost = fields[4].value;
   let credits = fields[5].value;
+  let link = fields[6].value;
 
   return(
     `<!--ON-DEMAND WEBINAR WITHOUT HEADER-->
@@ -608,7 +619,7 @@ export function on_demand_webinar_wo_header(fields){
     </tr>
     <tr>
       <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:12px;"><strong>
-Tiny Tweaks Make Big Differences: How Sphere Technology May Revolutionize Composite Dentistry</strong></td>
+${title}</strong></td>
     </tr>
     <tr>
       <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -616,8 +627,8 @@ Tiny Tweaks Make Big Differences: How Sphere Technology May Revolutionize Compos
             <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="305" align="left" class="w100">
                 <tr>
                   <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Presenter:  Timothy Bizga, DDS, FAGD<br>
-                    Provider: Dental Learning Systems, LLC<br>
-                    Commercial Supporter: <em>Dentsply Sirona Restorative</em></td>
+                    Provider: ${provider}<br>
+                    Commercial Supporter: <em>${supporter}</em></td>
                 </tr>
               </table>
               
@@ -636,7 +647,7 @@ Tiny Tweaks Make Big Differences: How Sphere Technology May Revolutionize Compos
         </table></td>
     </tr>
     <tr>
-      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:10px;"><a href="https://cdeworld.com/webinars/20851-Tiny_Tweaks_Make_Big_Differences:How_Sphere_Technology_May_Revolutionize_Composite_Dentistry" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR</a></td>
+      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:10px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR</a></td>
     </tr>
     <!--END ON-DEMAND WEBINAR WITHOUT HEADER-->`
   )
@@ -644,7 +655,7 @@ Tiny Tweaks Make Big Differences: How Sphere Technology May Revolutionize Compos
 
 export function center_banner(fields){
   let link = fields[0].value;
-  let imgLink = fields[1].value;
+  let imgSrc = fields[1].value;
 
   return(`
   <!--CENTER BANNER-->
@@ -661,7 +672,7 @@ export function center_banner(fields){
     <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
   </tr>
   <tr>
-    <td align="center" style="padding:15px 0px;"><a href="http://marketing.sdi.com.au/pola-visibly-whiter-teeth/" target="_blank"> <img src="http://aegispublications.com/news/ce/2017/04/images/sdi-banner.jpg" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </a></td>
+    <td align="center" style="padding:15px 0px;"><a href="${link}" target="_blank"> <img src="${imgSrc}" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </a></td>
   </tr>
   <tr>
     <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
@@ -676,6 +687,7 @@ export function new_content_w_header(fields){
   let source = fields[4].value;
   let cost = fields[5].value;
   let credits = fields[6].value;
+  let link = fields[7].value;
   
     return(`<!--NEW CONTENT WITH HEADER-->
     <tr>
@@ -721,6 +733,7 @@ export function new_content_w_header(fields){
     let source = fields[3].value;
     let cost = fields[4].value;
     let credits = fields[5].value;
+    let link = fields[6].value;
   
     return(`                          <!--NEW CONTENT WITHOUT HEADER-->
     <tr>
