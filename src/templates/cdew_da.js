@@ -152,7 +152,6 @@ export const cdew_da_forms = {
     switchable: true,
     addable: true,
     fields:  [
-      {label: 'Header', name: 'header'},
       {label: 'Title', name: 'title'},
       {label: 'Presenter', name: 'presenter'},
       {label: 'Provider', name: 'provider'},
@@ -626,7 +625,7 @@ ${title}</strong></td>
           <tr>
             <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="305" align="left" class="w100">
                 <tr>
-                  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Presenter:  Timothy Bizga, DDS, FAGD<br>
+                  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Presenter:  ${presenter}<br>
                     Provider: ${provider}<br>
                     Commercial Supporter: <em>${supporter}</em></td>
                 </tr>
@@ -691,37 +690,37 @@ export function new_content_w_header(fields){
   
     return(`<!--NEW CONTENT WITH HEADER-->
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold; padding-top:10px;">Featured CE Courses - New Content Added</td>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold; padding-top:10px;">${header}</td>
     </tr>
     <tr>
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>The Business of Dentistry: Practice Administration</strong><br />
-        Natalie Kaweckyj, LDARF, CDA, CDPMA, COMSA, CPFDA, MADAA, BA</td>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>${title}</strong><br />
+        ${presenter}</td>
     </tr>
     <tr>
       <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
             <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="305" align="left" class="w100">
                 <tr>
-                  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Provider: American Dental Assistants Association<br>
-                    Source: <em>American Dental Assistants Association</em></td>
+                  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Provider: ${provider}<br>
+                    Source: <em>${source}</em></td>
                 </tr>
               </table>
 
               
               <table cellpadding="0" cellspacing="0" border="0" width="265" align="left" class="w100" style="margin:0 0 0 14px;">
                 <tr>
-                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: $48<br>
-                    Credits: 3 Self-Study CEU</td>
+                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: ${cost}<br>
+                    Credits: ${credits}</td>
                 </tr>
               </table></td>
           </tr>
         </table></td>
     </tr>
     <tr>
-      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="https://cdeworld.com/courses/20858-The_Business_of_Dentistry:Practice_Administration" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
+      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
     </tr>
     <!--END OF NEW CONTENT WITH HEADER-->`)
   }
@@ -741,16 +740,16 @@ export function new_content_w_header(fields){
     </tr>
     <tr>
       <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333; padding-bottom:6px;"><strong>
-Alginate Impression and Diagnostic Study Model Techniques</strong><br />
-        <span style="font-size:13px; line-height:18px;">Ellen Gambardella, CDA, Med; and Rita Johnson, COA, RDH, MA</span></td>
+${title}</strong><br />
+        <span style="font-size:13px; line-height:18px;">${presenter}</span></td>
     </tr>
     <tr>
       <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
             <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="305" align="left" class="w100">
                 <tr>
-                  <td width="307" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Provider: American Dental Assistants Association<br>
-                    Source: <em>American Dental Assistants Association</em></td>
+                  <td width="307" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Provider: ${provider}<br>
+                    Source: <em>${source}</em></td>
                 </tr>
               </table>
               
@@ -761,15 +760,15 @@ Alginate Impression and Diagnostic Study Model Techniques</strong><br />
               
               <table cellpadding="0" cellspacing="0" border="0" width="265" align="left" class="w100" style="margin:0 0 0 14px;">
                 <tr>
-                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: $64<br>
-                    Credits: 4 Self-Study CEU</td>
+                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: ${cost}<br>
+                    Credits: ${credits}</td>
                 </tr>
               </table></td>
           </tr>
         </table></td>
     </tr>
     <tr>
-      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="https://cdeworld.com/courses/20842-Alginate_Impression_and_Diagnostic_Study_Model_Techniques" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
+      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
     </tr>
     <!--END OF NEW CONTENT WITHOUT HEADER-->`)
   }
@@ -886,7 +885,7 @@ export function end(fields){
           <tr>
             <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="225" align="left" class="w100">
                 <tr>
-                  <td align="left" class="txtCenter" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#818181; padding-left:10px;"><span class="black">© 2017 CDEWorld. All rights reserved.<br />
+                  <td align="left" class="txtCenter" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#818181; padding-left:10px;"><span class="black">© ${year} CDEWorld. All rights reserved.<br />
 PO Box 510 | Newtown, PA 18940</span></td>
                 </tr>
               </table>
@@ -902,7 +901,7 @@ PO Box 510 | Newtown, PA 18940</span></td>
                       <tr>
                         <td align="center"><a href="https://www.facebook.com/pages/CDE-World/141910839256792?ref=hl" target="_blank"> <img src="https://www.dentalaegis.com/media/60420/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                         <td align="center"><a href="https://twitter.com/CDEWorld" target="_blank"> <img src="https://www.dentalaegis.com/media/60421/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
-                        <td align="center" style="padding-left:1px;"><a href="mailto:?subject=FW: Dental Assistant News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/2017/12/ce3.html" target="_blank"> <img src="https://www.dentalaegis.com/media/60422/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
+                        <td align="center" style="padding-left:1px;"><a href="mailto:?subject=FW: Dental Assistant News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/ce3.html" target="_blank"> <img src="https://www.dentalaegis.com/media/60422/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                       </tr>
                     </table></td>
                 </tr>
