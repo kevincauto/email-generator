@@ -17,12 +17,13 @@ import {id_digital_initial_state} from './templates/id_digital';
 import {idt_digital_initial_state} from './templates/idt_digital';
 import {cced_digital_initial_state} from './templates/cced_digital';
 import {cdew_da_initial_state} from './templates/cdew_da';
+import {cdew_dds_initial_state} from './templates/cdew_dds';
 
 class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected_template: 'idt_digital',
+      selected_template: 'cdew_dds',
       cced_digital: cced_digital_initial_state,
       cced_reader: cced_reader_initial_state,
       cced_thematic: cced_thematic_initial_state,
@@ -33,6 +34,7 @@ class Container extends React.Component {
       idt_reader: idt_reader_initial_state,
       idt_digital: idt_digital_initial_state,
       cdew_da: cdew_da_initial_state,
+      cdew_dds: cdew_dds_initial_state,
     };
 
     this.handleFieldChange = this.handleFieldChange.bind(this);
@@ -93,8 +95,8 @@ class Container extends React.Component {
           onFormDelete={(field)=>this.handleFormDelete(field)}
           onFormSwitch = {(formIndex, formToSwitch)=>this.handleFormSwitch(formIndex, formToSwitch)}
           onFormDrag = {(startIndex, endIndex)=>this.handleFormDrag(startIndex, endIndex)}
-              /> 
-          <Display info={this.state} />
+        /> 
+        <Display info={this.state} />
       </div>
 
     );

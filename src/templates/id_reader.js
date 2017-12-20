@@ -192,7 +192,6 @@ export function beginning(fields){
   let issue = fields[6].value;
   let subscribe = fields[7].value;
   let header = fields[8].value;
-
   let title = fields[9].value;
   let description = fields[10].value;
   let author = fields[11].value;
@@ -200,18 +199,18 @@ export function beginning(fields){
   let imgSrc = fields[13].value;
   
   let monthName;
-  if(month == '01'){monthName = 'January'};
-  if(month == '02'){monthName = 'February'};
-  if(month == '03'){monthName = 'March'};
-  if(month == '04'){monthName = 'April'};
-  if(month == '05'){monthName = 'May'};
-  if(month == '06'){monthName = 'June'};
-  if(month == '07'){monthName = 'July'};
-  if(month == '08'){monthName = 'August'};
-  if(month == '09'){monthName = 'September'};
-  if(month == '10'){monthName = 'October'};
-  if(month == '11'){monthName = 'November'};
-  if(month == '12'){monthName = 'December'};
+  if(month === '01'){monthName = 'January'};
+  if(month === '02'){monthName = 'February'};
+  if(month === '03'){monthName = 'March'};
+  if(month === '04'){monthName = 'April'};
+  if(month === '05'){monthName = 'May'};
+  if(month === '06'){monthName = 'June'};
+  if(month === '07'){monthName = 'July'};
+  if(month === '08'){monthName = 'August'};
+  if(month === '09'){monthName = 'September'};
+  if(month === '10'){monthName = 'October'};
+  if(month === '11'){monthName = 'November'};
+  if(month === '12'){monthName = 'December'};
   //put the url together
   let url = `https://www.dentalaegis.com/id/${year}/${month}/newsletter`;
   
@@ -812,18 +811,18 @@ export function end(fields){
       let year = fields[1].value;
 
       let monthName;
-      if(month == '01'){monthName = 'January'};
-      if(month == '02'){monthName = 'February'};
-      if(month == '03'){monthName = 'March'};
-      if(month == '04'){monthName = 'April'};
-      if(month == '05'){monthName = 'May'};
-      if(month == '06'){monthName = 'June'};
-      if(month == '07'){monthName = 'July'};
-      if(month == '08'){monthName = 'August'};
-      if(month == '09'){monthName = 'September'};
-      if(month == '10'){monthName = 'October'};
-      if(month == '11'){monthName = 'November'};
-      if(month == '12'){monthName = 'December'};
+      if(month === '01'){monthName = 'January'};
+      if(month === '02'){monthName = 'February'};
+      if(month === '03'){monthName = 'March'};
+      if(month === '04'){monthName = 'April'};
+      if(month === '05'){monthName = 'May'};
+      if(month === '06'){monthName = 'June'};
+      if(month === '07'){monthName = 'July'};
+      if(month === '08'){monthName = 'August'};
+      if(month === '09'){monthName = 'September'};
+      if(month === '10'){monthName = 'October'};
+      if(month === '11'){monthName = 'November'};
+      if(month === '12'){monthName = 'December'};
 
 
   return(

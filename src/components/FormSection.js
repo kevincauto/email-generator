@@ -11,6 +11,7 @@ import {idt_digital_forms} from '../templates/idt_digital';
 import {idt_reader_forms} from '../templates/idt_reader';
 import {idt_thematic_forms} from '../templates/idt_thematic';
 import {cdew_da_forms} from '../templates/cdew_da';
+import {cdew_dds_forms} from '../templates/cdew_dds';
 
 let forms ={
   cced_digital: cced_digital_forms,
@@ -22,7 +23,8 @@ let forms ={
   idt_thematic: idt_thematic_forms,
   idt_reader: idt_reader_forms,
   idt_digital: idt_digital_forms,
-  cdew_da: cdew_da_forms
+  cdew_da: cdew_da_forms,
+  cdew_dds: cdew_dds_forms,
 }
 
 // using some little inline style helpers to make the app look okay
@@ -235,16 +237,20 @@ class FormSection extends React.Component{
               value={this.props.info.selected_template}
               onChange={this.handleTemplateChange}
             >
-              <option value="cced_thematic">CCED Thematic</option>
-              <option value="idt_thematic">IDT Thematic</option>
-              <option value="id_thematic">ID Thematic</option>
-              <option value="idt_reader">IDT Reader Newsletter</option>
-              <option value="cced_reader">CCED Reader Newsletter</option>
-              <option value="id_reader">ID Reader</option>
-              <option value="id_digital">ID Digital Edition Newsletter</option>
-              <option value="idt_digital">IDT Digital Edition Newsletter</option>
               <option value="cced_digital">CCED Digital Edition Newsletter</option>
+              <option value="cced_reader">CCED Reader Newsletter</option>
+              <option value="cced_thematic">CCED Thematic</option>
+
               <option value="cdew_da">CDEWorld Dental Assistant Newsletter</option>
+              <option value="cdew_dds">CDEWorld Dentist Newsletter</option>
+
+              <option value="id_digital">ID Digital Edition Newsletter</option>
+              <option value="id_reader">ID Reader</option>
+              <option value="id_thematic">ID Thematic</option>
+
+              <option value="idt_digital">IDT Digital Edition Newsletter</option>
+              <option value="idt_reader">IDT Reader Newsletter</option>
+              <option value="idt_thematic">IDT Thematic</option>
             </select>
 
             <h3>2. Complete the form.</h3>
