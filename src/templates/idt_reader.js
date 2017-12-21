@@ -43,14 +43,14 @@ export const idt_reader_forms = {
           {value: '2022', text: 'Send Year: 2022'}
       ]
   },
-      {label: 'Masthead Link', name: 'mastheadLink', value: 'https://www.pulpdent.com'},
+      {label: 'Masthead Link', name: 'mastheadLink'},
       {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
       {label: 'Volume Number', name: 'volume'},
       {label: 'Issue Number', name: 'issue'},
-      {label: 'Header', name: 'header'},
+      {label: 'Header', name: 'header', value: 'Cover Story'},
       {label: 'Title', name: 'title'},
       {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  '},
-      {label: 'Author', name: 'author'},
+      {label: 'Author', name: 'author', value: 'Lorem Ipsum, DDS'},
       {label: 'Link', name: 'link'},
       {label: 'Cover Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x220'}
     ]
@@ -65,7 +65,7 @@ export const idt_reader_forms = {
       {label: 'Header', name: 'header', value: 'Header'},
       {label: 'Title', name: 'title'},
       {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos. ' },
-      {label: 'Author', name: 'author'},
+      {label: 'Author', name: 'author', value: 'Lorem Ipsum, DDS'},
       {label: 'Article link', name: 'link'},
       {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150'},
       {label: 'Image Link', name: 'imgLink'}
@@ -130,7 +130,7 @@ export const idt_reader_forms = {
       {label: 'Header', name: 'header', value: 'Featured Header'},
       {label: 'Title', name: 'title'},
       {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  '},
-      {label: 'Author', name: 'author'},
+      {label: 'Author', name: 'author', value: 'Lorem Ipsum, DDS'},
       {label: 'Link', name: 'link'},
       {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150'},
       {label: 'Image Link', name: 'imgLink'}
@@ -387,7 +387,7 @@ export function beginning(fields){
                                                                                                                        <tbody>
                                                                                                                           <tr>
                                                                                                                              <td align="left" class="f16" style="font-family:'Times New Roman', Times, serif; font-size: 15px; font-weight: bold; line-height: 20px; color: #000000; padding-left:20px;">
-                                                                                                                                <span class="black"><a href="http://www.dentalaegis.com/idt/${year}/${month}" style="color:#000000; text-decoration:none;" target="_blank">November 2017 | Vol. 8 No. 11 </a></span>
+                                                                                                                                <span class="black"><a href="http://www.dentalaegis.com/idt/${year}/${month}" style="color:#000000; text-decoration:none;" target="_blank">${monthName} ${year} | Vol. ${volume} No. ${issue} </a></span>
                                                                                                                              </td>
                                                                                                                           </tr>
                                                                                                                           <tr>
@@ -501,7 +501,7 @@ export function beginning(fields){
                                                                                                <tbody>
                                                                                                   <tr>
                                                                                                      <td align="center" style="font-size: 18px; padding: 2px 9px; font-family: Times New Roman, serif; font-style: italic; font-weight: normal; color: #ffffff; text-align: left;">
-                                                                                                        Cover Story
+                                                                                                        ${header}
                                                                                                      </td>
                                                                                                   </tr>
                                                                                                </tbody>
@@ -510,13 +510,13 @@ export function beginning(fields){
                                                                                       </tr>
                                                                                       <tr>
                                                                                          <td align="left" dir="ltr" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:16px; font-weight:bold; line-height:20px; text-transform: uppercase;">
-                                                                                            <a href="${link}" style="text-decoration:none; color:#000;" target="_blank">Buying Trends: What, Why, and How</a>
+                                                                                            <a href="${link}" style="text-decoration:none; color:#000;" target="_blank">${title}</a>
                                                                                          </td>
                                                                                       </tr>
                                                                                       <tr>
                                                                                          <td align="left" dir="ltr" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:16px; color:#000000; padding-bottom:5px;">
                                                                                             ${description}<br />
-                                                                                            <em>${author}</em>
+                                                                                            ${author?`<em>${author}</em>`:``}
                                                                                          </td>
                                                                                       </tr>
                                                                                       <tr>
@@ -602,7 +602,8 @@ export function article(fields){
                                <td align="center">
                                   <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="395">
                                      <tbody>
-                                     ${header ? `                                        <tr>
+                                     ${header ? `                                        
+                                <tr>
                                      <td align="left" style="padding-left:3px; padding-bottom:7px;">
                                         <table border="0" cellpadding="0" cellspacing="0" style="background-color: #ab1117; box-shadow: -3px 3px 0px #bbbbbb;">
                                            <tbody>
@@ -625,7 +626,7 @@ export function article(fields){
                                            <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:16px; color:#000000; padding-bottom:5px;">
                                               ${description}
 <br />
-<em>${author}</em>
+${author?`<em>${author}</em>`:``}
                                            </td>
                                         </tr>
                                         <tr>
@@ -1029,7 +1030,7 @@ export function featured(fields){
                                            <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:16px; color:#000000; padding-bottom:5px;">
                                               ${description}
 <br />
-<em>${author}</em>
+${author?`<em>${author}</em>`:``}
                                            </td>
                                         </tr>
                                         <tr>
@@ -1126,24 +1127,27 @@ export function end(fields){
                                            <td align="center">
                                               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                  <tbody>
-                                                    <tr>
-                                                       <td align="left" style="padding-left:3px; padding-bottom:7px;">
-                                                          <table border="0" cellpadding="0" cellspacing="0" style="background-color: #ab1117; box-shadow: -3px 3px 0px #bbbbbb;">
-                                                             <tbody>
-                                                                <tr>
-                                                                   <td align="center" style="font-size: 18px; padding: 2px 9px; font-family: Times New Roman, serif; font-style: italic; font-weight: normal; color: #ffffff; text-align: left;">
-                                                                      ${header}
-                                                                   </td>
-                                                                </tr>
-                                                             </tbody>
-                                                          </table>
-                                                       </td>
-                                                    </tr>
-                                                    <tr>
-                                                       <td align="left" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:16px; font-weight:bold; line-height:20px; text-transform:uppercase;">
-                                                          ${title}
-                                                       </td>
-                                                    </tr>
+                                                 ${header?`                                                    
+                                            <tr>
+                                                 <td align="left" style="padding-left:3px; padding-bottom:7px;">
+                                                    <table border="0" cellpadding="0" cellspacing="0" style="background-color: #ab1117; box-shadow: -3px 3px 0px #bbbbbb;">
+                                                       <tbody>
+                                                          <tr>
+                                                             <td align="center" style="font-size: 18px; padding: 2px 9px; font-family: Times New Roman, serif; font-style: italic; font-weight: normal; color: #ffffff; text-align: left;">
+                                                                ${header}
+                                                             </td>
+                                                          </tr>
+                                                       </tbody>
+                                                    </table>
+                                                 </td>
+                                              </tr>`:``}
+                                                ${title?`                                                    
+                                            <tr>
+                                                <td align="left" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:16px; font-weight:bold; line-height:20px; text-transform:uppercase;">
+                                                   ${title}
+                                                </td>
+                                             </tr>`:``}
+
                                                     <tr>
                                                        <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; color:#000000;">
                                                           ${description}
@@ -1219,7 +1223,7 @@ export function end(fields){
                                            <td width="20">
                                            </td>
                                            <td align="center">
-                                              <a href="mailto:?subject=FW: Inside%20Dental%20Technology ${monthName} 2017 Issue Available Now&body=I thought you might be interested in this:%20https://www.dentalaegis.com/idt/${year}/${month}/newsletter?refer=true" target="_blank"> <img alt="" border="0" src="https://www.dentalaegis.com/media/59797/" style="display:block; margin:0px; max-width:31px;" width="31" /> </a>
+                                              <a href="mailto:?subject=FW: Inside%20Dental%20Technology ${monthName} ${year} Issue Available Now&body=I thought you might be interested in this:%20https://www.dentalaegis.com/idt/${year}/${month}/newsletter?refer=true" target="_blank"> <img alt="" border="0" src="https://www.dentalaegis.com/media/59797/" style="display:block; margin:0px; max-width:31px;" width="31" /> </a>
                                            </td>
                                         </tr>
                                      </tbody>

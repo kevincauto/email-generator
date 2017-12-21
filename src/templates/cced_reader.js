@@ -44,9 +44,11 @@ export const cced_reader_forms = {
           {value: '2022', text: 'Send Year: 2022'}
       ]
       },
-      {label: 'Masthead Link', name: 'mastheadLink', value: 'https://www.pulpdent.com'},
+      {label: 'Masthead Link', name: 'mastheadLink'},
       {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
-      {label: 'Subscribe Link', name: 'subscribe'}
+      {label: 'Subscribe Link', name: 'subscribe'},
+      {label: 'Volume Number', name: 'volume'},
+      {label: 'Issue Number', name: 'issue'}
     ]
   },
   ce:     {
@@ -233,6 +235,22 @@ export function beginning(fields){
   let mastheadLink = fields[3].value;
   let mastheadSrc = fields[4].value;
   let subscribe = fields[5].value;
+  let volume = fields[6].value;
+  let issue = fields[7].value;
+
+  let monthName;
+  if(month === '01'){monthName = 'January'};
+  if(month === '02'){monthName = 'February'};
+  if(month === '03'){monthName = 'March'};
+  if(month === '04'){monthName = 'April'};
+  if(month === '05'){monthName = 'May'};
+  if(month === '06'){monthName = 'June'};
+  if(month === '07'){monthName = 'July'};
+  if(month === '08'){monthName = 'August'};
+  if(month === '09'){monthName = 'September'};
+  if(month === '10'){monthName = 'October'};
+  if(month === '11'){monthName = 'November'};
+  if(month === '12'){monthName = 'December'};
 
   //put the url together
   let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter`;
@@ -412,7 +430,7 @@ export function beginning(fields){
                           </td>
                         </tr>
                         <tr>
-                          <td align="center" bgcolor="#9C8C30" class="f14" style="background-color:#9c8c30; color:#ffffff; margin:0px; padding: 7px 0px; font-size:14px; font-family:'Times New Roman', Times, serif; border-bottom:2px solid #ffffff;"><a href="http://www.dentalaegis.com/cced/2017/11" style="text-decoration: none; color:#ffffff">November/December 2017 | Vol. 38 No. 11</a> | <span class="hide"><a href="http://www.dentalaegis.com/cced/" style="text-decoration: none; color:#ffffff">compendiumlive.com</a> |</span> <a href="mailto:?subject=FW:%20November/December%202017%20Issue%20Available%20Now&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/cced/2017/11/newsletter?refer=true" style="text-decoration: none; color:#ffffff">Forward to a Colleague</a></td>
+                          <td align="center" bgcolor="#9C8C30" class="f14" style="background-color:#9c8c30; color:#ffffff; margin:0px; padding: 7px 0px; font-size:14px; font-family:'Times New Roman', Times, serif; border-bottom:2px solid #ffffff;"><a href="http://www.dentalaegis.com/cced/${year}/${month}" style="text-decoration: none; color:#ffffff">${monthName} ${year} | Vol. ${volume} No. ${issue}</a> | <span class="hide"><a href="http://www.dentalaegis.com/cced/" style="text-decoration: none; color:#ffffff">compendiumlive.com</a> |</span> <a href="mailto:?subject=FW:%20${monthName}%20${year}%20Issue%20Available%20Now&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/cced/${year}/${month}/newsletter?refer=true" style="text-decoration: none; color:#ffffff">Forward to a Colleague</a></td>
                         </tr>
                         <tr>
                           <td align="center" bgcolor="#8E682A" style="background-color:#8E682A;">
@@ -423,7 +441,7 @@ export function beginning(fields){
                                 <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 7px; border-right:1px solid #775623;"><a href="http://cced.cdeworld.com/" style=" text-decoration:none; color:#ffffff" target="_blank">ce</a></td>
                                 <td align="center" class="menu" style=" color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 6px; border-right:1px solid #775623;"><a href="http://www.dentalaegis.com/cced/webinars" style=" text-decoration:none; color:#ffffff" target="_blank">webinars</a></td>
                                 <td align="center" class="menu" style=" color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 8px; border-right:1px solid #775623;"><a href="http://www.dentalaegis.com/news" style=" text-decoration:none; color:#ffffff" target="_blank">news</a></td>
-                                <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 5px; border-right:1px solid #775623;"><a href="https://www.dentalaegis.com/cced/subscribe/thematic?campaign=7834" style=" text-decoration:none; color:#ffffff" target="_blank">subscribe</a></td>
+                                <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 5px; border-right:1px solid #775623;"><a href="${subscribe}" style=" text-decoration:none; color:#ffffff" target="_blank">subscribe</a></td>
                                 <td align="center" class="menu" style="color:#fff; font-size:12px; text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; padding:10px 20px 10px 8px;"><a href="http://www.dentalaegis.com/cced/${year}/${month}/digital" style=" text-decoration:none; color:#ffffff" target="_blank">Digital Edition</a></td>
                               </tr>
                             </table>
@@ -577,9 +595,8 @@ export function article(fields){
 
                 <tr>
                   <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="${link}" style="text-decoration:none; color:#4c4c4c" target="blank">${title}</a></strong><br>
-                  ${description?`${description}`:``}
+                  ${description?`${description}<br />`:``}
                   ${author?`
-                  <br />
                   <em>${author}</em>`:
                   ``}
 
@@ -718,8 +735,8 @@ let imgSrc = fields[5].value;
                   </tr>
                   <tr>
                     <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="${link}" style="text-decoration:none; color:#4c4c4c" target="blank">${title}</a></strong><br>
-                    ${description}<br>
-                    <em>${author}</em></td>
+                    ${description?`${description}<br>`:``}
+                    ${author?`<em>${author}</em>`:``}</td>
                   </tr>
                   <tr>
                     <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="${link}" style="text-decoration:none; color:#9c8d30;" target="_blank">DOWNLOAD NOW</a></td>
