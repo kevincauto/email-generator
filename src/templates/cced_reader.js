@@ -417,7 +417,7 @@ export function beginning(fields){
                           <td align="center" height="20" style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:10px; color:#6d6f72; text-transform:uppercase;">Having trouble viewing this email? <span class="grey"><a href="https://www.dentalaegis.com/cced/${year}/${month}/newsletter" style="color:#ffffff; text-decoration:none;" target="_blank">Click here.</a></span></td>
                         </tr>
                         <tr>
-                          <td align="center"><a href="${mastheadLink}"><img alt="" border="0" class="w100" src="${mastheadSrc}" style="display:block; margin:0px; max-width:600px;" width="600"></a></td>
+                          <td align="center"><a href="${mastheadLink}" target="_blank"><img alt="" border="0" class="w100" src="${mastheadSrc}" style="display:block; margin:0px; max-width:600px;" width="600"></a></td>
                         </tr>
                         <tr>
                           <td align="center"><img alt="" border="0" class="w100" src="http://aegispublications.com/news/cced/2017/dash-3.jpg" style="display:block; margin:0px; max-width:600px;" width="600"></td>
@@ -967,7 +967,7 @@ export function end(fields){
                       <td width="23"></td>
                       <td align="center"><a href="https://twitter.com/compendiumced" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/59474/" style="display:block; margin:0px; max-width:32px;" width="32"></a></td>
                       <td width="23"></td>
-                      <td align="center"><a href="mailto:?subject=FW:%20${monthName}%202017%20Issue%20Available%20Now&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/cced/${year}/${month}/newsletter?refer=true" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/59475/" style="display:block; margin:0px; max-width:31px;" width="31"></a></td>
+                      <td align="center"><a href="mailto:?subject=FW:%20${monthName}%20${year}%20Issue%20Available%20Now&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/cced/${year}/${month}/newsletter?refer=true" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/59475/" style="display:block; margin:0px; max-width:31px;" width="31"></a></td>
                     </tr>
                   </table>
                 </td>

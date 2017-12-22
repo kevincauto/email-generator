@@ -151,7 +151,7 @@ export function beginning(fields){
       </head>
       <body bgcolor="#efefef">
   <!-- g-link -->		<center>
-              <map name="Map2"><area coords="48,95,210,115" href="http://www.dentalaegis.com/cced/${year}/${month}/" shape="rect" target="_blank" /> <area coords="219,90,344,114" href="http://www.dentalaegis.com/cced/" shape="rect" target="_blank" /><area coords="153,17,461,83" href="http://www.dentalaegis.com/cced/" shape="rect" target="_blank" /><area coords="354,92,414,112" href="${subscribe}" shape="rect" target="_blank" /> <area coords="420,93,558,115" href="mailto:?subject=FW: Compendium ${month} Issue Available Now&body=I%20thought%20you%20might%20be%20interested%20in%20this: https://www.dentalaegis.com/cced/${year}/${month}/newsletter/digital?refer=true" shape="rect" target="_blank" /></map>
+              <map name="Map2"><area coords="48,95,210,115" href="http://www.dentalaegis.com/cced/${year}/${month}/" shape="rect" target="_blank" /> <area coords="219,90,344,114" href="http://www.dentalaegis.com/cced/" shape="rect" target="_blank" /><area coords="153,17,461,83" href="http://www.dentalaegis.com/cced/" shape="rect" target="_blank" /><area coords="354,92,414,112" href="${subscribe}" shape="rect" target="_blank" /> <area coords="420,93,558,115" href="mailto:?subject=FW: Compendium ${monthName} Issue Available Now&body=I%20thought%20you%20might%20be%20interested%20in%20this: https://www.dentalaegis.com/cced/${year}/${month}/newsletter/digital?refer=true" shape="rect" target="_blank" /></map>
               <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="font-family:Arial, sans-serif; border:solid 1px #989797; color:#000000;" width="600">
                   <tbody>
                       <tr>
@@ -210,7 +210,7 @@ export function article(fields){
             ${author}</div>` : ``}
 
             <div style="font-family:Arial, sans-serif; color:#d99316; font-size:13px; text-align:left; clear:both; font-weight:bold; margin:0 1px 11px 29px; width:326px;">
-                <a href="${link}" style="text-decoration:none; color:#9d0707; font-size:13px;" target="_blank">READ MORE</a></div>
+                <a href="${link}" style="text-decoration:none; color:#9c8c30; font-size:13px;" target="_blank">READ MORE</a></div>
         </td>
     </tr>
 <!--START OF ARTICLE-->`
@@ -252,6 +252,39 @@ export function end(fields){
     if(month === '12'){monthName = 'December'};
   return(`
   <!--END-->
+  <tr>
+  
+                          <td align="center" colspan="2">
+  
+                              <div style="margin:1px 0 12px 0; clear:both; padding:1px 0 0 0;">
+  
+                                  <img alt="" src="http://aegispublications.com/news/cced/2015/img/dash.jpg" width="600" /></div>
+  
+                          </td>
+  
+                      </tr>
+  
+                      <tr>
+  
+                          <td align="center" bgcolor="#efefef" colspan="2">
+  
+                              <div style="font-family:Arial, sans-serif; color:#4c4c4c; font-size:14px; text-align:left; clear:both; font-weight:bold; margin:11px 8px 11px 4px; width:541px;">
+  
+                                  <a href="https://www.dentalaegis.com/cced/${year}/${month}" style="text-decoration: none; font-weight:bold; color: #4c4c4c;" target="_blank">${description}</a><br />
+  
+                                  <a href="https://www.dentalaegis.com/cced/${year}/${month}" style="text-decoration:none; color:#9c8c30; font-size:13px; text-align:left; font-weight:bold; margin:4px 8px 11px 0;" target="_blank">READ MORE</a></div>
+  
+                          </td>
+  
+                      </tr>
+  
+                      <tr>
+  
+                          <td colspan="2"> 
+  
+                              </td>
+  
+                      </tr>
   <tr>
       <td align="center" colspan="2">
           <div style="margin:1px 0 17px 0; clear:both; height:1px; background-color:#989797; width:598px">
