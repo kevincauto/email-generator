@@ -881,15 +881,12 @@ export function end(fields){
         <span class="blue"><a href="http://scdl-online.org/annual-meeting.php" target="_blank" style="color:#2f84c0;text-decoration:underline;">REGISTER TODAY</a></span></td>
     </tr>
     
-   
     <tr>
       <td height="20" align="center"></td>
     </tr>
     <tr>
       <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
     </tr>-->
-   
-    
    
     <tr>
       <td align="center" style="padding-top:5px;"> <img src="https://cdeworld.com/media/14014/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </td>
