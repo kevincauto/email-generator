@@ -187,24 +187,6 @@ export const cdew_dh_forms = {
       {label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/155x180'}
     ]
   },
-  portal_partner: {
-    typeOfRow: 'portal_partner',
-    header: 'Portal Partner',
-    closable: true,
-    switchable: true,
-    addable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Source', name: 'source'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'},
-      {label: 'Partner Logo Source', name: 'imgSrc'},
-      {label: 'Brand Link', name: 'brandLink'},
-    ]
-  },
   end: {
     typeOfRow: 'end',
     header: 'End of the Email',
