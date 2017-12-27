@@ -584,7 +584,6 @@ export function on_demand_webinar_w_header(fields){
   let cost = fields[5].value;
   let credits = fields[6].value;
   let link = fields[7].value;
-
   return(
     `<!--ON-DEMAND WEBINAR WITH HEADER-->
     <tr>
@@ -640,7 +639,6 @@ export function on_demand_webinar_w_header(fields){
 }
 
 export function on_demand_webinar_wo_header(fields){
-
   let title = fields[0].value;
   let presenter = fields[1].value;
   let provider= fields[2].value;
@@ -693,7 +691,6 @@ ${title}</strong></td>
 export function center_banner(fields){
   let link = fields[0].value;
   let imgSrc = fields[1].value;
-
   return(`
   <!--CENTER BANNER-->
   <tr>
@@ -726,7 +723,6 @@ export function new_content_w_header(fields){
   let cost = fields[5].value;
   let credits = fields[6].value;
   let link = fields[7].value;
-  
     return(`<!--NEW CONTENT WITH HEADER-->
     <tr>
       <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold; padding-top:10px;">${header}</td>
@@ -764,7 +760,6 @@ export function new_content_w_header(fields){
     <!--END OF NEW CONTENT WITH HEADER-->`)
   }
   export function new_content_wo_header(fields){
-
     let title = fields[0].value;
     let presenter = fields[1].value;
     let provider= fields[2].value;
