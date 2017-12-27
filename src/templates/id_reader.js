@@ -351,7 +351,7 @@ export function beginning(fields){
                           </tr>
                           <tr>
                             <td align="center" style="padding:10px; border-bottom:1px dotted #333333; font-family:Georgia, 'Times New Roman', Times, serif; font-size:14px; color:#000000; padding:2px 0 7px 0; font-weight:bold;" valign="top">
-                              <a href="https://www.dentalaegis.com/id/${year}/${month}/" style="text-decoration:none; color:#000000;" target="_blank">${monthName} 2017 <span style="color:#000000;">|</span> Vol. ${volume}, No. ${issue}</a> | <a href="https://www.dentalaegis.com/id" style="color:#9d0707; text-decoration:none;" target="_blank">insidedentistry.net</a><a href="https://www.dentalaegis.com/id/${year}/${month}/digital" style="color:#9d0707; text-decoration:none;" target="_blank"> <span style="color:#000000;">|</span> Digital Edition</a>
+                              <a href="https://www.dentalaegis.com/id/${year}/${month}/" style="text-decoration:none; color:#000000;" target="_blank">${monthName} ${year} <span style="color:#000000;">|</span> Vol. ${volume}, No. ${issue}</a> | <a href="https://www.dentalaegis.com/id" style="color:#9d0707; text-decoration:none;" target="_blank">insidedentistry.net</a><a href="https://www.dentalaegis.com/id/${year}/${month}/digital" style="color:#9d0707; text-decoration:none;" target="_blank"> <span style="color:#000000;">|</span> Digital Edition</a>
                             </td>
                           </tr>
                           <tr>
@@ -376,7 +376,7 @@ export function beginning(fields){
                                       <img src="https://www.dentalaegis.com/media/59113/" style="vertical-align:bottom;" width="22" />
                                     </td>
                                     <td align="right" height="20" style="font-family:'Times New Roman', Times, serif; font-size:12px; text-transform:uppercase; padding-right:10px;">
-                                      <a href="mailto:?subject=Forward: Inside Dentistry &body=I%20thought%20you%20might%20be%20interested%20in%20this: https://www.dentalaegis.com/id/${year}/1${month}/newsletter?refer=true" style="text-decoration:none;color:#fff;" target="_blank">Forward to a Colleague</a>
+                                      <a href="mailto:?subject=Forward: Inside Dentistry &body=I%20thought%20you%20might%20be%20interested%20in%20this: https://www.dentalaegis.com/id/${year}/${month}/newsletter?refer=true" style="text-decoration:none;color:#fff;" target="_blank">Forward to a Colleague</a>
                                     </td>
                                   </tr>
                                 </tbody>
