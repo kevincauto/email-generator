@@ -476,13 +476,23 @@ export function red_header(fields){
 
 
   return(
-    `<!--RED HEADER-->
+    `
+    <!--RED HEADER-->
+    <tr>
+    <td align="center" height="7"> 
+    </td>
+    </tr>
     <tr>
       <td align="left" height="20" style="background-color:#9d0707;  font-family:Arial, san-serif; text-transform:uppercase; font-size: 13px; line-height:16px; color:#ffffff; padding-left:10px;">
         ${header}
       </td>
     </tr>
-    <!--END HEADER-->`
+    <tr>
+    <td align="center" height="7"> 
+    </td>
+    </tr>
+    <!--END HEADER-->
+    `
   )
 }
 
@@ -501,7 +511,8 @@ export function ce(fields){
   let imgSrc = fields[10].value;
 
   return(
-    `<!--START CE-->
+    `
+    <!--START CE-->
     <tr>
       <td align="center">
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -584,7 +595,8 @@ export function ce(fields){
         </table>
       </td>
     </tr>
-    <!--END CE -->`
+    <!--END CE -->
+    `
   )
 }
 export function peer_reviewed(fields){
@@ -604,7 +616,8 @@ let link = fields[3].value;
 let imgSrc = fields[4].value;
 
 
-  return `<!--PEER-REVIEWED-->
+  return `
+  <!--PEER-REVIEWED-->
   <tr>
     <td align="center">
       <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -679,7 +692,8 @@ let imgSrc = fields[4].value;
       </table>
     </td>
   </tr>
-  <!--END PEER-REVIEWED-->`;
+  <!--END PEER-REVIEWED-->
+  `;
 }
 
 export function article(fields){
@@ -689,8 +703,9 @@ export function article(fields){
     let author = fields[2].value;
     let link = fields[3].value;
 
-  return(
-    `<tr>
+  return(`
+    <!--START ARTICLE-->
+    <tr>
     <td align="center">
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
       <tbody>
@@ -726,12 +741,12 @@ export function article(fields){
     </table>
     </td>
     </tr>
-    
-    
     <tr>
-    <td align="center" height="20"> 
+    <td align="center" height="7"> 
     </td>
-    </tr>`
+    </tr>
+    <!--END ARTICLE-->
+    `
   )
 }
 
@@ -746,7 +761,8 @@ export function featured(fields){
       let imgSrc = fields[6].value;
 
   return(
-    `<!--FEATURED GRAY BOX -->
+    `
+    <!--FEATURED GRAY BOX -->
     <tr>
       <td align="left" height="20" style="background-color:#9d0707;  font-family:Arial, san-serif; text-transform:uppercase; font-size: 13px; line-height:16px; color:#ffffff; padding-left:10px;">
         Featured eBook
@@ -800,7 +816,8 @@ export function featured(fields){
         </table>
       </td>
     </tr>
-    <!--FEATURED GRAY BOX-->`
+    <!--FEATURED GRAY BOX-->
+    `
   )
 }
 
@@ -825,8 +842,8 @@ export function end(fields){
       if(month === '12'){monthName = 'December'};
 
 
-  return(
-    `<!--START OF THE END-->
+  return(`
+    <!--START OF THE END-->
     </tbody>
     </table>
     </td>
