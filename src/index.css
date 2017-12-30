@@ -11,8 +11,8 @@ body {
 #main-form {
   background: #fff;
   float: left;
-  width: 300px;
-  min-width: 300px;
+  width: 310px;
+  min-width: 310px;
   padding: 10px;
   margin: 4px 10px 2px 10px;
   border-radius: 4px;
@@ -239,4 +239,7 @@ h3{
 }
 .header-dropdown{
   margin: 10px 0px 50px;
+}
+.bold{
+  font-weight: bold;
 }

@@ -55,7 +55,6 @@ export default class Display extends React.Component {
     //It uses the information in the fields array to generate an html row with the proper info
     //The info is mapped to an array and then joined into one string of html
     let html = layout.map(row=>{ 
-      console.log(row);
       return TEMPLATES[this.props.info.selected_template][row.typeOfRow](row.fields)}).join('');
     
         //Sanitize data to avoid XSS attack

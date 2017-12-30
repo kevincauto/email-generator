@@ -16,6 +16,7 @@ export const cdew_dh_forms = {
     closable: false,
     switchable: false,
     addable: true,
+    draggable: false,
     fields:  [
       {label: 'Email Name', name: 'emailName', value: 'ce3'},
       {label: 'Month', name: 'month', value: month, 
@@ -55,6 +56,7 @@ export const cdew_dh_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Header', name: 'header', value: 'Upcoming Live Webinar'},
       {label: 'Title', name: 'title'},
@@ -73,6 +75,7 @@ export const cdew_dh_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Title', name: 'title'},
       {label: 'Date', name: 'date'},
@@ -90,6 +93,7 @@ export const cdew_dh_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Header', name: 'header', value: 'Featured On-Demand Webinars'},
       {label: 'Title', name: 'title'},
@@ -107,6 +111,7 @@ export const cdew_dh_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Title', name: 'title'},
       {label: 'Presenter', name: 'presenter'},
@@ -123,6 +128,7 @@ export const cdew_dh_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Link', name: 'link'},
       {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/600x70'},
@@ -134,6 +140,7 @@ export const cdew_dh_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Header', name: 'header', value: 'Featured CE Courses - New Content Added'},
       {label: 'Title', name: 'title'},
@@ -151,6 +158,7 @@ export const cdew_dh_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Title', name: 'title'},
       {label: 'Presenter', name: 'presenter'},
@@ -167,6 +175,7 @@ export const cdew_dh_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  []
   },
   ebook: {
@@ -175,6 +184,7 @@ export const cdew_dh_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Title', name: 'title'},
       {label: 'author', name: 'author'},
@@ -193,6 +203,7 @@ export const cdew_dh_forms = {
     closable: false,
     switchable: false,
     addable: false,
+    draggable: false,
     fields: [
       {label: 'Month', name: 'month', value: month, 
       dropdown: [

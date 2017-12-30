@@ -15,6 +15,7 @@ export const id_reader_forms = {
     closable: false,
     switchable: false,
     addable: true,
+    draggable: false,
     fields:  [
       {label: 'Email Name', name: 'emailName'},
       {label: 'Month', name: 'month', value: currentMonth, 
@@ -62,6 +63,7 @@ export const id_reader_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Header', name: 'header', value: 'Header'},
     ]
@@ -72,6 +74,7 @@ export const id_reader_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Title', name: 'title'},
       {label: 'Number of Credits', name: 'numCredits'},
@@ -92,6 +95,7 @@ export const id_reader_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Title', name: 'title'},
       {label: 'Description', name: 'description'},
@@ -106,6 +110,7 @@ export const id_reader_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Header', name: 'header', value: 'Header for Article'},
       {label: 'Title', name: 'title'},
@@ -119,6 +124,7 @@ export const id_reader_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Header', name: 'header', value: 'Featured Header'},
       {label: 'Title', name: 'title'},
@@ -135,6 +141,7 @@ export const id_reader_forms = {
     closable: false,
     switchable: false,
     addable: false,
+    draggable: false,
     fields:  [
         {label: 'Month', name: 'month', value: currentMonth, 
         dropdown: [

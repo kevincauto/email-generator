@@ -97,7 +97,7 @@ class Forms extends React.Component {
               style={getListStyle(snapshot.isDraggingOver)}
             >
               {this.props.info[this.props.info.selected_template].map((object,i) => (
-                <Draggable key={i} draggableId={i}>
+                <Draggable key={i} draggableId={i} isDragDisabled={!object.draggable}> 
                   {(provided, snapshot) => (
                     <div>
                       <div
@@ -120,7 +120,7 @@ class Forms extends React.Component {
                       {
                         this.props.info[this.props.info.selected_template][i].switchable ? 
                           <select className="header-dropdown" onChange={(e)=>this.handleFormSwitch(i,e)}>
-                            <option>{object.header}</option>
+                            <option >{object.header}</option>
                             {
                               Object.keys(forms[this.props.info.selected_template])
                               .filter(rowName=>forms[this.props.info.selected_template][rowName].switchable && (forms[this.props.info.selected_template][rowName].typeOfRow !== object.typeOfRow))

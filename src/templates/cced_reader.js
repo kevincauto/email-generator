@@ -16,6 +16,7 @@ export const cced_reader_forms = {
     closable: false,
     switchable: false,
     addable: true,
+    draggable: false,
     fields:  [
       {label: 'Email Name', name: 'emailName'},
       {label: 'Month', name: 'month', value: month, 
@@ -57,6 +58,7 @@ export const cced_reader_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Header', name: 'header', value: 'New CE Courses'},
       {label: 'Title', name: 'title'},
@@ -77,6 +79,7 @@ export const cced_reader_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Link', name: 'link'},
       {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/600x70'},
@@ -88,6 +91,7 @@ export const cced_reader_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Header', name: 'header', value: 'Header'},
       {label: 'Subheader Description', name: 'subheader'},
@@ -103,6 +107,7 @@ export const cced_reader_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  []
   },
   image_article: {
@@ -111,6 +116,7 @@ export const cced_reader_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
         {label: 'Header', name: 'header', value: 'Featured Event'},
         {label: 'Title', name: 'title'},
@@ -126,6 +132,7 @@ export const cced_reader_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Header', name: 'header', value: 'Featured eBook'},
       {label: 'Title', name: 'title'},
@@ -141,6 +148,7 @@ export const cced_reader_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields: [
       {label: 'Header', name: 'header', value: 'Live Webinar'},
       {label: 'Title', name: 'title'},
@@ -160,6 +168,7 @@ export const cced_reader_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields: [
       {label: 'Header', name: 'header', value: 'On-Demand Webinar'},
       {label: 'Title', name: 'title'},
@@ -178,6 +187,7 @@ export const cced_reader_forms = {
     closable: false,
     switchable: false,
     addable: false,
+    draggable: false,
     fields: [
       {label: 'Month', name: 'month', value: month, 
       dropdown: [

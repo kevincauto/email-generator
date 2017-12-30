@@ -15,6 +15,7 @@ export const id_thematic_forms = {
     closable: false,
     switchable: false,
     addable: true,
+    draggable: false,
     fields:  [
       {label: 'Email Name', name: 'emailName'},
       {label: 'Month', name: 'month', value: currentMonth, 
@@ -57,6 +58,7 @@ export const id_thematic_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'First News Title', name: 'title1'},
       {label: 'First News Description', name: 'description1'},
@@ -72,6 +74,7 @@ export const id_thematic_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Title', name: 'title'},
       {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
@@ -91,6 +94,7 @@ export const id_thematic_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
         {label: 'Header', name: 'header', value: 'Featured Articles'},
         {label: 'Title', name: 'title'},
@@ -107,6 +111,7 @@ export const id_thematic_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Link', name: 'link'},
       {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70'},
@@ -118,6 +123,7 @@ export const id_thematic_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
         {label: 'Header', name: 'header'},
         {label: 'Title', name: 'title'},
@@ -132,6 +138,7 @@ export const id_thematic_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
         {label: 'First Product Name', name: 'product1'},
         {label: 'First Product Description', name: 'description1'},
@@ -148,6 +155,7 @@ export const id_thematic_forms = {
     closable: false,
     switchable: false,
     addable: false,
+    draggable: false,
     fields: []
   }
 }

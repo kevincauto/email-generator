@@ -15,6 +15,7 @@ export const idt_digital_forms = {
     closable: false,
     switchable: false,
     addable: true,
+    draggable: false,
     fields:  [
       {label: 'Email Name', name: 'emailName'},
       {label: 'Month', name: 'month', value: currentMonth, 
@@ -54,6 +55,7 @@ export const idt_digital_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  [
       {label: 'Header', name: 'header', value: 'Header'},
       {label: 'Title', name: 'title'},
@@ -67,6 +69,7 @@ export const idt_digital_forms = {
     closable: true,
     switchable: true,
     addable: true,
+    draggable: true,
     fields:  []
   },
   end: {
@@ -75,6 +78,7 @@ export const idt_digital_forms = {
     closable: false,
     switchable: false,
     addable: false,
+    draggable: false,
     fields:  [
         {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
         {label: 'Link', name: 'link'},
