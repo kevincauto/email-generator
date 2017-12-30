@@ -62,7 +62,16 @@ export default class Display extends React.Component {
         //messing up what it looks like
         //let cleanHtml = DOMPurify.sanitize(html);
 
-    let textEmail = `This is the text email.\n\nTo be updated with data`
+    let textEmail = layout
+      .filter(form=>(form.fields.length > 0))
+      .map(form=>(form.fields
+        .map(field=>(field.value))
+          .filter(value=>(value !== undefined && value !== ''))
+          .join('\n'))
+      ).join('\n\n')
+
+
+
     //fix this.
     let emailName =  'Untitled';
         return(
