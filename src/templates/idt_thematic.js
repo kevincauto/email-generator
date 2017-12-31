@@ -1050,14 +1050,12 @@ export function end(){
   return(
     `                                <!--LAST SECTION OF THE EMAIL -->
     <tr>
-      <td align="center" class="black" style="font-size:11px; line-height:16px; font-family:Arial, Helvetica, sans-serif; padding-top:10px;">
-        <em>Inside Dental Technology</em> | 104 Pheasant Run, Suite 105 | Newtown, PA 18940<br />
-        To ensure delivery, please add reply-289795@news.aegispublications.com to your address book</td>
-    </tr>
-    <tr>
-      <td align="center" class="black" style="font-size:11px; line-height:16px; font-family:Arial, Helvetica, sans-serif;">
-        %%PLUGIN_UNSUBSCRIBE: 1654490-UNSUBSCRIBE%%</td>
-    </tr>
+    <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px; border-bottom: #000 solid 1px;" valign="middle">
+          <br>
+  You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#666 !important; text-decoration:none;">AEGIS Dental Network</a> | <em>Inside Dental Technology</em>.<br />To ensure delivery, please add <a href="mailto:reply-289795@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-289795@news.aegispublications.com</a> to your address book<br />
+  %%PLUGIN_UNSUBSCRIBE: 2146841-UNSUBSCRIBE%% <br />
+         <em>Inside Dental Technology</em> an AEGIS Publication | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
+  </tr>
     <tr>
       <td align="center" height="15" style="font-size:15px; line-height:15px;">
         <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>

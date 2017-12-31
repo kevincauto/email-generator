@@ -1074,14 +1074,15 @@ export function end(){
     <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
       <table style="border-spacing:0;font-family:sans-serif;color:#333333; " width="100%">
         <tbody>
+
+          
           <tr>
-            <td class="inner contents" style="padding-top:0px;padding-bottom:10px;padding-right:10px;padding-left:10px;text-align:left;">
-              <center>
-                <div style="font-family:Gotham, sans-serif; display:block; padding:0 10px 0 10px; margin:0; font-size:10px; color:#000; text-decoration:none;">
-                  <em>Compendium</em> | 104 Pheasant Run, Suite 105 | Newtown, PA 18940</div>
-                <small style="font-family:Gotham, sans-serif; display:block; padding:0 10px 0 10px; margin:0; font-size:10px; color:#000; text-decoration:none;">To ensure delivery, please add reply-207851@news.aegispublications.com to your address book</small> <small style="font-family:Gotham, sans-serif; display:block; padding:0 10px 0 10px; margin:0; font-size:10px; color:#000; text-decoration:none;">%%PLUGIN_UNSUBSCRIBE: 1089099-CCED UNSUBSCRIBE%%</small></center>
-            </td>
-          </tr>
+          <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px; border-bottom: #000 solid 1px;" valign="middle">
+                  <br>
+          You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#666 !important; text-decoration:none;">AEGIS Dental Network</a> | <em>Compendium</em>.<br />To ensure delivery, please add <a href="mailto:reply-207852@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-207852@news.aegispublications.com</a> to your address book<br />
+          %%PLUGIN_UNSUBSCRIBE: 1089099-CCED UNSUBSCRIBE%%
+                 <em>Compendium</em> an AEGIS Publication | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
+        </tr>
         </tbody>
       </table>
     </td>

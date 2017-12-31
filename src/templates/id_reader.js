@@ -441,10 +441,7 @@ export function beginning(fields){
                                                             <a href="${link}" style="font-family:Helvetica, sans-serif; color:#9d0707; text-decoration:none;" target="_blank"><span style="font-size:11px; line-height:14px;">▶</span> Read More </a>
                                                           </td>
                                                         </tr>
-                                                        <tr>
-                                                          <td align="center" class="hide" height="20"> 
-                                                          </td>
-                                                        </tr>
+                                                  
                                                       </tbody>
                                                     </table>
                                                     <table align="right" border="0" cellpadding="0" cellspacing="0" class="w100" width="140">
@@ -458,10 +455,7 @@ export function beginning(fields){
                                                             <a href="https://www.dentalaegis.com/id/${year}/${month}" target="_blank"> <img alt="" border="0" src="${imgSrc}" style="display:block; margin:0px; max-width:140px;" width="140" /> </a>
                                                           </td>
                                                         </tr>
-                                                        <tr>
-                                                          <td align="center" height="20"> 
-                                                          </td>
-                                                        </tr>
+                                                     
                                                       </tbody>
                                                     </table>
                                                   </td>
@@ -475,18 +469,13 @@ export function beginning(fields){
 }
 
 export function red_header(fields){
-
-
-
   let header = fields[0].value;
-
-
 
   return(
     `
     <!--RED HEADER-->
     <tr>
-    <td align="center" height="7"> 
+    <td align="center" height="20"> 
     </td>
     </tr>
     <tr>
@@ -495,7 +484,7 @@ export function red_header(fields){
       </td>
     </tr>
     <tr>
-    <td align="center" height="7"> 
+    <td align="center" height="20"> 
     </td>
     </tr>
     <!--END HEADER-->
@@ -528,10 +517,7 @@ export function ce(fields){
               <td align="center">
                 <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="280">
                   <tbody>
-                    <tr>
-                      <td align="center" height="20"> 
-                      </td>
-                    </tr>
+                  
                     <tr>
                       <td align="center">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -581,19 +567,13 @@ export function ce(fields){
                 </table>
                 <table align="right" border="0" cellpadding="0" cellspacing="0" class="w100" width="260">
                   <tbody>
-                    <tr>
-                      <td align="center" height="20"> 
-                      </td>
-                    </tr>
+                    
                     <tr>
                       <td align="center">
                         <a href="${link}" target="_blank"> <img alt="" border="0" src="${imgSrc}" style="display:block; margin:0px; max-width:260px;" width="260" /> </a>
                       </td>
                     </tr>
-                    <tr>
-                      <td align="center" height="20"> 
-                      </td>
-                    </tr>
+                    
                   </tbody>
                 </table>
               </td>
@@ -771,6 +751,9 @@ export function featured(fields){
     `
     <!--FEATURED GRAY BOX -->
     <tr>
+      <td align="center" height="20"> 
+    </td>
+    <tr>
       <td align="left" height="20" style="background-color:#9d0707;  font-family:Arial, san-serif; text-transform:uppercase; font-size: 13px; line-height:16px; color:#ffffff; padding-left:10px;">
         Featured eBook
       </td>
@@ -851,6 +834,9 @@ export function end(fields){
 
   return(`
     <!--START OF THE END-->
+    <tr>
+    <td align="center" height="20"> 
+    </td>
     </tbody>
     </table>
     </td>
@@ -861,7 +847,7 @@ export function end(fields){
     </table>
     </td>
     </tr>
-    <tr>
+<!--<tr>
     <td align="center" class="maroon" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:20px; color:#9d0707; text-transform:uppercase; font-weight:bold; padding:15px 5px 7px;">
 CONNECT WITH <em>INSIDE DENTISTRY</em>
     </td>
@@ -888,13 +874,17 @@ CONNECT WITH <em>INSIDE DENTISTRY</em>
     </tbody>
     </table>
     </td>
-    </tr>
+    </tr>-->
+  
+    
     <tr>
-    <td align="center" style="font-family:'Times New Roman', Times, serif; font-size:12px;  color:#000000; padding-top:0px; border-bottom:1px solid #000000;"><br /><span><em>Inside Dentistry</em> | 104 Pheasant Run, Suite 105 | Newtown, PA 18940</span><br />
-    <span>To ensure delivery, please add <a href="mailto:reply-207851@news.aegispublications.com" style="color:#000000; text-decoration:none;" target="_blank">reply-207851@news.aegispublications.com</a></span><span> to your address book<br />
-    %%PLUGIN_UNSUBSCRIBE: 2145119-UNSUBSCRIBE%%  </span><br /><br />
-    </td>
+    <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px; border-bottom: #000 solid 1px;" valign="middle">
+            <br>
+    You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#666 !important; text-decoration:none;">AEGIS Dental Network</a> | <em>Inside Dentistry</em>.<br />To ensure delivery, please add <a href="mailto:reply-207852@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-207852@news.aegispublications.com</a> to your address book<br />
+    %%PLUGIN_UNSUBSCRIBE: 2145119-UNSUBSCRIBE%%
+           <em>Inside Dentistry</em> an AEGIS Publication | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
     </tr>
+
     </tbody>
     </table>
     </td>

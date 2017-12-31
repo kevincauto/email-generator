@@ -222,7 +222,7 @@ export const cdew_dds_forms = {
     closable: false,
     switchable: false,
     addable: false,
-    draggable: false,
+    draggable: true,
     fields: [
       {label: 'Month', name: 'month', value: month, 
       dropdown: [
@@ -1069,9 +1069,13 @@ export function end(fields){
 <tr>
 <td height="22" align="center"></td>
 </tr>
+
 <tr>
-<td align="center"  style="font-family:Arial, sans-serif; font-size:10px; color:#818181; text-align:center; padding:0px 10;"> %%PLUGIN_UNSUBSCRIBE: 1146575-UNSUBSCRIBE%% <br>
- To ensure delivery, please add <span class="grey" style="color:#818181; text-decoration:none;"><a href="mailto:215892@news.aegispublications.com" target="_blank" style="color:#818181; text-decoration:none;">reply-215892@news.aegispublications.com</a></span> to your address book </td>
+<td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px; border-bottom: #000 solid 1px;" valign="middle">
+      <br>
+You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#666 !important; text-decoration:none;">AEGIS Dental Network</a> | CDEWorld.<br />To ensure delivery, please add <a href="mailto:reply-207852@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-207852@news.aegispublications.com</a> to your address book<br />
+%%PLUGIN_UNSUBSCRIBE: 1146575-UNSUBSCRIBE%% <br />
+     CDEWorld an AEGIS Publication | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
 </tr>
 <tr>
 <td height="22" align="center"></td>
