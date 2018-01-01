@@ -18,12 +18,13 @@ import {idt_digital_initial_state} from './templates/idt_digital';
 import {cced_digital_initial_state} from './templates/cced_digital';
 import {cdew_da_initial_state} from './templates/cdew_da';
 import {cdew_dds_initial_state} from './templates/cdew_dds';
+import {cdew_dh_initial_state} from './templates/cdew_dh';
 
 class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected_template: 'id_reader',
+      selected_template: 'cdew_dh',
       cced_digital: cced_digital_initial_state,
       cced_reader: cced_reader_initial_state,
       cced_thematic: cced_thematic_initial_state,
@@ -35,6 +36,7 @@ class Container extends React.Component {
       idt_digital: idt_digital_initial_state,
       cdew_da: cdew_da_initial_state,
       cdew_dds: cdew_dds_initial_state,
+      cdew_dh: cdew_dh_initial_state,
     };
 
     this.handleFieldChange = this.handleFieldChange.bind(this);

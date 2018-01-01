@@ -36,7 +36,7 @@ export const id_digital_forms = {
     },
      {label: 'Year', name: 'year', value: currentYear, 
     dropdown: [
-      {value: '2017', text: 'Send Year: 2017'}, 
+       
       {value: '2018', text: 'Send Year: 2018'},
       {value: '2019', text: 'Send Year: 2019'}, 
       {value: '2020', text: 'Send Year: 2020'},
@@ -100,7 +100,7 @@ export const id_digital_forms = {
     },
     {label: 'Year', name: 'year', value: currentYear, 
     dropdown: [
-        {value: '2017', text: 'Send Year: 2017'}, 
+         
         {value: '2018', text: 'Send Year: 2018'},
         {value: '2019', text: 'Send Year: 2019'}, 
         {value: '2020', text: 'Send Year: 2020'},

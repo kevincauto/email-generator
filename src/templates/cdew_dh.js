@@ -8,7 +8,6 @@ if(month<10){month = '0' + '' + month}
 month = month.toString();
 let year = d.getFullYear();
 
-
 export const cdew_dh_forms = {
   beginning: {
     typeOfRow: 'beginning',
@@ -36,8 +35,7 @@ export const cdew_dh_forms = {
           ]
       },
       {label: 'Year', name: 'year', value: year, 
-      dropdown: [
-          {value: '2017', text: 'Send Year: 2017'}, 
+      dropdown: [   
           {value: '2018', text: 'Send Year: 2018'},
           {value: '2019', text: 'Send Year: 2019'}, 
           {value: '2020', text: 'Send Year: 2020'},
@@ -197,6 +195,25 @@ export const cdew_dh_forms = {
       {label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/155x180'}
     ]
   },
+  portal_partner: {
+    typeOfRow: 'portal_partner',
+    header: 'Portal Partner',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields:  [
+      {label: 'Title', name: 'title'},
+      {label: 'Presenter', name: 'presenter'},
+      {label: 'Provider', name: 'provider'},
+      {label: 'Source', name: 'source'},
+      {label: 'Cost', name: 'cost'},
+      {label: 'Credits', name: 'credits'},
+      {label: 'Link', name: 'link'},
+      {label: 'Partner Logo Source', name: 'imgSrc'},
+      {label: 'Brand Link', name: 'brandLink'},
+    ]
+  },
   end: {
     typeOfRow: 'end',
     header: 'End of the Email',
@@ -223,7 +240,7 @@ export const cdew_dh_forms = {
   },
   {label: 'Year', name: 'year', value: year, 
   dropdown: [
-      {value: '2017', text: 'Send Year: 2017'}, 
+       
       {value: '2018', text: 'Send Year: 2018'},
       {value: '2019', text: 'Send Year: 2019'}, 
       {value: '2020', text: 'Send Year: 2020'},
@@ -278,11 +295,12 @@ export function beginning(fields){
   return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-  <title>New CE Opportunities for Dentists</title>
+  <title>New CE Courses For Dental Assistants</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <style type="text/css">
+  
   #outlook a {
     padding: 0;
   }
@@ -319,7 +337,6 @@ export function beginning(fields){
     outline: none;
     text-decoration: none;
   }
-  /* LINK STYLES */
   .white a, .white a:link, .white a:active, .white a:visited {
     color: #FFFFFF !important;
     text-decoration: none !important;
@@ -392,8 +409,13 @@ export function beginning(fields){
   .f26 {
     font-size: 23px !important;
     line-height: 26px !important;
+    padding-left: 0px !important;
   }
-  .center {
+  .hgt{
+    height:auto !important;
+    padding-bottom:20px !important;
+  }
+  .txtCenter {
     text-align: center !important;
   }
   }
@@ -405,28 +427,20 @@ export function beginning(fields){
   <body bgcolor="#f9f6f1">
   <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#f9f6f1">
     <tr>
-      <td align="center"> <table cellpadding="0" cellspacing="0" border="0" width="662" style="min-width:662px;" class="w662">
-          <tr>
-            <td height="20" align="center"></td>
-          </tr>
-          <tr>
-            <td align="center" style="padding:0px 10px;"><a href="${mastheadLink}" target="_blank"> <img src="${mastheadSrc}" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </a></td>
-          </tr>
-          <tr>
-            <td height="20" align="center"></td>
-          </tr>
+      <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="662" style="min-width:662px;" class="w662">
+          
           <tr>
             <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff" style="border:solid 1px #EAE9E2;">
                 <tr>
                   <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
                       <tr>
-                        <td width="20"></td>
+                        <td width="5"></td>
                         <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
                             <tr>
                               <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
                                   <tr>
                                     <td style="padding:12px 0 0;"><a href="http://www.cdeworld.com" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2017/logos/cdew-logo.jpg" width="420" height="85" alt="" border="0" class="w420"></a></td>
-                                    <td width="170" style="padding-left: 20px;" class="padL"><a href="http://aegispublications.com/machform/view.php?id=77" target="_blank"><img src="https://www.dentalaegis.com/media/60260/" border="0" style="height:45px; width:170px;" width="170" class="w170"></a></td>
+                                    <td width="170" style="padding-left: 20px;" class="padL"><a href="http://aegispublications.com/machform/view.php?id=81" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2014/10/email-subscribebtn.png" border="0" style="height:45px; width:170px;" width="170" class="w170"></a></td>
                                   </tr>
                                 </table></td>
                             </tr>
@@ -434,7 +448,7 @@ export function beginning(fields){
                               <td height="20" align="center"></td>
                             </tr>
                           </table></td>
-                        <td width="20"></td>
+                        <td width="30"></td>
                       </tr>
                     </table></td>
                 </tr>
@@ -446,9 +460,9 @@ export function beginning(fields){
                             <tr>
                               <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#2f84c0">
                                   <tr>
-                                    <td align="center" class="f12" height="50" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#ffffff;"><span class="white">${monthName} ${year}</span> | <span class="white1"> <a href="http://www.cdeworld.com" target="_blank" style="color:#ffffff;">Visit Our Website</a></span> | <span class="white1"><a href="http://aegispublications.com/news/ce/2017/12/ce1.html" target="_blank" style="color:#ffffff;">Read Online</a></span> | <span class="white1"><a href="mailto:?subject=FW: Dentist News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/ce1.html" target="_blank" style="color:#ffffff;">Forward&nbsp;to&nbsp;a&nbsp;Colleague</a></span></td>
-                                    <td width="25"><a href="https://www.facebook.com/CDEWorldDentistry/" target="_blank"> <img src="https://www.dentalaegis.com/media/60261/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
-                                    <td width="25"><a href="https://twitter.com/CDEWorld" target="_blank"> <img src="https://www.dentalaegis.com/media/60286/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
+                                    <td align="center" class="f12" height="50" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#ffffff; padding-left:20px;"><span class="white">${monthName} ${year}</span> | <span class="white1"> <a href="http://www.cdeworld.com" target="_blank" style="color:#ffffff;">Visit Our Website</a></span> | <span class="white1"><a href="http://aegispublications.com/news/ce/${year}/${month}/ce4.html" target="_blank" style="color:#ffffff;">Read Online</a></span> | <span class="white1"><a href="mailto:?subject=FW: Dental Hygienists News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/ce4.html" target="_blank" style="color:#ffffff;">Forward&nbsp;to&nbsp;a&nbsp;Colleague</a></span></td>
+                                    <td width="25"><a href="https://www.facebook.com/CDEWorldDentistry/" target="_blank"> <img src="https://www.dentalaegis.com/media/60420/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
+                                    <td width="25"><a href="https://twitter.com/CDEWorld" target="_blank"> <img src="https://www.dentalaegis.com/media/60421/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                                     <td width="35" class="w35"></td>
                                   </tr>
                                 </table></td>
@@ -456,9 +470,9 @@ export function beginning(fields){
                             <tr>
                               <td align="center" bgcolor="#2469AA"><table align="center" width="100%">
                                   <tr>
-                                    <td align="center" height="30" style="font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:18px; color:#fffff;border-right:1px solid #315D86; text-transform:uppercase;" class="menu"><span class="white"><a href="https://cdeworld.com/courses/search?c=279" target="_blank" style=" color:#ffffff; text-decoration:none;">Courses</a></span></td>
+                                    <td align="center" height="30" style="font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:18px; color:#fffff;border-right:1px solid #315D86; text-transform:uppercase;" class="menu"><span class="white"><a href="https://cdeworld.com/courses/search?utf8=%E2%9C%93&q=&c=280&p=&o=&s=&commit=SEARCH" target="_blank" style=" color:#ffffff; text-decoration:none;">Courses</a></span></td>
                                     <td align="center" height="30" style="font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:18px; color:#fffff;border-right:1px solid #315D86; text-transform:uppercase;" class="menu"><span class="white"><a href="https://cdeworld.com/events" target="_blank" style=" color: #ffffff; text-decoration:none;">Events</a></span></td>
-                                    <td align="center" height="30" style="font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:18px; color:#fffff;border-right:1px solid #315D86; text-transform:uppercase;" class="menu"><span class="white"><a href="https://cdeworld.com/webinars/search?c=279" target="_blank" style=" color: #ffffff;text-decoration:none;">Webinars</a></span></td>
+                                    <td align="center" height="30" style="font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:18px; color:#fffff;border-right:1px solid #315D86; text-transform:uppercase;" class="menu"><span class="white"><a href="https://cdeworld.com/webinars/search?utf8=%E2%9C%93&q=&c=280&p=&o=&commit=SEARCH" target="_blank" style=" color: #ffffff;text-decoration:none;">Webinars</a></span></td>
                                     <td align="center" height="30" style="font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:18px; color:#fffff;text-transform:uppercase;" class="menu"><span class="white"><a href="https://cdeworld.com/ebooks" target="_blank" style=" color: #ffffff; text-decoration:none;">eBooks</a></span></td>
                                   </tr>
                                 </table></td>
@@ -467,12 +481,12 @@ export function beginning(fields){
                               <td height="30" align="center"></td>
                             </tr>
                             <tr>
-                              <td align="center" class="f26" style="font-family:Arial, Helvetica, sans-serif; font-size:21px; line-height:30px; font-weight:bold; color:#333333; padding-bottom:10px;">New CE Opportunities for Dentists | ${monthName} ${year}</td>
+                              <td align="center" class="f26" style="font-family:Arial, Helvetica, sans-serif; font-size:20px; line-height:30px; font-weight:bold; color:#333333; padding-bottom:10px;">New CE Opportunities for Dental Hygienists</td>
                             </tr>
                             <tr>
                               <td align="center" style="font-family:Georgia, 'Times New Roman', Times, serif; font-size:16px; line-height:18px; color:#333333;">CDEWorld, your partner in continuing education, has created and curated new CE opportunities to fit into your busy schedule. Explore our newest CE courses below.</td>
                             </tr>
-    <!--END OF BEGINNING-->`
+                              <!--END OF BEGINNING-->`
 }
 
 export function live_webinar_w_header(fields){
@@ -487,7 +501,8 @@ export function live_webinar_w_header(fields){
   let link = fields[8].value;
 
   return(
-    `<!--LIVE WEBINAR WITH HEADER-->
+    `
+    <!--LIVE WEBINAR WITH HEADER-->
     <tr>
       <td height="30" align="center"></td>
     </tr>
@@ -528,9 +543,10 @@ export function live_webinar_w_header(fields){
         </table></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="https://cdeworld.com/webinars/register/20856" target="_blank" style="color:#2f84c0; text-decoration:underline;">REGISTER HERE</a></td>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR</a></td>
     </tr>
-    <!--END LIVE WEBINAR WITH HEADER -->`
+    <!--END LIVE WEBINAR WITH HEADER -->
+    `
   )
 }
 
@@ -580,7 +596,7 @@ export function live_webinar_wo_header(fields){
         </table></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">REGISTER HERE</a></td>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR</a></td>
     </tr>
     <!--END LIVE WEBINAR-->`
   )
@@ -705,22 +721,26 @@ export function center_banner(fields){
   return(`
   <!--CENTER BANNER-->
   <tr>
+  <td height="35" align="center"></td>
+</tr>
+<tr>
+  <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/webinars/search?c=280" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to on-demand webinars produced with Dental Hygienists in mind! »</a></td>
+</tr>
+<tr>
   <td height="20" align="center"></td>
 </tr>
+
+${imgSrc?`
 <tr>
-  <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/webinars/search?c=279 " target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to more FREE CE programs »</a></td>
+<td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
 </tr>
 <tr>
-  <td height="20" align="center"></td>
-</tr>
-<tr>
-  <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
-</tr>
-<tr>
-   <td align="center"><a href="${link}" target="_blank"><img src="${imgSrc}" width="600" height="80" alt=""/></a>
-   </td>
+ <td align="center"><a href="${link}" target="_blank"><img src="${imgSrc}" width="600" height="80" alt=""/></a>
+ </td>
 </tr>   
 <tr>
+`:``}
+
   <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
 </tr>
   <!--END CENTER BANNER-->`)
@@ -820,16 +840,17 @@ ${title}</strong><br />
 
   export function end_new_content(fields){
     return(
-  `                          <tr>
-  <td height="20" align="center"></td>
+  `
+  <tr>
+  <td height="35" align="center"></td>
 </tr>
 <tr>
-  <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/courses/search?c=279&hq_e=el&hq_m=4255273&hq_l=19&hq_v=1030197208" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to more  CE programs!  »
-  </a></td>
+  <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold; padding-bottom:5px;"><a href="https://cdeworld.com/courses/search?c=280" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to CE courses for Dental Hygienists! »</a></td>
 </tr>
 <tr>
   <td height="20" align="center"></td>
-</tr>`)
+</tr>
+  `)
 }
 
 export function ebook(fields){
@@ -938,21 +959,21 @@ export function portal_partner(fields){
     <td height="25" align="center"></td>
   </tr>
   <tr>
-    <td align="left" style="padding-bottom:10px;"><a href="https://united-concordia.cdeworld.com" target="_blank"> <img src="http://aegispublications.com/news/ce/2017/12/uc-logo.jpg" alt="" width="190" border="0" style="display:block; margin:0px;"/> </a></td>
+    <td align="left" style="padding-bottom:10px;"><a href="${brandLink}" target="_blank"> <img src="${imgSrc}" alt="" width="190" border="0" style="display:block; margin:0px;"/> </a></td>
   </tr>
   <tr>
-    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:17px; color:#333333; padding-bottom:15px;"><strong>Caring for Patients Affected by Methamphetamine Use</strong></td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:17px; color:#333333; padding-bottom:15px;"><strong>${title}</strong></td>
   </tr>
   <tr>
-    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:auto; color:#333333; padding-bottom:7px;">Lola Giusti, DDS; Jamie Jenkins, MD, RDMS; Mitchell A. Goodis, DDS; Carsen Bentley, DDS, MPH; Christine E. Miller, MPH, RDH; and Alexander Faigen, DMD</td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:auto; color:#333333; padding-bottom:7px;">${presenter}</td>
   </tr>
   <tr>
     <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr>
           <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="240" align="left" class="w100">
               <tr>
-                <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Provider: Dental Learning Systems, LLC<br>
-                  Source: <em>United Concordia</em>
+                <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Provider: ${provider}<br>
+                  Source: <em>${source}/em>
                   </td>
               </tr>
             </table>
@@ -964,8 +985,8 @@ export function portal_partner(fields){
             
             <table cellpadding="0" cellspacing="0" border="0" width="320" align="right" class="w100">
               <tr>
-                <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: $18<br>
-                  Credits: 2 Self-Study CEU</td>
+                <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: ${cost}<br>
+                  Credits: ${credits}</td>
               </tr>
             </table></td>
         </tr>
@@ -975,7 +996,7 @@ export function portal_partner(fields){
     <td height="20" align="center"></td>
   </tr>
   <tr>
-    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0;"><a href="https://united-concordia.cdeworld.com/courses/20758-Caring_for_Patients_Affected_by_Methamphetamine_Use" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
   </tr>
   <tr>
     <td height="30" align="center"></td>
@@ -988,11 +1009,13 @@ export function portal_partner(fields){
 `)
 }
 
+
 export function end(fields){
   let month = fields[0].value;
   let year = fields[1].value;
   return(
-    `  <!--START OF THE END -->
+    `  
+  <!--START OF THE END -->
     <tr>
                  <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
                </tr>
@@ -1001,38 +1024,8 @@ export function end(fields){
                <tr>
                  <td align="center" style="padding:10px 0px;"> <img src="https://cdeworld.com/media/14014/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
                </tr>
-               <tr>
-                 <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
-                     <tr>
-                       <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="300" align="left" class="w100">
-                           <tr>
-                             <td align="left" class="center" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#818181;">© 2017<em> CDEWorld</em>. All rights reserved.<br>
-                               PO Box 510 | Newtown, PA 18940 </td>
-                           </tr>
-                         </table>
-                         
-                         <!--[if gte mso 9]>
-                         </td>
-                         <td align="center"  valign="top">
-<![endif]-->
-                         
-                         <table cellpadding="0" cellspacing="0" border="0" width="110" align="right" class="w100">
-                           <tr>
-                             <td align="center" height="40"><table cellpadding="0" cellspacing="0" border="0">
-                                 <tr>
-                                   <td align="center"><a href="https://www.facebook.com/CDEWorldDentistry/" target="_blank"> <img src="https://www.dentalaegis.com/media/60261/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
-                                   <td align="center"><a href="https://twitter.com/CDEWorld" target="_blank"> <img src="https://www.dentalaegis.com/media/60286/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
-                                   <td align="center"><a href="mailto:?subject=FW: Dentist News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/2017/12/ce1.html" target="_blank"> <img src="https://www.dentalaegis.com/media/60292/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
-                                 </tr>
-                               </table></td>
-                           </tr>
-                         </table></td>
-                     </tr>
-                   </table></td>
-               </tr>
-               <tr>
-                 <td height="25" align="center"></td>
-               </tr>
+
+               
              </table></td>
            <td width="30" class="w20"></td>
          </tr>
@@ -1042,12 +1035,10 @@ export function end(fields){
 </tr>
 
 
-<tr>
-<td height="22" align="center"></td>
-</tr>
+
 
 <tr>
-<td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px; border-bottom: #000 solid 1px;" valign="middle">
+<td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px;" valign="middle">
       <br>
 You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#666 !important; text-decoration:none;">AEGIS Dental Network</a> | CDEWorld.<br />To ensure delivery, please add <a href="mailto:reply-215892@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-215892@news.aegispublications.com</a> to your address book<br />
 %%PLUGIN_UNSUBSCRIBE: 1146575-UNSUBSCRIBE%% <br />

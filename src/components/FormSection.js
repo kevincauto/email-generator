@@ -12,6 +12,7 @@ import {idt_reader_forms} from '../templates/idt_reader';
 import {idt_thematic_forms} from '../templates/idt_thematic';
 import {cdew_da_forms} from '../templates/cdew_da';
 import {cdew_dds_forms} from '../templates/cdew_dds';
+import {cdew_dh_forms} from '../templates/cdew_dh';
 
 let forms ={
   cced_digital: cced_digital_forms,
@@ -25,6 +26,7 @@ let forms ={
   idt_digital: idt_digital_forms,
   cdew_da: cdew_da_forms,
   cdew_dds: cdew_dds_forms,
+  cdew_dh: cdew_dh_forms,
 }
 
 // using some little inline style helpers to make the app look okay
@@ -96,10 +98,13 @@ class Forms extends React.Component {
               ref={provided.innerRef}
               style={getListStyle(snapshot.isDraggingOver)}
             >
-              {this.props.info[this.props.info.selected_template].map((object,i) => (
+              {this.props.info[this.props.info.selected_template].map((object,i) => {
+                console.log(object);
+                return(
                 <Draggable key={i} draggableId={i} isDragDisabled={!object.draggable}> 
                   {(provided, snapshot) => (
                     <div>
+                     
                       <div
                         ref={provided.innerRef}
                         style={getItemStyle(
@@ -180,7 +185,7 @@ class Forms extends React.Component {
                     </div>
                   )}
                 </Draggable>
-              ))}
+              )})}
               {provided.placeholder}
             </div>
           )}
@@ -243,6 +248,7 @@ class FormSection extends React.Component{
 
               <option value="cdew_da">CDEWorld Dental Assistant Newsletter</option>
               <option value="cdew_dds">CDEWorld Dentist Newsletter</option>
+              <option value="cdew_dh">CDEWorld Dental Hygienist Newsletter</option>
 
               <option value="id_digital">ID Digital Edition Newsletter</option>
               <option value="id_reader">ID Reader</option>
@@ -258,7 +264,6 @@ class FormSection extends React.Component{
             <Forms 
                 info={this.props.info}
                 onTemplateChange={value => this.handleTemplateChange(value)}
-                onDateChange={this.handleDateChange}
                 onFieldChange={(form, field, value)=>this.handleFieldChange(form, field, value)}
                 onFormAdd={(formIndex,formToAdd)=>this.handleFormAdd(formIndex,formToAdd)}
                 onFormDelete={(field)=>this.handleFormDelete(field)}
