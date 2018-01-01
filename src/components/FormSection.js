@@ -13,6 +13,7 @@ import {idt_thematic_forms} from '../templates/idt_thematic';
 import {cdew_da_forms} from '../templates/cdew_da';
 import {cdew_dds_forms} from '../templates/cdew_dds';
 import {cdew_dh_forms} from '../templates/cdew_dh';
+import {cdew_lab_forms} from '../templates/cdew_lab';
 
 let forms ={
   cced_digital: cced_digital_forms,
@@ -27,6 +28,7 @@ let forms ={
   cdew_da: cdew_da_forms,
   cdew_dds: cdew_dds_forms,
   cdew_dh: cdew_dh_forms,
+  cdew_lab: cdew_lab_forms,
 }
 
 // using some little inline style helpers to make the app look okay
@@ -98,9 +100,7 @@ class Forms extends React.Component {
               ref={provided.innerRef}
               style={getListStyle(snapshot.isDraggingOver)}
             >
-              {this.props.info[this.props.info.selected_template].map((object,i) => {
-                console.log(object);
-                return(
+              {this.props.info[this.props.info.selected_template].map((object,i) => (
                 <Draggable key={i} draggableId={i} isDragDisabled={!object.draggable}> 
                   {(provided, snapshot) => (
                     <div>
@@ -185,7 +185,7 @@ class Forms extends React.Component {
                     </div>
                   )}
                 </Draggable>
-              )})}
+              ))}
               {provided.placeholder}
             </div>
           )}
@@ -249,6 +249,7 @@ class FormSection extends React.Component{
               <option value="cdew_da">CDEWorld Dental Assistant Newsletter</option>
               <option value="cdew_dds">CDEWorld Dentist Newsletter</option>
               <option value="cdew_dh">CDEWorld Dental Hygienist Newsletter</option>
+              <option value="cdew_lab">CDEWorld Dental Lab Newsletter</option>
 
               <option value="id_digital">ID Digital Edition Newsletter</option>
               <option value="id_reader">ID Reader</option>

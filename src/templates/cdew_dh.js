@@ -973,7 +973,7 @@ export function portal_partner(fields){
           <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="240" align="left" class="w100">
               <tr>
                 <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Provider: ${provider}<br>
-                  Source: <em>${source}/em>
+                  Source: <em>${source}</em>
                   </td>
               </tr>
             </table>

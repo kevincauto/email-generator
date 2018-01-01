@@ -962,21 +962,21 @@ export function portal_partner(fields){
     <td height="25" align="center"></td>
   </tr>
   <tr>
-    <td align="left" style="padding-bottom:10px;"><a href="https://united-concordia.cdeworld.com" target="_blank"> <img src="http://aegispublications.com/news/ce/2017/12/uc-logo.jpg" alt="" width="190" border="0" style="display:block; margin:0px;"/> </a></td>
+    <td align="left" style="padding-bottom:10px;"><a href="${brandLink}" target="_blank"> <img src="${imgSrc}" alt="" width="190" border="0" style="display:block; margin:0px;"/> </a></td>
   </tr>
   <tr>
-    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:17px; color:#333333; padding-bottom:15px;"><strong>Caring for Patients Affected by Methamphetamine Use</strong></td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:17px; color:#333333; padding-bottom:15px;"><strong>${title}</strong></td>
   </tr>
   <tr>
-    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:auto; color:#333333; padding-bottom:7px;">Lola Giusti, DDS; Jamie Jenkins, MD, RDMS; Mitchell A. Goodis, DDS; Carsen Bentley, DDS, MPH; Christine E. Miller, MPH, RDH; and Alexander Faigen, DMD</td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:auto; color:#333333; padding-bottom:7px;">${presenter}</td>
   </tr>
   <tr>
     <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr>
           <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="240" align="left" class="w100">
               <tr>
-                <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Provider: Dental Learning Systems, LLC<br>
-                  Source: <em>United Concordia</em>
+                <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Provider: ${provider}<br>
+                  Source: <em>${source}</em>
                   </td>
               </tr>
             </table>
@@ -988,8 +988,8 @@ export function portal_partner(fields){
             
             <table cellpadding="0" cellspacing="0" border="0" width="320" align="right" class="w100">
               <tr>
-                <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: $18<br>
-                  Credits: 2 Self-Study CEU</td>
+                <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: ${cost}<br>
+                  Credits: ${credits}</td>
               </tr>
             </table></td>
         </tr>
@@ -999,7 +999,7 @@ export function portal_partner(fields){
     <td height="20" align="center"></td>
   </tr>
   <tr>
-    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0;"><a href="https://united-concordia.cdeworld.com/courses/20758-Caring_for_Patients_Affected_by_Methamphetamine_Use" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
   </tr>
   <tr>
     <td height="30" align="center"></td>
