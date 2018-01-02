@@ -18,8 +18,7 @@ export const cdew_thematic_forms = {
     draggable: false,
     fields:  [
       {label: 'Email Name', name: 'emailName', value: 'ce3'},
-      {label: 'Month', name: 'month', value: month, 
-          dropdown: [
+      {label: 'Month', name: 'month', value: month, dropdown: [
               {value: '01', text: 'Send Month: January'}, 
               {value: '02', text: 'Send Month: February'},
               {value: '03', text: 'Send Month: March'}, 
@@ -34,8 +33,7 @@ export const cdew_thematic_forms = {
               {value: '12', text: 'Send Month: December'},
           ]
       },
-      {label: 'Year', name: 'year', value: year, 
-      dropdown: [   
+      {label: 'Year', name: 'year', value: year, dropdown: [   
           {value: '2018', text: 'Send Year: 2018'},
           {value: '2019', text: 'Send Year: 2019'}, 
           {value: '2020', text: 'Send Year: 2020'},
@@ -45,12 +43,14 @@ export const cdew_thematic_forms = {
       },
       {label: 'Masthead Link', name: 'mastheadLink'},
       {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
-      {label: 'Subscribe Link', name: 'subscribe'}
-      ]
-      },
-  news:     {
-    typeOfRow: 'news',
-    header: 'News Section',
+      {label: 'Subscribe Link', name: 'subscribe'},
+      {label: 'Thematic Topic', name: 'topic'},
+      {label: 'Banner Image Source', name: 'imgSrc', value: 'http://placehold.it/600x150'}
+    ]
+  },
+  live_webinar:     {
+    typeOfRow: 'live_webinar',
+    header: 'Live Webinar w/ Header',
     closable: true,
     switchable: true,
     addable: true,
@@ -67,9 +67,9 @@ export const cdew_thematic_forms = {
       {label: 'Link', name: 'link'}
     ]
   },
-  ce_header: {
-    typeOfRow: 'ce_header',
-    header: 'CE with Header',
+  live_webinar_wo_header: {
+    typeOfRow: 'live_webinar_wo_header',
+    header: 'Live Webinar w/o Header',
     closable: true,
     switchable: true,
     addable: true,
@@ -85,9 +85,9 @@ export const cdew_thematic_forms = {
       {label: 'Link', name: 'link'}
     ]
   },
-  ce_wo_header: {
-    typeOfRow: 'ce_wo_header',
-    header: 'CE without Header',
+  on_demand_webinar: {
+    typeOfRow: 'on_demand_webinar',
+    header: 'On-Demand Webinar w/ Header',
     closable: true,
     switchable: true,
     addable: true,
@@ -103,9 +103,9 @@ export const cdew_thematic_forms = {
       {label: 'Link', name: 'link'}
     ]
   },
-  center_banner: {
-    typeOfRow: 'center_banner',
-    header: 'center_banner',
+  on_demand_webinar_wo_header: {
+    typeOfRow: 'on_demand_webinar_wo_header',
+    header: 'On-Demand Webinar w/o Header',
     closable: true,
     switchable: true,
     addable: true,
@@ -120,21 +120,18 @@ export const cdew_thematic_forms = {
       {label: 'Link', name: 'link'}
     ]
   },
-  clinical_header: {
-    typeOfRow: 'clinical_header',
-    header: "Clinical Article w/ Header",
+  end_webinar_section: {
+    typeOfRow: 'end_webinar_section',
+    header: "End of Webinar Section",
     closable: true,
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/600x70'},
-    ]
+    fields:  []
   },
-  clinical_wo_header: {
-    typeOfRow: 'clinical_wo_header',
-    header: 'Clinical w/o Header',
+  featured_ce: {
+    typeOfRow: 'featured_ce',
+    header: 'Featured CE w/ Header',
     closable: true,
     switchable: true,
     addable: true,
@@ -145,9 +142,99 @@ export const cdew_thematic_forms = {
       {label: 'Presenter', name: 'presenter'},
       {label: 'Provider', name: 'provider'},
       {label: 'Source', name: 'source'},
+      {label: 'Supporter', name: 'supporter'},
       {label: 'Cost', name: 'cost'},
       {label: 'Credits', name: 'credits'},
       {label: 'Link', name: 'link'}
+    ]
+  },
+  featured_ce_wo_header: {
+    typeOfRow: 'featured_ce_wo_header',
+    header: 'Featured CE w/o Header',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields:  [
+      {label: 'Title', name: 'title'},
+      {label: 'Presenter', name: 'presenter'},
+      {label: 'Provider', name: 'provider'},
+      {label: 'Source', name: 'source'},
+      {label: 'Supporter', name: 'supporter'},
+      {label: 'Cost', name: 'cost'},
+      {label: 'Credits', name: 'credits'},
+      {label: 'Link', name: 'link'}
+    ]
+  },
+  end_featured_ce_section: {
+    typeOfRow: 'end_featured_ce_section',
+    header: "End Featured CE Section",
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields:  [
+      {label: 'Link', name: 'link'},
+      {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/600x70'},
+    ]
+  },
+  center_banner: {
+    typeOfRow: 'center_banner',
+    header: 'Center Banner',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields:  [
+      {label: 'Link', name: 'link', value: 'Link'},
+      {label: 'Image Source', name: 'imgSrc'},
+    ]
+  },
+  featured_article: {
+    typeOfRow: 'featured_article',
+    header: 'Featured Article w/ Header',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields:  [
+      {label: 'Header', name: 'header'},
+      {label: 'Title', name: 'title'},
+      {label: 'Author', name: 'author'},
+      {label: 'Source', name: 'source'},
+      {label: 'Link', name: 'link'}
+    ]
+  },
+  featured_article_wo_header: {
+    typeOfRow: 'featured_article_wo_header',
+    header: "Featued Article w/o Header",
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields:  [
+      {label: 'Title', name: 'title'},
+      {label: 'Author', name: 'author'},
+      {label: 'Source', name: 'source'},
+      {label: 'Link', name: 'link'}
+    ]
+  },
+  ebook: {
+    typeOfRow: 'ebook',
+    header: 'eBook Section',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields:  [
+      {label: 'Title', name: 'title'},
+      {label: 'Author', name: 'author'},
+      {label: 'Supporter', name: 'supporter'},
+      {label: 'Cost', name: 'cost'},
+      {label: 'Credits', name: 'credits'},
+      {label: 'Description', name: 'description'},
+      {label: 'Link', name: 'link'},
+      {label: 'Image Source', name: 'imgSrc'},
     ]
   },
   event: {
@@ -158,13 +245,12 @@ export const cdew_thematic_forms = {
     addable: true,
     draggable: true,
     fields:  [
+      {label: 'Header', name: 'header'},
       {label: 'Title', name: 'title'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Source', name: 'source'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'}
+      {label: 'Details', name: 'details', value: 'November 18, 2017 | Boston, MA | 7 CEU'},
+      {label: 'Description', name: 'description'},
+      {label: 'Link', name: 'link'},
+      {label: 'Image Source', name: 'imgSrc'}
     ]
   },
   video: {
@@ -174,11 +260,24 @@ export const cdew_thematic_forms = {
     switchable: true,
     addable: true,
     draggable: true,
+    fields:  [
+      {label: 'Title', name: 'title'},
+      {label: 'Link', name: 'link'},
+      {label: 'Image Source', name: 'imgSrc'}
+    ]
+  },
+  featured_webinar: {
+    typeOfRow: 'featured_webinar',
+    header: 'Featured Webinar',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
     fields:  []
   },
-  new_product: {
-    typeOfRow: 'new_product',
-    header: 'New Products',
+  featured_product: {
+    typeOfRow: 'featured_product',
+    header: 'Featured Product',
     closable: true,
     switchable: true,
     addable: true,
@@ -195,9 +294,9 @@ export const cdew_thematic_forms = {
       {label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/155x180'}
     ]
   },
-  featured_product: {
-    typeOfRow: 'featured_product',
-    header: 'Featured Product',
+  products: {
+    typeOfRow: 'products',
+    header: 'Non-Featured Products',
     closable: true,
     switchable: true,
     addable: true,
@@ -254,18 +353,25 @@ export const cdew_thematic_forms = {
 
 export const cdew_thematic_initial_state = [
     _.cloneDeep(cdew_thematic_forms.beginning),
-    _.cloneDeep(cdew_thematic_forms.news),
-    _.cloneDeep(cdew_thematic_forms.ce_header),
-    _.cloneDeep(cdew_thematic_forms.ce_wo_header),
+    _.cloneDeep(cdew_thematic_forms.live_webinar),
+    _.cloneDeep(cdew_thematic_forms.live_webinar_wo_header),
+    _.cloneDeep(cdew_thematic_forms.on_demand_webinar),
+    _.cloneDeep(cdew_thematic_forms.on_demand_webinar_wo_header),
+    _.cloneDeep(cdew_thematic_forms.end_webinar_section),
+    _.cloneDeep(cdew_thematic_forms.featured_ce),
+    _.cloneDeep(cdew_thematic_forms.featured_ce_wo_header),
+    _.cloneDeep(cdew_thematic_forms.end_featured_ce_section),
     _.cloneDeep(cdew_thematic_forms.center_banner),
-    _.cloneDeep(cdew_thematic_forms.clinical_header),
-    _.cloneDeep(cdew_thematic_forms.clinical_wo_header),
+    _.cloneDeep(cdew_thematic_forms.featured_article),
+    _.cloneDeep(cdew_thematic_forms.featured_article_wo_header),
+    _.cloneDeep(cdew_thematic_forms.ebook),
     _.cloneDeep(cdew_thematic_forms.event),
     _.cloneDeep(cdew_thematic_forms.video),
-    _.cloneDeep(cdew_thematic_forms.new_product),
+    _.cloneDeep(cdew_thematic_forms.featured_webinar),
     _.cloneDeep(cdew_thematic_forms.featured_product),
+    _.cloneDeep(cdew_thematic_forms.products),
     _.cloneDeep(cdew_thematic_forms.end)
-  ];
+];
 
 export function beginning(fields){
     let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
@@ -274,6 +380,11 @@ export function beginning(fields){
     let mastheadLink = fields[3].value;
     let mastheadSrc = fields[4].value;
     let subscribe = fields[5].value;
+    let topic = fields[6].value || '';
+    let imgSrc = fields[7].value;
+
+    //uppercase all words.
+    topic = topic.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 
     let monthName;
     if(month === '01'){monthName = 'January'};
@@ -292,61 +403,211 @@ export function beginning(fields){
 
   return `
   <!DOCTYPE html>
-  <html>
+  <html lang="en">
   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <meta charset="UTF-8">
-      <title>Laser eNews</title>
+      <title>${topic} CE Opportunities</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <style type="text/css">
+          
+      /* RESET STYLES */
+      img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+      table { border-collapse: collapse !important; }
+      body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+          
+      @media (max-width: 425px) {
+          /* General Styles */
+          
+          img {
+              max-width: 100%;
+          }
+          .margin {
+              margin-left: 15px !important;
+              margin-right: 15px !important;
+          }
+      .clear {
+            float: none !important;
+              display: block !important;
+              width: 100% !important;
+              margin-bottom: 10px !important;
+          }
+          
+          /* Email Container */
+          
+          .email-container {
+              width: 100% !important;
+          }
+          .main-content,
+          .main-content {
+              width: 100% !important;
+          }
+          
+          /* Header and Navigation */
+          
+          .nav-mod {
+              padding: 20px 0 0 0 !important;
+          }
+          .nav-mod td {
+              width: 100% !important;
+              display: block;
+              text-align: center;
+          }
+          .nav-mod td .soc {
+              width: 56px !important;
+              padding: 10px 0 !important;
+          }
+          .masthead {
+              padding: 0 10px !important;
+          }
+          .image img {
+              width: 100% !important;
+              margin: 0 !important;
+              padding: 0 !important;
+          }
+          .header-module table {
+              width: 100% !important;
+          }
+          .header-module table td {
+              width: 50% !important;
+              text-align: center;
+          }
+          .cdeworld-logo,
+          .subscribe-button {
+              margin: 0 !important;  
+              padding: 0 !important;
+          }
+          .cdeworld-logo {
+              max-width: 95%;
+              padding: 10px 0 !important;
+          }
+          .subscribe-button img {
+              max-width: 73% !important;
+              height: auto !important;
+          }
+          .main-image img {
+              border: none !important;
+          }
+          .newsletter-title {
+              font-size: 1.2em !important;
+              padding-left: 15px !important;
+              padding-right: 15px !important;
+          }
+          
+          /* Modules */
+          
+          .module-title {
+              padding: 0 15px !important;
+          }
+          .module-body {
+              margin: 0 15px !important;
+          }
+          .columns td {
+              width: 100% !important;
+              display: block !important;
+          }
+          .link {
+              padding: 12px 10px !important;
+              display: inline-block !important;
+              background-color: #2f84c0 !important;
+              color: #ffffff !important;
+              text-decoration: none !important;
+              margin-bottom: 15px !important;
+              margin-top: 7px !important;
+          }
+          
+          /* Section End */
+          .section-end-mod table {
+              margin: 12px 15px 0 15px !important; 
+          }
+          
+          /* Divider */
+          .divider {
+              text-align: center !important;
+          }
+          
+          .featured-article {
+              margin-top: 15px !important;
+              margin-bottom: 15px !important;
+          }
+      }
+      </style>
   </head>
-  
-  <body bgcolor="#f9f6f1" cz-shortcut-listen="true">
-  <center>
-  <table width="662" border="0" cellspacing="0" cellpadding="0" style="border:solid 1px #EAE9E2; background-color:#ffffff;">
-    <tbody>
-        <tr>
-          <!--<td colspan="2" align="center"><div style="width:600px; height:70px; text-align:center; border:solid 1px #EAE9E2; margin:11px;"></div></td>-->
-      </tr>
-      <tr align="center">
-        <td colspan="2" style="font-family:Arial, sans-serif; font-size:12px; clear:both; font-weight:normal; clear:both; color:#9f9999; padding:0px 32px 0px 0px;"><a href="http://www.denmat.com/NV_Microlaser" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2014/12/images/Shannon-AEGIS-banner.jpg" width="660" height="80" style="margin:0 0 0 34px;" border="0"/></a></td>
-      </tr>    
+  <body style="background-color: #f9f6f1;">
+      <table class="email-container" border="0" cellpadding="0" cellspacing="0" width="100%">
       <tr>
-        <td colspan="2" style="font-family:Arial, sans-serif; font-size:12px; clear:both; font-weight:normal; clear:both; color:#9f9999; text-align:right; padding:0px 32px 0px 0px;">
-            <br /><a href="http://www.cdeworld.com" target="_blank" style="color:#2f84c0;">Visit Our Website</a> | <a href="http://aegispublications.com/news/cdeworld/2014/12/laser-thematic.html" target="_blank" style="color:#2f84c0;">Read Online</a> | December 8, 2014
+        <td>
+          <div style="display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+             <a href="https://cdeworld.com"></a>
+          </div>
         </td>
       </tr>
-      
-      <tr>
-        <td colspan="2"><table width="644" border="0" cellspacing="0" cellpadding="0">
-          <tbody>
-            <tr>
-              <td width="494" height="112">
-                  <a href="http://www.cdeworld.com"><img src="http://aegispublications.com/news/cdeworld/2014/10/cde-logo.jpg" width="420" height="85" alt="" style="margin:0 18px 27px 22px;" border="0"></a>
-              </td>
-              <td width="170" style="padding-bottom: 31px; padding-left: 20px;">
-                  <a href="http://aegispublications.com/machform/view.php?id=157" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2014/10/email-subscribebtn.png" border="0" style="height:45px; width:170px;" /></a>
-              </td>
-            </tr>
-          </tbody>
-        </table></td>
-      </tr>    
-        <tr>
-          <td colspan="2" align="center">
-          <div style="text-align:left; width:600px; height:197px; border:solid 1px #8799a6;">
-              <img src="http://aegispublications.com/news/cdeworld/2014/12/images/billboard.jpg" width="600" height="197" />
-          </div>
-          </td>
-      </tr>
-      <tr>
-        <td colspan="2" style="font-family:Arial, sans-serif; font-size:30px; font-weight:bold; text-align:center; color:#333333;"><br /> Laser E-News</td>
-      </tr>
-      <tr>
-        <td colspan="2" style="font-family: Georgia, Times, serif; font-size:16px; color:#333333; text-align:center;"><div style="margin:12px 32px 21px 32px;">In <em>Laser eNews</em>, brought to you quarterly by CDEWorld, you will find the latest industry and professional news, laser-related CE articles and case studies, live laser event announcements, informational videos, and much, much more. Subscribe today so you don’t miss an issue—click on the button at the top of the page to sign up now!</div></td>
-      </tr>
-      <!--END OF THE BEGINNING-->
+          <tr>
+              <td bgcolor="#f9f6f1" align="center" style="padding: 8px;">
+                  <!-- Main Table -->
+                  <table class="main-content" width="662" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="border: 1px solid #eae9e2; background-color: #ffffff;">
+                      <!-- Main Content -->
+                      <tr>
+                          <!-- "Navigation" Module -->
+                          <td class="nav-mod" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; text-align:right; padding:20px 32px 0px 0px;">    
+                              <table cellspacing="0" cellpadding="0" border="0" align="right">
+                                  <tr>
+                                      <td align="right">
+                                          ${monthName} ${year} | <a href="http://www.cdeworld.com" target="_blank" style="color:#2f84c0;">Visit Our Website</a> | <a href="http://aegispublications.com/news/cdeworld/2017/12/regen-thematic.html" target="_blank" style="color:#2f84c0;">Read Online</a> | <a href="mailto:?subject=FW: ${topic} eNews!&amp;body=I thought you might be interested in this: http://aegispublications.com/news/cdeworld/2017/12/regen-thematic.html" target="_blank" style="color:#2f84c0;">Forward to a Colleague</a> |&nbsp;
+                                      </td>
+                                      <td align="right">
+                                          <img class="soc" src="http://aegispublications.com/news/ce/2016/templates/soc-2.png" alt="" width="33" height="14" usemap="#Map2" style="padding-top:1px;">
+                                      </td>
+                                  </tr>
+                              </table>
+                          </td>
+                          <!-- End of Navigation Module -->
+                      </tr>
+                      <tr>
+                          <!-- Masthead Ad -->
+                          <td align="center" class="masthead image" style="font-family:Arial, sans-serif; padding:21px 32px 20px 0px;">
+                              <a href="${mastheadLink}" target="_blank"><img class="ads" src="${mastheadSrc}" width="600" height="80" style="margin:0 0 0 34px; border: 1px solid #efefef;" border="0"/></a>
+                          </td>
+                          <!-- End of Masthead Ad -->
+                      </tr>
+                      <tr>
+                          <!-- Header Module -->
+                          <td class="header-module">
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                      <td>
+                                          <a href="http://www.cdeworld.com" target="_blank">
+                                              <img class="cdeworld-logo" src="http://aegispublications.com/news/cdeworld/2017/logos/cde-logo.jpg" width="420" height="85" alt="CDEWorld" style="margin:0 18px 27px 22px;" border="0">
+                                          </a>
+                                      </td>
+                                      <td class="subscribe-button" width="170" style="padding-bottom: 31px; padding-left: 20px; padding-right: 28px;"><a href="http://aegispublications.com/machform/view.php?id=146&hq_e=el&hq_m=4197608&hq_l=5&hq_v=aa181f797d" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2014/10/email-subscribebtn.png" border="0" style="height:45px;" /></a></td>
+                                  </tr>
+                              </table>
+                          </td>
+                          <!-- End of Header Module -->
+                      </tr>
+                      <tr>
+                          <!-- Image Banner -->
+                          <td class="main-image banner" align="center">
+                           <img alt="" src="${imgSrc}" style="margin:5px 0 1px 0; border:solid 1px #aaaaaa;" width="600"> 
+                          </td>
+                          <!-- End of Image Banner -->
+                      </tr>
+                      <tr>
+                          <!-- Newsletter Title Module -->
+                          <td class="newsletter-title" style="font-family:Arial, sans-serif; font-size:28px; font-weight:bold; padding: 1em 32px; color:#333333;">
+                         ${topic} CE Opportunities         
+                        </td>
+                        
+                          <!-- End of Newsletter Title Module -->
+                      </tr>
+          <!--END OF THE BEGINNING-->
   `
 }
 
-export function news(fields){
+export function live_webinar(fields){
+
+
   let header = fields[0].value;
   let title = fields[1].value;
   let date = fields[2].value;
@@ -359,25 +620,38 @@ export function news(fields){
 
   return(
     `
-    <!--START NEWS SECTION-->
+    <!--LIVE WEBINAR WITH HEADER-->
     <tr>
-      <td colspan="2">
-      	<div style="font-family:Arial, sans-serif; font-size:16px; clear:both; font-weight:bold; color:#333333; margin:0 32px 0 32px; line-height:27px;">In the News</div>
-      	<div style="font-family:Arial, sans-serif; font-size:12px; clear:both; font-weight:normal; color:#9f9999; margin:15px 32px 15px 32px; line-height:16px;">
-			Convergent Dental Unveils Award-Winning CO<sub>2</sub> Dental Laser at GNYDM<br />
-			<a href="http://www.cnbc.com/id/102227458#" style="color:#2f84c0;">READ MORE</a><br /><br />
-			BIOLASE Launches New EPIC X Diode Laser<br />
-			<a href="http://www.marketwatch.com/story/biolase-launches-new-epictm-x-diode-laser-in-the-united-states-now-dentists-can-delight-their-patients-faster-2014-12-01" style="color:#2f84c0;">READ MORE</a>
-      	</div>
-     </td>
-    </tr>
-
-    <!--END NEWS SECTION -->
+            <td>
+                <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding: 0 32px 0 32px; line-height:27px;">${header}</div>
+                <div class="module-body" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
+                    <span style="color:#333333; font-weight: bold;">${title}</span>
+                    <div style="margin:8px 0;">
+                        ${date}<br>
+                        <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0" style="padding:5px 0;">
+                            <tr>
+                                <td valign="top" width="48%">
+                                    Presenter: ${presenter}<br>
+                                    Provider: ${provider}<br>
+                                    Commercial Supporter: <em>${supporter}</em>
+                               </td>
+                                <td valign="top">
+                                    Credits: ${credits}<br>
+                                    Cost: ${cost}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">REGISTER NOW</a> 
+                </div>
+  <!--END LIVE WEBINAR WITH HEADER SECTION-->
     `
   )
 }
 
-export function ce_header(fields){
+export function live_webinar_wo_header(fields){
+
+
   let title = fields[0].value;
   let date = fields[1].value;
   let presenter = fields[2].value;
@@ -388,29 +662,35 @@ export function ce_header(fields){
   let link = fields[7].value;
   return(
     `
-    <!--CE WITH HEADER-->
-    <tr>
-        <td colspan="2" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin:0 0 -11px 0;"></td>
-    </tr>
-    <tr>
-<td colspan="2">
-	<div style="font-family:Arial, sans-serif; font-size:16px; clear:both; font-weight:bold; color:#333333; margin:0 32px 0 32px;line-height:27px;">Featured CE</div>
-	<div style="font-family:Arial, sans-serif; font-size:12px; clear:both; font-weight:normal; clear:both; color:#9f9999; margin:15px 32px 15px 32px; line-height:16px;">
-		<strong style="color:#676262;">Diode Laser Soft-Tissue Surgery: Advancements Aimed at Consistent Cutting, Improved Clinical Outcomes</strong><br />
-		Georgios E. Romanos, DDS, PhD, Prof Dr med dent<br>
-		November/December 2013 Issue - Expires December 31, 2016<br>
-		<em>Compendium of Continuing Education in Dentistry</em>
-		<br />
-		<a href="http://cdeworld.com/courses/4726-Diode_Laser_Soft-Tissue_Surgery:Advancements_Aimed_at_Consistent_Cutting-Improved_Clinical_Outcomes" style="color:#2f84c0;">READ MORE</a>
-    </div>
-</td>
-</tr>
-<!--END CE WITH HEADER-->
+    <!--START LIVE WEBINAR WITHOUT HEADER-->
+    <div class="module-body" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
+                      <span style="color:#333333; font-weight: bold;">${title}</span>
+                      <div style="margin:8px 0;">
+                          ${date}<br>
+                          <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0" style="padding:5px 0;">
+                              <tr>
+                                  <td valign="top" width="48%">
+                                      Presenter: ${presenter}<br>
+                                      Provider: ${provider}<br>
+                                      Commercial Supporter: <em>${supporter}</em>
+                                 </td>
+                                  <td valign="top">
+                                      Credits: ${credits}<br>
+                                      Cost: ${cost}
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+                      <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">REGISTER NOW</a> 
+                  </div>
+              </td>
+          </tr>
+    <!--START LIVE WEBINAR WITHOUT HEADER-->
     `
   )
 }
 
-export function ce_wo_header(fields){
+export function on_demand_webinar(fields){
   let header = fields[0].value;
   let title = fields[1].value;
   let presenter = fields[2].value;
@@ -421,25 +701,39 @@ export function ce_wo_header(fields){
   let link = fields[7].value;
   return(
     `
-    <!--START CE WITHOUT HEADER-->
+    <!--START ON-DEMAND WEBINAR WITH HEADER-->
     <tr>
-    <td colspan="2">
-        <div style="font-family:Arial, sans-serif; font-size:12px; clear:both; font-weight:normal; clear:both; color:#9f9999; margin:15px 32px 15px 32px; line-height:16px;">
-            <strong style="color:#676262;">Laser-Assisted Removal of Irritation Fibroma</strong><br />
-            Robert Levine, DDS and Peter Vitruk, PhD, MInstP, CPhys<br>
-            November 2014 Issue - Expires November 30, 2017<br>
-            <em>CDEWorld</em><br>
-            Because of the close match between coagulation depth and oral soft-tissue blood capillary diameters, a 10,600-nm CO2 laser is a highly efficient and spatially accurate photo-thermal ablation tool with excellent coagulation efficiency. The excision of benign soft-tissue masses, such as irritation fibroma, with the flexible fiber waveguide 10,600-nm CO2 laser is a minimally invasive and typically suture-free surgical modality that ensures dependable treatment of fibromas. It is, in many respects, superior to most of the alternative treatment options. Because of the excellent hemostasis it provides and the minimal damage it causes to the surrounding tissues, a CO2 laser is especially well suited for removing these lesions.<br>
-            <a href="http://cdeworld.com/courses/20193-Laser-Assisted_Removal_of_Irritation_Fibroma" style="color:#2f84c0;">READ MORE</a>
-        </div>
-    </td>
-        </tr>  
-    <!--START CE WITHOUT HEADER-->
+        <td>
+            <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; clear:both; font-weight:bold; color:#333333; padding: 0 32px 0 32px; line-height:27px;">${header}</div>
+            <!-- Webinar # -->
+            <div class="module-body" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
+                <span style="color:#333333; font-weight: bold;">${title}</span>
+                <div style="margin:8px 0;">
+                    <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0" style="padding:5px 0;">
+                        <tr>
+                            <td valign="top" width="48%">
+                                Presenter: ${presenter}<br>
+                                Provider: ${provider}<br>
+                                Commercial Supporter: <em>${supporter}</em>
+                          </td>
+                            <td valign="top">
+                                Credits: ${credits}<br>
+                                Cost: ${cost}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">CLICK HERE TO VIEW THE WEBINAR</a> 
+            </div>
+            <!-- End of Webinar # -->
+        </td>
+    </tr>
+    <!--END ON-DEMAND WEBINAR WITH HEADER-->
     `
   )
 }
 
-export function center_banner(fields){
+export function on_demand_webinar_wo_header(fields){
   let title = fields[0].value;
   let presenter = fields[1].value;
   let provider= fields[2].value;
@@ -450,128 +744,463 @@ export function center_banner(fields){
 
   return(
     `
-    <!--CENTER BANNER-->
+    <!--START ON-DEMAND WEBINAR WITHOUT HEADER-->
     <tr>
-      <td colspan="2" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin:00;"></td>
-  </tr>
-  <tr>
-    <td colspan="2"><div style="text-align:left; width:600px; height:80px; margin:0 32px 0 32px;"><a href="http://www.denmat.com/NV_Microlaser" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2014/12/images/Shannon-AEGIS-banner.jpg" border="0"></a></div></td>
-  </tr>
-<!--CENTER BANNER-->
+        <td>
+            <!-- Webinar # -->
+            <div class="module-body" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
+                <span style="color:#333333; font-weight: bold;">${title}</span>
+                <div style="margin:8px 0;">
+                    <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0" style="padding:5px 0;">
+                        <tr>
+                            <td valign="top" width="48%">
+                                Presenter: ${presenter}<br>
+                                Provider: ${provider} <br>
+                                Commercial Supporter: <em>${supporter}</em>
+                          </td>
+                            <td valign="top">
+                                Credits: ${credits}<br>
+                                Cost: ${cost}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">CLICK HERE TO VIEW THE WEBINAR</a> 
+            </div>
+            <!-- End of Webinar # -->
+        </td>
+    </tr>
+    <!--END ON-DEMAND WEBINAR WITHOUT HEADER-->
     `
   )
 }
 
-export function clinical_header(fields){
+export function end_webinar_section(fields){
   let link = fields[0].value;
   let imgSrc = fields[1].value;
   return(`
-  <!--CLINICAL ARTICLE WITH HEADER -->
+  <!--WEBINAR LIBRARY LINK-->
   <tr>
-    <td colspan="2" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin:0 0 -11px 0;"></td>
+      <!-- Section-end Link -->
+      <td class="section-end-mod">
+          <table cellpadding="0" cellspacing="0" border="0" align="left" style="border: 1px solid #e6e6e6; margin-top: 12px; margin-left: 32px;">
+              <tr>
+                  <td>
+                      <div style="padding: 18px 20px; font-family:Arial, sans-serif; font-size: 12px; line-height:1.4em; color:#525252;">
+                          <a href="https://cdeworld.com/webinars" target="_blank" style="color: #2469aa; text-decoration: none;">Visit the CDEWorld Library to access more Webinars across the many dental disciplines.</a>
+                      </div>
+                  </td>
+              </tr>
+          </table>
+      </td>
+      <!-- End of Section-end Link -->
   </tr>
-  <tr>
-    <td colspan="2"><div style="font-family:Arial, sans-serif; font-size:16px; clear:both; font-weight:bold; color:#333333; margin:0 32px 0 32px; line-height:27px;">Clinical Articles</div>
-      <div style="font-family:Arial, sans-serif; font-size:12px; clear:both; font-weight:normal; color:#9f9999; margin:15px 32px 15px 32px; line-height:16px;">
-          <strong style="color:#676262;">Laser Soft Tissue Crown Lengthening</strong><br />
-          Scott D. Benjamin, DDS<br />
-          <a href="http://www.dentalaegis.com/id/2010/06/laser-soft-tissue-crown-lengthening" style="color:#2f84c0;">READ MORE</a>
-      </div>
-   </td>
-   </tr> 
-<!--END CLINICAL ARTICLE WITH HEADER-->
+  <!--END WEBINAR LIBRARY LINK-->
   `)
 }
-export function clinical_wo_header(fields){
+export function featured_ce(fields){
   let header = fields[0].value;
   let title = fields[1].value;
   let presenter = fields[2].value;
   let provider= fields[3].value;
   let source = fields[4].value;
-  let cost = fields[5].value;
-  let credits = fields[6].value;
-  let link = fields[7].value;
+  let supporter = fields[5].value;
+  let cost = fields[6].value;
+  let credits = fields[7].value;
+  let link = fields[8].value;
     return(`
-    <!--START CLINICAL ARTICLE WITHOUT HEADER-->  
+    <!--FEATURED CE COURSE WITH HEADER-->
     <tr>
-     <td colspan="2">
-       <div style="font-family:Arial, sans-serif; font-size:12px; clear:both; font-weight:normal; color:#9f9999; margin:15px 32px 15px 32px; line-height:16px;">
-           <strong style="color:#676262;">Dental Lasers</strong><br />
-           Allison M. DiMatteo, BA, MPS, and Terri Rafferty, BA, MA<br />
-           <a href="http://www.dentalaegis.com/id/2012/11/dental-lasers" style="color:#2f84c0;">READ MORE</a>
-       </div>
-     </td>
-   </tr>
-<!--END CLINICAL ARTICLE WITHOUT HEADER-->
+        <!-- Divider -->
+        <td class="divider" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin: 12px 0;"></td>
+        <!-- End of Divider -->
+    </tr>
+
+    <tr>
+        <!-- Featured Courses Module -->
+        <td>
+            <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding: 0 32px 0 32px;line-height:27px;">${header}</div>
+            <!-- Course # -->
+            <div class="module-body" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:25px 32px 15px 32px; line-height:16px;">
+                <span style="color:#333333; font-weight: bold;">${title}</span><br />
+                ${presenter}<br>
+                <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0" style="padding:5px 0;">
+                    <tr>
+                        <td width="48%" height="32" valign="top">
+                            Provider: ${provider}<br>
+                            Source: <em>${source}</em>
+                            ${supporter?`Commercial Supporter: <em>${supporter}</em>`:''}
+                        </td>
+                        <td valign="top">
+                            Credits: ${credits}<br>
+                            Cost: ${cost}
+                        </td>
+                    </tr>
+                </table>
+                <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">FOR MORE INFORMATION</a> 
+            </div>
+            <!-- End of Course # -->
+        </td>
+    </tr>
+    <!--END FEATURED CE COURSE WITH HEADER-->
     `)
   }
-  export function event(fields){
+  export function featured_ce_wo_header(fields){
     let title = fields[0].value;
     let presenter = fields[1].value;
     let provider= fields[2].value;
     let source = fields[3].value;
-    let cost = fields[4].value;
-    let credits = fields[5].value;
-    let link = fields[6].value;
+    let supporter = fields[4].value;
+    let cost = fields[5].value;
+    let credits = fields[6].value;
+    let link = fields[7].value;
   
     return(`   
-    <!--START EVENT SECTION-->
+    <!--START FEATURED CE COURSE WITHOUT HEADER-->
     <tr>
-      <td colspan="2" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin:0 0 -11px 0;"></td>
-    </tr>
+      <td>
+    <!-- Course # -->
+    <div class="module-body" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:25px 32px 15px 32px; line-height:16px;">
+        <span style="color:#333333; font-weight: bold;">${title}</span><br />
+        ${presenter}<br>
+        <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0" style="padding:5px 0;">
+            <tr>
+                <td valign="top" width="48%">
+                    Provider: ${provider}<br>
+                    Source: <em>${source}</em><br>
+                    Commercial Supporter: <em>${supporter}</em>
+                    
+                </td>
+                <td valign="top">
+                    Credits: ${credits}<br>
+                    Cost: ${cost}
+                </td>
+            </tr>
+        </table>
+      <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">FOR MORE INFORMATION</a> 
+    </div>
+    <!-- End of Course # -->
+      <td>
     <tr>
-      <td colspan="2"><div style="font-family:Arial, sans-serif; font-size:16px; clear:both; font-weight:bold; color:#333333; margin:0 32px 0 32px; line-height:27px;">Upcoming Events</div>
-	  	<div style="margin:15px 32px 15px 32px;"><img src="http://aegispublications.com/news/cdeworld/2014/12/images/gloh-event.jpg"></div>
-		<div style="font-family:Arial, sans-serif; font-size:12px; clear:both; font-weight:normal; color:#9f9999; margin:15px 32px 15px 32px; line-height:16px;">
-			<strong style="color:#676262;">Introduction to Laser Science with Clinical and Hygiene Applications</strong><br />
-			During this 2-day program and workshop at ASDOH, the participants will have the opportunity to gain knowledge with a thorough understanding of the principles of laser science. Hard- and soft-tissue applications will be demonstrated via hands-on cases with actual patients.<br><br>
-			February 20, 2015 7:30 AM - February 21, 2015 5:00 PM | Arizona School of Dentistry & Oral Health<br>
-			<a href="http://gloh-education.cdeworld.com/events/137" target="_blank" style="color:#2f84c0;">CLICK HERE TO REGISTER </a>
-		</div>
-      </td>
-    </tr> 
-<!--END EVENT SECTION-->                        
+<!--END FEATURED CE COURSE WITHOUT HEADER-->          
     `)
   }
 
-  export function video(fields){
+  export function end_featured_ce_section(fields){
+    let header = fields[0].value;
+    let title = fields[1].value;
+    let date = fields[2].value;
+    let presenter = fields[3].value;
+    let provider= fields[4].value;
+    let supporter = fields[5].value;
+    let cost = fields[6].value;
+    let credits = fields[7].value;
+    let link = fields[8].value;
+  
+    return(
+      `
+      <!--START END OF FEATURED CE SECTION -->
+      <tr>
+          <td class="section-end-mod">
+              <table cellpadding="0" cellspacing="0" border="0" align="left" style="border: 1px solid #e6e6e6; margin-top: 12px; margin-left: 32px;">
+                  <tr>
+                      <td>
+                          <div style="padding: 18px 20px; font-family:Arial, sans-serif; font-size: 12px; line-height:1.4em; color: #525252;">
+                            <a href="https://cdeworld.com/courses" target="_blank" style="color:#2469aa; text-decoration: none;">Visit the CDEWorld Library for access to additional dental CE courses!</a>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </td>
+          <!-- End of Featured Course Module -->
+      </tr>
+    <!--END END OF FEATURED CE SECTION -->
+      `
+    )
+  }
+  
+  export function center_banner(fields){
+    let link = fields[0].value;
+    let imgSrc = fields[1].value;
+
+    return(
+      `
+      <!--START CENTER BANNER-->
+      <tr>
+          <!-- Divider -->
+          <td class="divider" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin: 12px 0;"></td>
+          <!-- End of Divider -->
+      </tr>
+      
+      <tr>
+          <!-- Center Banner Ad Module -->
+        <td class="masthead image" align="center">
+           <a href="${link}" target="_blank">
+            <img class="ads" src="${imgSrc}" width="600" height="80" style="border: 1px solid #efefef;" border="0"/>
+          </a>
+        </td>
+        <!-- End of Center Banner Ad Module -->
+      </tr>
+    <!--END CENTER BANNER-->
+      `
+    )
+  }
+  
+  export function featured_article(fields){
+    let header = fields[0].value;
+    let title = fields[1].value;
+    let author = fields[2].value;
+    let source = fields[3].value;
+    let link = fields[4].value;
+
+    return(
+      `
+      <!--FEATURED ARTICLE WITH HEADER-->
+      <tr>
+          <!-- Divider -->
+          <td class="divider" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin: 12px 0;"></td>
+          <!-- End of Divider -->
+      </tr>
+      
+      <tr>
+          <!-- Featured Article Module -->
+          <td>
+            <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; clear:both; font-weight:bold; color:#333333; padding:0 32px 0 32px; line-height:27px;">${header}</div>
+              <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                      <!-- Article - Only -->
+                      <td valign="top">
+                          <div class="module-body featured-article" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
+                              <span style="color:#333333; font-weight: bold;">${title}</span><br />
+                          ${author}<br>
+                              <em>${source}</em><br>
+                            <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">READ MORE</a> 
+                          </div>
+                      </td>
+                      <!-- End of Article - Only -->                                
+                  </tr>
+              </table>
+          </td>
+      </tr>
+    <!--END FEATURED ARTICLE WITH HEADER-->
+      `
+    )
+  }
+  
+  export function featured_article_wo_header(fields){
+    let title = fields[0].value;
+    let author = fields[1].value;
+    let source = fields[2].value;
+    let link = fields[3].value;
+  
+    return(
+      `
+      <!--FEATURED ARTICLE WITHOUT HEADER-->
+      <tr>
+        <td>
+          <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                  <!-- Article - Only -->
+                  <td valign="top">
+                      <div class="module-body featured-article" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
+                          <span style="color:#333333; font-weight: bold;">${title}</span><br />
+                      ${author}<br>
+                          <em>${source}</em><br>
+                        <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">READ MORE</a> 
+                      </div>
+                  </td>
+                  <!-- End of Article - Only -->                                
+              </tr>
+          </table>        
+        </td>
+      <!-- End of Featured Article -->
+      </tr>
+      <!--END FEATURE ARTICLE WITHOUT HEADER-->
+      `
+    )
+  }
+  
+  export function ebook(fields){
+    let title = fields[0].value;
+    let author = fields[1].value;
+    let supporter = fields[2].value;
+    let cost = fields[3].value;
+    let credits = fields[4].value;
+    let description = fields[5].value;
+    let link = fields[6].value;
+    let imgSrc = fields[7].value;
+
+    return(`
+    <!--START EBOOK-->
+    <tr>
+        <td class="divider" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin: 12px 0;"></td>
+    </tr>
+    
+    <tr>
+        <td>
+            <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding:0 32px 0 32px; line-height:27px;">Featured eBook</div>
+          <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td valign="top">
+                        <a href="${link}" target="_blank">
+                            <img class="margin" src="${imgSrc}" width="154" border="0" style="margin:15px 0 15px 32px;">
+                        </a>
+                    </td>
+                    <td valign="top" width="70%">
+                        <div class="margin" style="font-family:Arial, sans-serif; font-size:13px; color:#676262; margin:15px 42px 15px 32px; line-height:18px;">
+                            <span style="color:#333333; font-weight: bold;">
+${title}</span>
+                            <div style="margin:8px 0;">
+                                <strong>By:</strong> ${author}<br>
+<strong>Supported By: </strong><em>${supporter}</em><br>
+                                <strong>Cost: </strong>${cost} | <strong>Credits:</strong> ${credits} 
+                          </div>
+                            <div style="margin-top: 4px;">${description}
+</div>
+                            <a href="${link}" target="_blank" style="color: #fff;display:inline-block; margin-top:14px; background-color:#2f84c0;text-decoration: none;padding: 10px 12px;border-radius: 5px;">Download your free eBook</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="section-end-mod">
+            <table cellpadding="0" cellspacing="0" border="0" align="left" style="border: 1px solid #e6e6e6; margin-top: 12px; margin-left: 32px;">
+                <tr>
+                    <td>
+                        <div style="padding: 18px 20px; font-family:Arial, sans-serif; font-size: 12px; line-height:1.4em; color:#525252;">
+                            <a href="https://cdeworld.com/ebooks" target="_blank" style="color: #2469aa; text-decoration: none;">Visit the CDEWorld eBook Library for access to the dental information you need, when you need it.</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <!-- End of Featured eBook -->
+    </tr>
+<!--END EBOOK-->
+    `)
+  }
+  export function event(fields){
+    let header = fields[0].value;
+    let title = fields[1].value;
+    let details = fields[2].value;
+    let description = fields[3].value;
+    let link = fields[4].value;
+    let imgSrc = fields[5].value;
+      return(`
+      <!--FEATURED EVENT-->
+      <tr>
+          <!-- Divider -->
+          <td class="divider" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin: 12px 0;"></td>
+          <!-- End of Divider -->
+      </tr>
+      <tr>
+          <td>
+              <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding:0 32px 0 32px; line-height:27px;">Featured Event</div>
+            <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                      <td valign="top">
+                          <a href="${link}" target="_blank">
+                              <img class="margin" src="${imgSrc}" width="154" height="204" border="0" style="margin:15px 0 15px 32px;">
+                          </a>
+                      </td>
+                      <td valign="top" width="70%">
+                          <div class="margin" style="font-family:Arial, sans-serif; font-size:13px; color:#676262; margin:15px 42px 15px 32px; line-height:18px;">
+                              <span style="color:#333333; font-weight: bold;">${title}</span>
+                              <div style="margin:8px 0;">
+                                  <strong>${details}</strong>
+                              </div>
+                              <div style="margin-top: 4px;">${description}</div>
+                              <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">READ MORE</a> 
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+      <!--END FEATURED EVENT-->
+      `)
+    }
+    export function video(fields){
+      let title = fields[0].value;
+      let link = fields[1].value;
+      let imgSrc = fields[2].value;
+    
+      return(`   
+      <!--START FEATURED VIDEO-->
+      <tr>
+          <!-- Divider -->
+          <td class="divider" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin: 12px 0;"></td>
+          <!-- End of Divider -->
+      </tr>
+      <tr>
+          <!-- Featured Video Module -->
+          <td>
+              <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; clear:both; font-weight:bold; color:#333333; padding:0 32px 0 32px; line-height:27px;">Featured Video</div>
+              <table class="columns">
+                  <!-- Video -->
+                  <tr>
+                    <td valign="top">
+                          <a href="${link}" target="_blank"><img class="margin" src="${imgSrc}" alt="" border="0" style="margin:15px 23px 15px 32px;"></a>
+                      </td>
+                      <td valign="top">
+                          <div class="margin" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 23px 15px 32px; line-height:16px; width:276px;">
+                          <div style="margin-bottom: 5px;"> <strong>${title}</strong><br>
+</div>
+                                  <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">Click on the video to learn more.</a> </div>
+                      </td>
+                  </tr>
+                  <!-- End of Video -->
+              </table>
+          </td>
+          <!-- End of Featured Video Module -->
+      </tr>
+      <!--END FEATURED VIDEO-->             
+      `)
+    }
+
+  export function featured_webinar(fields){
+
+    let title = fields[0].value;
+    let link = fields[1].value;
+    let imgSrc = fields[2].value;
     return(
   `
-  <!--START VIDEO SECTION-->  
+  <!--START FEATURED WEBINAR SECTION-->       
   <tr>
-    <td colspan="2" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin:0 0 -11px 0;"></td>
-</tr>
-<tr>
-    <td>
-        <div style="font-family:Arial, sans-serif; font-size:16px; clear:both; font-weight:bold; color:#333333; margin:0 32px 0 32px; line-height:27px;">Featured Videos</div>
-    </td>
-    <td>
-        <div style="font-family:Arial, sans-serif; font-size:16px; clear:both; font-weight:bold; color:#333333; margin:0 32px 0 32px; line-height:27px;"></div>
-    </td>
-</tr>
-<tr>
-  <td colspan="1" valign="top">
-    <div style="font-family:Arial, sans-serif; font-size:12px; clear:both; font-weight:normal; color:#9f9999; margin:15px 32px 15px 32px; line-height:16px;">
-        <a href="http://aegispublications.com/news/cdeworld/2014/12/images/classvgingivoplasty.mov" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2014/12/images/denmat-featured-video.jpg" border="0" /></a><br /><br />
-        <strong style="color:#676262;">NV Microlaser</strong><br />
-        The NV Microlaser from DenMat delivers the full power and capabilities of much larger desktop soft-tissue lasers in a pen-sized package. Weighs only 1.9 ounces and is completely self-contained and wireless.<br>
-<a href="http://aegispublications.com/news/cdeworld/2014/12/images/classvgingivoplasty.mov" target="_blank" style="color:#2f84c0;">Click on the video to learn more.</a>
-    </div>
-  </td>
-  <td colspan="1" valign="top">
-    <div style="font-family:Arial, sans-serif; font-size:12px; clear:both; font-weight:normal; color:#9f9999; margin:15px 32px 15px 32px; line-height:16px;">
-        <a href="https://www.youtube.com/watch?v=0RGTcusFHMA" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2014/12/images/odyssey-featured-video.jpg" style="border:solid 1px #666666;" border="0" /></a><br /><br />
-        <strong style="color:#676262;">Odyssey Diode Laser</strong><br />
-        The Odyssey® Diode Lasers from Ivoclar Vivadent, Inc. represent the latest diode laser technology available for soft-tissue modification and preventive care.<br>
-        <a href="https://www.youtube.com/watch?v=0RGTcusFHMA" target="_blank" style="color:#2f84c0;">Click on the video to learn more.</a>
-    </div>
-  </td>
-</tr>
-<!--END VIDEO SECTION -->
+      <!-- Divider -->
+      <td class="divider" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin: 12px 0;"></td>
+      <!-- End of Divider -->
+  </tr>
+  <tr>
+      <td>
+          
+          <table class="columns" width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                  
+                  <td width="50%" valign="top">
+                  <a href="https://cdeworld.com/webinars/20841-A_Multidisciplinary_Approach_in_Improving_the_Health_of_Patients_with_Diabetes" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2017/12/webinar.jpg" alt="" width="140" class="clear" style="float:right; margin:0 47px 0 27px;"></a>
+                    <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding:0 32px 0 32px;line-height:27px;">Featured Webinar</div>
+                      <div class="margin" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
+                        <div style="margin:8px 0;"><strong>A Multidisciplinary Approach in Improving the Health of Patients with Diabetes</strong><br>Karen Lau, MS, RD, LDN, CDE<br>
+October 2017 Course - Expires October 31st, 2020
+                        <a href="https://cdeworld.com/webinars/20841-A_Multidisciplinary_Approach_in_Improving_the_Health_of_Patients_with_Diabetes" target="_blank" style="color:#2f84c0;"><br>
+                        READ MORE</a></div>
+
+                    </div>
+                  </td>
+                 
+              </tr>
+          </table>
+      </td>
+  </tr>
+<!--END FEATURED WEBINAR SECTION-->
   `)
 }
 
-export function new_product(fields){
+export function featured_product(fields){
 
   let title = fields[0].value;
   let author = fields[1].value;
@@ -585,42 +1214,39 @@ export function new_product(fields){
 
   return(
 `
-<!--START NEW PRODUCT SECTION -->
+<!--START FEATURED PRODUCT SECTION-->
 <tr>
-  <td colspan="2" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin:0 0 -11px 0;"></td>
+    <!-- Divider -->
+    <td class="divider" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin: 12px 0;"></td>
+    <!-- End of Divider -->
 </tr>
 <tr>
-  <td colspan="2">
-      <div style="font-family:Arial, sans-serif; font-size:16px; clear:both; font-weight:bold; color:#333333; margin:0 32px 0 32px;line-height:27px;">New Products</div>
-    
-  </td>
-</tr>
-<tr>
-  <td valign="top">
-      <div style="font-family:Arial, sans-serif; font-size:12px; clear:both; font-weight:normal; clear:both; color:#9f9999; margin:15px 32px 15px 32px; line-height:16px;">
-            <img src="http://aegispublications.com/news/cdeworld/2014/12/images/convergent-dental-solea.png" width="140" height="85" alt=""/ style="float:right;">
-            <strong style="color:#676262;">Solea</strong><br />
-            Convergent Dental<br />
-            Solea is the first CO2 laser system ever cleared by the FDA for hard- and soft-tissue ablation. It’s fast, precise, virtually noiseless, and anesthesia-free for the vast majority of procedures.<br>
-            <a href="http://www.convergentdental.com/solea/" target="_blank" style="color:#2f84c0;">READ MORE</a>
-      </div>
+    <!-- Featured Product Module -->
+    <td>
         
-        
+        <table class="columns" width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <!-- Product # -->
+                <td width="50%" valign="top">
+                <a href="http://us.guidor.com/guidorr-easy-graftr-classic-alloplastic-bone-grafting-system.html" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2017/12/feat-prod.png" alt="" width="240" class="clear" style="float:right; margin:0 27px 0 0;"></a>
+                  <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding:0 32px 0 32px;line-height:27px;">Featured Product</div>
+                    <div class="margin" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
+                      <div style="margin:8px 0;"><strong>GUIDOR® easy-graft® CLASSIC Alloplastic Bone Grafting System</strong><br>The first particulate bone grafting material designed to be syringed directly into a bone defect, hardening into a stable, porous scaffold in approximately one minute and eliminating the need for a dental membrane in many cases.<br>
+                      <a href="http://us.guidor.com/guidorr-easy-graftr-classic-alloplastic-bone-grafting-system.html" target="_blank" style="color:#2f84c0;">READ MORE</a></div>
+
+                  </div>
+                </td>
+                <!-- End of Product # -->
+            </tr>
+        </table>
     </td>
-  <td valign="top">
-      <div style="font-family:Arial, sans-serif; font-size:12px; clear:both; font-weight:normal; clear:both; color:#9f9999; margin:15px 32px 15px 32px; line-height:16px;">
-            <img src="http://aegispublications.com/news/cdeworld/2014/12/images/biolase-epicx.png" width="140" height="85" alt="" style="float:right;"/>
-            <strong style="color:#676262;">EPIC X</strong><br />
-            BIOLASE<br>
-            EPIC X features innovations such as pre-initiated tips, laser-assisted whitening, and temporary relief of minor pain, all from a single diode laser solution.<br />
-            <a href="http://go.biolase.com/epic-x" target="_blank" style="color:#2f84c0;">READ MORE</a>
-      </div>
-    </td>
+    <!-- End of Featured Product Module -->
 </tr>
-<!--END NEW PRODUCT SECTION -->`
+<!--END FEATURED PRODUCT SECTION-->
+`
   )}
 
-export function featured_product(fields){
+export function products(fields){
 
   let title = fields[0].value;
   let presenter = fields[1].value;
@@ -634,7 +1260,47 @@ export function featured_product(fields){
 
   return(
   `
-
+  <!--START NON-FEATURED PRODUCTS-->
+  <tr>
+      <!-- Divider -->
+      <td class="divider" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin: 12px 0;"></td>
+      <!-- End of Divider -->
+  </tr>
+  
+  <tr>
+      <!-- Products Module -->
+      <td>
+          <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding:0 32px 0 32px;line-height:27px;"><strong>Regenerative Dentistry Products </strong></div>
+          <table class="columns" width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                  <!-- Product # -->
+                  <td width="50%" valign="top">
+                      <div class="margin" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;"> 
+                        <a class="link" href="https://www.aegisdentalnetwork.com/id/products/zimmer/biomend-extend/?pc=bone-grafting-tissue-regeneration-materials" target="_blank"><img class="clear" src="http://aegispublications.com/news/cdeworld/2017/12/p1.jpg" width="140" alt="" style="float:right;"></a>
+                          <span style="color:#333333; font-weight: bold;">BioMend Extend</span><br />
+                          <em>Zimmer Biomet Dental</em>
+                          <div style="margin:8px 0;">BioMend Extend™ from Zimmer is an absorbable membrane rigid enough to maintain space. It is absorbable and eliminates second-stage surgery because it is designed to reduce wound trauma and surgicial chair tell. Its cell-occlusive properties allow it to serve as a barrier to prevent epithelial cell migration and allow passage of essential nutrients. The rigidness of BioMend Extend provides rigid scaffold for tissue regeneration.</div>
+                        <a class="link" href="https://www.aegisdentalnetwork.com/id/products/zimmer/biomend-extend/?pc=bone-grafting-tissue-regeneration-materials" target="_blank" style="color:#2f84c0;">READ MORE</a> 
+                      </div>
+                  </td>
+                  <!-- End of Product # -->
+                  <!-- Product # -->
+                  <td width="50%" valign="top">
+                      <div class="margin" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;"> 
+                        <a class="link" href="  https://www.aegisdentalnetwork.com/id/products/nobel-biocare-llc/creos-allograft-bone-regenerative-solutions/?pc=bone-grafting-tissue-regeneration-materials" target="_blank"><img class="clear" src="http://aegispublications.com/news/cdeworld/2017/12/p2.jpg" width="140" alt="" style="float:right;"></a>
+                          <span style="color:#333333; font-weight: bold;">Creos™ Allograft Bone Regenerative Solutions</span><br />
+                          <em>Nobel Biocare USA, LLC</em>
+                          <div style="margin:8px 0;">Creos™ allograft bone regenerative solutions by Nobel Biocare is a product portfolio that brings together a full selection of regenerative solutions in three core products: particulate bone graft, demineralized bone matrix (dbm) putty and a barrier membrane that gives clinicians flexibility to choose the optimum solution for their patient. </div>
+                        <a class="link" href="  https://www.aegisdentalnetwork.com/id/products/nobel-biocare-llc/creos-allograft-bone-regenerative-solutions/?pc=bone-grafting-tissue-regeneration-materials" target="_blank" style="color:#2f84c0;">READ MORE</a> 
+                      </div>
+                  </td>
+                  <!-- End of Product # -->
+              </tr>
+          </table>
+      </td>
+      <!-- End of Products Module -->
+  </tr>
+<!--END NON-FEATURED PRODUCTS-->
 `)
 }
 
@@ -644,33 +1310,47 @@ export function end(fields){
   let year = fields[1].value;
   return(
     `  
-    <!--START OF THE END-->
+    <!--START OF THE END OF THE EMAIL-->
     <tr>
-      <td colspan="2" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin:0;"></td>
-    </tr>    
-
-    <tr>
-        <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px;" valign="middle" colspan="2">
-              <br>
-        You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#666 !important; text-decoration:none;">AEGIS Dental Network</a> | CDEWorld.<br />To ensure delivery, please add <a href="mailto:reply-207852@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-207852@news.aegispublications.com</a> to your address book<br />
-        %%PLUGIN_UNSUBSCRIBE: 1146575-UNSUBSCRIBE%% <br />
-             CDEWorld an AEGIS Publication | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
-        </tr>
-    <tr>
-      <td colspan="2">&nbsp;</td>
+        <!-- Divider -->
+        <td class="divider" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin: 12px 0;"></td>
+        <!-- End of Divider -->
     </tr>
-  <tr>
-    <td colspan="2"></td></tr></tbody>
+    
+    <tr>
+        <!-- Fine Print - Credits -->
+        <td class="masthead image">
+            <img class="ads" src="http://aegispublications.com/news/cdeworld/2017/08/images/dls-fineprint.jpg" width="540" alt="" style="margin-left:25px;">
+        </td>
+        <!-- End of Fine Print - Credits -->
+    </tr>
+    
+
+
+    
+    <!-- End of Main Content -->
+</table>    
+</td>
+</tr>
 </table>
-
-</center>
-
+<table width="662" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px;" valign="middle">
+  <br>
+You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#666 !important; text-decoration:none;">AEGIS Dental Network</a> | CDEWorld.<br />To ensure delivery, please add <a href="mailto:reply-215892@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-215892@news.aegispublications.com</a> to your address book<br />
+%%PLUGIN_UNSUBSCRIBE: 1146575-UNSUBSCRIBE%% <br />
+ CDEWorld an AEGIS Publication | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
+</tr>
+</table>
 <map name="Map">
-  <area shape="rect" coords="-1,2,26,25" href="https://www.facebook.com/pages/CDE-World/141910839256792?ref=br_tf">
-  <area shape="rect" coords="29,2,51,30" href="https://twitter.com/CDE_World#">
-  <area shape="rect" coords="54,2,77,33" href="mailto:?subject=FW: Laser eNews&amp;body=I thought you might be interested in this: http://aegispublications.com/news/cdeworld/2014/12/laser-thematic.html">
+<area shape="rect" coords="-1,2,26,25" href="https://www.facebook.com/pages/CDE-World/141910839256792?ref=br_tf" target="_blank">
+<area shape="rect" coords="29,2,51,30" href="https://twitter.com/CDEWorld#" target="_blank">
+<area shape="rect" coords="54,2,77,33" href="mailto:?subject=FW: Regenerative Dentistry eNews!&amp;body=I thought you might be interested in this: http://aegispublications.com/news/cdeworld/2017/12/regen-thematic.html">
 </map>
-
+<map name="Map2" id="Map2">
+<area shape="rect" coords="17,0,32,13" href="https://twitter.com/CDEWorld#" target="_blank">
+<area shape="rect" coords="0,0,16,14" href="https://www.facebook.com/pages/CDE-World/141910839256792?ref=br_tf" target="_blank">
+</map>
 </body></html>
 `
   )

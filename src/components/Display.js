@@ -15,6 +15,7 @@ import * as cdew_da from '../templates/cdew_da.js';
 import * as cdew_dds from '../templates/cdew_dds.js';
 import * as cdew_dh from '../templates/cdew_dh.js';
 import * as cdew_lab from '../templates/cdew_lab.js';
+import * as cdew_thematic from '../templates/cdew_thematic.js';
 
 const TEMPLATES = {
   cced_thematic,
@@ -29,7 +30,8 @@ const TEMPLATES = {
   cdew_da,
   cdew_dds,
   cdew_dh,
-  cdew_lab
+  cdew_lab,
+  cdew_thematic
 }
 
 export default class Display extends React.Component {

@@ -14,6 +14,7 @@ import {cdew_da_forms} from '../templates/cdew_da';
 import {cdew_dds_forms} from '../templates/cdew_dds';
 import {cdew_dh_forms} from '../templates/cdew_dh';
 import {cdew_lab_forms} from '../templates/cdew_lab';
+import {cdew_thematic_forms} from '../templates/cdew_thematic';
 
 let forms ={
   cced_digital: cced_digital_forms,
@@ -29,6 +30,7 @@ let forms ={
   cdew_dds: cdew_dds_forms,
   cdew_dh: cdew_dh_forms,
   cdew_lab: cdew_lab_forms,
+  cdew_thematic: cdew_thematic_forms,
 }
 
 // using some little inline style helpers to make the app look okay
@@ -247,9 +249,10 @@ class FormSection extends React.Component{
               <option value="cced_thematic">CCED Thematic</option>
 
               <option value="cdew_da">CDEWorld Dental Assistant Newsletter</option>
-              <option value="cdew_dds">CDEWorld Dentist Newsletter</option>
               <option value="cdew_dh">CDEWorld Dental Hygienist Newsletter</option>
               <option value="cdew_lab">CDEWorld Dental Lab Newsletter</option>
+              <option value="cdew_dds">CDEWorld Dentist Newsletter</option>
+              <option value="cdew_thematic">CDEWorld Thematic Newsletter</option>
 
               <option value="id_digital">ID Digital Edition Newsletter</option>
               <option value="id_reader">ID Reader</option>

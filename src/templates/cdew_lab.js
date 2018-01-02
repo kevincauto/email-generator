@@ -1034,7 +1034,7 @@ export function end(fields){
 
 <tr>
 <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
-</tr>-->
+</tr>
 <tr>
 <td align="center" style="padding-top:5px;"> <img src="http://aegispublications.com/news/ce/2014/08/images/nbc-footer.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </td>
 </tr>

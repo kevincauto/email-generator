@@ -20,6 +20,7 @@ import {cdew_da_initial_state} from './templates/cdew_da';
 import {cdew_dds_initial_state} from './templates/cdew_dds';
 import {cdew_dh_initial_state} from './templates/cdew_dh';
 import {cdew_lab_initial_state} from './templates/cdew_lab';
+import {cdew_thematic_initial_state} from './templates/cdew_thematic';
 
 class Container extends React.Component {
   constructor(props) {
@@ -38,7 +39,8 @@ class Container extends React.Component {
       cdew_da: cdew_da_initial_state,
       cdew_dds: cdew_dds_initial_state,
       cdew_dh: cdew_dh_initial_state,
-      cdew_lab: cdew_lab_initial_state
+      cdew_lab: cdew_lab_initial_state,
+      cdew_thematic: cdew_thematic_initial_state,
     };
 
     this.handleFieldChange = this.handleFieldChange.bind(this);
