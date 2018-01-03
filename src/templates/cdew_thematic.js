@@ -173,10 +173,7 @@ export const cdew_thematic_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/600x70'},
-    ]
+    fields:  []
   },
   center_banner: {
     typeOfRow: 'center_banner',
@@ -273,7 +270,14 @@ export const cdew_thematic_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  []
+    fields:  [
+        {label: 'Header', name: 'header', value: 'Featured Webinar'},
+        {label: 'Title', name: 'title'},
+        {label: 'Presenter', name: 'presenter'},
+        {label: 'Dates', name: 'dates'},
+        {label: 'Link', name: 'link'},
+        {label: 'Image Source', name: 'imgSrc'}
+    ]
   },
   featured_product: {
     typeOfRow: 'featured_product',
@@ -283,12 +287,8 @@ export const cdew_thematic_forms = {
     addable: true,
     draggable: true,
     fields:  [
+      {label: 'Header', name: 'header'},
       {label: 'Title', name: 'title'},
-      {label: 'author', name: 'author'},
-      {label: 'Commercial Supporter', name: 'supporter'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Source', name: 'source'},
-      {label: 'Credits', name: 'credits'},
       {label: 'Description', name: 'description'},
       {label: 'Link', name: 'link'},
       {label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/155x180'}
@@ -302,15 +302,17 @@ export const cdew_thematic_forms = {
     addable: true,
     draggable: true,
     fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Source', name: 'source'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'},
-      {label: 'Partner Logo Source', name: 'imgSrc'},
-      {label: 'Brand Link', name: 'brandLink'},
+      {label: 'Header', name: 'header', value: 'Regenerative Dentistry Products'},
+      {label: 'First Product', name: 'product1'},
+      {label: 'First Company', name: 'company1'},
+      {label: 'First Description', name: 'description1'},
+      {label: 'First Link', name: 'link1'},
+      {label: 'First Image Source', name: 'imgSrc1'},
+      {label: 'Second Product', name: 'product2'},
+      {label: 'Second Company', name: 'company2'},
+      {label: 'Second Description', name: 'description2'},
+      {label: 'Second Link', name: 'link2'},
+      {label: 'Second Image Source', name: 'imgSrc2'},
     ]
   },
   end: {
@@ -320,34 +322,7 @@ export const cdew_thematic_forms = {
     switchable: false,
     addable: false,
     draggable: false,
-    fields: [
-      {label: 'Month', name: 'month', value: month, 
-      dropdown: [
-          {value: '01', text: 'Send Month: January'}, 
-          {value: '02', text: 'Send Month: February'},
-          {value: '03', text: 'Send Month: March'}, 
-          {value: '04', text: 'Send Month: April'},
-          {value: '05', text: 'Send Month: May'}, 
-          {value: '06', text: 'Send Month: June'},
-          {value: '07', text: 'Send Month: July'}, 
-          {value: '08', text: 'Send Month: August'},
-          {value: '09', text: 'Send Month: September'}, 
-          {value: '10', text: 'Send Month: October'},
-          {value: '11', text: 'Send Month: November'}, 
-          {value: '12', text: 'Send Month: December'},
-      ]
-  },
-  {label: 'Year', name: 'year', value: year, 
-  dropdown: [
-       
-      {value: '2018', text: 'Send Year: 2018'},
-      {value: '2019', text: 'Send Year: 2019'}, 
-      {value: '2020', text: 'Send Year: 2020'},
-      {value: '2021', text: 'Send Year: 2021'}, 
-      {value: '2022', text: 'Send Year: 2022'}
-  ]
-  },
-    ]
+    fields: []
   }
 }
 
@@ -776,8 +751,7 @@ export function on_demand_webinar_wo_header(fields){
 }
 
 export function end_webinar_section(fields){
-  let link = fields[0].value;
-  let imgSrc = fields[1].value;
+
   return(`
   <!--WEBINAR LIBRARY LINK-->
   <tr>
@@ -887,15 +861,6 @@ export function featured_ce(fields){
   }
 
   export function end_featured_ce_section(fields){
-    let header = fields[0].value;
-    let title = fields[1].value;
-    let date = fields[2].value;
-    let presenter = fields[3].value;
-    let provider= fields[4].value;
-    let supporter = fields[5].value;
-    let cost = fields[6].value;
-    let credits = fields[7].value;
-    let link = fields[8].value;
   
     return(
       `
@@ -1162,10 +1127,13 @@ ${title}</span>
     }
 
   export function featured_webinar(fields){
+    let header = fields[0].value;
+    let title = fields[1].value;
+    let presenter = fields[2].value;
+    let dates = fields[3].value;
+    let link = fields[4].value;
+    let imgSrc = fields[5].value;
 
-    let title = fields[0].value;
-    let link = fields[1].value;
-    let imgSrc = fields[2].value;
     return(
   `
   <!--START FEATURED WEBINAR SECTION-->       
@@ -1181,12 +1149,12 @@ ${title}</span>
               <tr>
                   
                   <td width="50%" valign="top">
-                  <a href="https://cdeworld.com/webinars/20841-A_Multidisciplinary_Approach_in_Improving_the_Health_of_Patients_with_Diabetes" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2017/12/webinar.jpg" alt="" width="140" class="clear" style="float:right; margin:0 47px 0 27px;"></a>
-                    <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding:0 32px 0 32px;line-height:27px;">Featured Webinar</div>
+                  <a href="${link}" target="_blank"><img src="${imgSrc}" alt="" width="140" class="clear" style="float:right; margin:0 47px 0 27px;"></a>
+                    <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding:0 32px 0 32px;line-height:27px;">${header}</div>
                       <div class="margin" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
-                        <div style="margin:8px 0;"><strong>A Multidisciplinary Approach in Improving the Health of Patients with Diabetes</strong><br>Karen Lau, MS, RD, LDN, CDE<br>
-October 2017 Course - Expires October 31st, 2020
-                        <a href="https://cdeworld.com/webinars/20841-A_Multidisciplinary_Approach_in_Improving_the_Health_of_Patients_with_Diabetes" target="_blank" style="color:#2f84c0;"><br>
+                        <div style="margin:8px 0;"><strong>${title}</strong><br>${presenter}<br>
+                        ${dates}
+                        <a href="${link}" target="_blank" style="color:#2f84c0;"><br>
                         READ MORE</a></div>
 
                     </div>
@@ -1201,17 +1169,11 @@ October 2017 Course - Expires October 31st, 2020
 }
 
 export function featured_product(fields){
-
-  let title = fields[0].value;
-  let author = fields[1].value;
-  let supporter = fields[2].value;
-  let cost = fields[3].value;
-  let source = fields[4].value;
-  let credits = fields[5].value;
-  let description = fields[6].value;
-  let link = fields[7].value;
-  let imgSrc = fields[8].value;
-
+  let header = fields[0].value;
+  let title = fields[1].value;
+  let description = fields[2].value;
+  let link = fields[3].value;
+  let imgSrc = fields[4].value;
   return(
 `
 <!--START FEATURED PRODUCT SECTION-->
@@ -1228,11 +1190,11 @@ export function featured_product(fields){
             <tr>
                 <!-- Product # -->
                 <td width="50%" valign="top">
-                <a href="http://us.guidor.com/guidorr-easy-graftr-classic-alloplastic-bone-grafting-system.html" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2017/12/feat-prod.png" alt="" width="240" class="clear" style="float:right; margin:0 27px 0 0;"></a>
-                  <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding:0 32px 0 32px;line-height:27px;">Featured Product</div>
+                <a href="${link}" target="_blank"><img src="${imgSrc}" alt="" width="240" class="clear" style="float:right; margin:0 27px 0 0;"></a>
+                  <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding:0 32px 0 32px;line-height:27px;">${header}</div>
                     <div class="margin" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
-                      <div style="margin:8px 0;"><strong>GUIDOR® easy-graft® CLASSIC Alloplastic Bone Grafting System</strong><br>The first particulate bone grafting material designed to be syringed directly into a bone defect, hardening into a stable, porous scaffold in approximately one minute and eliminating the need for a dental membrane in many cases.<br>
-                      <a href="http://us.guidor.com/guidorr-easy-graftr-classic-alloplastic-bone-grafting-system.html" target="_blank" style="color:#2f84c0;">READ MORE</a></div>
+                      <div style="margin:8px 0;"><strong>${title}</strong><br>${description}<br>
+                      <a href="${link}" target="_blank" style="color:#2f84c0;">READ MORE</a></div>
 
                   </div>
                 </td>
@@ -1247,16 +1209,32 @@ export function featured_product(fields){
   )}
 
 export function products(fields){
+    fields:  [
+        {label: 'Header', name: 'header'},
+        {label: 'First Product', name: 'product1'},
+        {label: 'First Company', name: 'company1'},
+        {label: 'First Description', name: 'description1'},
+        {label: 'First Link', name: 'link1'},
+        {label: 'First Image Source', name: 'imgSrc1'},
+        {label: 'Second Product', name: 'product2'},
+        {label: 'Second Company', name: 'company2'},
+        {label: 'Second Description', name: 'description2'},
+        {label: 'Second Link', name: 'link2'},
+        {label: 'Second Image Source', name: 'imgSrc2'},
+      ]
 
-  let title = fields[0].value;
-  let presenter = fields[1].value;
-  let provider = fields[2].value;
-  let source = fields[3].value;
-  let cost = fields[4].value;
-  let credits = fields[5].value;
-  let link = fields[6].value;
-  let imgSrc = fields[7].value;
-  let brandLink = fields[8].value;
+
+  let header = fields[0].value;
+  let product1 = fields[1].value;
+  let company1 = fields[2].value;
+  let description1 = fields[3].value;
+  let link1 = fields[4].value;
+  let imgSrc1 = fields[5].value;
+  let product2 = fields[6].value;
+  let company2 = fields[7].value;
+  let description2 = fields[8].value;
+  let link2 = fields[9].value;
+  let imgSrc2= fields[10].value;
 
   return(
   `
@@ -1270,28 +1248,28 @@ export function products(fields){
   <tr>
       <!-- Products Module -->
       <td>
-          <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding:0 32px 0 32px;line-height:27px;"><strong>Regenerative Dentistry Products </strong></div>
+          <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding:0 32px 0 32px;line-height:27px;"><strong>${header}</strong></div>
           <table class="columns" width="100%" cellspacing="0" cellpadding="0" border="0">
               <tr>
                   <!-- Product # -->
                   <td width="50%" valign="top">
                       <div class="margin" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;"> 
-                        <a class="link" href="https://www.aegisdentalnetwork.com/id/products/zimmer/biomend-extend/?pc=bone-grafting-tissue-regeneration-materials" target="_blank"><img class="clear" src="http://aegispublications.com/news/cdeworld/2017/12/p1.jpg" width="140" alt="" style="float:right;"></a>
-                          <span style="color:#333333; font-weight: bold;">BioMend Extend</span><br />
-                          <em>Zimmer Biomet Dental</em>
-                          <div style="margin:8px 0;">BioMend Extend™ from Zimmer is an absorbable membrane rigid enough to maintain space. It is absorbable and eliminates second-stage surgery because it is designed to reduce wound trauma and surgicial chair tell. Its cell-occlusive properties allow it to serve as a barrier to prevent epithelial cell migration and allow passage of essential nutrients. The rigidness of BioMend Extend provides rigid scaffold for tissue regeneration.</div>
-                        <a class="link" href="https://www.aegisdentalnetwork.com/id/products/zimmer/biomend-extend/?pc=bone-grafting-tissue-regeneration-materials" target="_blank" style="color:#2f84c0;">READ MORE</a> 
+                        <a class="link" href="${link1}" target="_blank"><img class="clear" src="${imgSrc1}" width="140" alt="" style="float:right;"></a>
+                          <span style="color:#333333; font-weight: bold;">${product1}</span><br />
+                          <em>${company1}</em>
+                          <div style="margin:8px 0;">${description1}</div>
+                        <a class="link" href="${link1}" target="_blank" style="color:#2f84c0;">READ MORE</a> 
                       </div>
                   </td>
                   <!-- End of Product # -->
                   <!-- Product # -->
                   <td width="50%" valign="top">
                       <div class="margin" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;"> 
-                        <a class="link" href="  https://www.aegisdentalnetwork.com/id/products/nobel-biocare-llc/creos-allograft-bone-regenerative-solutions/?pc=bone-grafting-tissue-regeneration-materials" target="_blank"><img class="clear" src="http://aegispublications.com/news/cdeworld/2017/12/p2.jpg" width="140" alt="" style="float:right;"></a>
-                          <span style="color:#333333; font-weight: bold;">Creos™ Allograft Bone Regenerative Solutions</span><br />
-                          <em>Nobel Biocare USA, LLC</em>
-                          <div style="margin:8px 0;">Creos™ allograft bone regenerative solutions by Nobel Biocare is a product portfolio that brings together a full selection of regenerative solutions in three core products: particulate bone graft, demineralized bone matrix (dbm) putty and a barrier membrane that gives clinicians flexibility to choose the optimum solution for their patient. </div>
-                        <a class="link" href="  https://www.aegisdentalnetwork.com/id/products/nobel-biocare-llc/creos-allograft-bone-regenerative-solutions/?pc=bone-grafting-tissue-regeneration-materials" target="_blank" style="color:#2f84c0;">READ MORE</a> 
+                        <a class="link" href="  ${link2}" target="_blank"><img class="clear" src="${imgSrc2}" width="140" alt="" style="float:right;"></a>
+                          <span style="color:#333333; font-weight: bold;">${product2}</span><br />
+                          <em>${company2}</em>
+                          <div style="margin:8px 0;">${description2}</div>
+                        <a class="link" href="  ${link2}" target="_blank" style="color:#2f84c0;">READ MORE</a> 
                       </div>
                   </td>
                   <!-- End of Product # -->
@@ -1306,8 +1284,7 @@ export function products(fields){
 
 
 export function end(fields){
-  let month = fields[0].value;
-  let year = fields[1].value;
+
   return(
     `  
     <!--START OF THE END OF THE EMAIL-->

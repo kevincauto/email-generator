@@ -44,7 +44,7 @@ export const id_reader_forms = {
           {value: '2022', text: 'Send Year: 2022'}
       ]
   },
-      {label: 'Masthead Link', name: 'mastheadLink', value: 'https://www.pulpdent.com'},
+      {label: 'Masthead Link', name: 'mastheadLink'},
       {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
       {label: 'Volume Number', name: 'volume'},
       {label: 'Issue Number', name: 'issue'},

@@ -92,12 +92,12 @@ select{
 input[type=text]{
   width: 100%;
   padding: 6px 10px;
-  margin: 2px 0 8px;
+  margin: 1px 0 4px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 14px;
   box-shadow: inset 1px 1px 0px rgba(0,0,0,.18);
   -webkit-font-smoothing: antialiased;
   border: 1px solid #bbb;
@@ -109,11 +109,11 @@ height: 32px;
   padding: 5px;
   width: 100%;
   padding: 6px 10px;
-  margin: 2px 0 8px;
+  margin: 1px 0 4px;
   display: inline-block;
   border-radius: 4px;
   box-sizing: border-box;
-  font-size:16px;
+  font-size:14px;
   background-color: rgb(234, 235, 245);
  
   box-shadow: 0 1px 1px rgb(164, 164, 167);
