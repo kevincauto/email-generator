@@ -40,8 +40,8 @@ export const idt_thematic_forms = {
           {value: '2021', text: 'Send Year: 2021'}, 
           {value: '2022', text: 'Send Year: 2022'}
       ]
-  },
-      {label: 'Masthead Link', name: 'mastheadLink', value: 'https://www.pulpdent.com'},
+      },
+      {label: 'Masthead Link', name: 'mastheadLink'},
       {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
       {label: 'Subscribe Link', name: 'subscribe'},
       {label: 'Thematic Topic', name: 'topic', value: 'Implantology'},
@@ -528,8 +528,8 @@ export function news(fields){
           </tbody>
         </table>
       </td>
-                    </tr>
-                    <!--END OF THE NEWS SECTION -->
+    </tr>
+    <!--END OF THE NEWS SECTION -->
     `
   )
 }
@@ -546,7 +546,8 @@ export function ce(fields){
   let link = fields[8].value;
   let imgSrc = fields[9].value;
   return(
-    `        <!--START THE CE SECTION-->
+    `        
+    <!--START THE CE SECTION-->
     <tr>
       <td align="center">
         <table border="0" cellpadding="0" cellspacing="0" style="border-bottom:1px solid #000000;" width="100%">
@@ -608,8 +609,8 @@ export function ce(fields){
           </tbody>
         </table>
       </td>
-                    </tr>
-                    <!--END OF CE SECTION -->`
+    </tr>
+    <!--END OF CE SECTION -->`
   )
 }
 export function resources(fields){
@@ -623,7 +624,8 @@ let author2 = fields[6].value
 let description2 = fields[7].value
 let link2 = fields[8].value
 
-  return `<tr>
+  return `
+  <tr>
   <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#d2232a; font-weight:bold; text-transform:uppercase; padding-top:13px;">
     ${topic} Resources</td>
 </tr>
@@ -693,9 +695,10 @@ export function center_banner(fields){
      <!-- CENTER BANNER -->
     <tr>
       <td align="center" class="pad" style="padding:16px 10px; border-bottom:1px solid #000000;">
-        <a href="${link}" target="_blank"> <img alt="" border="0" class="w100" src="${imgLink}" style="display:block; margin:0px; max-width:600px;" width="600" /> </a></td>
-                    </tr>
-                    <!--END CENTER BANNER -->`
+        <a href="${link}" target="_blank"> <img alt="" border="0" class="w100" src="${imgLink}" style="display:block; margin:0px; max-width:600px;" width="600" /> </a>
+        </td>
+          </tr>
+            <!--END CENTER BANNER -->`
   )
 }
 
@@ -708,7 +711,8 @@ export function featured_article(fields){
   let imgSrc = fields[5].value;
 
   return(
-    ` <!--FEATURED ARTICLE SECTION -->
+    ` 
+    <!--FEATURED ARTICLE SECTION -->
     <tr>
       <td align="center">
         <table border="0" cellpadding="0" cellspacing="0" style="border-bottom:1px solid #000000;" width="100%">
@@ -723,7 +727,7 @@ export function featured_article(fields){
                     </tr>
                     <tr>
                       <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px; padding-left:10px">
-                        <span style="color:#f26647; font-weight:bold; font-size:13px; line-height:20px;">${header}</span><br />
+                        <span style="color:#f26647; font-weight:bold; font-size:13px; line-height:20px; text-transform:uppercase;">${header}</span><br />
                         <span style="color:#000000; font-weight:bold;"><a href="${link}" style="text-decoration:none; color:#000;" target="_blank"> ${title} </a></span><br />
                         <em>${author}</em><br />
                         ${description}</td>
@@ -770,8 +774,8 @@ export function featured_article(fields){
           </tbody>
         </table>
       </td>
-                    </tr>
-                    <!--END FEATURED ARTICLE SECTION -->     
+    </tr>
+    <!--END FEATURED ARTICLE SECTION -->     
 `
   )
 }
@@ -801,7 +805,7 @@ export function featured_video(fields){
                     </tr>
                     <tr>
                       <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px; padding-left:15px;">
-                        <span style="color:#00bdcd; font-weight:bold;">${header}</span><br />
+                        <span style="color:#00bdcd; font-weight:bold; text-transform:uppercase;">${header}</span><br />
                         <span style="color:#000000; font-weight:bold;"><a href="${link}" style="text-decoration:none; color:#000;" target="_blank">${title}</a></span><br />
                         ${description}</td>
                     </tr>
@@ -884,7 +888,7 @@ export function products(fields){
                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tbody>
                           <tr>
-                            <td align="left" class="maroon" style="font-family:Arial, Helvetica, sans-serif; color:#d2232a; font-size:13px; font-weight:bold; line-height:16px; padding-bottom:7px;">
+                            <td align="left" class="maroon" style="font-family:Arial, Helvetica, sans-serif; color:#d2232a; font-size:13px; font-weight:bold; line-height:16px; padding-bottom:7px; text-transform:uppercase;">
                               ${header}</td>
                           </tr>
                           <tr>
@@ -1040,14 +1044,15 @@ export function products(fields){
         </tbody>
       </table>
     </td>
-                  </tr>
-                  <!--END FEATURED WORKSHOP AND PRODUCTS-->
+  </tr>
+  <!--END FEATURED WORKSHOP AND PRODUCTS-->
   `)
 }
 
 export function end(){
   return(
-    `                                <!--LAST SECTION OF THE EMAIL -->
+    `                                
+    <!--LAST SECTION OF THE EMAIL -->
     <tr>
     <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px; border-bottom: #000 solid 1px;" valign="middle">
           <br>

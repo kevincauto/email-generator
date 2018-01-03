@@ -34,7 +34,7 @@ const TEMPLATES = {
   cdew_thematic
 }
 
-export default class Display extends React.Component {
+class RightSideDisplay extends React.Component {
     downloadHtml(html, fileName){
         if(!fileName){
           alert("This email needs a name in order to be downloaded.");
@@ -79,23 +79,27 @@ export default class Display extends React.Component {
 
 
     //fix this.
-    let emailName =  'Untitled';
+    // let emailName =  'Untitled';
         return(
           <div id="text-results">
         <div className="content" dangerouslySetInnerHTML={{__html: html}}></div>
         <br />
-        <h3 className="download-header">3. Copy or download the email.</h3>
+        <h3 className="download-header">3. Copy the email.</h3>
         <div className="copy-paste">
           <div className="copyArea html-copy">
+            HTML Version:
             <textarea value={html} readOnly={true}  />
-            {<button onClick={()=>this.downloadHtml(html,emailName)} className="download-button">Download HTML Email</button>}
+            {/* <button onClick={()=>this.downloadHtml(html,emailName)} className="download-button">Download HTML Email</button> */}
           </div>
           <div className="copyArea text-copy">
+            Text Version:
             <textarea value={textEmail} readOnly={true}/>
-            <button onClick={()=>this.downloadText(textEmail,emailName)} className="download-button">Download Text-Version Email</button>
+            {/* <button onClick={()=>this.downloadText(textEmail,emailName)} className="download-button">Download Text-Version Email</button> */}
           </div>
         </div>
       </div>
         )
     }
 }
+
+export default RightSideDisplay;
