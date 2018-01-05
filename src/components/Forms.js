@@ -16,7 +16,7 @@ import {cdew_dh_forms} from '../templates/cdew_dh';
 import {cdew_lab_forms} from '../templates/cdew_lab';
 import {cdew_thematic_forms} from '../templates/cdew_thematic';
 
-let forms ={
+let FORMS ={
   cced_digital: cced_digital_forms,
   cced_reader: cced_reader_forms,
   cced_thematic: cced_thematic_forms,
@@ -52,7 +52,7 @@ class Forms extends React.Component {
   }
 
   handleFormSwitch(formIndex, e){
-    let formToSwitch = forms[this.props.info.selected_template][e.target.value]
+    let formToSwitch = FORMS[this.props.info.selected_template][e.target.value]
     this.props.onFormSwitch(formIndex, formToSwitch);
   }
 
@@ -63,13 +63,13 @@ class Forms extends React.Component {
   handleFormAdd(formIndex,object, e){   
         let formToAdd;
         //duplicate the current form if it is switchable
-        if(forms[this.props.info.selected_template][object.typeOfRow].switchable === true)
-        {formToAdd = forms[this.props.info.selected_template][object.typeOfRow]}
+        if(FORMS[this.props.info.selected_template][object.typeOfRow].switchable === true)
+        {formToAdd = FORMS[this.props.info.selected_template][object.typeOfRow]}
         //if not, add the first row that is switchable
         else{
-          for (let rowName in forms[this.props.info.selected_template]) { 
-            if(forms[this.props.info.selected_template][rowName].switchable === true){
-              formToAdd = forms[this.props.info.selected_template][rowName];
+          for (let rowName in FORMS[this.props.info.selected_template]) { 
+            if(FORMS[this.props.info.selected_template][rowName].switchable === true){
+              formToAdd = FORMS[this.props.info.selected_template][rowName];
               break;
             }
           }
@@ -125,10 +125,10 @@ class Forms extends React.Component {
                           <select className="header-dropdown" onChange={(e)=>this.handleFormSwitch(i,e)}>
                             <option >{object.header}</option>
                             {
-                              Object.keys(forms[this.props.info.selected_template])
-                              .filter(rowName=>forms[this.props.info.selected_template][rowName].switchable && (forms[this.props.info.selected_template][rowName].typeOfRow !== object.typeOfRow))
+                              Object.keys(FORMS[this.props.info.selected_template])
+                              .filter(rowName=>FORMS[this.props.info.selected_template][rowName].switchable && (FORMS[this.props.info.selected_template][rowName].typeOfRow !== object.typeOfRow))
                               .sort()
-                              .map(rowName => <option key={rowName} value={rowName}>{forms[this.props.info.selected_template][rowName].header}</option>)
+                              .map(rowName => <option key={rowName} value={rowName}>{FORMS[this.props.info.selected_template][rowName].header}</option>)
                             }    
                           </select> : 
                           <h4>{object.header}</h4>
