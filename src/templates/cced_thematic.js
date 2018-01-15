@@ -35,7 +35,7 @@ export const cced_thematic_forms = {
               {value: '12', text: 'Send Month: December'},
           ]
       },
-      {label: 'Year', name: 'year', value: '2017', 
+      {label: 'Year', name: 'year', value: year, 
       dropdown: [
            
           {value: '2018', text: 'Send Year: 2018'},
