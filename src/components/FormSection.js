@@ -66,7 +66,7 @@ class FormSection extends React.Component{
               <option value="idt_thematic">IDT Thematic</option>
             </select>
 
-            <h3>2. Complete the forms.</h3>
+            <h3>2. Complete the forms. <br />You can add, delete, and reorder some sections (using drag and drop).</h3>
            
             <Forms 
                 info={this.props.info}
