@@ -87,7 +87,7 @@ class RightSideDisplay extends React.Component {
         <h3 className="download-header">3. Copy the email.</h3>
         <div className="copy-paste">
           <div className="copyArea html-copy">
-            HTML Version:
+            {/* HTML Version: */}
             <textarea value={html} readOnly={true}  />
             {/* <button onClick={()=>this.downloadHtml(html,emailName)} className="download-button">Download HTML Email</button> */}
           </div>
