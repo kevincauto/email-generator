@@ -3,7 +3,7 @@ import _ from 'lodash';
 //Auto detect the month and year.  
 let d = new Date();
 let currentMonth = d.getMonth() + 1;
-if(currentMonth<10){currentMonth = '0' + '' + currentMonth}
+if (currentMonth < 10) { currentMonth = '0' + '' + currentMonth }
 currentMonth = currentMonth.toString();
 let currentYear = d.getFullYear().toString();
 
@@ -16,56 +16,58 @@ export const id_reader_forms = {
     switchable: false,
     addable: true,
     draggable: false,
-    fields:  [
-      {label: 'Email Name', name: 'emailName'},
-      {label: 'Month', name: 'month', value: currentMonth, 
-          dropdown: [
-              {value: '01', text: 'Send Month: January'}, 
-              {value: '02', text: 'Send Month: February'},
-              {value: '03', text: 'Send Month: March'}, 
-              {value: '04', text: 'Send Month: April'},
-              {value: '05', text: 'Send Month: May'}, 
-              {value: '06', text: 'Send Month: June'},
-              {value: '07', text: 'Send Month: July'}, 
-              {value: '08', text: 'Send Month: August'},
-              {value: '09', text: 'Send Month: September'}, 
-              {value: '10', text: 'Send Month: October'},
-              {value: '11', text: 'Send Month: November'}, 
-              {value: '12', text: 'Send Month: December'},
-          ]
+    fields: [
+      { label: 'Email Name', name: 'emailName' },
+      {
+        label: 'Month', name: 'month', value: currentMonth,
+        dropdown: [
+          { value: '01', text: 'Send Month: January' },
+          { value: '02', text: 'Send Month: February' },
+          { value: '03', text: 'Send Month: March' },
+          { value: '04', text: 'Send Month: April' },
+          { value: '05', text: 'Send Month: May' },
+          { value: '06', text: 'Send Month: June' },
+          { value: '07', text: 'Send Month: July' },
+          { value: '08', text: 'Send Month: August' },
+          { value: '09', text: 'Send Month: September' },
+          { value: '10', text: 'Send Month: October' },
+          { value: '11', text: 'Send Month: November' },
+          { value: '12', text: 'Send Month: December' },
+        ]
       },
-      {label: 'Year', name: 'year', value: currentYear, 
-      dropdown: [
-           
-          {value: '2018', text: 'Send Year: 2018'},
-          {value: '2019', text: 'Send Year: 2019'}, 
-          {value: '2020', text: 'Send Year: 2020'},
-          {value: '2021', text: 'Send Year: 2021'}, 
-          {value: '2022', text: 'Send Year: 2022'}
-      ]
-  },
-      {label: 'Masthead Link', name: 'mastheadLink'},
-      {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
-      {label: 'Volume Number', name: 'volume'},
-      {label: 'Issue Number', name: 'issue'},
-      {label: 'Subscribe Link', name: 'subscribe'},
-      {label: 'Header', name: 'header', value: 'Cover Story'},
-      {label: 'Title', name: 'title'},
-      {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  '},
-      {label: 'Author', name: 'author'},
-      {label: 'Link', name: 'link'},
-      {label: 'Cover Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x220'}
+      {
+        label: 'Year', name: 'year', value: currentYear,
+        dropdown: [
+
+          { value: '2018', text: 'Send Year: 2018' },
+          { value: '2019', text: 'Send Year: 2019' },
+          { value: '2020', text: 'Send Year: 2020' },
+          { value: '2021', text: 'Send Year: 2021' },
+          { value: '2022', text: 'Send Year: 2022' }
+        ]
+      },
+      { label: 'Masthead Link', name: 'mastheadLink' },
+      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+      { label: 'Volume Number', name: 'volume' },
+      { label: 'Issue Number', name: 'issue' },
+      { label: 'Subscribe Link', name: 'subscribe' },
+      { label: 'Header', name: 'header', value: 'Cover Story' },
+      { label: 'Title', name: 'title' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  ' },
+      { label: 'Author', name: 'author' },
+      { label: 'Link', name: 'link' },
+      { label: 'Cover Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x220' }
     ]
   },
-  red_header:     {
+  red_header: {
     typeOfRow: 'red_header',
     header: 'Red Banner Header',
     closable: true,
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'Header'},
+    fields: [
+      { label: 'Header', name: 'header', value: 'Header' },
     ]
   },
   ce: {
@@ -75,18 +77,18 @@ export const id_reader_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Number of Credits', name: 'numCredits'},
-      {label: 'Description', name: 'description'},
-      {label: 'Author', name: 'author'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Supporter', name: 'supporter'},
-      {label: 'Dates', name: 'dates'},
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150'},
+    fields: [
+      { label: 'Title', name: 'title' },
+      { label: 'Number of Credits', name: 'numCredits' },
+      { label: 'Description', name: 'description' },
+      { label: 'Author', name: 'author' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Provider', name: 'provider' },
+      { label: 'Supporter', name: 'supporter' },
+      { label: 'Dates', name: 'dates' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150' },
     ]
   },
   peer_reviewed: {
@@ -96,12 +98,12 @@ export const id_reader_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Description', name: 'description'},
-      {label: 'Author', name: 'author'},
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150'},
+    fields: [
+      { label: 'Title', name: 'title' },
+      { label: 'Description', name: 'description' },
+      { label: 'Author', name: 'author' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150' },
     ]
   },
   article: {
@@ -111,28 +113,28 @@ export const id_reader_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'Header for Article'},
-      {label: 'Title', name: 'title'},
-      {label: 'Author', name: 'author'},
-      {label: 'Link', name: 'link'},
+    fields: [
+      { label: 'Header', name: 'header', value: 'Header for Article' },
+      { label: 'Title', name: 'title' },
+      { label: 'Author', name: 'author' },
+      { label: 'Link', name: 'link' },
     ]
   },
-  featured:     {
+  featured: {
     typeOfRow: 'featured',
-    header: 'Featured Gray Box',
+    header: 'Featured Gray Box (eBook)',
     closable: true,
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'Featured Header'},
-      {label: 'Title', name: 'title'},
-      {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  '},
-      {label: 'Author', name: 'author'},
-      {label: 'Call-to-Action', name: 'cta'},
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150'},
+    fields: [
+      { label: 'Header', name: 'header', value: 'Featured eBook' },
+      { label: 'Title', name: 'title' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  ' },
+      { label: 'Author', name: 'author' },
+      { label: 'Call-to-Action', name: 'cta' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150' },
     ]
   },
   end: {
@@ -142,54 +144,56 @@ export const id_reader_forms = {
     switchable: false,
     addable: false,
     draggable: false,
-    fields:  [
-        {label: 'Month', name: 'month', value: currentMonth, 
+    fields: [
+      {
+        label: 'Month', name: 'month', value: currentMonth,
         dropdown: [
-            {value: '01', text: 'Send Month: January'}, 
-            {value: '02', text: 'Send Month: February'},
-            {value: '03', text: 'Send Month: March'}, 
-            {value: '04', text: 'Send Month: April'},
-            {value: '05', text: 'Send Month: May'}, 
-            {value: '06', text: 'Send Month: June'},
-            {value: '07', text: 'Send Month: July'}, 
-            {value: '08', text: 'Send Month: August'},
-            {value: '09', text: 'Send Month: September'}, 
-            {value: '10', text: 'Send Month: October'},
-            {value: '11', text: 'Send Month: November'}, 
-            {value: '12', text: 'Send Month: December'},
+          { value: '01', text: 'Send Month: January' },
+          { value: '02', text: 'Send Month: February' },
+          { value: '03', text: 'Send Month: March' },
+          { value: '04', text: 'Send Month: April' },
+          { value: '05', text: 'Send Month: May' },
+          { value: '06', text: 'Send Month: June' },
+          { value: '07', text: 'Send Month: July' },
+          { value: '08', text: 'Send Month: August' },
+          { value: '09', text: 'Send Month: September' },
+          { value: '10', text: 'Send Month: October' },
+          { value: '11', text: 'Send Month: November' },
+          { value: '12', text: 'Send Month: December' },
         ]
-        },
-        {label: 'Year', name: 'year', value: currentYear, 
-            dropdown: [
-                 
-                {value: '2018', text: 'Send Year: 2018'},
-                {value: '2019', text: 'Send Year: 2019'}, 
-                {value: '2020', text: 'Send Year: 2020'},
-                {value: '2021', text: 'Send Year: 2021'}, 
-                {value: '2022', text: 'Send Year: 2022'}
-             ]
-        }
+      },
+      {
+        label: 'Year', name: 'year', value: currentYear,
+        dropdown: [
+
+          { value: '2018', text: 'Send Year: 2018' },
+          { value: '2019', text: 'Send Year: 2019' },
+          { value: '2020', text: 'Send Year: 2020' },
+          { value: '2021', text: 'Send Year: 2021' },
+          { value: '2022', text: 'Send Year: 2022' }
+        ]
+      }
     ]
   }
 }
 
 export const id_reader_initial_state = [
-    _.cloneDeep(id_reader_forms.beginning),
-    _.cloneDeep(id_reader_forms.red_header),
-    _.cloneDeep(id_reader_forms.ce),
-    _.cloneDeep(id_reader_forms.red_header),
-    _.cloneDeep(id_reader_forms.peer_reviewed),
-    _.cloneDeep(id_reader_forms.peer_reviewed),
-    _.cloneDeep(id_reader_forms.red_header),
-    _.cloneDeep(id_reader_forms.article),
-    _.cloneDeep(id_reader_forms.featured),
-    _.cloneDeep(id_reader_forms.red_header),
-    _.cloneDeep(id_reader_forms.article),
-    _.cloneDeep(id_reader_forms.article),
-    _.cloneDeep(id_reader_forms.end)
-  ];
+  _.cloneDeep(id_reader_forms.beginning),
+  _.cloneDeep(id_reader_forms.red_header),
+  _.cloneDeep(id_reader_forms.ce),
+  _.cloneDeep(id_reader_forms.red_header),
+  _.cloneDeep(id_reader_forms.peer_reviewed),
+  _.cloneDeep(id_reader_forms.peer_reviewed),
+  _.cloneDeep(id_reader_forms.red_header),
+  _.cloneDeep(id_reader_forms.article),
+  _.cloneDeep(id_reader_forms.featured),
+  _.cloneDeep(id_reader_forms.red_header),
+  _.cloneDeep(id_reader_forms.article),
+  _.cloneDeep(id_reader_forms.article),
+  _.cloneDeep(id_reader_forms.end)
+];
 
-export function beginning(fields){
+export function beginning(fields) {
   let emailName = fields[0].value;
   let month = fields[1].value;
   let year = fields[2].value;
@@ -204,24 +208,24 @@ export function beginning(fields){
   let author = fields[11].value;
   let link = fields[12].value;
   let imgSrc = fields[13].value;
-  
+
   let monthName;
-  if(month === '01'){monthName = 'January'};
-  if(month === '02'){monthName = 'February'};
-  if(month === '03'){monthName = 'March'};
-  if(month === '04'){monthName = 'April'};
-  if(month === '05'){monthName = 'May'};
-  if(month === '06'){monthName = 'June'};
-  if(month === '07'){monthName = 'July'};
-  if(month === '08'){monthName = 'August'};
-  if(month === '09'){monthName = 'September'};
-  if(month === '10'){monthName = 'October'};
-  if(month === '11'){monthName = 'November'};
-  if(month === '12'){monthName = 'December'};
+  if (month === '01') { monthName = 'January' };
+  if (month === '02') { monthName = 'February' };
+  if (month === '03') { monthName = 'March' };
+  if (month === '04') { monthName = 'April' };
+  if (month === '05') { monthName = 'May' };
+  if (month === '06') { monthName = 'June' };
+  if (month === '07') { monthName = 'July' };
+  if (month === '08') { monthName = 'August' };
+  if (month === '09') { monthName = 'September' };
+  if (month === '10') { monthName = 'October' };
+  if (month === '11') { monthName = 'November' };
+  if (month === '12') { monthName = 'December' };
   //put the url together
   let url = `https://www.dentalaegis.com/id/${year}/${month}/newsletter`;
-  
-  return(`
+
+  return (`
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -337,12 +341,12 @@ export function beginning(fields){
                     <td align="center">
                       <table border="0" cellpadding="0" cellspacing="0" class="w600" style="min-width:600px;" width="600">
                         <tbody>
-                        ${mastheadLink? `
+                        ${mastheadLink ? `
                         <tr>
                         <td align="center" style="border-top:1px solid #000000;">
                           <a href="${mastheadLink}" target="_blank"> <img alt="" border="0" class="w100" src="${mastheadSrc}" style="display:block; margin:0px; max-width:600px;" width="600" /> </a></td>
-                        </tr>`: 
-                        `<!--<tr>
+                        </tr>`:
+      `<!--<tr>
                         <td align="center" style="border-top:1px solid #000000;">
                           <a href="http://info.affordabledentures.com/owner" target="_blank"> <img alt="" border="0" class="w100" src="https://www.dentalaegis.com/media/61416/" style="display:block; margin:0px; max-width:600px;" width="600" /> </a></td>
                         </tr>-->`}
@@ -429,10 +433,10 @@ export function beginning(fields){
                                                             ${description}
                                                           </td>
                                                         </tr>
-                                                        ${author? `<tr>
+                                                        ${author ? `<tr>
                                                         <td align="left" style="font-family:Helvetica, Arial, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-top:7px;"><em>${author}</em></td>
-                                                        </tr` : 
-                                                        `<!--  <tr>
+                                                        </tr` :
+      `<!--  <tr>
                                                         <td align="left" style="font-family:Helvetica, Arial, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-top:7px;"><em>${author}</em></td>
                                                         </tr>-->`}
                                                    																											
@@ -468,10 +472,10 @@ export function beginning(fields){
   `)
 }
 
-export function red_header(fields){
+export function red_header(fields) {
   let header = fields[0].value;
 
-  return(
+  return (
     `
     <!--RED HEADER-->
     <tr>
@@ -492,7 +496,7 @@ export function red_header(fields){
   )
 }
 
-export function ce(fields){
+export function ce(fields) {
 
   let title = fields[0].value;
   let numCredits = fields[1].value;
@@ -506,7 +510,7 @@ export function ce(fields){
   let link = fields[9].value;
   let imgSrc = fields[10].value;
 
-  return(
+  return (
     `
     <!--START CE-->
     <tr>
@@ -586,21 +590,21 @@ export function ce(fields){
     `
   )
 }
-export function peer_reviewed(fields){
+export function peer_reviewed(fields) {
 
-  fields:  [
-    {label: 'Title', name: 'title'},
-    {label: 'Description', name: 'description'},
-    {label: 'Author', name: 'author'},
-    {label: 'Link', name: 'link'},
-    {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150'},
-  ]  
+  fields: [
+    { label: 'Title', name: 'title' },
+    { label: 'Description', name: 'description' },
+    { label: 'Author', name: 'author' },
+    { label: 'Link', name: 'link' },
+    { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150' },
+  ]
 
-let title = fields[0].value;
-let description = fields[1].value;
-let author = fields[2].value;
-let link = fields[3].value;
-let imgSrc = fields[4].value;
+  let title = fields[0].value;
+  let description = fields[1].value;
+  let author = fields[2].value;
+  let link = fields[3].value;
+  let imgSrc = fields[4].value;
 
 
   return `
@@ -683,14 +687,14 @@ let imgSrc = fields[4].value;
   `;
 }
 
-export function article(fields){
+export function article(fields) {
 
-    let header = fields[0].value;
-    let title = fields[1].value;
-    let author = fields[2].value;
-    let link = fields[3].value;
+  let header = fields[0].value;
+  let title = fields[1].value;
+  let author = fields[2].value;
+  let link = fields[3].value;
 
-  return(`
+  return (`
     <!--START ARTICLE-->
     <tr>
     <td align="center">
@@ -706,11 +710,11 @@ export function article(fields){
                 </tr>
                 <tr>
                   <td align="left" style="font-size:16px;  color:#9d0707; font-family:Helvetica, Arial, sans-serif; font-size:14px; line-height:18px;">
-                  ${header? `<span class="maroon"><strong>${header}</strong></span><br />`: ``}
+                  ${header ? `<span class="maroon"><strong>${header}</strong></span><br />` : ``}
 
                     <span style="font-size:13px; line-height:16px; color:#333333;"><a href="${link}" style="text-decoration:none; color:#333333; font-family:Helvetica, sans-serif; font-size:13px; " target="_blank"><strong>${title}</strong></a></span>
                         <br />
-                    ${author?`<span style="font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#333333;"><em>${author}</em></span>`:``}
+                    ${author ? `<span style="font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#333333;"><em>${author}</em></span>` : ``}
                   </td>
                 </tr>
                 <tr>
@@ -737,17 +741,17 @@ export function article(fields){
   )
 }
 
-export function featured(fields){
+export function featured(fields) {
 
-      let header = fields[0].value;
-      let title = fields[1].value;
-      let description = fields[2].value;
-      let author = fields[3].value;
-      let cta = fields[4].value;
-      let link = fields[5].value;
-      let imgSrc = fields[6].value;
+  let header = fields[0].value;
+  let title = fields[1].value;
+  let description = fields[2].value;
+  let author = fields[3].value;
+  let cta = fields[4].value;
+  let link = fields[5].value;
+  let imgSrc = fields[6].value;
 
-  return(
+  return (
     `
     <!--FEATURED GRAY BOX -->
     <tr>
@@ -755,7 +759,7 @@ export function featured(fields){
     </td>
     <tr>
       <td align="left" height="20" style="background-color:#9d0707;  font-family:Arial, san-serif; text-transform:uppercase; font-size: 13px; line-height:16px; color:#ffffff; padding-left:10px;">
-        Featured eBook
+        ${header}
       </td>
     </tr>                                      
     <tr>
@@ -811,28 +815,28 @@ export function featured(fields){
   )
 }
 
-export function end(fields){
+export function end(fields) {
 
 
-      let month = fields[0].value;
-      let year = fields[1].value;
+  let month = fields[0].value;
+  let year = fields[1].value;
 
-      let monthName;
-      if(month === '01'){monthName = 'January'};
-      if(month === '02'){monthName = 'February'};
-      if(month === '03'){monthName = 'March'};
-      if(month === '04'){monthName = 'April'};
-      if(month === '05'){monthName = 'May'};
-      if(month === '06'){monthName = 'June'};
-      if(month === '07'){monthName = 'July'};
-      if(month === '08'){monthName = 'August'};
-      if(month === '09'){monthName = 'September'};
-      if(month === '10'){monthName = 'October'};
-      if(month === '11'){monthName = 'November'};
-      if(month === '12'){monthName = 'December'};
+  let monthName;
+  if (month === '01') { monthName = 'January' };
+  if (month === '02') { monthName = 'February' };
+  if (month === '03') { monthName = 'March' };
+  if (month === '04') { monthName = 'April' };
+  if (month === '05') { monthName = 'May' };
+  if (month === '06') { monthName = 'June' };
+  if (month === '07') { monthName = 'July' };
+  if (month === '08') { monthName = 'August' };
+  if (month === '09') { monthName = 'September' };
+  if (month === '10') { monthName = 'October' };
+  if (month === '11') { monthName = 'November' };
+  if (month === '12') { monthName = 'December' };
 
 
-  return(`
+  return (`
     <!--START OF THE END-->
     <tr>
     <td align="center" height="20"> 
