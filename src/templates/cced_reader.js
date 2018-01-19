@@ -3,7 +3,7 @@ import _ from 'lodash';
 //Auto detect the month and year for the url.  
 let d = new Date();
 let month = d.getMonth() + 1;
-if(month<10){month = '0' + '' + month}
+if (month < 10) { month = '0' + '' + month }
 
 month = month.toString();
 let year = d.getFullYear().toString();
@@ -17,60 +17,62 @@ export const cced_reader_forms = {
     switchable: false,
     addable: true,
     draggable: false,
-    fields:  [
-      {label: 'Email Name', name: 'emailName'},
-      {label: 'Month', name: 'month', value: month, 
-          dropdown: [
-              {value: '01', text: 'Send Month: January'}, 
-              {value: '02', text: 'Send Month: February'},
-              {value: '03', text: 'Send Month: March'}, 
-              {value: '04', text: 'Send Month: April'},
-              {value: '05', text: 'Send Month: May'}, 
-              {value: '06', text: 'Send Month: June'},
-              {value: '07', text: 'Send Month: July'}, 
-              {value: '08', text: 'Send Month: August'},
-              {value: '09', text: 'Send Month: September'}, 
-              {value: '10', text: 'Send Month: October'},
-              {value: '11', text: 'Send Month: November'}, 
-              {value: '12', text: 'Send Month: December'},
-          ]
+    fields: [
+      { label: 'Email Name', name: 'emailName' },
+      {
+        label: 'Month', name: 'month', value: month,
+        dropdown: [
+          { value: '01', text: 'Send Month: January' },
+          { value: '02', text: 'Send Month: February' },
+          { value: '03', text: 'Send Month: March' },
+          { value: '04', text: 'Send Month: April' },
+          { value: '05', text: 'Send Month: May' },
+          { value: '06', text: 'Send Month: June' },
+          { value: '07', text: 'Send Month: July' },
+          { value: '08', text: 'Send Month: August' },
+          { value: '09', text: 'Send Month: September' },
+          { value: '10', text: 'Send Month: October' },
+          { value: '11', text: 'Send Month: November' },
+          { value: '12', text: 'Send Month: December' },
+        ]
       },
-      {label: 'Year', name: 'year', value: year, 
-      dropdown: [
-           
-          {value: '2018', text: 'Send Year: 2018'},
-          {value: '2019', text: 'Send Year: 2019'}, 
-          {value: '2020', text: 'Send Year: 2020'},
-          {value: '2021', text: 'Send Year: 2021'}, 
-          {value: '2022', text: 'Send Year: 2022'}
-      ]
+      {
+        label: 'Year', name: 'year', value: year,
+        dropdown: [
+
+          { value: '2018', text: 'Send Year: 2018' },
+          { value: '2019', text: 'Send Year: 2019' },
+          { value: '2020', text: 'Send Year: 2020' },
+          { value: '2021', text: 'Send Year: 2021' },
+          { value: '2022', text: 'Send Year: 2022' }
+        ]
       },
-      {label: 'Masthead Link', name: 'mastheadLink'},
-      {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
-      {label: 'Subscribe Link', name: 'subscribe'},
-      {label: 'Volume Number', name: 'volume'},
-      {label: 'Issue Number', name: 'issue'}
+      { label: 'Masthead Link', name: 'mastheadLink' },
+      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+      { label: 'Subscribe Link', name: 'subscribe' },
+      { label: 'Volume Number', name: 'volume' },
+      { label: 'Issue Number', name: 'issue' }
     ]
   },
-  ce:     {
+  ce: {
     typeOfRow: 'ce',
     header: 'CE Section',
     closable: true,
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'New CE Courses'},
-      {label: 'Title', name: 'title'},
-      {label: 'Description', name: 'description', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '},
-      {label: 'Author', name: 'author'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Source', name: 'source'},
-      {label: 'Dates', name: 'dates'},
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/165'}
+    fields: [
+      { label: 'Header', name: 'header', value: 'New CE Courses' },
+      { label: 'Title', name: 'title' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ' },
+      { label: 'Author', name: 'author' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Provider', name: 'provider' },
+      { label: 'Source', name: 'source' },
+      { label: 'Dates', name: 'dates' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/165' }
     ]
   },
   center_banner: {
@@ -80,9 +82,9 @@ export const cced_reader_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/600x70'},
+    fields: [
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/600x70' },
     ]
   },
   article: {
@@ -92,13 +94,13 @@ export const cced_reader_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'Header'},
-      {label: 'Subheader Description', name: 'subheader'},
-      {label: 'Title', name: 'title'},
-      {label: 'Description', name: 'description', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '},
-      {label: 'Author', name: 'author'},
-      {label: 'Link', name: 'link'},
+    fields: [
+      { label: 'Header', name: 'header', value: 'Header' },
+      { label: 'Subheader Description (rarely used)', name: 'subheader' },
+      { label: 'Title', name: 'title' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ' },
+      { label: 'Author', name: 'author' },
+      { label: 'Link', name: 'link' },
     ]
   },
   dotted_line: {
@@ -108,7 +110,7 @@ export const cced_reader_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  []
+    fields: []
   },
   image_article: {
     typeOfRow: 'image_article',
@@ -117,13 +119,13 @@ export const cced_reader_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-        {label: 'Header', name: 'header', value: 'Featured Event'},
-        {label: 'Title', name: 'title'},
-        {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'Author', name: 'author'},
-        {label: 'Link', name: 'link'},
-        {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150'}
+    fields: [
+      { label: 'Header', name: 'header', value: 'Featured Event' },
+      { label: 'Title', name: 'title' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Author', name: 'author' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150' }
     ]
   },
   featured_article: {
@@ -133,16 +135,16 @@ export const cced_reader_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'Featured eBook'},
-      {label: 'Title', name: 'title'},
-      {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-      {label: 'Author', name: 'author'},
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150'}
-  ]
+    fields: [
+      { label: 'Header', name: 'header', value: 'Featured eBook' },
+      { label: 'Title', name: 'title' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Author', name: 'author' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150' }
+    ]
   },
-    live_webinar: {
+  live_webinar: {
     typeOfRow: 'live_webinar',
     header: 'Live Webinar',
     closable: true,
@@ -150,16 +152,16 @@ export const cced_reader_forms = {
     addable: true,
     draggable: true,
     fields: [
-      {label: 'Header', name: 'header', value: 'Live Webinar'},
-      {label: 'Title', name: 'title'},
-      {label: 'Date', name: 'date'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Supporter', name: 'supporter'},
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/150'}
+      { label: 'Header', name: 'header', value: 'Live Webinar' },
+      { label: 'Title', name: 'title' },
+      { label: 'Date', name: 'date' },
+      { label: 'Presenter', name: 'presenter' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Provider', name: 'provider' },
+      { label: 'Supporter', name: 'supporter' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/150' }
     ]
   },
   on_demand_webinar: {
@@ -170,15 +172,15 @@ export const cced_reader_forms = {
     addable: true,
     draggable: true,
     fields: [
-      {label: 'Header', name: 'header', value: 'On-Demand Webinar'},
-      {label: 'Title', name: 'title'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Supporter', name: 'supporter'},
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/150'}
+      { label: 'Header', name: 'header', value: 'On-Demand Webinar' },
+      { label: 'Title', name: 'title' },
+      { label: 'Presenter', name: 'presenter' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Provider', name: 'provider' },
+      { label: 'Supporter', name: 'supporter' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/150' }
     ]
   },
   end: {
@@ -189,55 +191,57 @@ export const cced_reader_forms = {
     addable: false,
     draggable: false,
     fields: [
-      {label: 'Month', name: 'month', value: month, 
-      dropdown: [
-          {value: '01', text: 'Send Month: January'}, 
-          {value: '02', text: 'Send Month: February'},
-          {value: '03', text: 'Send Month: March'}, 
-          {value: '04', text: 'Send Month: April'},
-          {value: '05', text: 'Send Month: May'}, 
-          {value: '06', text: 'Send Month: June'},
-          {value: '07', text: 'Send Month: July'}, 
-          {value: '08', text: 'Send Month: August'},
-          {value: '09', text: 'Send Month: September'}, 
-          {value: '10', text: 'Send Month: October'},
-          {value: '11', text: 'Send Month: November'}, 
-          {value: '12', text: 'Send Month: December'},
-      ]
-  },
-    {label: 'Year', name: 'year', value: year, 
-    dropdown: [
-           
-          {value: '2018', text: 'Send Year: 2018'},
-          {value: '2019', text: 'Send Year: 2019'}, 
-          {value: '2020', text: 'Send Year: 2020'},
-          {value: '2021', text: 'Send Year: 2021'}, 
-          {value: '2022', text: 'Send Year: 2022'}
-      ]
-    }
+      {
+        label: 'Month', name: 'month', value: month,
+        dropdown: [
+          { value: '01', text: 'Send Month: January' },
+          { value: '02', text: 'Send Month: February' },
+          { value: '03', text: 'Send Month: March' },
+          { value: '04', text: 'Send Month: April' },
+          { value: '05', text: 'Send Month: May' },
+          { value: '06', text: 'Send Month: June' },
+          { value: '07', text: 'Send Month: July' },
+          { value: '08', text: 'Send Month: August' },
+          { value: '09', text: 'Send Month: September' },
+          { value: '10', text: 'Send Month: October' },
+          { value: '11', text: 'Send Month: November' },
+          { value: '12', text: 'Send Month: December' },
+        ]
+      },
+      {
+        label: 'Year', name: 'year', value: year,
+        dropdown: [
+
+          { value: '2018', text: 'Send Year: 2018' },
+          { value: '2019', text: 'Send Year: 2019' },
+          { value: '2020', text: 'Send Year: 2020' },
+          { value: '2021', text: 'Send Year: 2021' },
+          { value: '2022', text: 'Send Year: 2022' }
+        ]
+      }
     ]
   }
 }
 
 export const cced_reader_initial_state = [
-    _.cloneDeep(cced_reader_forms.beginning),
-    _.cloneDeep(cced_reader_forms.ce),
-    _.cloneDeep(cced_reader_forms.center_banner),
-    _.cloneDeep(cced_reader_forms.article),
-    _.cloneDeep(cced_reader_forms.dotted_line),
-    _.cloneDeep(cced_reader_forms.image_article),
-    _.cloneDeep(cced_reader_forms.dotted_line),
-    _.cloneDeep(cced_reader_forms.featured_article),
-    _.cloneDeep(cced_reader_forms.dotted_line),
-    _.cloneDeep(cced_reader_forms.live_webinar),
-    _.cloneDeep(cced_reader_forms.dotted_line),
-    _.cloneDeep(cced_reader_forms.on_demand_webinar),
-    _.cloneDeep(cced_reader_forms.on_demand_webinar),
-    _.cloneDeep(cced_reader_forms.dotted_line),
-    _.cloneDeep(cced_reader_forms.end)
-  ];
+  _.cloneDeep(cced_reader_forms.beginning),
+  _.cloneDeep(cced_reader_forms.ce),
+  _.cloneDeep(cced_reader_forms.center_banner),
+  _.cloneDeep(cced_reader_forms.article),
+  _.cloneDeep(cced_reader_forms.dotted_line),
+  _.cloneDeep(cced_reader_forms.image_article),
+  _.cloneDeep(cced_reader_forms.dotted_line),
+  _.cloneDeep(cced_reader_forms.featured_article),
+  _.cloneDeep(cced_reader_forms.dotted_line),
+  _.cloneDeep(cced_reader_forms.live_webinar),
+  _.cloneDeep(cced_reader_forms.dotted_line),
+  _.cloneDeep(cced_reader_forms.on_demand_webinar),
+  _.cloneDeep(cced_reader_forms.on_demand_webinar),
+  _.cloneDeep(cced_reader_forms.dotted_line),
+  _.cloneDeep(cced_reader_forms.end)
+];
 
-export function beginning(fields){
+export function beginning(fields) {
 
   let emailName = fields[0].value;
   let month = fields[1].value;
@@ -249,18 +253,18 @@ export function beginning(fields){
   let issue = fields[7].value;
 
   let monthName;
-  if(month === '01'){monthName = 'January'};
-  if(month === '02'){monthName = 'February'};
-  if(month === '03'){monthName = 'March'};
-  if(month === '04'){monthName = 'April'};
-  if(month === '05'){monthName = 'May'};
-  if(month === '06'){monthName = 'June'};
-  if(month === '07'){monthName = 'July'};
-  if(month === '08'){monthName = 'August'};
-  if(month === '09'){monthName = 'September'};
-  if(month === '10'){monthName = 'October'};
-  if(month === '11'){monthName = 'November'};
-  if(month === '12'){monthName = 'December'};
+  if (month === '01') { monthName = 'January' };
+  if (month === '02') { monthName = 'February' };
+  if (month === '03') { monthName = 'March' };
+  if (month === '04') { monthName = 'April' };
+  if (month === '05') { monthName = 'May' };
+  if (month === '06') { monthName = 'June' };
+  if (month === '07') { monthName = 'July' };
+  if (month === '08') { monthName = 'August' };
+  if (month === '09') { monthName = 'September' };
+  if (month === '10') { monthName = 'October' };
+  if (month === '11') { monthName = 'November' };
+  if (month === '12') { monthName = 'December' };
 
   //put the url together
   let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter`;
@@ -463,7 +467,7 @@ export function beginning(fields){
   `
 }
 
-export function ce(fields){
+export function ce(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
   let description = fields[2].value;
@@ -476,7 +480,7 @@ export function ce(fields){
   let link = fields[9].value;
   let imgSrc = fields[10].value;
 
-  return(
+  return (
     `
     <!--START CE -->
     <tr>
@@ -547,11 +551,11 @@ export function ce(fields){
   )
 }
 
-export function center_banner(fields){
+export function center_banner(fields) {
 
   let link = fields[0].value;
   let imgSrc = fields[1].value;
-  return(
+  return (
     `       <!--CENTER BANNER AD-->
     <tr>
       <td align="center" style="padding-bottom:10px;"><img alt="" border="0" class="w100" src="http://aegispublications.com/news/cced/2017/dash-3.jpg" style="display:block; margin:0px; max-width:600px;" width="600"></td>
@@ -566,7 +570,7 @@ export function center_banner(fields){
   )
 }
 
-export function article(fields){
+export function article(fields) {
 
   let header = fields[0].value;
   let subheader = fields[1].value;
@@ -575,7 +579,7 @@ export function article(fields){
   let author = fields[4].value;
   let link = fields[5].value;
 
-  return(
+  return (
     `<!--ARTICLE-->
     <tr>
       <td align="center">
@@ -585,7 +589,7 @@ export function article(fields){
             <td align="center">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
 
-                ${header?`      
+                ${header ? `      
               <tr>
                 <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
               </tr>          
@@ -594,9 +598,9 @@ export function article(fields){
               </tr>
               <tr>
                 <td align="center" height="12" style="font-size:12px; line-height:12px;"></td>
-              </tr>`:``}
+              </tr>`: ``}
 
-              ${subheader? `
+              ${subheader ? `
             <!--OPTIONAL SUB-HEADER-->
               <tr>
                 <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px; padding-bottom:10px;">${subheader}</td>
@@ -605,10 +609,10 @@ export function article(fields){
 
                 <tr>
                   <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="${link}" style="text-decoration:none; color:#4c4c4c" target="blank">${title}</a></strong><br>
-                  ${description?`${description}<br />`:``}
-                  ${author?`
-                  <em>${author}</em>`:
-                  ``}
+                  ${description ? `${description}<br />` : ``}
+                  ${author ? `
+                  <em>${author}</em>` :
+      ``}
 
                   
                   </td>
@@ -630,8 +634,8 @@ export function article(fields){
   )
 }
 
-export function dotted_line(fields){
-  return(
+export function dotted_line(fields) {
+  return (
     `<!--DOTTED LINE-->
     <tr>
       <td align="center"><img alt="" border="0" class="w100" src="http://aegispublications.com/news/cced/2017/dash-3.jpg" style="display:block; margin:0px; max-width:600px;" width="600"></td>
@@ -641,7 +645,7 @@ export function dotted_line(fields){
   )
 }
 
-export function image_article(fields){
+export function image_article(fields) {
 
   let header = fields[0].value;
   let title = fields[1].value;
@@ -650,7 +654,7 @@ export function image_article(fields){
   let link = fields[4].value;
   let imgSrc = fields[5].value;
 
-  return(
+  return (
     `
     <!--START IMAGE ARTICLE -->
     <tr>
@@ -713,17 +717,17 @@ export function image_article(fields){
   )
 }
 
-export function featured_article(fields){
+export function featured_article(fields) {
 
 
-let header = fields[0].value;
-let title = fields[1].value;
-let description = fields[2].value;
-let author = fields[3].value;
-let link = fields[4].value;
-let imgSrc = fields[5].value;
+  let header = fields[0].value;
+  let title = fields[1].value;
+  let description = fields[2].value;
+  let author = fields[3].value;
+  let link = fields[4].value;
+  let imgSrc = fields[5].value;
 
-  return(`
+  return (`
   <tr bgcolor="#EFEFEF">
   <td align="center">
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -745,8 +749,8 @@ let imgSrc = fields[5].value;
                   </tr>
                   <tr>
                     <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:14px; line-height:16px;"><strong><a href="${link}" style="text-decoration:none; color:#4c4c4c" target="blank">${title}</a></strong><br>
-                    ${description?`${description}<br>`:``}
-                    ${author?`<em>${author}</em>`:``}</td>
+                    ${description ? `${description}<br>` : ``}
+                    ${author ? `<em>${author}</em>` : ``}</td>
                   </tr>
                   <tr>
                     <td align="left" class="golden" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#9c8d30; text-transform:uppercase; font-weight:bold;"><a href="${link}" style="text-decoration:none; color:#9c8d30;" target="_blank">DOWNLOAD NOW</a></td>
@@ -784,7 +788,7 @@ let imgSrc = fields[5].value;
   `)
 }
 
-export function live_webinar(fields){
+export function live_webinar(fields) {
 
   let header = fields[0].value;
   let title = fields[1].value;
@@ -797,7 +801,7 @@ export function live_webinar(fields){
   let link = fields[8].value;
   let imgSrc = fields[9].value;
 
-  return(
+  return (
     `<tr>
     <td align="center">
       <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -805,13 +809,13 @@ export function live_webinar(fields){
           <td class="w28" width="28"></td>
           <td align="center">
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            ${header?`              
+            ${header ? `              
           <tr>
             <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
           </tr>
           <tr>
             <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">${header}</td>
-          </tr>`:``}
+          </tr>`: ``}
 
               <tr>
                 <td align="center">
@@ -863,7 +867,7 @@ export function live_webinar(fields){
   </tr>`
   )
 }
-export function on_demand_webinar(fields){
+export function on_demand_webinar(fields) {
 
   let header = fields[0].value;
   let title = fields[1].value;
@@ -875,7 +879,7 @@ export function on_demand_webinar(fields){
   let link = fields[7].value;
   let imgSrc = fields[8].value;
 
-  return(
+  return (
     `<tr>
     <td align="center">
       <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -883,13 +887,13 @@ export function on_demand_webinar(fields){
           <td class="w28" width="28"></td>
           <td align="center">
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            ${header?`              
+            ${header ? `              
             <tr>
               <td align="center" height="15" style="font-size:15px; line-height:15px;"></td>
             </tr>
             <tr>
               <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">${header}</td>
-            </tr>`:``}
+            </tr>`: ``}
               <tr>
                 <td align="center">
                   <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="355">
@@ -939,26 +943,26 @@ export function on_demand_webinar(fields){
   </tr>`
   )
 }
-export function end(fields){
+export function end(fields) {
   let month = fields[0].value;
   let year = fields[1].value;
   let monthName;
-  if(month === '01'){monthName = 'January'};
-  if(month === '02'){monthName = 'February'};
-  if(month === '03'){monthName = 'March'};
-  if(month === '04'){monthName = 'April'};
-  if(month === '05'){monthName = 'May'};
-  if(month === '06'){monthName = 'June'};
-  if(month === '07'){monthName = 'July'};
-  if(month === '08'){monthName = 'August'};
-  if(month === '09'){monthName = 'September'};
-  if(month === '10'){monthName = 'October'};
-  if(month === '11'){monthName = 'November'};
-  if(month === '12'){monthName = 'December'};
+  if (month === '01') { monthName = 'January' };
+  if (month === '02') { monthName = 'February' };
+  if (month === '03') { monthName = 'March' };
+  if (month === '04') { monthName = 'April' };
+  if (month === '05') { monthName = 'May' };
+  if (month === '06') { monthName = 'June' };
+  if (month === '07') { monthName = 'July' };
+  if (month === '08') { monthName = 'August' };
+  if (month === '09') { monthName = 'September' };
+  if (month === '10') { monthName = 'October' };
+  if (month === '11') { monthName = 'November' };
+  if (month === '12') { monthName = 'December' };
   //put the url together
   let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter`;
 
-  return(
+  return (
     `<tr>
     <td align="center">
       <table border="0" cellpadding="0" cellspacing="0" style="border-bottom:2px solid #989797;" width="100%">
