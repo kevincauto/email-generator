@@ -965,7 +965,7 @@ export function end(fields) {
   return (
     `<tr>
     <td align="center">
-      <table border="0" cellpadding="0" cellspacing="0" style="border-bottom:2px solid #989797;" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0" style="border-bottom:1px solid #989797;" width="100%">
         <tr>
           <td width="20"></td>
           <td align="center">
