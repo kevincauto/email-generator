@@ -413,6 +413,8 @@ export function beginning(fields) {
   <![endif]-->
   </head>
   <body bgcolor="#FFFFFF">
+  <!-- g-link -->	
+  <a href="https://www.dentalaegis.com/cced/" target="_blank"></a>
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
       <tr>
         <td align="center">
@@ -998,7 +1000,7 @@ export function end(fields) {
   </tr>
 
   <tr>
-    <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px; border-bottom: #000 solid 1px;" valign="middle">
+    <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px;" valign="middle">
           <br>
   You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#666 !important; text-decoration:none;">AEGIS Dental Network</a> | <em>Compendium</em>.<br />To ensure delivery, please add <a href="mailto:reply-207852@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-207852@news.aegispublications.com</a> to your address book<br />
   %%PLUGIN_UNSUBSCRIBE: 1089099-CCED UNSUBSCRIBE%%

@@ -3,7 +3,7 @@ import _ from 'lodash';
 //Auto detect the month and year for the url.  
 let d = new Date();
 let month = d.getMonth() + 1;
-if(month<10){month = '0' + '' + month}
+if (month < 10) { month = '0' + '' + month }
 
 month = month.toString();
 let year = d.getFullYear();
@@ -17,57 +17,59 @@ export const cced_thematic_forms = {
     switchable: false,
     addable: true,
     draggable: false,
-    fields:  [
-      {label: 'Email Name', name: 'emailName'},
-      {label: 'Month', name: 'month', value: month, 
-          dropdown: [
-              {value: '01', text: 'Send Month: January'}, 
-              {value: '02', text: 'Send Month: February'},
-              {value: '03', text: 'Send Month: March'}, 
-              {value: '04', text: 'Send Month: April'},
-              {value: '05', text: 'Send Month: May'}, 
-              {value: '06', text: 'Send Month: June'},
-              {value: '07', text: 'Send Month: July'}, 
-              {value: '08', text: 'Send Month: August'},
-              {value: '09', text: 'Send Month: September'}, 
-              {value: '10', text: 'Send Month: October'},
-              {value: '11', text: 'Send Month: November'}, 
-              {value: '12', text: 'Send Month: December'},
-          ]
+    fields: [
+      { label: 'Email Name', name: 'emailName' },
+      {
+        label: 'Month', name: 'month', value: month,
+        dropdown: [
+          { value: '01', text: 'Send Month: January' },
+          { value: '02', text: 'Send Month: February' },
+          { value: '03', text: 'Send Month: March' },
+          { value: '04', text: 'Send Month: April' },
+          { value: '05', text: 'Send Month: May' },
+          { value: '06', text: 'Send Month: June' },
+          { value: '07', text: 'Send Month: July' },
+          { value: '08', text: 'Send Month: August' },
+          { value: '09', text: 'Send Month: September' },
+          { value: '10', text: 'Send Month: October' },
+          { value: '11', text: 'Send Month: November' },
+          { value: '12', text: 'Send Month: December' },
+        ]
       },
-      {label: 'Year', name: 'year', value: year, 
-      dropdown: [
-           
-          {value: '2018', text: 'Send Year: 2018'},
-          {value: '2019', text: 'Send Year: 2019'}, 
-          {value: '2020', text: 'Send Year: 2020'},
-          {value: '2021', text: 'Send Year: 2021'}, 
-          {value: '2022', text: 'Send Year: 2022'}
-      ]
-  },
-      {label: 'Masthead Link', name: 'mastheadLink', value: 'https://www.pulpdent.com'},
-      {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
-      {label: 'Thematic Topic', name: 'topic', value: 'Implantology'},
-      {label: 'Subscribe Link', name: 'subscribe'},
-      {label: 'Main Image Link Source', name: 'mainImg', value: 'http://placehold.it/600x150'},
-      {label: 'Intro Paragraph', name: 'intro', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+      {
+        label: 'Year', name: 'year', value: year,
+        dropdown: [
+
+          { value: '2018', text: 'Send Year: 2018' },
+          { value: '2019', text: 'Send Year: 2019' },
+          { value: '2020', text: 'Send Year: 2020' },
+          { value: '2021', text: 'Send Year: 2021' },
+          { value: '2022', text: 'Send Year: 2022' }
+        ]
+      },
+      { label: 'Masthead Link', name: 'mastheadLink', value: 'https://www.pulpdent.com' },
+      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+      { label: 'Thematic Topic', name: 'topic', value: 'Implantology' },
+      { label: 'Subscribe Link', name: 'subscribe' },
+      { label: 'Main Image Link Source', name: 'mainImg', value: 'http://placehold.it/600x150' },
+      { label: 'Intro Paragraph', name: 'intro', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
     ]
   },
-  news:     {
+  news: {
     typeOfRow: 'news',
     header: 'News Section',
     closable: true,
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'IN THE NEWS'},
-      {label: 'First News Title', name: 'title1'},
-      {label: 'Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-      {label: 'First News Link', name: 'link1'},
-      {label: 'Second News Title', name: 'title2'},
-      {label: 'Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-      {label: 'First News Link', name: 'link2'},
+    fields: [
+      { label: 'Header', name: 'header', value: 'IN THE NEWS' },
+      { label: 'First News Title', name: 'title1' },
+      { label: 'Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'First News Link', name: 'link1' },
+      { label: 'Second News Title', name: 'title2' },
+      { label: 'Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'First News Link', name: 'link2' },
 
     ]
   },
@@ -78,17 +80,17 @@ export const cced_thematic_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-      {label: 'Author', name: 'author'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Source', name: 'source'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Available Dates', name: 'dates'},
-      {label: 'Link', name: 'link'},
-      {label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/120x100'},
+    fields: [
+      { label: 'Title', name: 'title' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Author', name: 'author' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Source', name: 'source' },
+      { label: 'Provider', name: 'provider' },
+      { label: 'Available Dates', name: 'dates' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/120x100' },
     ]
   },
   center_banner: {
@@ -98,9 +100,9 @@ export const cced_thematic_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70'},
+    fields: [
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70' },
     ]
   },
   three_column: {
@@ -110,19 +112,19 @@ export const cced_thematic_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-        {label: 'First Header', name: 'header1'},
-        {label: 'First Title', name: 'title1'},
-        {label: 'First Author', name: 'author1'},
-        {label: 'First Link', name: 'link1'},
-        {label: 'Second Header', name: 'header2'},
-        {label: 'Second Title', name: 'title2'},
-        {label: 'Second Author', name: 'author2'},
-        {label: 'Second Link', name: 'link2'},
-        {label: 'Third Header', name: 'header3'},
-        {label: 'Third Title', name: 'title3'},
-        {label: 'Third Author', name: 'author3'},
-        {label: 'Third Link', name: 'link3'},            
+    fields: [
+      { label: 'First Header', name: 'header1' },
+      { label: 'First Title', name: 'title1' },
+      { label: 'First Author', name: 'author1' },
+      { label: 'First Link', name: 'link1' },
+      { label: 'Second Header', name: 'header2' },
+      { label: 'Second Title', name: 'title2' },
+      { label: 'Second Author', name: 'author2' },
+      { label: 'Second Link', name: 'link2' },
+      { label: 'Third Header', name: 'header3' },
+      { label: 'Third Title', name: 'title3' },
+      { label: 'Third Author', name: 'author3' },
+      { label: 'Third Link', name: 'link3' },
     ]
   },
   featured: {
@@ -132,13 +134,13 @@ export const cced_thematic_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-        {label: 'Header', name: 'header', value: 'FEATURED EVENT'},
-        {label: 'Title', name: 'title'},
-        {label: 'Author', name: 'author'},
-        {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'Link', name: 'link'},
-        {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/150'}
+    fields: [
+      { label: 'Header', name: 'header', value: 'FEATURED EVENT' },
+      { label: 'Title', name: 'title' },
+      { label: 'Author', name: 'author' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/150' }
     ]
   },
   products: {
@@ -148,18 +150,18 @@ export const cced_thematic_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-        {label: 'Header', name: 'header', value: 'FEATURED PRODUCTS'},
-        {label: 'First Product', name: 'product1'},
-        {label: 'First Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'First Link', name: 'link1'},
-        {label: 'Second Product', name: 'product2'},
-        {label: 'Second Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'Second Link', name: 'link2'},
-        {label: 'Featured Product', name: 'product3'},
-        {label: 'Featured Description', name: 'description3', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'Featured Link', name: 'link3'},
-        {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150'},
+    fields: [
+      { label: 'Header', name: 'header', value: 'FEATURED PRODUCTS' },
+      { label: 'First Product', name: 'product1' },
+      { label: 'First Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'First Link', name: 'link1' },
+      { label: 'Second Product', name: 'product2' },
+      { label: 'Second Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Second Link', name: 'link2' },
+      { label: 'Featured Product', name: 'product3' },
+      { label: 'Featured Description', name: 'description3', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Featured Link', name: 'link3' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150' },
     ]
   },
   end: {
@@ -174,18 +176,18 @@ export const cced_thematic_forms = {
 }
 
 export const cced_thematic_initial_state = [
-    _.cloneDeep(cced_thematic_forms.beginning),
-    _.cloneDeep(cced_thematic_forms.news),
-    _.cloneDeep(cced_thematic_forms.ce),
-    _.cloneDeep(cced_thematic_forms.center_banner),
-    _.cloneDeep(cced_thematic_forms.three_column),
-    _.cloneDeep(cced_thematic_forms.featured),
-    _.cloneDeep(cced_thematic_forms.products),
-    _.cloneDeep(cced_thematic_forms.featured),
-    _.cloneDeep(cced_thematic_forms.end)
-  ];
+  _.cloneDeep(cced_thematic_forms.beginning),
+  _.cloneDeep(cced_thematic_forms.news),
+  _.cloneDeep(cced_thematic_forms.ce),
+  _.cloneDeep(cced_thematic_forms.center_banner),
+  _.cloneDeep(cced_thematic_forms.three_column),
+  _.cloneDeep(cced_thematic_forms.featured),
+  _.cloneDeep(cced_thematic_forms.products),
+  _.cloneDeep(cced_thematic_forms.featured),
+  _.cloneDeep(cced_thematic_forms.end)
+];
 
-export function beginning(fields){
+export function beginning(fields) {
   let emailName = fields[0].value;
   let month = fields[1].value;
   let year = fields[2].value;
@@ -622,7 +624,7 @@ export function beginning(fields){
   `
 }
 
-export function news(fields){
+export function news(fields) {
   let header = fields[0].value;
   let title1 = fields[1].value;
   let description1 = fields[2].value;
@@ -631,7 +633,7 @@ export function news(fields){
   let description2 = fields[5].value;
   let link2 = fields[6].value;
 
-  return(
+  return (
     `
     <!-- NEWS ITEMS -->
                 <tr>
@@ -678,7 +680,7 @@ export function news(fields){
   )
 }
 
-export function ce(fields){
+export function ce(fields) {
   let title = fields[0].value;
   let description = fields[1].value;
   let author = fields[2].value;
@@ -689,7 +691,7 @@ export function ce(fields){
   let dates = fields[7].value;
   let link = fields[8].value;
   let imgSrc = fields[9].value;
-  return(
+  return (
     `        <!--START SINGLE CE -->
     
                 <tr>
@@ -780,10 +782,10 @@ export function ce(fields){
   )
 }
 
-export function center_banner(fields){
+export function center_banner(fields) {
   let link = fields[0].value;
   let imgLink = fields[1].value;
-  return(
+  return (
     `<!-- START CENTER BANNER -->
     <tr>
       <td style="padding-top:0px;padding-bottom:;padding-right:0;padding-left:0;">
@@ -801,7 +803,7 @@ export function center_banner(fields){
   )
 }
 
-export function three_column(fields){
+export function three_column(fields) {
   let header1 = fields[0].value;
   let title1 = fields[1].value;
   let author1 = fields[2].value;
@@ -814,7 +816,7 @@ export function three_column(fields){
   let title3 = fields[9].value;
   let author3 = fields[10].value;
   let link3 = fields[11].value;
-  return(
+  return (
     `<!--START 3 COLUMN-->
     <tr>
       <td class="three-column">
@@ -854,10 +856,10 @@ export function three_column(fields){
               <tr>
                 <td class="inner contents">
 ${header2 ?
-`<span align="left" style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top; text-align:left; font-weight:normal; text-align:left;">
+      `<span align="left" style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top; text-align:left; font-weight:normal; text-align:left;">
 ${header2}</span>	`
-:
-``}
+      :
+      ``}
 												<br />
                   <p style="text-align:left; font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none; text-align:left; margin-top:12px;">
                     <a href="${link2}" style="text-decoration:none;color:#000;" target="_blank">${title2}</a></p>
@@ -905,7 +907,7 @@ ${header2}</span>	`
   )
 }
 
-export function featured(fields){
+export function featured(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
   let author = fields[2].value;
@@ -913,7 +915,7 @@ export function featured(fields){
   let link = fields[4].value;
   let imgLink = fields[5].value;
 
-  return(
+  return (
     `
     <!-- Featured Section -->
     
@@ -958,7 +960,7 @@ export function featured(fields){
   )
 }
 
-export function products(fields){
+export function products(fields) {
   let header = fields[0].value;
   let product1 = fields[1].value;
   let description1 = fields[2].value;
@@ -971,7 +973,7 @@ export function products(fields){
   let link3 = fields[9].value;
   let imgSrc = fields[10].value;
 
-  return(`
+  return (`
   <!--PRODUCT SECTION -->
   <tr>
     <td class="two-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;text-align:center;font-size:0; ">
@@ -1068,8 +1070,8 @@ export function products(fields){
   `)
 }
 
-export function end(){
-  return(
+export function end() {
+  return (
     `<tr>
     <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
       <table style="border-spacing:0;font-family:sans-serif;color:#333333; " width="100%">
@@ -1077,7 +1079,7 @@ export function end(){
 
           
           <tr>
-          <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px; border-bottom: #000 solid 1px;" valign="middle">
+          <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px;" valign="middle">
           You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#666 !important; text-decoration:none;">AEGIS Dental Network</a> | <em>Compendium</em>.<br />To ensure delivery, please add <a href="mailto:reply-207852@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-207852@news.aegispublications.com</a> to your address book<br />
           %%PLUGIN_UNSUBSCRIBE: 1089099-CCED UNSUBSCRIBE%%
                  <em>Compendium</em> an AEGIS Publication | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
