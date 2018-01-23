@@ -925,7 +925,7 @@ export function featured(fields) {
                       <tbody>
                         <tr>
                           <td class="inner contents" style="padding-top:10px;padding-bottom:10px;padding-right:0px;padding-left:0px;text-align:left;">
-                            <div style=" border-top:solid 1px #d0d0d2; border-bottom:solid 1px #d0d0d2; background-image:url(http://aegispublications.com/news/cced/2016/02/webinar-bg.jpg); background-repeat:repeat-x; font-family:Arial, san-serif; padding: 0px 10px 10px; margin: 0px 0px 0px; font-size: 13px; text-align: left; color:#000; font-weight: 300; letter-spacing: .8; display:block;
+                            <div style=" border-top:solid 1px #d0d0d2; background-image:url(http://aegispublications.com/news/cced/2016/02/webinar-bg.jpg); background-repeat:repeat-x; font-family:Arial, san-serif; padding: 0px 10px 10px; margin: 0px 0px 0px; font-size: 13px; text-align: left; color:#000; font-weight: 300; letter-spacing: .8; display:block;
     
     overflow:auto;">
                               <center>
