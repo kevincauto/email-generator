@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 let d = new Date();
 let currentMonth = d.getMonth() + 1;
-if(currentMonth<10){currentMonth = '0' + '' + currentMonth}
+if (currentMonth < 10) { currentMonth = '0' + '' + currentMonth }
 currentMonth = currentMonth.toString();
 let currentYear = d.getFullYear().toString();
 
@@ -14,53 +14,56 @@ export const idt_thematic_forms = {
     switchable: false,
     addable: true,
     draggable: false,
-    fields:  [
-      {label: 'Email Name', name: 'emailName'},
-      {label: 'Month', name: 'month', value: currentMonth, 
-          dropdown: [
-              {value: '01', text: 'Send Month: January'}, 
-              {value: '02', text: 'Send Month: February'},
-              {value: '03', text: 'Send Month: March'}, 
-              {value: '04', text: 'Send Month: April'},
-              {value: '05', text: 'Send Month: May'}, 
-              {value: '06', text: 'Send Month: June'},
-              {value: '07', text: 'Send Month: July'}, 
-              {value: '08', text: 'Send Month: August'},
-              {value: '09', text: 'Send Month: September'}, 
-              {value: '10', text: 'Send Month: October'},
-              {value: '11', text: 'Send Month: November'}, 
-              {value: '12', text: 'Send Month: December'},
-          ]
+    fields: [
+      { label: 'Email Name', name: 'emailName' },
+      {
+        label: 'Month', name: 'month', value: currentMonth,
+        dropdown: [
+          { value: '01', text: 'Send Month: January' },
+          { value: '02', text: 'Send Month: February' },
+          { value: '03', text: 'Send Month: March' },
+          { value: '04', text: 'Send Month: April' },
+          { value: '05', text: 'Send Month: May' },
+          { value: '06', text: 'Send Month: June' },
+          { value: '07', text: 'Send Month: July' },
+          { value: '08', text: 'Send Month: August' },
+          { value: '09', text: 'Send Month: September' },
+          { value: '10', text: 'Send Month: October' },
+          { value: '11', text: 'Send Month: November' },
+          { value: '12', text: 'Send Month: December' },
+        ]
       },
-      {label: 'Year', name: 'year', value: currentYear, 
-      dropdown: [
-          {value: '2018', text: 'Send Year: 2018'},
-          {value: '2019', text: 'Send Year: 2019'}, 
-          {value: '2020', text: 'Send Year: 2020'},
-          {value: '2021', text: 'Send Year: 2021'}, 
-          {value: '2022', text: 'Send Year: 2022'}
-      ]
+      {
+        label: 'Year', name: 'year', value: currentYear,
+        dropdown: [
+          { value: '2018', text: 'Send Year: 2018' },
+          { value: '2019', text: 'Send Year: 2019' },
+          { value: '2020', text: 'Send Year: 2020' },
+          { value: '2021', text: 'Send Year: 2021' },
+          { value: '2022', text: 'Send Year: 2022' }
+        ]
       },
-      {label: 'Masthead Link', name: 'mastheadLink'},
-      {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
-      {label: 'Subscribe Link', name: 'subscribe'},
-      {label: 'Thematic Topic', name: 'topic', value: 'Implantology'},
-      {label: 'Main Image Link Source', name: 'mainImg', value: 'http://placehold.it/600x150'},
-      {label: 'Intro Paragraph', name: 'intro', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
+      { label: 'Masthead Link', name: 'mastheadLink' },
+      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+      { label: 'Subscribe Link', name: 'subscribe' },
+      { label: 'Thematic Topic', name: 'topic', value: 'Implantology' },
+      { label: 'Main Image Link Source', name: 'mainImg', value: 'http://placehold.it/600x150' },
+      { label: 'Intro Paragraph', name: 'intro', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Thematic Topic Header', name: 'thematicSrc', value: 'https://www.dentalaegis.com/media/64338/' }
     ]
   },
-  news:     {
+  news: {
     typeOfRow: 'news',
     header: 'News Section',
     closable: true,
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'First News Title', name: 'title1'},
-      {label: 'First News Link', name: 'link1'},
-      {label: 'Second News Title', name: 'title2'},
-      {label: 'Second News Link', name: 'link2'},
+    fields: [
+      { label: 'First News Title', name: 'title1' },
+      { label: 'First News Link', name: 'link1' },
+      { label: 'Second News Title', name: 'title2' },
+      { label: 'Second News Link', name: 'link2' },
     ]
   },
   ce: {
@@ -70,17 +73,17 @@ export const idt_thematic_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-      {label: 'Author', name: 'author'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Source', name: 'source'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Available Dates', name: 'dates'},
-      {label: 'Link', name: 'link'},
-      {label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/150x120'},
+    fields: [
+      { label: 'Title', name: 'title' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Author', name: 'author' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Source', name: 'source' },
+      { label: 'Provider', name: 'provider' },
+      { label: 'Available Dates', name: 'dates' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/150x120' },
     ]
   },
   resources: {
@@ -90,16 +93,16 @@ export const idt_thematic_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-        {label: 'Thematic Topic', name: 'topic', value: 'DIGITAL DENTURES'},
-        {label: 'First Title', name: 'title1'},
-        {label: 'First Author', name: 'author1'},
-        {label: 'First Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'First Link', name: 'link1'},  
-        {label: 'Second Title', name: 'title2'},
-        {label: 'Second Author', name: 'author2'},
-        {label: 'Second Product Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'Second Product Link', name: 'link2'}
+    fields: [
+      { label: 'Thematic Topic', name: 'topic', value: 'DIGITAL DENTURES' },
+      { label: 'First Title', name: 'title1' },
+      { label: 'First Author', name: 'author1' },
+      { label: 'First Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'First Link', name: 'link1' },
+      { label: 'Second Title', name: 'title2' },
+      { label: 'Second Author', name: 'author2' },
+      { label: 'Second Product Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Second Product Link', name: 'link2' }
     ]
   },
   center_banner: {
@@ -109,9 +112,9 @@ export const idt_thematic_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70'},
+    fields: [
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70' },
     ]
   },
   featured_article: {
@@ -121,13 +124,13 @@ export const idt_thematic_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-        {label: 'Header', name: 'header'},
-        {label: 'Title', name: 'title'},
-        {label: 'Author', name: 'author'},
-        {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'Link', name: 'link'},
-        {label: 'Image Source Link', name: 'imgSrc'},                
+    fields: [
+      { label: 'Header', name: 'header' },
+      { label: 'Title', name: 'title' },
+      { label: 'Author', name: 'author' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'imgSrc' },
     ]
   },
   featured_video: {
@@ -137,13 +140,13 @@ export const idt_thematic_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-        {label: 'Header', name: 'header', value: 'FEATURED EVENT'},
-        {label: 'Title', name: 'title'},
-        {label: 'Author', name: 'author'},
-        {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'Link', name: 'link'},
-        {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150'}
+    fields: [
+      { label: 'Header', name: 'header', value: 'FEATURED EVENT' },
+      { label: 'Title', name: 'title' },
+      { label: 'Author', name: 'author' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150' }
     ]
   },
   products: {
@@ -153,25 +156,25 @@ export const idt_thematic_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-        {label: 'Header', name: 'header', value: 'FEATURED WORKSHOP'},
-        {label: 'Title', name: 'title'},
-        {label: 'Author', name: 'author'},
-        {label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'Link', name: 'link'},
-        
-        {label: 'First Product Name', name: 'product1'},
-        {label: 'First Product Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'First Product Link', name: 'link1'},
-        
-        {label: 'Second Product Name', name: 'product2'},
-        {label: 'Second Product Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'Second Product Link', name: 'link2'},
+    fields: [
+      { label: 'Header', name: 'header', value: 'FEATURED WORKSHOP' },
+      { label: 'Title', name: 'title' },
+      { label: 'Author', name: 'author' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Link', name: 'link' },
 
-        {label: 'Featured Product Name', name: 'product3'},
-        {label: 'Featured Product Description', name: 'description3', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  '},
-        {label: 'Featured Link', name: 'link3'},
-        {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150'}
+      { label: 'First Product Name', name: 'product1' },
+      { label: 'First Product Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'First Product Link', name: 'link1' },
+
+      { label: 'Second Product Name', name: 'product2' },
+      { label: 'Second Product Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Second Product Link', name: 'link2' },
+
+      { label: 'Featured Product Name', name: 'product3' },
+      { label: 'Featured Product Description', name: 'description3', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Featured Link', name: 'link3' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150' }
     ]
   },
   end: {
@@ -186,18 +189,18 @@ export const idt_thematic_forms = {
 }
 
 export const idt_thematic_initial_state = [
-    _.cloneDeep(idt_thematic_forms.beginning),
-    _.cloneDeep(idt_thematic_forms.news),
-    _.cloneDeep(idt_thematic_forms.ce),
-    _.cloneDeep(idt_thematic_forms.resources),
-    _.cloneDeep(idt_thematic_forms.center_banner),
-    _.cloneDeep(idt_thematic_forms.featured_article),
-    _.cloneDeep(idt_thematic_forms.featured_video),
-    _.cloneDeep(idt_thematic_forms.products),
-    _.cloneDeep(idt_thematic_forms.end)
-  ];
+  _.cloneDeep(idt_thematic_forms.beginning),
+  _.cloneDeep(idt_thematic_forms.news),
+  _.cloneDeep(idt_thematic_forms.ce),
+  _.cloneDeep(idt_thematic_forms.resources),
+  _.cloneDeep(idt_thematic_forms.center_banner),
+  _.cloneDeep(idt_thematic_forms.featured_article),
+  _.cloneDeep(idt_thematic_forms.featured_video),
+  _.cloneDeep(idt_thematic_forms.products),
+  _.cloneDeep(idt_thematic_forms.end)
+];
 
-export function beginning(fields){
+export function beginning(fields) {
   let emailName = fields[0].value;
   let month = fields[1].value;
   let year = fields[2].value;
@@ -207,7 +210,8 @@ export function beginning(fields){
   let topic = fields[6].value;
   let mainImg = fields[7].value;
   let intro = fields[8].value;
-  
+  let thematicSrc = fields[9].value;
+
   //put the url together
   let url = `https://www.aegisdentalnetwork.com/idt/${year}/${month}/newsletter/${topic.trim().replace(/\s+/g, '-').toLowerCase()}`;
 
@@ -418,7 +422,7 @@ export function beginning(fields){
                                                                   </tr>
                                                                   <tr>
                                                                       <td align="center">
-                                                                          <img alt="" border="0" class="w100" src="https://www.dentalaegis.com/media/64338/" style="display:block; margin:0px; max-width:600px;" width="600" /></td>
+                                                                          <img alt="" border="0" class="w100" src="${thematicSrc}" style="display:block; margin:0px; max-width:600px;" width="600" /></td>
                                                                   </tr>
                                                                   <tr>
                                                                       <td align="right" style="padding-bottom:4px;">
@@ -458,14 +462,14 @@ export function beginning(fields){
   `
 }
 
-export function news(fields){
+export function news(fields) {
 
   let title1 = fields[0].value;
   let link1 = fields[1].value;
   let title2 = fields[2].value;
   let link2 = fields[3].value;
 
-  return(
+  return (
     `
     <!--START OF THE NEWS SECTION -->
     <tr>
@@ -534,7 +538,7 @@ export function news(fields){
   )
 }
 
-export function ce(fields){
+export function ce(fields) {
   let title = fields[0].value;
   let description = fields[1].value;
   let author = fields[2].value;
@@ -545,7 +549,7 @@ export function ce(fields){
   let dates = fields[7].value;
   let link = fields[8].value;
   let imgSrc = fields[9].value;
-  return(
+  return (
     `        
     <!--START THE CE SECTION-->
     <tr>
@@ -613,16 +617,16 @@ export function ce(fields){
     <!--END OF CE SECTION -->`
   )
 }
-export function resources(fields){
-let topic = fields[0].value
-let title1 = fields[1].value
-let author1 = fields[2].value
-let description1 = fields[3].value
-let link1 = fields[4].value
-let title2 = fields[5].value
-let author2 = fields[6].value
-let description2 = fields[7].value
-let link2 = fields[8].value
+export function resources(fields) {
+  let topic = fields[0].value
+  let title1 = fields[1].value
+  let author1 = fields[2].value
+  let description1 = fields[3].value
+  let link1 = fields[4].value
+  let title2 = fields[5].value
+  let author2 = fields[6].value
+  let description2 = fields[7].value
+  let link2 = fields[8].value
 
   return `
   <tr>
@@ -687,10 +691,10 @@ let link2 = fields[8].value
 </tr>`;
 }
 
-export function center_banner(fields){
+export function center_banner(fields) {
   let link = fields[0].value;
   let imgLink = fields[1].value;
-  return(
+  return (
     `                               
      <!-- CENTER BANNER -->
     <tr>
@@ -702,7 +706,7 @@ export function center_banner(fields){
   )
 }
 
-export function featured_article(fields){
+export function featured_article(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
   let author = fields[2].value;
@@ -710,7 +714,7 @@ export function featured_article(fields){
   let link = fields[4].value;
   let imgSrc = fields[5].value;
 
-  return(
+  return (
     ` 
     <!--FEATURED ARTICLE SECTION -->
     <tr>
@@ -780,7 +784,7 @@ export function featured_article(fields){
   )
 }
 
-export function featured_video(fields){
+export function featured_video(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
   let author = fields[2].value;
@@ -788,7 +792,7 @@ export function featured_video(fields){
   let link = fields[4].value;
   let imgSrc = fields[5].value;
 
-  return(
+  return (
     `
     <!--START FEATURED VIDEO SECTION -->
     <tr>
@@ -856,7 +860,7 @@ export function featured_video(fields){
   )
 }
 
-export function products(fields){
+export function products(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
   let author = fields[2].value;
@@ -873,7 +877,7 @@ export function products(fields){
   let link3 = fields[13].value;
   let imgSrc = fields[14].value;
 
-  return(`
+  return (`
   <!--FEATURED WORKSHOP AND PRODUCTS -->
   <tr>
     <td align="center" style="padding-top:15px;">
@@ -1049,8 +1053,8 @@ export function products(fields){
   `)
 }
 
-export function end(){
-  return(
+export function end() {
+  return (
     `                                
     <!--LAST SECTION OF THE EMAIL -->
     <tr>
