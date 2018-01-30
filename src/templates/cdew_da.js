@@ -18,7 +18,7 @@ export const cdew_da_forms = {
     addable: true,
     draggable: false,
     fields: [
-      { label: 'Email Name', name: 'emailName', value: 'ce3' },
+      { label: 'Email Name', name: 'emailName', value: 'da' },
       {
         label: 'Month', name: 'month', value: month,
         dropdown: [
@@ -171,6 +171,63 @@ export const cdew_da_forms = {
       { label: 'Link', name: 'link' }
     ]
   },
+  ebook: {
+    typeOfRow: 'ebook',
+    header: 'eBook',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: [
+      { label: 'Title', name: 'title' },
+      { label: 'author', name: 'author' },
+      { label: 'Commercial Supporter', name: 'supporter' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Source', name: 'source' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Description', name: 'description' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/155x180' }
+    ]
+  },
+  portal_partner: {
+    typeOfRow: 'portal_partner',
+    header: 'Portal Partner',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: [
+      { label: 'Title', name: 'title' },
+      { label: 'Presenter', name: 'presenter' },
+      { label: 'Provider', name: 'provider' },
+      { label: 'Source', name: 'source' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Link', name: 'link' },
+      { label: 'Partner Logo Source', name: 'imgSrc' },
+      { label: 'Brand Link', name: 'brandLink' },
+    ]
+  },
+  featured_event: {
+    typeOfRow: 'featured_event',
+    header: 'Featured Event',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: [
+      { label: 'Header', name: 'header', value: 'Featured Event' },
+      { label: 'Title', name: 'title' },
+      { label: 'Description', name: 'description' },
+      { label: 'Location', name: 'location' },
+      { label: 'Date', name: 'date' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Call-to-Action', name: 'cta', value: 'Learn More & Register here!' },
+      { label: 'Link', name: 'link' },
+      { label: 'Event Image Source', name: 'imgSrc', value: 'http://placehold.it/150x150' }
+    ]
+  },
   end: {
     typeOfRow: 'end',
     header: 'End of the Email',
@@ -220,6 +277,9 @@ export const cdew_da_initial_state = [
   _.cloneDeep(cdew_da_forms.center_banner),
   _.cloneDeep(cdew_da_forms.new_content_w_header),
   _.cloneDeep(cdew_da_forms.new_content_wo_header),
+  _.cloneDeep(cdew_da_forms.ebook),
+  _.cloneDeep(cdew_da_forms.portal_partner),
+  _.cloneDeep(cdew_da_forms.featured_event),
   _.cloneDeep(cdew_da_forms.end)
 ];
 
@@ -424,7 +484,7 @@ export function beginning(fields) {
                             <tr>
                               <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#2f84c0">
                                   <tr>
-                                    <td align="center" class="f12" height="50" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#ffffff; padding-left:20px;"><span class="white">${monthName} ${year} </span> | <span class="white1"> <a href="http://www.cdeworld.com" target="_blank" style="color:#ffffff;">Visit Our Website</a></span> | <span class="white1"><a href="http://aegispublications.com/news/ce/2017/12/ce3.html" target="_blank" style="color:#ffffff;">Read Online</a></span> | <span class="white1"><a href="mailto:?subject=FW: Dental Assistant News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/${emailName}.html" target="_blank" style="color:#ffffff;">Forward&nbsp;to&nbsp;a&nbsp;Colleague</a></span></td>
+                                    <td align="center" class="f12" height="50" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#ffffff; padding-left:20px;"><span class="white">${monthName} ${year} </span> | <span class="white1"> <a href="http://www.cdeworld.com" target="_blank" style="color:#ffffff;">Visit Our Website</a></span> | <span class="white1"><a href="http://aegispublications.com/news/ce/${year}/${month}/da.html" target="_blank" style="color:#ffffff;">Read Online</a></span> | <span class="white1"><a href="mailto:?subject=FW: Dental Assistant News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/${emailName}.html" target="_blank" style="color:#ffffff;">Forward&nbsp;to&nbsp;a&nbsp;Colleague</a></span></td>
                                     <td width="25"><a href="https://www.facebook.com/CDEWorldDentistry/" target="_blank"> <img src="https://www.dentalaegis.com/media/60420/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                                     <td width="25"><a href="https://twitter.com/CDEWorld" target="_blank"> <img src="https://www.dentalaegis.com/media/60421/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                                     <td width="35" class="w35"></td>
@@ -800,6 +860,225 @@ ${title}</strong><br />
     <!--END OF NEW CONTENT WITHOUT HEADER-->`)
 }
 
+export function ebook(fields) {
+
+  let title = fields[0].value;
+  let author = fields[1].value;
+  let supporter = fields[2].value;
+  let cost = fields[3].value;
+  let source = fields[4].value;
+  let credits = fields[5].value;
+  let description = fields[6].value;
+  let link = fields[7].value;
+  let imgSrc = fields[8].value;
+
+  return (
+    `<!--START EBOOK SECTION -->
+    <tr>
+    <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
+  </tr>
+  <tr>
+    <td height="20" align="center"></td>
+  </tr>
+<tr>
+  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">Featured CE eBook</td>
+</tr>
+<tr>
+  <td height="20" align="center"></td>
+</tr>
+<tr>
+  <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
+      <tr>
+        <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="154" align="left" class="w100">
+            <tr>
+              <td align="left"><a href="${link}" target="_blank"> <img src="${imgSrc}" alt="" border="0" style="display:block; margin:0px; max-width:154px;" width="154"/> </a></td>
+            </tr>
+            <tr>
+              <td height="20" align="center"></td>
+            </tr>
+          </table>
+          
+          <!--[if gte mso 9]>
+          </td>
+          <td align="center"  valign="top">
+<![endif]-->
+          
+          <table cellpadding="0" cellspacing="0" border="0" width="420" align="right" class="w100">
+            <tr>
+              <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:7px;"><strong>${title}</strong></td>
+            </tr>
+            <tr>
+              <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#676262;"><p><strong>By:</strong> ${author}<strong><br />
+              Supported By:</strong> <em>${supporter}</em><br>
+                  <strong>Cost:</strong> ${cost}  | <strong>Source:</strong> ${source}<strong><br>
+                    Credits:</strong> ${credits} </p></td>
+            </tr>
+            <tr>
+              <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:17px; padding-top:4px; color:#676262;">${description}</td>
+            </tr>
+            <tr>
+              <td align="left" style="padding-top:15px;"><table cellpadding="0" cellspacing="0" border="0" bgcolor="#2f84c0" style="border-radius: 5px;">
+                  <tr>
+                    <td width="10"></td>
+                    <td align="left" height="40" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#ffffff;"><a href="${link}" target="_blank" style="color:#ffffff; text-decoration:none;">Download your free eBook</a></td>
+                    <td width="15"></td>
+                  </tr>
+                </table></td>
+            </tr>
+            <tr>
+              <td height="20" align="center"></td>
+            </tr>
+          </table></td>
+      </tr>
+    </table></td>
+</tr>
+<tr>
+  <td height="20" align="center"></td>
+</tr>
+<tr>
+  <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="http://cdeworld.com/ebooks" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld eBook Library for access to the dental information <br>
+    you need, when you need it »</a></td>
+</tr>
+<tr>
+  <td height="20" align="center"></td>
+</tr>
+                       
+<!--END EBOOK SECTION --> `
+  )
+}
+
+export function portal_partner(fields) {
+
+  let title = fields[0].value;
+  let presenter = fields[1].value;
+  let provider = fields[2].value;
+  let source = fields[3].value;
+  let cost = fields[4].value;
+  let credits = fields[5].value;
+  let link = fields[6].value;
+  let imgSrc = fields[7].value;
+  let brandLink = fields[8].value;
+
+  return (
+    `<!--FEATURED PORTAL PARTNER-->
+    <tr>
+    <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
+  </tr>
+  <tr>
+    <td height="20" align="center"></td>
+  </tr>
+  <tr>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">Featured Portal Partner</td>
+  </tr>
+  <tr>
+    <td height="25" align="center"></td>
+  </tr>
+  <tr>
+    <td align="left" style="padding-bottom:10px;"><a href="${brandLink}" target="_blank"> <img src="${imgSrc}" alt="" width="190" border="0" style="display:block; margin:0px;"/> </a></td>
+  </tr>
+  <tr>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:17px; color:#333333; padding-bottom:15px;"><strong>${title}</strong></td>
+  </tr>
+  <tr>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:auto; color:#333333; padding-bottom:7px;">${presenter}</td>
+  </tr>
+  <tr>
+    <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="240" align="left" class="w100">
+              <tr>
+                <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Provider: ${provider}<br>
+                  Source: <em>${source}</em>
+                  </td>
+              </tr>
+            </table>
+            
+            <!--[if gte mso 9]>
+            </td>
+            <td align="center"  valign="top">
+<![endif]-->
+            
+            <table cellpadding="0" cellspacing="0" border="0" width="320" align="right" class="w100">
+              <tr>
+                <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: ${cost}<br>
+                  Credits: ${credits}</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="center"></td>
+  </tr>
+  <tr>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
+  </tr>
+  <tr>
+    <td height="30" align="center"></td>
+  </tr>
+  <!--<tr>
+    <td align="center"><img src="http://placehold.it/600x70" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
+  </tr>-->
+
+<!--END FEATURED PORTAL PARTNER-->
+`)
+}
+
+export function featured_event(fields) {
+
+  let header = fields[0].value;
+  let title = fields[1].value;
+  let description = fields[2].value;
+  let location = fields[3].value;
+  let date = fields[4].value;
+  let credits = fields[5].value;
+  let cta = fields[6].value;
+  let link = fields[7].value;
+  let imgSrc = fields[8].value;
+
+  return (
+    `<!--FEATURED EVENT -->
+    <tr>
+    <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
+  </tr>
+  <tr>
+    <td height="20" align="center"></td>
+  </tr>
+    <tr>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">${header}</td>
+    </tr>
+<tr>
+      <td height="20" align="center"></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="${link}" target="_blank"> <img src="${imgSrc}" alt="" border="0" style="display:block; margin:0px; max-width:156px;" width="156"/> </a></td>
+    </tr>
+    <tr>
+      <td height="25" align="center"></td>
+    </tr>
+    <tr>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:7px;"><strong>${title}</strong></td>
+    </tr>
+    <tr>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">${description}<br />
+        <span style="font-size:13px; line-height:28px;">${location} | ${date} | ${credits}</span></td>
+    </tr>
+    <tr>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase">${cta}</a></td>
+    </tr>
+<tr>
+<td height="31" align="center"></td>
+</tr>
+    <tr>
+      <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/events" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Event Listing for exciting upcoming live events »</a></td>
+    </tr>
+    <tr>
+      <td height="20" align="center"></td>
+    </tr>
+<!--END FEATURED EVENT -->   
+`)
+}
+
 export function end(fields) {
   let month = fields[0].value;
   let year = fields[1].value;
@@ -925,7 +1204,7 @@ PO Box 510 | Newtown, PA 18940</span></td>
                       <tr>
                         <td align="center"><a href="https://www.facebook.com/pages/CDE-World/141910839256792?ref=hl" target="_blank"> <img src="https://www.dentalaegis.com/media/60420/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                         <td align="center"><a href="https://twitter.com/CDEWorld" target="_blank"> <img src="https://www.dentalaegis.com/media/60421/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
-                        <td align="center" style="padding-left:1px;"><a href="mailto:?subject=FW: Dental Assistant News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/ce3.html" target="_blank"> <img src="https://www.dentalaegis.com/media/60422/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
+                        <td align="center" style="padding-left:1px;"><a href="mailto:?subject=FW: Dental Assistant News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/da.html" target="_blank"> <img src="https://www.dentalaegis.com/media/60422/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                       </tr>
                     </table></td>
                 </tr>
