@@ -3,7 +3,7 @@ import _ from 'lodash';
 //Auto detect the month and year for the url.  
 let d = new Date();
 let month = d.getMonth() + 1;
-if(month<10){month = '0' + '' + month}
+if (month < 10) { month = '0' + '' + month }
 
 month = month.toString();
 let year = d.getFullYear();
@@ -16,55 +16,57 @@ export const cdew_dh_forms = {
     switchable: false,
     addable: true,
     draggable: false,
-    fields:  [
-      {label: 'Email Name', name: 'emailName', value: 'ce3'},
-      {label: 'Month', name: 'month', value: month, 
-          dropdown: [
-              {value: '01', text: 'Send Month: January'}, 
-              {value: '02', text: 'Send Month: February'},
-              {value: '03', text: 'Send Month: March'}, 
-              {value: '04', text: 'Send Month: April'},
-              {value: '05', text: 'Send Month: May'}, 
-              {value: '06', text: 'Send Month: June'},
-              {value: '07', text: 'Send Month: July'}, 
-              {value: '08', text: 'Send Month: August'},
-              {value: '09', text: 'Send Month: September'}, 
-              {value: '10', text: 'Send Month: October'},
-              {value: '11', text: 'Send Month: November'}, 
-              {value: '12', text: 'Send Month: December'},
-          ]
+    fields: [
+      { label: 'Email Name', name: 'emailName', value: 'ce3' },
+      {
+        label: 'Month', name: 'month', value: month,
+        dropdown: [
+          { value: '01', text: 'Send Month: January' },
+          { value: '02', text: 'Send Month: February' },
+          { value: '03', text: 'Send Month: March' },
+          { value: '04', text: 'Send Month: April' },
+          { value: '05', text: 'Send Month: May' },
+          { value: '06', text: 'Send Month: June' },
+          { value: '07', text: 'Send Month: July' },
+          { value: '08', text: 'Send Month: August' },
+          { value: '09', text: 'Send Month: September' },
+          { value: '10', text: 'Send Month: October' },
+          { value: '11', text: 'Send Month: November' },
+          { value: '12', text: 'Send Month: December' },
+        ]
       },
-      {label: 'Year', name: 'year', value: year, 
-      dropdown: [   
-          {value: '2018', text: 'Send Year: 2018'},
-          {value: '2019', text: 'Send Year: 2019'}, 
-          {value: '2020', text: 'Send Year: 2020'},
-          {value: '2021', text: 'Send Year: 2021'}, 
-          {value: '2022', text: 'Send Year: 2022'}
-      ]
+      {
+        label: 'Year', name: 'year', value: year,
+        dropdown: [
+          { value: '2018', text: 'Send Year: 2018' },
+          { value: '2019', text: 'Send Year: 2019' },
+          { value: '2020', text: 'Send Year: 2020' },
+          { value: '2021', text: 'Send Year: 2021' },
+          { value: '2022', text: 'Send Year: 2022' }
+        ]
       },
-      {label: 'Masthead Link', name: 'mastheadLink'},
-      {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
-      {label: 'Subscribe Link', name: 'subscribe'}
-      ]
-      },
-  live_webinar_w_header:     {
+      { label: 'Masthead Link', name: 'mastheadLink' },
+      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+      { label: 'Subscribe Link', name: 'subscribe' }
+    ]
+  },
+  live_webinar_w_header: {
     typeOfRow: 'live_webinar_w_header',
     header: 'Live Webinar w/ Header',
     closable: true,
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'Upcoming Live Webinar'},
-      {label: 'Title', name: 'title'},
-      {label: 'Date', name: 'date'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Commercial Supporter', name: 'supporter'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'}
+    fields: [
+      { label: 'Header', name: 'header', value: 'Upcoming Live Webinar' },
+      { label: 'Title', name: 'title' },
+      { label: 'Date', name: 'date' },
+      { label: 'Presenter', name: 'presenter' },
+      { label: 'Provider', name: 'provider' },
+      { label: 'Commercial Supporter', name: 'supporter' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Link', name: 'link' }
     ]
   },
   live_webinar_wo_header: {
@@ -74,15 +76,15 @@ export const cdew_dh_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Date', name: 'date'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Commercial Supporter', name: 'supporter'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'}
+    fields: [
+      { label: 'Title', name: 'title' },
+      { label: 'Date', name: 'date' },
+      { label: 'Presenter', name: 'presenter' },
+      { label: 'Provider', name: 'provider' },
+      { label: 'Commercial Supporter', name: 'supporter' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Link', name: 'link' }
     ]
   },
   on_demand_webinar_w_header: {
@@ -92,15 +94,15 @@ export const cdew_dh_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'Featured On-Demand Webinars'},
-      {label: 'Title', name: 'title'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Commercial Supporter', name: 'supporter'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'}
+    fields: [
+      { label: 'Header', name: 'header', value: 'Featured On-Demand Webinars' },
+      { label: 'Title', name: 'title' },
+      { label: 'Presenter', name: 'presenter' },
+      { label: 'Provider', name: 'provider' },
+      { label: 'Commercial Supporter', name: 'supporter' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Link', name: 'link' }
     ]
   },
   on_demand_webinar_wo_header: {
@@ -110,14 +112,14 @@ export const cdew_dh_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Commercial Supporter', name: 'supporter'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'}
+    fields: [
+      { label: 'Title', name: 'title' },
+      { label: 'Presenter', name: 'presenter' },
+      { label: 'Provider', name: 'provider' },
+      { label: 'Commercial Supporter', name: 'supporter' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Link', name: 'link' }
     ]
   },
   center_banner: {
@@ -127,9 +129,9 @@ export const cdew_dh_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/600x70'},
+    fields: [
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/600x70' },
     ]
   },
   new_content_w_header: {
@@ -139,15 +141,15 @@ export const cdew_dh_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'Featured CE Courses - New Content Added'},
-      {label: 'Title', name: 'title'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Source', name: 'source'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'}
+    fields: [
+      { label: 'Header', name: 'header', value: 'Featured CE Courses - New Content Added' },
+      { label: 'Title', name: 'title' },
+      { label: 'Presenter', name: 'presenter' },
+      { label: 'Provider', name: 'provider' },
+      { label: 'Source', name: 'source' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Link', name: 'link' }
     ]
   },
   new_content_wo_header: {
@@ -157,14 +159,14 @@ export const cdew_dh_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Source', name: 'source'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'}
+    fields: [
+      { label: 'Title', name: 'title' },
+      { label: 'Presenter', name: 'presenter' },
+      { label: 'Provider', name: 'provider' },
+      { label: 'Source', name: 'source' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Link', name: 'link' }
     ]
   },
   end_new_content: {
@@ -174,7 +176,7 @@ export const cdew_dh_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  []
+    fields: []
   },
   ebook: {
     typeOfRow: 'ebook',
@@ -183,16 +185,16 @@ export const cdew_dh_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'author', name: 'author'},
-      {label: 'Commercial Supporter', name: 'supporter'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Source', name: 'source'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Description', name: 'description'},
-      {label: 'Link', name: 'link'},
-      {label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/155x180'}
+    fields: [
+      { label: 'Title', name: 'title' },
+      { label: 'author', name: 'author' },
+      { label: 'Commercial Supporter', name: 'supporter' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Source', name: 'source' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Description', name: 'description' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/155x180' }
     ]
   },
   portal_partner: {
@@ -202,16 +204,16 @@ export const cdew_dh_forms = {
     switchable: true,
     addable: true,
     draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Source', name: 'source'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'},
-      {label: 'Partner Logo Source', name: 'imgSrc'},
-      {label: 'Brand Link', name: 'brandLink'},
+    fields: [
+      { label: 'Title', name: 'title' },
+      { label: 'Presenter', name: 'presenter' },
+      { label: 'Provider', name: 'provider' },
+      { label: 'Source', name: 'source' },
+      { label: 'Cost', name: 'cost' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Link', name: 'link' },
+      { label: 'Partner Logo Source', name: 'imgSrc' },
+      { label: 'Brand Link', name: 'brandLink' },
     ]
   },
   end: {
@@ -222,72 +224,74 @@ export const cdew_dh_forms = {
     addable: false,
     draggable: false,
     fields: [
-      {label: 'Month', name: 'month', value: month, 
-      dropdown: [
-          {value: '01', text: 'Send Month: January'}, 
-          {value: '02', text: 'Send Month: February'},
-          {value: '03', text: 'Send Month: March'}, 
-          {value: '04', text: 'Send Month: April'},
-          {value: '05', text: 'Send Month: May'}, 
-          {value: '06', text: 'Send Month: June'},
-          {value: '07', text: 'Send Month: July'}, 
-          {value: '08', text: 'Send Month: August'},
-          {value: '09', text: 'Send Month: September'}, 
-          {value: '10', text: 'Send Month: October'},
-          {value: '11', text: 'Send Month: November'}, 
-          {value: '12', text: 'Send Month: December'},
-      ]
-  },
-  {label: 'Year', name: 'year', value: year, 
-  dropdown: [
-       
-      {value: '2018', text: 'Send Year: 2018'},
-      {value: '2019', text: 'Send Year: 2019'}, 
-      {value: '2020', text: 'Send Year: 2020'},
-      {value: '2021', text: 'Send Year: 2021'}, 
-      {value: '2022', text: 'Send Year: 2022'}
-  ]
-  },
+      {
+        label: 'Month', name: 'month', value: month,
+        dropdown: [
+          { value: '01', text: 'Send Month: January' },
+          { value: '02', text: 'Send Month: February' },
+          { value: '03', text: 'Send Month: March' },
+          { value: '04', text: 'Send Month: April' },
+          { value: '05', text: 'Send Month: May' },
+          { value: '06', text: 'Send Month: June' },
+          { value: '07', text: 'Send Month: July' },
+          { value: '08', text: 'Send Month: August' },
+          { value: '09', text: 'Send Month: September' },
+          { value: '10', text: 'Send Month: October' },
+          { value: '11', text: 'Send Month: November' },
+          { value: '12', text: 'Send Month: December' },
+        ]
+      },
+      {
+        label: 'Year', name: 'year', value: year,
+        dropdown: [
+
+          { value: '2018', text: 'Send Year: 2018' },
+          { value: '2019', text: 'Send Year: 2019' },
+          { value: '2020', text: 'Send Year: 2020' },
+          { value: '2021', text: 'Send Year: 2021' },
+          { value: '2022', text: 'Send Year: 2022' }
+        ]
+      },
     ]
   }
 }
 
 export const cdew_dh_initial_state = [
-    _.cloneDeep(cdew_dh_forms.beginning),
-    _.cloneDeep(cdew_dh_forms.live_webinar_w_header),
-    _.cloneDeep(cdew_dh_forms.live_webinar_wo_header),
-    _.cloneDeep(cdew_dh_forms.on_demand_webinar_w_header),
-    _.cloneDeep(cdew_dh_forms.on_demand_webinar_wo_header),
-    _.cloneDeep(cdew_dh_forms.center_banner),
-    _.cloneDeep(cdew_dh_forms.new_content_w_header),
-    _.cloneDeep(cdew_dh_forms.new_content_wo_header),
-    _.cloneDeep(cdew_dh_forms.end_new_content),
-    _.cloneDeep(cdew_dh_forms.ebook),
-    _.cloneDeep(cdew_dh_forms.portal_partner),
-    _.cloneDeep(cdew_dh_forms.end)
-  ];
+  _.cloneDeep(cdew_dh_forms.beginning),
+  _.cloneDeep(cdew_dh_forms.live_webinar_w_header),
+  _.cloneDeep(cdew_dh_forms.live_webinar_wo_header),
+  _.cloneDeep(cdew_dh_forms.on_demand_webinar_w_header),
+  _.cloneDeep(cdew_dh_forms.on_demand_webinar_wo_header),
+  _.cloneDeep(cdew_dh_forms.center_banner),
+  _.cloneDeep(cdew_dh_forms.new_content_w_header),
+  _.cloneDeep(cdew_dh_forms.new_content_wo_header),
+  _.cloneDeep(cdew_dh_forms.end_new_content),
+  _.cloneDeep(cdew_dh_forms.ebook),
+  _.cloneDeep(cdew_dh_forms.portal_partner),
+  _.cloneDeep(cdew_dh_forms.end)
+];
 
-export function beginning(fields){
-    let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
-    let month = fields[1].value;
-    let year = fields[2].value;
-    let mastheadLink = fields[3].value;
-    let mastheadSrc = fields[4].value;
-    let subscribe = fields[5].value;
+export function beginning(fields) {
+  let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
+  let month = fields[1].value;
+  let year = fields[2].value;
+  let mastheadLink = fields[3].value;
+  let mastheadSrc = fields[4].value;
+  let subscribe = fields[5].value;
 
-    let monthName;
-    if(month === '01'){monthName = 'January'};
-    if(month === '02'){monthName = 'February'};
-    if(month === '03'){monthName = 'March'};
-    if(month === '04'){monthName = 'April'};
-    if(month === '05'){monthName = 'May'};
-    if(month === '06'){monthName = 'June'};
-    if(month === '07'){monthName = 'July'};
-    if(month === '08'){monthName = 'August'};
-    if(month === '09'){monthName = 'September'};
-    if(month === '10'){monthName = 'October'};
-    if(month === '11'){monthName = 'November'};
-    if(month === '12'){monthName = 'December'};
+  let monthName;
+  if (month === '01') { monthName = 'January' };
+  if (month === '02') { monthName = 'February' };
+  if (month === '03') { monthName = 'March' };
+  if (month === '04') { monthName = 'April' };
+  if (month === '05') { monthName = 'May' };
+  if (month === '06') { monthName = 'June' };
+  if (month === '07') { monthName = 'July' };
+  if (month === '08') { monthName = 'August' };
+  if (month === '09') { monthName = 'September' };
+  if (month === '10') { monthName = 'October' };
+  if (month === '11') { monthName = 'November' };
+  if (month === '12') { monthName = 'December' };
 
   //put the url together
   //let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter/${topic.trim().replace(/\s+/g, '-').toLowerCase()}`;
@@ -489,18 +493,18 @@ export function beginning(fields){
                               <!--END OF BEGINNING-->`
 }
 
-export function live_webinar_w_header(fields){
+export function live_webinar_w_header(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
   let date = fields[2].value;
   let presenter = fields[3].value;
-  let provider= fields[4].value;
+  let provider = fields[4].value;
   let supporter = fields[5].value;
   let cost = fields[6].value;
   let credits = fields[7].value;
   let link = fields[8].value;
 
-  return(
+  return (
     `
     <!--LIVE WEBINAR WITH HEADER-->
     <tr>
@@ -550,16 +554,16 @@ export function live_webinar_w_header(fields){
   )
 }
 
-export function live_webinar_wo_header(fields){
+export function live_webinar_wo_header(fields) {
   let title = fields[0].value;
   let date = fields[1].value;
   let presenter = fields[2].value;
-  let provider= fields[3].value;
+  let provider = fields[3].value;
   let supporter = fields[4].value;
   let cost = fields[5].value;
   let credits = fields[6].value;
   let link = fields[7].value;
-  return(
+  return (
     `
     <!--LIVE WEBINAR WITHOUT HEADER-->
     <tr>
@@ -602,16 +606,16 @@ export function live_webinar_wo_header(fields){
   )
 }
 
-export function on_demand_webinar_w_header(fields){
+export function on_demand_webinar_w_header(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
   let presenter = fields[2].value;
-  let provider= fields[3].value;
+  let provider = fields[3].value;
   let supporter = fields[4].value;
   let cost = fields[5].value;
   let credits = fields[6].value;
   let link = fields[7].value;
-  return(
+  return (
     `<!--ON-DEMAND WEBINAR WITH HEADER-->
     <tr>
       <td height="30" align="center"></td>
@@ -665,16 +669,16 @@ export function on_demand_webinar_w_header(fields){
   )
 }
 
-export function on_demand_webinar_wo_header(fields){
+export function on_demand_webinar_wo_header(fields) {
   let title = fields[0].value;
   let presenter = fields[1].value;
-  let provider= fields[2].value;
+  let provider = fields[2].value;
   let supporter = fields[3].value;
   let cost = fields[4].value;
   let credits = fields[5].value;
   let link = fields[6].value;
 
-  return(
+  return (
     `<!--ON-DEMAND WEBINAR WITHOUT HEADER-->
     <tr>
       <td height="20" align="center"></td>
@@ -715,10 +719,10 @@ ${title}</strong></td>
   )
 }
 
-export function center_banner(fields){
+export function center_banner(fields) {
   let link = fields[0].value;
   let imgSrc = fields[1].value;
-  return(`
+  return (`
   <!--CENTER BANNER-->
   <tr>
   <td height="35" align="center"></td>
@@ -730,7 +734,7 @@ export function center_banner(fields){
   <td height="20" align="center"></td>
 </tr>
 
-${imgSrc?`
+${imgSrc ? `
 <tr>
 <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
 </tr>
@@ -739,22 +743,22 @@ ${imgSrc?`
  </td>
 </tr>   
 <tr>
-`:``}
+`: ``}
 
   <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
 </tr>
   <!--END CENTER BANNER-->`)
 }
-export function new_content_w_header(fields){
+export function new_content_w_header(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
   let presenter = fields[2].value;
-  let provider= fields[3].value;
+  let provider = fields[3].value;
   let source = fields[4].value;
   let cost = fields[5].value;
   let credits = fields[6].value;
   let link = fields[7].value;
-    return(`<!--NEW CONTENT WITH HEADER-->
+  return (`<!--NEW CONTENT WITH HEADER-->
     <tr>
       <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold; padding-top:10px;">${header}</td>
     </tr>
@@ -789,17 +793,17 @@ export function new_content_w_header(fields){
       <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
     </tr>
     <!--END OF NEW CONTENT WITH HEADER-->`)
-  }
-  export function new_content_wo_header(fields){
-    let title = fields[0].value;
-    let presenter = fields[1].value;
-    let provider= fields[2].value;
-    let source = fields[3].value;
-    let cost = fields[4].value;
-    let credits = fields[5].value;
-    let link = fields[6].value;
-  
-    return(`                          <!--NEW CONTENT WITHOUT HEADER-->
+}
+export function new_content_wo_header(fields) {
+  let title = fields[0].value;
+  let presenter = fields[1].value;
+  let provider = fields[2].value;
+  let source = fields[3].value;
+  let cost = fields[4].value;
+  let credits = fields[5].value;
+  let link = fields[6].value;
+
+  return (`                          <!--NEW CONTENT WITHOUT HEADER-->
     <tr>
       <td height="20" align="center"></td>
     </tr>
@@ -836,11 +840,11 @@ ${title}</strong><br />
       <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
     </tr>
     <!--END OF NEW CONTENT WITHOUT HEADER-->`)
-  }
+}
 
-  export function end_new_content(fields){
-    return(
-  `
+export function end_new_content(fields) {
+  return (
+    `
   <tr>
   <td height="35" align="center"></td>
 </tr>
@@ -853,7 +857,7 @@ ${title}</strong><br />
   `)
 }
 
-export function ebook(fields){
+export function ebook(fields) {
 
   let title = fields[0].value;
   let author = fields[1].value;
@@ -865,8 +869,8 @@ export function ebook(fields){
   let link = fields[7].value;
   let imgSrc = fields[8].value;
 
-  return(
-`<!--START EBOOK SECTION -->
+  return (
+    `<!--START EBOOK SECTION -->
 <tr>
   <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">Featured CE eBook</td>
 </tr>
@@ -933,9 +937,10 @@ export function ebook(fields){
   <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
 </tr>                        
 <!--END EBOOK SECTION --> `
-  )}
+  )
+}
 
-export function portal_partner(fields){
+export function portal_partner(fields) {
 
   let title = fields[0].value;
   let presenter = fields[1].value;
@@ -947,8 +952,8 @@ export function portal_partner(fields){
   let imgSrc = fields[7].value;
   let brandLink = fields[8].value;
 
-  return(
-  `<!--FEATURED PORTAL PARTNER-->
+  return (
+    `<!--FEATURED PORTAL PARTNER-->
   <tr>
     <td height="25" align="center"></td>
   </tr>
@@ -1010,10 +1015,10 @@ export function portal_partner(fields){
 }
 
 
-export function end(fields){
+export function end(fields) {
   let month = fields[0].value;
   let year = fields[1].value;
-  return(
+  return (
     `  
   <!--START OF THE END -->
     <tr>
@@ -1042,7 +1047,7 @@ export function end(fields){
       <br>
 You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#666 !important; text-decoration:none;">AEGIS Dental Network</a> | CDEWorld.<br />To ensure delivery, please add <a href="mailto:reply-215892@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-215892@news.aegispublications.com</a> to your address book<br />
 %%PLUGIN_UNSUBSCRIBE: 1146575-UNSUBSCRIBE%% <br />
-     CDEWorld an AEGIS Publication | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
+CDEWorld a part of the AEGIS Dental Network | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
 </tr>
 
 <tr>

@@ -832,7 +832,7 @@ export function new_content_wo_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333; padding-bottom:6px;"><strong>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333; "><strong>
 ${title}</strong><br />
         <span style="font-size:13px; line-height:18px;">${presenter}</span></td>
     </tr>
@@ -1000,7 +1000,7 @@ export function portal_partner(fields) {
     <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:17px; color:#333333; padding-bottom:15px;"><strong>${title}</strong></td>
   </tr>
   <tr>
-    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:auto; color:#333333; padding-bottom:7px;">${presenter}</td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:auto; color:#333333; ">${presenter}</td>
   </tr>
   <tr>
     <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -1112,38 +1112,6 @@ export function end(fields) {
                <tr>
                  <td align="center" style="padding:10px 0px;"> <img src="https://cdeworld.com/media/14014/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
                </tr>
-               <tr>
-                 <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
-                     <tr>
-                       <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="300" align="left" class="w100">
-                           <tr>
-<td align="left" class="center" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#818181;">© ${year}<em> CDEWorld</em>. All rights reserved.<br>
-                               PO Box 510 | Newtown, PA 18940 </td>
-                           </tr>
-                         </table>
-                         
-                         <!--[if gte mso 9]>
-                         </td>
-                         <td align="center"  valign="top">
-<![endif]-->
-                         
-                         <table cellpadding="0" cellspacing="0" border="0" width="110" align="right" class="w100">
-                           <tr>
-                             <td align="center" height="40"><table cellpadding="0" cellspacing="0" border="0">
-                                 <tr>
-                                   <td align="center"><a href="https://www.facebook.com/CDEWorldDentistry/" target="_blank"> <img src="https://www.dentalaegis.com/media/60261/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
-                                   <td align="center"><a href="https://twitter.com/CDEWorld" target="_blank"> <img src="https://www.dentalaegis.com/media/60286/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
-                                   <td align="center"><a href="mailto:?subject=FW: Dentist News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/2018/02/dds.html" target="_blank"> <img src="https://www.dentalaegis.com/media/60292/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
-                                 </tr>
-                               </table></td>
-                           </tr>
-                         </table></td>
-                     </tr>
-                   </table></td>
-               </tr>
-               <tr>
-                 <td height="25" align="center"></td>
-               </tr>
              </table></td>
            <td width="30" class="w20"></td>
          </tr>
@@ -1162,7 +1130,7 @@ export function end(fields) {
       <br>
 You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#666 !important; text-decoration:none;">AEGIS Dental Network</a> | CDEWorld.<br />To ensure delivery, please add <a href="mailto:reply-207852@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-207852@news.aegispublications.com</a> to your address book<br />
 %%PLUGIN_UNSUBSCRIBE: 1146575-UNSUBSCRIBE%% <br />
-     CDEWorld an AEGIS Publication | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
+CDEWorld a part of the AEGIS Dental Network | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
 </tr>
 <tr>
 <td height="22" align="center"></td>

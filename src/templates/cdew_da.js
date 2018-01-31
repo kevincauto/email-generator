@@ -646,7 +646,7 @@ export function on_demand_webinar_w_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:12px;"><table cellpadding="0" cellspacing="0" border="0" width="100%">
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; "><table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tbody>
           <tr>
             <td align="left"><strong>${title}</strong></td>
@@ -704,7 +704,7 @@ export function on_demand_webinar_wo_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:12px;"><strong>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; "><strong>
 ${title}</strong></td>
     </tr>
     <tr>
@@ -826,7 +826,7 @@ export function new_content_wo_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333; padding-bottom:6px;"><strong>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333; "><strong>
 ${title}</strong><br />
         <span style="font-size:13px; line-height:18px;">${presenter}</span></td>
     </tr>
@@ -1232,7 +1232,7 @@ PO Box 510 | Newtown, PA 18940</span></td>
       <br>
 You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#666 !important; text-decoration:none;">AEGIS Dental Network</a> | CDEWorld.<br />To ensure delivery, please add <a href="mailto:reply-207852@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-207852@news.aegispublications.com</a> to your address book<br />
 %%PLUGIN_UNSUBSCRIBE: 1146575-UNSUBSCRIBE%% <br />
-     CDEWorld an AEGIS Publication | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
+CDEWorld a part of the AEGIS Dental Network | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
 </tr>
 <td height="22" align="center"></td>
 </tr>
