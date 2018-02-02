@@ -237,6 +237,15 @@ export const cdew_dds_forms = {
       { label: 'Event Image Source', name: 'imgSrc', value: 'http://placehold.it/150x150' }
     ]
   },
+  border: {
+    typeOfRow: 'border',
+    header: 'Border',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: []
+  },
   end: {
     typeOfRow: 'end',
     header: 'End of the Email',
@@ -290,6 +299,7 @@ export const cdew_dds_initial_state = [
   _.cloneDeep(cdew_dds_forms.ebook),
   _.cloneDeep(cdew_dds_forms.portal_partner),
   _.cloneDeep(cdew_dds_forms.featured_event),
+  _.cloneDeep(cdew_dds_forms.border),
   _.cloneDeep(cdew_dds_forms.end)
 ];
 
@@ -1098,7 +1108,13 @@ export function featured_event(fields) {
 <!--END FEATURED EVENT -->   
 `)
 }
-
+export function border(fields) {
+  return (
+    `<tr>
+      <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100" /></td>
+    </tr>`
+  )
+}
 export function end(fields) {
   let month = fields[0].value;
   let year = fields[1].value;
