@@ -3,327 +3,329 @@ import _ from 'lodash';
 //Auto detect the month and year for the url.  
 let d = new Date();
 let month = d.getMonth() + 1;
-if(month<10){month = '0' + '' + month}
+if (month < 10) { month = '0' + '' + month }
 
 month = month.toString();
 let year = d.getFullYear();
 
 export const cdew_thematic_forms = {
-  beginning: {
-    typeOfRow: 'beginning',
-    header: 'Beginning Section',
-    closable: false,
-    switchable: false,
-    addable: true,
-    draggable: false,
-    fields:  [
-      {label: 'Email Name', name: 'emailName', value: 'ce3'},
-      {label: 'Month', name: 'month', value: month, dropdown: [
-              {value: '01', text: 'Send Month: January'}, 
-              {value: '02', text: 'Send Month: February'},
-              {value: '03', text: 'Send Month: March'}, 
-              {value: '04', text: 'Send Month: April'},
-              {value: '05', text: 'Send Month: May'}, 
-              {value: '06', text: 'Send Month: June'},
-              {value: '07', text: 'Send Month: July'}, 
-              {value: '08', text: 'Send Month: August'},
-              {value: '09', text: 'Send Month: September'}, 
-              {value: '10', text: 'Send Month: October'},
-              {value: '11', text: 'Send Month: November'}, 
-              {value: '12', text: 'Send Month: December'},
-          ]
-      },
-      {label: 'Year', name: 'year', value: year, dropdown: [   
-          {value: '2018', text: 'Send Year: 2018'},
-          {value: '2019', text: 'Send Year: 2019'}, 
-          {value: '2020', text: 'Send Year: 2020'},
-          {value: '2021', text: 'Send Year: 2021'}, 
-          {value: '2022', text: 'Send Year: 2022'}
-      ]
-      },
-      {label: 'Masthead Link', name: 'mastheadLink'},
-      {label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80'},
-      {label: 'Subscribe Link', name: 'subscribe'},
-      {label: 'Thematic Topic', name: 'topic'},
-      {label: 'Banner Image Source', name: 'imgSrc', value: 'http://placehold.it/600x150'}
-    ]
-  },
-  live_webinar:     {
-    typeOfRow: 'live_webinar',
-    header: 'Live Webinar w/ Header',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'Upcoming Live Webinar'},
-      {label: 'Title', name: 'title'},
-      {label: 'Date', name: 'date'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Commercial Supporter', name: 'supporter'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'}
-    ]
-  },
-  live_webinar_wo_header: {
-    typeOfRow: 'live_webinar_wo_header',
-    header: 'Live Webinar w/o Header',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Date', name: 'date'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Commercial Supporter', name: 'supporter'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'}
-    ]
-  },
-  on_demand_webinar: {
-    typeOfRow: 'on_demand_webinar',
-    header: 'On-Demand Webinar w/ Header',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'Featured On-Demand Webinars'},
-      {label: 'Title', name: 'title'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Commercial Supporter', name: 'supporter'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'}
-    ]
-  },
-  on_demand_webinar_wo_header: {
-    typeOfRow: 'on_demand_webinar_wo_header',
-    header: 'On-Demand Webinar w/o Header',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Commercial Supporter', name: 'supporter'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'}
-    ]
-  },
-  end_webinar_section: {
-    typeOfRow: 'end_webinar_section',
-    header: "End of Webinar Section",
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  []
-  },
-  featured_ce: {
-    typeOfRow: 'featured_ce',
-    header: 'Featured CE w/ Header',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'Featured CE Courses - New Content Added'},
-      {label: 'Title', name: 'title'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Source', name: 'source'},
-      {label: 'Supporter', name: 'supporter'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'}
-    ]
-  },
-  featured_ce_wo_header: {
-    typeOfRow: 'featured_ce_wo_header',
-    header: 'Featured CE w/o Header',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Presenter', name: 'presenter'},
-      {label: 'Provider', name: 'provider'},
-      {label: 'Source', name: 'source'},
-      {label: 'Supporter', name: 'supporter'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Link', name: 'link'}
-    ]
-  },
-  end_featured_ce_section: {
-    typeOfRow: 'end_featured_ce_section',
-    header: "End Featured CE Section",
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  []
-  },
-  center_banner: {
-    typeOfRow: 'center_banner',
-    header: 'Center Banner',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-      {label: 'Link', name: 'link', value: 'Link'},
-      {label: 'Image Source', name: 'imgSrc'},
-    ]
-  },
-  featured_article: {
-    typeOfRow: 'featured_article',
-    header: 'Featured Article w/ Header',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header'},
-      {label: 'Title', name: 'title'},
-      {label: 'Author', name: 'author'},
-      {label: 'Source', name: 'source'},
-      {label: 'Link', name: 'link'}
-    ]
-  },
-  featured_article_wo_header: {
-    typeOfRow: 'featured_article_wo_header',
-    header: "Featued Article w/o Header",
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Author', name: 'author'},
-      {label: 'Source', name: 'source'},
-      {label: 'Link', name: 'link'}
-    ]
-  },
-  ebook: {
-    typeOfRow: 'ebook',
-    header: 'eBook Section',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Author', name: 'author'},
-      {label: 'Supporter', name: 'supporter'},
-      {label: 'Cost', name: 'cost'},
-      {label: 'Credits', name: 'credits'},
-      {label: 'Description', name: 'description'},
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source', name: 'imgSrc'},
-    ]
-  },
-  event: {
-    typeOfRow: 'event',
-    header: 'Featured Event',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header'},
-      {label: 'Title', name: 'title'},
-      {label: 'Details', name: 'details', value: 'November 18, 2017 | Boston, MA | 7 CEU'},
-      {label: 'Description', name: 'description'},
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source', name: 'imgSrc'}
-    ]
-  },
-  video: {
-    typeOfRow: 'video',
-    header: 'Featured Video',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-      {label: 'Title', name: 'title'},
-      {label: 'Link', name: 'link'},
-      {label: 'Image Source', name: 'imgSrc'}
-    ]
-  },
-  featured_webinar: {
-    typeOfRow: 'featured_webinar',
-    header: 'Featured Webinar',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-        {label: 'Header', name: 'header', value: 'Featured Webinar'},
-        {label: 'Title', name: 'title'},
-        {label: 'Presenter', name: 'presenter'},
-        {label: 'Dates', name: 'dates'},
-        {label: 'Link', name: 'link'},
-        {label: 'Image Source', name: 'imgSrc'}
-    ]
-  },
-  featured_product: {
-    typeOfRow: 'featured_product',
-    header: 'Featured Product',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header'},
-      {label: 'Title', name: 'title'},
-      {label: 'Description', name: 'description'},
-      {label: 'Link', name: 'link'},
-      {label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/155x180'}
-    ]
-  },
-  products: {
-    typeOfRow: 'products',
-    header: 'Non-Featured Products',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields:  [
-      {label: 'Header', name: 'header', value: 'Regenerative Dentistry Products'},
-      {label: 'First Product', name: 'product1'},
-      {label: 'First Company', name: 'company1'},
-      {label: 'First Description', name: 'description1'},
-      {label: 'First Link', name: 'link1'},
-      {label: 'First Image Source', name: 'imgSrc1'},
-      {label: 'Second Product', name: 'product2'},
-      {label: 'Second Company', name: 'company2'},
-      {label: 'Second Description', name: 'description2'},
-      {label: 'Second Link', name: 'link2'},
-      {label: 'Second Image Source', name: 'imgSrc2'},
-    ]
-  },
-  end: {
-    typeOfRow: 'end',
-    header: 'End of the Email',
-    closable: false,
-    switchable: false,
-    addable: false,
-    draggable: false,
-    fields: []
-  }
+    beginning: {
+        typeOfRow: 'beginning',
+        header: 'Beginning Section',
+        closable: false,
+        switchable: false,
+        addable: true,
+        draggable: false,
+        fields: [
+            { label: 'Email Name', name: 'emailName', value: 'ce3' },
+            {
+                label: 'Month', name: 'month', value: month, dropdown: [
+                    { value: '01', text: 'Send Month: January' },
+                    { value: '02', text: 'Send Month: February' },
+                    { value: '03', text: 'Send Month: March' },
+                    { value: '04', text: 'Send Month: April' },
+                    { value: '05', text: 'Send Month: May' },
+                    { value: '06', text: 'Send Month: June' },
+                    { value: '07', text: 'Send Month: July' },
+                    { value: '08', text: 'Send Month: August' },
+                    { value: '09', text: 'Send Month: September' },
+                    { value: '10', text: 'Send Month: October' },
+                    { value: '11', text: 'Send Month: November' },
+                    { value: '12', text: 'Send Month: December' },
+                ]
+            },
+            {
+                label: 'Year', name: 'year', value: year, dropdown: [
+                    { value: '2018', text: 'Send Year: 2018' },
+                    { value: '2019', text: 'Send Year: 2019' },
+                    { value: '2020', text: 'Send Year: 2020' },
+                    { value: '2021', text: 'Send Year: 2021' },
+                    { value: '2022', text: 'Send Year: 2022' }
+                ]
+            },
+            { label: 'Masthead Link', name: 'mastheadLink' },
+            { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+            { label: 'Subscribe Link', name: 'subscribe' },
+            { label: 'Thematic Topic', name: 'topic' },
+            { label: 'Banner Image Source', name: 'imgSrc', value: 'http://placehold.it/600x150' }
+        ]
+    },
+    live_webinar: {
+        typeOfRow: 'live_webinar',
+        header: 'Live Webinar w/ Header',
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Header', name: 'header', value: 'Upcoming Live Webinar' },
+            { label: 'Title', name: 'title' },
+            { label: 'Date', name: 'date' },
+            { label: 'Presenter', name: 'presenter' },
+            { label: 'Provider', name: 'provider' },
+            { label: 'Commercial Supporter', name: 'supporter' },
+            { label: 'Cost', name: 'cost' },
+            { label: 'Credits', name: 'credits' },
+            { label: 'Link', name: 'link' }
+        ]
+    },
+    live_webinar_wo_header: {
+        typeOfRow: 'live_webinar_wo_header',
+        header: 'Live Webinar w/o Header',
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Title', name: 'title' },
+            { label: 'Date', name: 'date' },
+            { label: 'Presenter', name: 'presenter' },
+            { label: 'Provider', name: 'provider' },
+            { label: 'Commercial Supporter', name: 'supporter' },
+            { label: 'Cost', name: 'cost' },
+            { label: 'Credits', name: 'credits' },
+            { label: 'Link', name: 'link' }
+        ]
+    },
+    on_demand_webinar: {
+        typeOfRow: 'on_demand_webinar',
+        header: 'On-Demand Webinar w/ Header',
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Header', name: 'header', value: 'Featured On-Demand Webinars' },
+            { label: 'Title', name: 'title' },
+            { label: 'Presenter', name: 'presenter' },
+            { label: 'Provider', name: 'provider' },
+            { label: 'Commercial Supporter', name: 'supporter' },
+            { label: 'Cost', name: 'cost' },
+            { label: 'Credits', name: 'credits' },
+            { label: 'Link', name: 'link' }
+        ]
+    },
+    on_demand_webinar_wo_header: {
+        typeOfRow: 'on_demand_webinar_wo_header',
+        header: 'On-Demand Webinar w/o Header',
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Title', name: 'title' },
+            { label: 'Presenter', name: 'presenter' },
+            { label: 'Provider', name: 'provider' },
+            { label: 'Commercial Supporter', name: 'supporter' },
+            { label: 'Cost', name: 'cost' },
+            { label: 'Credits', name: 'credits' },
+            { label: 'Link', name: 'link' }
+        ]
+    },
+    end_webinar_section: {
+        typeOfRow: 'end_webinar_section',
+        header: "End of Webinar Section",
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: []
+    },
+    featured_ce: {
+        typeOfRow: 'featured_ce',
+        header: 'Featured CE w/ Header',
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Header', name: 'header', value: 'Featured CE Courses - New Content Added' },
+            { label: 'Title', name: 'title' },
+            { label: 'Presenter', name: 'presenter' },
+            { label: 'Provider', name: 'provider' },
+            { label: 'Source', name: 'source' },
+            { label: 'Supporter', name: 'supporter' },
+            { label: 'Cost', name: 'cost' },
+            { label: 'Credits', name: 'credits' },
+            { label: 'Link', name: 'link' }
+        ]
+    },
+    featured_ce_wo_header: {
+        typeOfRow: 'featured_ce_wo_header',
+        header: 'Featured CE w/o Header',
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Title', name: 'title' },
+            { label: 'Presenter', name: 'presenter' },
+            { label: 'Provider', name: 'provider' },
+            { label: 'Source', name: 'source' },
+            { label: 'Supporter', name: 'supporter' },
+            { label: 'Cost', name: 'cost' },
+            { label: 'Credits', name: 'credits' },
+            { label: 'Link', name: 'link' }
+        ]
+    },
+    end_featured_ce_section: {
+        typeOfRow: 'end_featured_ce_section',
+        header: "End Featured CE Section",
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: []
+    },
+    center_banner: {
+        typeOfRow: 'center_banner',
+        header: 'Center Banner',
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Link', name: 'link' },
+            { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/600x70' },
+        ]
+    },
+    featured_article: {
+        typeOfRow: 'featured_article',
+        header: 'Featured Article w/ Header',
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Header', name: 'header' },
+            { label: 'Title', name: 'title' },
+            { label: 'Author', name: 'author' },
+            { label: 'Source', name: 'source' },
+            { label: 'Link', name: 'link' }
+        ]
+    },
+    featured_article_wo_header: {
+        typeOfRow: 'featured_article_wo_header',
+        header: "Featued Article w/o Header",
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Title', name: 'title' },
+            { label: 'Author', name: 'author' },
+            { label: 'Source', name: 'source' },
+            { label: 'Link', name: 'link' }
+        ]
+    },
+    ebook: {
+        typeOfRow: 'ebook',
+        header: 'eBook Section',
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Title', name: 'title' },
+            { label: 'Author', name: 'author' },
+            { label: 'Supporter', name: 'supporter' },
+            { label: 'Cost', name: 'cost' },
+            { label: 'Credits', name: 'credits' },
+            { label: 'Description', name: 'description' },
+            { label: 'Link', name: 'link' },
+            { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/200x250' },
+        ]
+    },
+    event: {
+        typeOfRow: 'event',
+        header: 'Featured Event',
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Header', name: 'header' },
+            { label: 'Title', name: 'title' },
+            { label: 'Details', name: 'details', value: 'November 18, 2017 | Boston, MA | 7 CEU' },
+            { label: 'Description', name: 'description' },
+            { label: 'Link', name: 'link' },
+            { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/200x150' }
+        ]
+    },
+    video: {
+        typeOfRow: 'video',
+        header: 'Featured Video',
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Title', name: 'title' },
+            { label: 'Link', name: 'link' },
+            { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/200x150' }
+        ]
+    },
+    featured_webinar: {
+        typeOfRow: 'featured_webinar',
+        header: 'Featured Webinar',
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Header', name: 'header', value: 'Featured Webinar' },
+            { label: 'Title', name: 'title' },
+            { label: 'Presenter', name: 'presenter' },
+            { label: 'Dates', name: 'dates' },
+            { label: 'Link', name: 'link' },
+            { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/200x150' }
+        ]
+    },
+    featured_product: {
+        typeOfRow: 'featured_product',
+        header: 'Featured Product',
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Header', name: 'header' },
+            { label: 'Title', name: 'title' },
+            { label: 'Description', name: 'description' },
+            { label: 'Link', name: 'link' },
+            { label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/300x250' }
+        ]
+    },
+    products: {
+        typeOfRow: 'products',
+        header: 'Non-Featured Products',
+        closable: true,
+        switchable: true,
+        addable: true,
+        draggable: true,
+        fields: [
+            { label: 'Header', name: 'header', value: 'Regenerative Dentistry Products' },
+            { label: 'First Product', name: 'product1' },
+            { label: 'First Company', name: 'company1' },
+            { label: 'First Description', name: 'description1' },
+            { label: 'First Link', name: 'link1' },
+            { label: 'First Image Source', name: 'imgSrc1' },
+            { label: 'Second Product', name: 'product2' },
+            { label: 'Second Company', name: 'company2' },
+            { label: 'Second Description', name: 'description2' },
+            { label: 'Second Link', name: 'link2' },
+            { label: 'Second Image Source', name: 'imgSrc2' },
+        ]
+    },
+    end: {
+        typeOfRow: 'end',
+        header: 'End of the Email',
+        closable: false,
+        switchable: false,
+        addable: false,
+        draggable: false,
+        fields: []
+    }
 }
 
 export const cdew_thematic_initial_state = [
@@ -348,7 +350,7 @@ export const cdew_thematic_initial_state = [
     _.cloneDeep(cdew_thematic_forms.end)
 ];
 
-export function beginning(fields){
+export function beginning(fields) {
     let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
     let month = fields[1].value;
     let year = fields[2].value;
@@ -359,24 +361,24 @@ export function beginning(fields){
     let imgSrc = fields[7].value;
 
     //uppercase all words.
-    topic = topic.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    topic = topic.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
 
     let monthName;
-    if(month === '01'){monthName = 'January'};
-    if(month === '02'){monthName = 'February'};
-    if(month === '03'){monthName = 'March'};
-    if(month === '04'){monthName = 'April'};
-    if(month === '05'){monthName = 'May'};
-    if(month === '06'){monthName = 'June'};
-    if(month === '07'){monthName = 'July'};
-    if(month === '08'){monthName = 'August'};
-    if(month === '09'){monthName = 'September'};
-    if(month === '10'){monthName = 'October'};
-    if(month === '11'){monthName = 'November'};
-    if(month === '12'){monthName = 'December'};
+    if (month === '01') { monthName = 'January' };
+    if (month === '02') { monthName = 'February' };
+    if (month === '03') { monthName = 'March' };
+    if (month === '04') { monthName = 'April' };
+    if (month === '05') { monthName = 'May' };
+    if (month === '06') { monthName = 'June' };
+    if (month === '07') { monthName = 'July' };
+    if (month === '08') { monthName = 'August' };
+    if (month === '09') { monthName = 'September' };
+    if (month === '10') { monthName = 'October' };
+    if (month === '11') { monthName = 'November' };
+    if (month === '12') { monthName = 'December' };
 
 
-  return `
+    return `
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -580,28 +582,28 @@ export function beginning(fields){
   `
 }
 
-export function live_webinar(fields){
+export function live_webinar(fields) {
 
 
-  let header = fields[0].value;
-  let title = fields[1].value;
-  let date = fields[2].value;
-  let presenter = fields[3].value;
-  let provider= fields[4].value;
-  let supporter = fields[5].value;
-  let cost = fields[6].value;
-  let credits = fields[7].value;
-  let link = fields[8].value;
+    let header = fields[0].value;
+    let title = fields[1].value;
+    let date = fields[2].value;
+    let presenter = fields[3].value;
+    let provider = fields[4].value;
+    let supporter = fields[5].value;
+    let cost = fields[6].value;
+    let credits = fields[7].value;
+    let link = fields[8].value;
 
-  return(
-    `
+    return (
+        `
     <!--LIVE WEBINAR WITH HEADER-->
     <tr>
             <td>
                 <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding: 0 32px 0 32px; line-height:27px;">${header}</div>
                 <div class="module-body" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
                     <span style="color:#333333; font-weight: bold;">${title}</span>
-                    <div style="margin:8px 0;">
+                    <div style="margin:0px 0;">
                         ${date}<br>
                         <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0" style="padding:5px 0;">
                             <tr>
@@ -621,26 +623,26 @@ export function live_webinar(fields){
                 </div>
   <!--END LIVE WEBINAR WITH HEADER SECTION-->
     `
-  )
+    )
 }
 
-export function live_webinar_wo_header(fields){
+export function live_webinar_wo_header(fields) {
 
 
-  let title = fields[0].value;
-  let date = fields[1].value;
-  let presenter = fields[2].value;
-  let provider= fields[3].value;
-  let supporter = fields[4].value;
-  let cost = fields[5].value;
-  let credits = fields[6].value;
-  let link = fields[7].value;
-  return(
-    `
+    let title = fields[0].value;
+    let date = fields[1].value;
+    let presenter = fields[2].value;
+    let provider = fields[3].value;
+    let supporter = fields[4].value;
+    let cost = fields[5].value;
+    let credits = fields[6].value;
+    let link = fields[7].value;
+    return (
+        `
     <!--START LIVE WEBINAR WITHOUT HEADER-->
     <div class="module-body" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
                       <span style="color:#333333; font-weight: bold;">${title}</span>
-                      <div style="margin:8px 0;">
+                      <div style="margin:0px 0;">
                           ${date}<br>
                           <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0" style="padding:5px 0;">
                               <tr>
@@ -662,20 +664,20 @@ export function live_webinar_wo_header(fields){
           </tr>
     <!--START LIVE WEBINAR WITHOUT HEADER-->
     `
-  )
+    )
 }
 
-export function on_demand_webinar(fields){
-  let header = fields[0].value;
-  let title = fields[1].value;
-  let presenter = fields[2].value;
-  let provider= fields[3].value;
-  let supporter = fields[4].value;
-  let cost = fields[5].value;
-  let credits = fields[6].value;
-  let link = fields[7].value;
-  return(
-    `
+export function on_demand_webinar(fields) {
+    let header = fields[0].value;
+    let title = fields[1].value;
+    let presenter = fields[2].value;
+    let provider = fields[3].value;
+    let supporter = fields[4].value;
+    let cost = fields[5].value;
+    let credits = fields[6].value;
+    let link = fields[7].value;
+    return (
+        `
     <!--START ON-DEMAND WEBINAR WITH HEADER-->
     <tr>
         <td>
@@ -683,7 +685,7 @@ export function on_demand_webinar(fields){
             <!-- Webinar # -->
             <div class="module-body" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
                 <span style="color:#333333; font-weight: bold;">${title}</span>
-                <div style="margin:8px 0;">
+                <div style="margin:0px 0px;">
                     <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0" style="padding:5px 0;">
                         <tr>
                             <td valign="top" width="48%">
@@ -705,27 +707,27 @@ export function on_demand_webinar(fields){
     </tr>
     <!--END ON-DEMAND WEBINAR WITH HEADER-->
     `
-  )
+    )
 }
 
-export function on_demand_webinar_wo_header(fields){
-  let title = fields[0].value;
-  let presenter = fields[1].value;
-  let provider= fields[2].value;
-  let supporter = fields[3].value;
-  let cost = fields[4].value;
-  let credits = fields[5].value;
-  let link = fields[6].value;
+export function on_demand_webinar_wo_header(fields) {
+    let title = fields[0].value;
+    let presenter = fields[1].value;
+    let provider = fields[2].value;
+    let supporter = fields[3].value;
+    let cost = fields[4].value;
+    let credits = fields[5].value;
+    let link = fields[6].value;
 
-  return(
-    `
+    return (
+        `
     <!--START ON-DEMAND WEBINAR WITHOUT HEADER-->
     <tr>
         <td>
             <!-- Webinar # -->
             <div class="module-body" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
                 <span style="color:#333333; font-weight: bold;">${title}</span>
-                <div style="margin:8px 0;">
+                <div style="margin:0px 0px;">
                     <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0" style="padding:5px 0;">
                         <tr>
                             <td valign="top" width="48%">
@@ -747,12 +749,12 @@ export function on_demand_webinar_wo_header(fields){
     </tr>
     <!--END ON-DEMAND WEBINAR WITHOUT HEADER-->
     `
-  )
+    )
 }
 
-export function end_webinar_section(fields){
+export function end_webinar_section(fields) {
 
-  return(`
+    return (`
   <!--WEBINAR LIBRARY LINK-->
   <tr>
       <!-- Section-end Link -->
@@ -772,17 +774,17 @@ export function end_webinar_section(fields){
   <!--END WEBINAR LIBRARY LINK-->
   `)
 }
-export function featured_ce(fields){
-  let header = fields[0].value;
-  let title = fields[1].value;
-  let presenter = fields[2].value;
-  let provider= fields[3].value;
-  let source = fields[4].value;
-  let supporter = fields[5].value;
-  let cost = fields[6].value;
-  let credits = fields[7].value;
-  let link = fields[8].value;
-    return(`
+export function featured_ce(fields) {
+    let header = fields[0].value;
+    let title = fields[1].value;
+    let presenter = fields[2].value;
+    let provider = fields[3].value;
+    let source = fields[4].value;
+    let supporter = fields[5].value;
+    let cost = fields[6].value;
+    let credits = fields[7].value;
+    let link = fields[8].value;
+    return (`
     <!--FEATURED CE COURSE WITH HEADER-->
     <tr>
         <!-- Divider -->
@@ -803,7 +805,7 @@ export function featured_ce(fields){
                         <td width="48%" height="32" valign="top">
                             Provider: ${provider}<br>
                             Source: <em>${source}</em>
-                            ${supporter?`Commercial Supporter: <em>${supporter}</em>`:''}
+                            ${supporter ? `Commercial Supporter: <em>${supporter}</em>` : ''}
                         </td>
                         <td valign="top">
                             Credits: ${credits}<br>
@@ -818,18 +820,18 @@ export function featured_ce(fields){
     </tr>
     <!--END FEATURED CE COURSE WITH HEADER-->
     `)
-  }
-  export function featured_ce_wo_header(fields){
+}
+export function featured_ce_wo_header(fields) {
     let title = fields[0].value;
     let presenter = fields[1].value;
-    let provider= fields[2].value;
+    let provider = fields[2].value;
     let source = fields[3].value;
     let supporter = fields[4].value;
     let cost = fields[5].value;
     let credits = fields[6].value;
     let link = fields[7].value;
-  
-    return(`   
+
+    return (`   
     <!--START FEATURED CE COURSE WITHOUT HEADER-->
     <tr>
       <td>
@@ -858,12 +860,12 @@ export function featured_ce(fields){
     <tr>
 <!--END FEATURED CE COURSE WITHOUT HEADER-->          
     `)
-  }
+}
 
-  export function end_featured_ce_section(fields){
-  
-    return(
-      `
+export function end_featured_ce_section(fields) {
+
+    return (
+        `
       <!--START END OF FEATURED CE SECTION -->
       <tr>
           <td class="section-end-mod">
@@ -882,14 +884,14 @@ export function featured_ce(fields){
     <!--END END OF FEATURED CE SECTION -->
       `
     )
-  }
-  
-  export function center_banner(fields){
+}
+
+export function center_banner(fields) {
     let link = fields[0].value;
     let imgSrc = fields[1].value;
 
-    return(
-      `
+    return (
+        `
       <!--START CENTER BANNER-->
       <tr>
           <!-- Divider -->
@@ -909,17 +911,17 @@ export function featured_ce(fields){
     <!--END CENTER BANNER-->
       `
     )
-  }
-  
-  export function featured_article(fields){
+}
+
+export function featured_article(fields) {
     let header = fields[0].value;
     let title = fields[1].value;
     let author = fields[2].value;
     let source = fields[3].value;
     let link = fields[4].value;
 
-    return(
-      `
+    return (
+        `
       <!--FEATURED ARTICLE WITH HEADER-->
       <tr>
           <!-- Divider -->
@@ -950,16 +952,16 @@ export function featured_ce(fields){
     <!--END FEATURED ARTICLE WITH HEADER-->
       `
     )
-  }
-  
-  export function featured_article_wo_header(fields){
+}
+
+export function featured_article_wo_header(fields) {
     let title = fields[0].value;
     let author = fields[1].value;
     let source = fields[2].value;
     let link = fields[3].value;
-  
-    return(
-      `
+
+    return (
+        `
       <!--FEATURED ARTICLE WITHOUT HEADER-->
       <tr>
         <td>
@@ -983,9 +985,9 @@ export function featured_ce(fields){
       <!--END FEATURE ARTICLE WITHOUT HEADER-->
       `
     )
-  }
-  
-  export function ebook(fields){
+}
+
+export function ebook(fields) {
     let title = fields[0].value;
     let author = fields[1].value;
     let supporter = fields[2].value;
@@ -995,7 +997,7 @@ export function featured_ce(fields){
     let link = fields[6].value;
     let imgSrc = fields[7].value;
 
-    return(`
+    return (`
     <!--START EBOOK-->
     <tr>
         <td class="divider" align="center"><img src="http://aegispublications.com/news/cdeworld/2014/10/theme-email-divide.jpg" width="600" height="45" alt="" style="margin: 12px 0;"></td>
@@ -1046,15 +1048,15 @@ ${title}</span>
     </tr>
 <!--END EBOOK-->
     `)
-  }
-  export function event(fields){
+}
+export function event(fields) {
     let header = fields[0].value;
     let title = fields[1].value;
     let details = fields[2].value;
     let description = fields[3].value;
     let link = fields[4].value;
     let imgSrc = fields[5].value;
-      return(`
+    return (`
       <!--FEATURED EVENT-->
       <tr>
           <!-- Divider -->
@@ -1087,13 +1089,13 @@ ${title}</span>
       </tr>
       <!--END FEATURED EVENT-->
       `)
-    }
-    export function video(fields){
-      let title = fields[0].value;
-      let link = fields[1].value;
-      let imgSrc = fields[2].value;
-    
-      return(`   
+}
+export function video(fields) {
+    let title = fields[0].value;
+    let link = fields[1].value;
+    let imgSrc = fields[2].value;
+
+    return (`   
       <!--START FEATURED VIDEO-->
       <tr>
           <!-- Divider -->
@@ -1124,9 +1126,9 @@ ${title}</span>
       </tr>
       <!--END FEATURED VIDEO-->             
       `)
-    }
+}
 
-  export function featured_webinar(fields){
+export function featured_webinar(fields) {
     let header = fields[0].value;
     let title = fields[1].value;
     let presenter = fields[2].value;
@@ -1134,8 +1136,8 @@ ${title}</span>
     let link = fields[4].value;
     let imgSrc = fields[5].value;
 
-    return(
-  `
+    return (
+        `
   <!--START FEATURED WEBINAR SECTION-->       
   <tr>
       <!-- Divider -->
@@ -1168,14 +1170,14 @@ ${title}</span>
   `)
 }
 
-export function featured_product(fields){
-  let header = fields[0].value;
-  let title = fields[1].value;
-  let description = fields[2].value;
-  let link = fields[3].value;
-  let imgSrc = fields[4].value;
-  return(
-`
+export function featured_product(fields) {
+    let header = fields[0].value;
+    let title = fields[1].value;
+    let description = fields[2].value;
+    let link = fields[3].value;
+    let imgSrc = fields[4].value;
+    return (
+        `
 <!--START FEATURED PRODUCT SECTION-->
 <tr>
     <!-- Divider -->
@@ -1206,38 +1208,39 @@ export function featured_product(fields){
 </tr>
 <!--END FEATURED PRODUCT SECTION-->
 `
-  )}
+    )
+}
 
-export function products(fields){
-    fields:  [
-        {label: 'Header', name: 'header'},
-        {label: 'First Product', name: 'product1'},
-        {label: 'First Company', name: 'company1'},
-        {label: 'First Description', name: 'description1'},
-        {label: 'First Link', name: 'link1'},
-        {label: 'First Image Source', name: 'imgSrc1'},
-        {label: 'Second Product', name: 'product2'},
-        {label: 'Second Company', name: 'company2'},
-        {label: 'Second Description', name: 'description2'},
-        {label: 'Second Link', name: 'link2'},
-        {label: 'Second Image Source', name: 'imgSrc2'},
-      ]
+export function products(fields) {
+    fields: [
+        { label: 'Header', name: 'header' },
+        { label: 'First Product', name: 'product1' },
+        { label: 'First Company', name: 'company1' },
+        { label: 'First Description', name: 'description1' },
+        { label: 'First Link', name: 'link1' },
+        { label: 'First Image Source', name: 'imgSrc1' },
+        { label: 'Second Product', name: 'product2' },
+        { label: 'Second Company', name: 'company2' },
+        { label: 'Second Description', name: 'description2' },
+        { label: 'Second Link', name: 'link2' },
+        { label: 'Second Image Source', name: 'imgSrc2' },
+    ]
 
 
-  let header = fields[0].value;
-  let product1 = fields[1].value;
-  let company1 = fields[2].value;
-  let description1 = fields[3].value;
-  let link1 = fields[4].value;
-  let imgSrc1 = fields[5].value;
-  let product2 = fields[6].value;
-  let company2 = fields[7].value;
-  let description2 = fields[8].value;
-  let link2 = fields[9].value;
-  let imgSrc2= fields[10].value;
+    let header = fields[0].value;
+    let product1 = fields[1].value;
+    let company1 = fields[2].value;
+    let description1 = fields[3].value;
+    let link1 = fields[4].value;
+    let imgSrc1 = fields[5].value;
+    let product2 = fields[6].value;
+    let company2 = fields[7].value;
+    let description2 = fields[8].value;
+    let link2 = fields[9].value;
+    let imgSrc2 = fields[10].value;
 
-  return(
-  `
+    return (
+        `
   <!--START NON-FEATURED PRODUCTS-->
   <tr>
       <!-- Divider -->
@@ -1283,10 +1286,10 @@ export function products(fields){
 }
 
 
-export function end(fields){
+export function end(fields) {
 
-  return(
-    `  
+    return (
+        `  
     <!--START OF THE END OF THE EMAIL-->
     <tr>
         <!-- Divider -->
@@ -1330,5 +1333,5 @@ You received this e-mail because you are a customer of <a href="https://www.aegi
 </map>
 </body></html>
 `
-  )
+    )
 }
