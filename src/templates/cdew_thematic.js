@@ -129,7 +129,10 @@ export const cdew_thematic_forms = {
         switchable: true,
         addable: true,
         draggable: true,
-        fields: []
+        fields: [
+            { label: 'Message', name: 'message', value: 'Visit the CDEWorld Library for access to additional CE courses focused on Infection Control!' },
+            { label: 'Link', name: 'link', value: 'https://cdeworld.com/courses/search?utf8=%E2%9C%93&q=&c=294&p=&o=&s=&commit=SEARCH' }
+        ]
     },
     featured_ce: {
         typeOfRow: 'featured_ce',
@@ -175,7 +178,10 @@ export const cdew_thematic_forms = {
         switchable: true,
         addable: true,
         draggable: true,
-        fields: []
+        fields: [
+            { label: 'Message', name: 'message', value: 'Visit the CDEWorld Library for access to additional CE courses focused on Infection Control!' },
+            { label: 'Link', name: 'link', value: 'https://cdeworld.com/courses/search?utf8=%E2%9C%93&q=&c=294&p=&o=&s=&commit=SEARCH' }
+        ]
     },
     center_banner: {
         typeOfRow: 'center_banner',
@@ -557,7 +563,7 @@ export function beginning(fields) {
                                               <img class="cdeworld-logo" src="http://aegispublications.com/news/cdeworld/2017/logos/cde-logo.jpg" width="420" height="85" alt="CDEWorld" style="margin:0 18px 27px 22px;" border="0">
                                           </a>
                                       </td>
-                                      <td class="subscribe-button" width="170" style="padding-bottom: 31px; padding-left: 20px; padding-right: 28px;"><a href="http://aegispublications.com/machform/view.php?id=146&hq_e=el&hq_m=4197608&hq_l=5&hq_v=aa181f797d" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2014/10/email-subscribebtn.png" border="0" style="height:45px;" /></a></td>
+                                      <td class="subscribe-button" width="170" style="padding-bottom: 31px; padding-left: 20px; padding-right: 28px;"><a href="${subscribe}" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2014/10/email-subscribebtn.png" border="0" style="height:45px;" /></a></td>
                                   </tr>
                               </table>
                           </td>
@@ -754,6 +760,9 @@ export function on_demand_webinar_wo_header(fields) {
 
 export function end_webinar_section(fields) {
 
+    let message = fields[0].value;
+    let link = fields[1].value;
+
     return (`
   <!--WEBINAR LIBRARY LINK-->
   <tr>
@@ -763,7 +772,7 @@ export function end_webinar_section(fields) {
               <tr>
                   <td>
                       <div style="padding: 18px 20px; font-family:Arial, sans-serif; font-size: 12px; line-height:1.4em; color:#525252;">
-                          <a href="https://cdeworld.com/webinars" target="_blank" style="color: #2469aa; text-decoration: none;">Visit the CDEWorld Library to access more Webinars across the many dental disciplines.</a>
+                          <a href="${link}" target="_blank" style="color: #2469aa; text-decoration: none;">${message}</a>
                       </div>
                   </td>
               </tr>
@@ -863,6 +872,9 @@ export function featured_ce_wo_header(fields) {
 }
 
 export function end_featured_ce_section(fields) {
+
+    let message = fields[0].value;
+    let link = fields[1].value;
 
     return (
         `
