@@ -299,7 +299,7 @@ export const cdew_thematic_forms = {
             { label: 'Title', name: 'title' },
             { label: 'Description', name: 'description' },
             { label: 'Link', name: 'link' },
-            { label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/300x250' }
+            { label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/200150' }
         ]
     },
     products: {
@@ -536,7 +536,7 @@ export function beginning(fields) {
                               <table cellspacing="0" cellpadding="0" border="0" align="right">
                                   <tr>
                                       <td align="right">
-                                          ${monthName} ${year} | <a href="http://www.cdeworld.com" target="_blank" style="color:#2f84c0;">Visit Our Website</a> | <a href="http://aegispublications.com/news/cdeworld/2017/12/regen-thematic.html" target="_blank" style="color:#2f84c0;">Read Online</a> | <a href="mailto:?subject=FW: ${topic} eNews!&amp;body=I thought you might be interested in this: http://aegispublications.com/news/cdeworld/2017/12/regen-thematic.html" target="_blank" style="color:#2f84c0;">Forward to a Colleague</a> |&nbsp;
+                                          ${monthName} ${year} | <a href="http://www.cdeworld.com" target="_blank" style="color:#2f84c0;">Visit Our Website</a> | <a href="http://aegispublications.com/news/cdeworld/2017/12/${emailName}.html" target="_blank" style="color:#2f84c0;">Read Online</a> | <a href="mailto:?subject=FW: ${topic} eNews!&amp;body=I thought you might be interested in this: http://aegispublications.com/news/cdeworld/2017/12/${emailName}.html" target="_blank" style="color:#2f84c0;">Forward to a Colleague</a> |&nbsp;
                                       </td>
                                       <td align="right">
                                           <img class="soc" src="http://aegispublications.com/news/ce/2016/templates/soc-2.png" alt="" width="33" height="14" usemap="#Map2" style="padding-top:1px;">
@@ -814,7 +814,7 @@ export function featured_ce(fields) {
                         <td width="48%" height="32" valign="top">
                             Provider: ${provider}<br>
                             Source: <em>${source}</em>
-                            ${supporter ? `Commercial Supporter: <em>${supporter}</em>` : ''}
+                            ${supporter ? `<br />Commercial Supporter: <em>${supporter}</em>` : ''}
                         </td>
                         <td valign="top">
                             Credits: ${credits}<br>
@@ -853,7 +853,7 @@ export function featured_ce_wo_header(fields) {
                 <td valign="top" width="48%">
                     Provider: ${provider}<br>
                     Source: <em>${source}</em><br>
-                    Commercial Supporter: <em>${supporter}</em>
+                    ${supporter ? `<br />Commercial Supporter: <em>${supporter}</em>` : ''}
                     
                 </td>
                 <td valign="top">
@@ -1030,8 +1030,8 @@ export function ebook(fields) {
                             <span style="color:#333333; font-weight: bold;">
 ${title}</span>
                             <div style="margin:8px 0;">
-                                <strong>By:</strong> ${author}<br>
-<strong>Supported By: </strong><em>${supporter}</em><br>
+                            ${author ? `<strong>By:</strong> ${author}<br>` : ''}
+                            <strong>Supported By: </strong><em>${supporter}</em><br>
                                 <strong>Cost: </strong>${cost} | <strong>Credits:</strong> ${credits} 
                           </div>
                             <div style="margin-top: 4px;">${description}
