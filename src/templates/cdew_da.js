@@ -451,6 +451,8 @@ export function beginning(fields) {
   </head>
   
   <body bgcolor="#f9f6f1">
+  <!-- g-link -->	
+  <a href="http://www.cdeworld.com" target="_blank"></a>
   <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#f9f6f1">
     <tr>
       <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="662" style="min-width:662px;" class="w662">

@@ -334,7 +334,8 @@ export function beginning(fields) {
         <![endif]-->	
      </head>
      <body bgcolor="#FFFFFF">
-        <!-- g-link -->		
+     <!-- g-link -->		
+     <a href="https://www.dentalaegis.com/idt/" target="_blank"></a>	
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
            <tbody>
               <tr>

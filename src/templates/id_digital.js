@@ -156,6 +156,7 @@ export function beginning(fields) {
           <title>Inside Dentistry</title>
       </head>
       <body>
+      <a href="https://www.dentalaegis.com/id" target="_blank"></a>
           <center>
               <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="font-family:Arial, sans-serif; border:solid 1px #e7e7e8; color:#000000;" width="612">
                   <tbody>
