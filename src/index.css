@@ -205,11 +205,15 @@ h3{
 }
 .add:hover{
   font-size: 44px;
-  color: rgb(19, 68, 19) 
+  color: rgb(26, 102, 26) 
 }
 .header-dropdown{
   margin: 10px 0px 50px;
 }
 .bold{
   font-weight: bold;
+}
+
+#main-form > div > div:nth-child(1) > div > div:hover{
+  background-color: #eee;
 }

@@ -94,7 +94,7 @@ export const idt_thematic_forms = {
     addable: true,
     draggable: true,
     fields: [
-      { label: 'Thematic Topic', name: 'topic', value: 'DIGITAL DENTURES' },
+      { label: 'Thematic Topic', name: 'topic', value: '' },
       { label: 'First Title', name: 'title1' },
       { label: 'First Author', name: 'author1' },
       { label: 'First Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
@@ -130,7 +130,7 @@ export const idt_thematic_forms = {
       { label: 'Author', name: 'author' },
       { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgSrc' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/300x200' },
     ]
   },
   featured_video: {
@@ -141,12 +141,12 @@ export const idt_thematic_forms = {
     addable: true,
     draggable: true,
     fields: [
-      { label: 'Header', name: 'header', value: 'FEATURED EVENT' },
+      { label: 'Header', name: 'header', value: 'FEATURED VIDEO' },
       { label: 'Title', name: 'title' },
       { label: 'Author', name: 'author' },
       { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150' }
+      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/300x200' }
     ]
   },
   products: {
@@ -833,7 +833,7 @@ export function featured_video(fields) {
                         <table align="left" border="0" cellpadding="0" cellspacing="0">
                           <tbody>
                             <tr>
-                              <td align="center" class="hide" height="35">
+                              <td align="center" class="hide" height="15">
                                  </td>
                             </tr>
                             <tr>
