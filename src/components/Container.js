@@ -1,5 +1,21 @@
 import React from 'react';
 import _ from 'lodash';
+import axios from 'axios';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap';
+
+// import 'bootstrap/dist/css/bootstrap.css';
 
 import RightSideDisplay from './RightSideDisplay';
 import FormSection from './FormSection';
@@ -82,10 +98,20 @@ class Container extends React.Component {
     }
     this.setState({ selected_template: template });
   }
+  handleSave() {
+    console.log('Save API call');
+  }
+  handleSaveAs() {
+    console.log('SaveAs API call');
+  }
+  handleOnOpen() {
+    console.log('Load API call');
+  }
 
   render() {
     return (
       <div id="container">
+
         <FormSection
           info={this.state}
           onTemplateChange={value => this.handleTemplateChange(value)}
@@ -95,7 +121,7 @@ class Container extends React.Component {
           onFormSwitch={(formIndex, formToSwitch) => this.handleFormSwitch(formIndex, formToSwitch)}
           onFormDrag={(startIndex, endIndex) => this.handleFormDrag(startIndex, endIndex)}
         />
-        <RightSideDisplay info={this.state} />
+        <RightSideDisplay info={this.state} onSave={this.handleSave} onSaveAs={this.handleSaveAs} onLoad={this.handleOnOpen} />
       </div>
 
     );
