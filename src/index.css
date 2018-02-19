@@ -5,8 +5,9 @@ body {
   background-color:#ddd;
 }
 #container {
-  display: flex;
-  margin: auto;
+  /* display: flex; */
+  max-width: 1100px;
+  margin: 0 auto;
 }
 #main-form {
   background: #fff;
@@ -25,7 +26,8 @@ body {
   background-color: #fff;
   border: solid #000 1px;
   float: left;
-  min-width: 700px;
+  max-width: 750px;
+  /* min-width: 700px; */
   margin: 0px 20px 0px 20px;
   padding: 10px;
   margin: 4px 10px 2px 0px;
