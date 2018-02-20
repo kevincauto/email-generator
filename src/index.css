@@ -4,6 +4,10 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color:#ddd;
 }
+#load-container{
+  width: 700px;
+  margin: 0 auto;
+}
 #container {
   /* display: flex; */
   max-width: 1200px;
@@ -30,6 +34,21 @@ body {
   /* min-width: 700px; */
   margin: 0px 20px 0px 20px;
   padding: 10px;
+  margin: 4px 10px 2px 0px;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  box-shadow: 0px 1px 1px 0px rgb(43, 43, 44);
+  overflow-y: scroll;
+  max-height: 1200px;
+}
+.load-screen{
+  background-color: #fff;
+  border: solid #000 1px;
+
+  max-width: 750px;
+  /* min-width: 700px; */
+  margin: 0px 20px 0px 20px;
+  padding: 10px 10px 20px;
   margin: 4px 10px 2px 0px;
   border-radius: 4px;
   border: 1px solid #bbb;
@@ -218,4 +237,80 @@ h3{
 
 #main-form > div > div:nth-child(1) > div > div:hover{
   background-color: #eee;
+}
+
+.load-table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.load-table td, .load-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.load-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.load-table tr:hover {background-color: #ddd;}
+
+.load-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #345bad;
+  color: white;
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0,0,0, 0.5);
+}
+
+.popup_inner {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  top: 15%;
+  bottom: 15%;
+  margin: auto;
+  background: white;
+  border-radius: 4px;
+  padding: 20px;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.popup-para{
+  padding: 20px 0px 0px;
+}
+
+.form-control{
+  color: #000;
+}
+
+.save-text-input{
+  width: 100%;
+  padding: 6px 10px;
+  margin: 1px 0 4px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  box-shadow: inset 1px 1px 0px rgba(0,0,0,.18);
+  -webkit-font-smoothing: antialiased;
+  border: 1px solid #bbb;
+  border-top-color: #999;
+}
+
+.float-right{
+  float: right;
 }

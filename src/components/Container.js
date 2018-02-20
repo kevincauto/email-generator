@@ -19,6 +19,7 @@ import {
 
 import RightSideDisplay from './RightSideDisplay';
 import FormSection from './FormSection';
+import LoadScreen from './LoadScreen';
 
 import { cced_thematic_initial_state } from '../templates/cced_thematic';
 import { idt_thematic_initial_state } from '../templates/idt_thematic';
@@ -39,6 +40,9 @@ class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      fileName: '',
+      showSaveDialog: true,
+      showLoadScreen: false,
       selected_template: 'idt_thematic',
       cced_digital: cced_digital_initial_state,
       cced_reader: cced_reader_initial_state,
@@ -61,8 +65,29 @@ class Container extends React.Component {
     this.handleFormDelete = this.handleFormDelete.bind(this);
     this.handleFormSwitch = this.handleFormSwitch.bind(this);
     this.handleFormDrag = this.handleFormDrag.bind(this);
+
+    this.handleOpen = this.handleOpen.bind(this);
   }
 
+  renderDialog() {
+    return (
+      <div className="popup" >
+        <div className='popup_inner'>
+          <p className="float-right" onClick={() => this.toggleDialog()}>[x]</p>
+          <img src="https://www.aegisdentalnetwork.com/img/layout/general/da-logo-large.png" width="250" />
+          <p className="popup-para">
+            Name this file...</p>
+          <form>
+            <input className="save-text-input" placeholder="File Name" />
+            <button type="submit" className="download-button" onClick={() => this.saveAs}>Submit</button>
+          </form>
+        </div>
+      </div>
+    )
+  }
+  toggleDialog() {
+    this.setState({ showSaveDialog: !this.state.showSaveDialog })
+  }
   handleFormDrag(startIndex, endIndex) {
     let stateClone = _.cloneDeep(this.state);
     let arrayOfRows = stateClone[this.state.selected_template];
@@ -98,30 +123,48 @@ class Container extends React.Component {
     }
     this.setState({ selected_template: template });
   }
+
   handleSave() {
+    //call to backend with state
     console.log('Save API call');
   }
   handleSaveAs() {
     console.log('SaveAs API call');
   }
-  handleOnOpen() {
-    console.log('Load API call');
+  handleOpen() {
+    this.setState({ showLoadScreen: true })
   }
-
+  handleFileSelection(fileState) {
+    this.setState(fileState);
+    this.setState({ showLoadScreen: false });
+  }
+  showHomeScreen() {
+    this.setState({ showLoadScreen: false })
+  }
   render() {
     return (
-      <div id="container">
+      <div>
+        {this.state.showSaveDialog ? this.renderDialog() : null}
+        {this.state.showLoadScreen ?
+          <div id="load-container">
+            <LoadScreen onFileSelection={(fileState) => this.handleFileSelection(fileState)} backButton={() => this.showHomeScreen()} />
+          </div> :
+          <div>
+            <div id="container">
+              <FormSection
+                info={this.state}
+                onTemplateChange={value => this.handleTemplateChange(value)}
+                onFieldChange={(form, field, value) => this.handleFieldChange(form, field, value)}
+                onFormAdd={(formIndex, formToAdd) => this.handleFormAdd(formIndex, formToAdd)}
+                onFormDelete={(field) => this.handleFormDelete(field)}
+                onFormSwitch={(formIndex, formToSwitch) => this.handleFormSwitch(formIndex, formToSwitch)}
+                onFormDrag={(startIndex, endIndex) => this.handleFormDrag(startIndex, endIndex)}
+              />
+              <RightSideDisplay info={this.state} onSave={this.handleSave} onSaveAs={this.handleSaveAs} onOpen={this.handleOpen} />
+            </div>
+          </div>
+        }
 
-        <FormSection
-          info={this.state}
-          onTemplateChange={value => this.handleTemplateChange(value)}
-          onFieldChange={(form, field, value) => this.handleFieldChange(form, field, value)}
-          onFormAdd={(formIndex, formToAdd) => this.handleFormAdd(formIndex, formToAdd)}
-          onFormDelete={(field) => this.handleFormDelete(field)}
-          onFormSwitch={(formIndex, formToSwitch) => this.handleFormSwitch(formIndex, formToSwitch)}
-          onFormDrag={(startIndex, endIndex) => this.handleFormDrag(startIndex, endIndex)}
-        />
-        <RightSideDisplay info={this.state} onSave={this.handleSave} onSaveAs={this.handleSaveAs} onLoad={this.handleOnOpen} />
       </div>
 
     );

@@ -54,8 +54,11 @@ class RightSideDisplay extends React.Component {
     saveAs(file);
   }
 
-  save() {
+  handleSave() {
 
+  }
+  handleOpen() {
+    this.props.onOpen();
   }
 
   render() {
@@ -90,13 +93,19 @@ class RightSideDisplay extends React.Component {
       <div id="text-results">
         <div className="content" dangerouslySetInnerHTML={{ __html: html }}></div>
         <br />
-        <h3 className="download-header">3. Copy the email.</h3>
+        <h3 className="download-header">3. Copy the email.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        File: {}</h3>
         <div className="copy-paste">
           <div className="copyArea html-copy">
             {/* HTML Version: */}
             <textarea value={html} readOnly={true} />
             {/* <button onClick={()=>this.downloadHtml(html,emailName)} className="download-button">Download HTML Email</button> */}
           </div>
+          <br />
           <div className="copyArea text-copy">
             {/* Text Version:
             <textarea value={textEmail} readOnly={true}/>
