@@ -20,6 +20,7 @@ import {
 import RightSideDisplay from './RightSideDisplay';
 import FormSection from './FormSection';
 import LoadScreen from './LoadScreen';
+import SaveDialog from './SaveDialog';
 
 import { cced_thematic_initial_state } from '../templates/cced_thematic';
 import { idt_thematic_initial_state } from '../templates/idt_thematic';
@@ -68,20 +69,17 @@ class Container extends React.Component {
 
     this.handleOpen = this.handleOpen.bind(this);
   }
-
+  componentDidUpdate() {
+    console.log(this.state);
+  }
+  updateFileName(fileName) {
+    console.log(fileName + '!!!')
+    this.setState({ fileName })
+  }
   renderDialog() {
     return (
-      <div className="popup" >
-        <div className='popup_inner'>
-          <p className="float-right" onClick={() => this.toggleDialog()}>[x]</p>
-          <img src="https://www.aegisdentalnetwork.com/img/layout/general/da-logo-large.png" width="250" />
-          <p className="popup-para">
-            Name this file...</p>
-          <form>
-            <input className="save-text-input" placeholder="File Name" />
-            <button type="submit" className="download-button" onClick={() => this.saveAs}>Submit</button>
-          </form>
-        </div>
+      <div>
+        <SaveDialog closeSaveDialog={() => this.toggleDialog()} OnUpdateFilenName={(fileName) => this.updateFileName(fileName)} />
       </div>
     )
   }

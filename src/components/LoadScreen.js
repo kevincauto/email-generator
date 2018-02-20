@@ -29,7 +29,6 @@ class LoadScreen extends Component {
   render() {
     return (
       <div className="load-screen">
-        <p onClick={this.handleBackButton}>&lt; Back</p>
         <h2>Select a File to Open.</h2>
         <table className="load-table">
           <tr>
@@ -43,26 +42,15 @@ class LoadScreen extends Component {
           <tr>
             <td>Berglunds snabbköp</td>
             <td>Christina Berglund</td>
-
           </tr>
           <tr>
             <td>Centro comercial Moctezuma</td>
             <td>Francisco Chang</td>
-
           </tr>
-          <tr>
-            <td>Ernst Handel</td>
-            <td>Roland Mendel</td>
-
-          </tr>
-          <tr>
-            <td>Island Trading</td>
-            <td>Helen Bennett</td>
-
-          </tr>
-
         </table>
+        <p onClick={this.handleBackButton}>&lt; Back</p>
       </div >
+
     )
   }
 }

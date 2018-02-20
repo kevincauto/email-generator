@@ -98,7 +98,7 @@ class RightSideDisplay extends React.Component {
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        File: {}</h3>
+        File: {this.props.info.fileName ? this.props.info.fileName : '[ none ]'}</h3>
         <div className="copy-paste">
           <div className="copyArea html-copy">
             {/* HTML Version: */}
