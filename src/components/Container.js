@@ -73,8 +73,8 @@ class Container extends React.Component {
     console.log(this.state);
   }
   updateFileName(fileName) {
-    console.log(fileName + '!!!')
-    this.setState({ fileName })
+    this.setState({ fileName });
+    this.handleSave();
   }
   renderDialog() {
     return (
@@ -125,9 +125,14 @@ class Container extends React.Component {
   handleSave() {
     //call to backend with state
     console.log('Save API call');
+    if (this.state.fileName) {
+      axios.post('/api/save-email', { state: this.state });
+    }
+
   }
   handleSaveAs() {
     console.log('SaveAs API call');
+    this.setState({ showSaveDialog: true })
   }
   handleOpen() {
     this.setState({ showLoadScreen: true })
@@ -158,7 +163,7 @@ class Container extends React.Component {
                 onFormSwitch={(formIndex, formToSwitch) => this.handleFormSwitch(formIndex, formToSwitch)}
                 onFormDrag={(startIndex, endIndex) => this.handleFormDrag(startIndex, endIndex)}
               />
-              <RightSideDisplay info={this.state} onSave={this.handleSave} onSaveAs={this.handleSaveAs} onOpen={this.handleOpen} />
+              <RightSideDisplay info={this.state} onSave={this.handleSave} onSaveAs={() => this.handleSaveAs()} onOpen={this.handleOpen} />
             </div>
           </div>
         }

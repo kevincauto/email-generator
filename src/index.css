@@ -138,7 +138,7 @@ button:focus{
   margin: 4px 5px 2px 5px;
 }
 textarea{
-  min-height: 122px;
+  min-height: 162px;
   width: 100%;
   -webkit-box-sizing: border-box;
  /* Safari/Chrome, other WebKit */

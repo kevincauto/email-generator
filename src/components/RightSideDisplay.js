@@ -57,6 +57,10 @@ class RightSideDisplay extends React.Component {
   handleSave() {
 
   }
+  handleSaveAs() {
+    console.log('save as')
+    this.props.onSaveAs();
+  }
   handleOpen() {
     this.props.onOpen();
   }
@@ -113,6 +117,7 @@ class RightSideDisplay extends React.Component {
             <button onClick={() => this.handleSave()} className="download-button">Save</button>
             <button onClick={() => this.handleSaveAs()} className="download-button">Save As</button>
             <button onClick={() => this.handleOpen()} className="download-button">Open</button>
+            <button onClick={() => window.location.reload()} className="download-button">Clear All</button>
           </div>
 
         </div>
